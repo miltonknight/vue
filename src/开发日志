@@ -156,7 +156,8 @@ item hover svg文件反色bug已修复，方法为去掉svg文件中fill的部�
 将 mode:history 模式调整为hash模式，但在测试过程中需要调整链接地址，所以暂时将模式改回history模式
 2. src\api\laobing_url.js
 调整老兵驿站版块部分接口数据格式，调整页面对应输出部分
-3. 
+3. src\views\ma\courier_station\artical.vue
+文章详情页面调整数据接口，请求参数以json形式添加，增加点赞部分的关联，其他数据表待完善
 
 
 

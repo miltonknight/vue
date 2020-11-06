@@ -24,7 +24,7 @@
               </div>
               <div class="artical-foot">
                 <div class="thumbup">
-                  <div class="likebox" @click='likeFlag()' >0000</div>
+                  <div class="likebox" @click='likeFlag()'></div>
                   <p id="likeNum">123</p>
                   <p>好文章，需要你的鼓励</p>
                 </div>
@@ -81,7 +81,7 @@ export default {
   // },
   created: function() {
     // set default likebox
-    console.log("::::::"+this.thumbup);
+    console.log("::::::" + this.thumbup);
     if(this.thumbup) {
       var boxObj = document.getElementsByClassName("likebox");
       boxObj.classList = "likebox is-active";
@@ -93,11 +93,17 @@ export default {
     const baseUrl = this.GLOBAL.basePath;
     const allUrl = baseUrl + this.url;
     console.log('allUrl:::'+allUrl);
-    //json post prop
+    const aid= this.$route.query;
+    // json post prop
+    // 获取url中的参数
+    console.log("this.$route.query::::::" + this.$route.query.id);
     const prop = {
-      "article_id": this.$route.query, //文章id
+       //文章id
+      "article_id": this.$route.query.id,
+      // uid用户token中获取
       "uid": '0a44f30462e742879f5fbd15d2fda9e6'
     };
+    console.log("prop:::::::"+JSON.stringify(prop))
     axios.post(allUrl, prop)
       .then(res => {
         //data属性是固定的用法,用于获取后台的实际数据
