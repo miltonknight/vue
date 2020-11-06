@@ -158,6 +158,13 @@ item hover svg文件反色bug已修复，方法为去掉svg文件中fill的部�
 调整老兵驿站版块部分接口数据格式，调整页面对应输出部分
 3. src\views\ma\courier_station\artical.vue
 文章详情页面调整数据接口，请求参数以json形式添加，增加点赞部分的关联，其他数据表待完善
+4. src\views\ma\courier_station\components\rightside-artical.vue
+组件内去掉无用的顶部推荐，增加作者信息、推荐文章板块预留
+5. src\router\index.js
+将路由中独立的老兵驿站，path: "/courier-station/index"，path: "/courier-station/artical"部分合并
+-到/ma 下作为子路由
+6. src\views\ma\courier_station\index.vue
+增加分页功能，具体方法为L147.fetchData()，对接服务器接口方面待测 
 
 
 

@@ -94,17 +94,7 @@ export const constantRoutes = [
         name: "MaTestindex",
         component: () => import("@/views/ma/home/index"),
         meta: { title: "M测试首页", icon: "dashboard" }
-      }
-    ]
-  },
-  //courier_station
-  {
-    path: "/courier-station",
-    redirect: "/courier-station/index",
-    name: "MaCourierStation",
-    meta: { title: "M测试老兵驿站", icon: "user" },
-    component: MaCsLayout,
-    children: [
+      },
       {
         // path: "/ma/home/index",
         path: "/courier-station/index",
@@ -122,6 +112,31 @@ export const constantRoutes = [
       }
     ]
   },
+  // //courier_station
+  // {
+  //   path: "/courier-station",
+  //   redirect: "/courier-station/index",
+  //   name: "MaCourierStation",
+  //   meta: { title: "M测试老兵驿站", icon: "user" },
+  //   component: MaCsLayout,
+  //   children: [
+  //     {
+  //       // path: "/ma/home/index",
+  //       path: "/courier-station/index",
+  //       name: "MaCourierStationIndex",
+  //       component: () => import("@/views/ma/courier_station/index"),
+  //       meta: { title: "Ma测试老兵驿站", icon: "dashboard" }
+  //     },
+  //     {
+  //       // path: "/ma/home/index",
+  //       path: "/courier-station/artical",
+  //       name: "MaCourierStationArtical",
+  //       component: () => import("@/views/ma/courier_station/artical"),
+  //       // component: MaCsArticalLayout,
+  //       meta: { title: "Ma测试老兵驿站文章", icon: "dashboard" }
+  //     }
+  //   ]
+  // },
 
   {
     path: "/user",

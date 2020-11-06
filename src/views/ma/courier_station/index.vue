@@ -50,6 +50,16 @@
                   :limit.sync="listQuery.limit"
                   @pagination="fetchData"
                 /> -->
+
+                <pagination
+                  background="#f3f3f3"
+                  layout="prev, pager, next"
+                  v-show="total > 0"
+                  :total="total"
+                  :page.sync="listQuery.page"
+                  :limit.sync="listQuery.limit"
+                  @pagination="fetchData"
+                />
                 
               </div>
             </div>
@@ -79,8 +89,8 @@
 <script>
 console.log("./views/ma/courier_station/index is loaded~~~~~~~~~~~~~~~~~~~~");
 import CsFocus from "@/views/ma/courier_station/components/focus";
-import Pagination from "@/components/Pagination";
 import CsRightSide from "@/views/ma/courier_station/components/rightside"
+import Pagination from "@/components/Pagination";
 import axios from 'axios';
 // import { getData, postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
@@ -91,8 +101,8 @@ export default {
   name: "CourierStation",
   components: {
     CsFocus, // 焦点图
-    Pagination,
-    CsRightSide
+    CsRightSide,
+    Pagination
   },
   data() {
     return {
@@ -100,26 +110,27 @@ export default {
       url: LaobingUrl.courier_station_artical_list,
       ArticalList: [],
       // Pagination
-      // total: 0,
-      // list: null,
-      // listLoading: true,
-      // listQuery: {
-      //   type_id: 1,
-      //   page: 1,
-      //   limit: 10
-      // }
+      total: 100,
+      list: null,
+      listLoading: true,
+      listQuery: {
+        sort_id: 2,
+        page: 1,
+        limit: 20
+      }
     };
   },
   // computed: { },
   created: function() {
-    // this.fetchData();
+    this.fetchData();
+
     const baseUrl = this.GLOBAL.basePath;
-    const allUrl = baseUrl + this.url
+    const allUrl = baseUrl + this.url;
     //json post prop
     let prop = {
       "sort_id":"2", //版块
       "page": 1,  //
-      "limit": 10  //单页数量
+      "limit": 20  //单页数量
     };
     axios.post(allUrl, prop)
       .then(res => {
@@ -129,12 +140,33 @@ export default {
         //console.log("res.data::::::::"+res.data.data[0].srcPath);
       }
     );
-  },
-  activated: function() {
-    this.getCase()
   }
-  // ,
-  // methods: { }
+  ,
+  methods: { 
+    // fetch Pagination data, init & set 
+    fetchData() {
+      this.listLoading = true;
+      var page = {
+        page: this.listQuery.page,
+        limit: this.listQuery.limit
+      };
+      this.$store
+        .dispatch(this.url, page)
+        .then(response => {
+          const { code, msg, data } = response;
+          this.total = data.total;
+          this.list = data.list;
+          this.listLoading = false;
+        })
+        .catch(error => {
+          this.listLoading = false;
+          this.$message({
+            message: "操作失败",
+            type: "success"
+          });
+        });
+    },
+  }
 };
 </script>
 

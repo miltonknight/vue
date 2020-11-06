@@ -1,22 +1,17 @@
-<!-- 老兵驿站右侧 -->
+<!-- 老兵驿站文章右侧 -->
 <template>
   <div>
-    <!-- 顶部推荐 -->
+    <!-- 作者信息 -->
     <div class="side-main">
-      <div class="top-section">
-        <div class="rcm-bbs">
-          <img src="@/assets/img/bbs.png" alt="" />
-          <i class="badge badge-blue">论坛</i>
-        </div>
-        <div class="rcm-section">
-          <a href="">老兵论道</a>
-          <a href="">休闲养生</a>
-          <a href="">医学前沿</a>
-          <a href="">户外运动</a>
-        </div>
-      </div>
+      作者信息
     </div>
-    <!-- 顶部推荐end -->
+    <!-- 作者信息end -->
+
+    <!-- 推荐文章 -->
+    <div class="side-main">
+      推荐文章
+    </div>
+    <!-- 推荐文章end -->
 
     <!-- 最新活动 -->
     <div class="side-main">
