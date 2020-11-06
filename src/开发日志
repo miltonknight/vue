@@ -1,0 +1,164 @@
+#-------------------- 20201026前更新内容 --------------------
+开发更改的文件都集中制src下，说明如下：
+访问地址：http://localhost:9528/#/ma/home/index
+1. src\permission.js  
+文件中增加白名单 /ma
+2. src\components  
+文件夹下新增三个组件CommonFooter（通用底部信息），CommonNav（通用头部导航）与CommonTip（通用左侧小导航）三个组件，作为网站公共组件。
+3. src\icons\svg  
+文件夹中新增部分svg文件作为左侧小导航的图标
+4. src\layout\ma\home  
+文件夹中新增index.vue作为首页layout文件
+5. src\router\index.js  
+在第81行新增路径/ma 作为测试页面路径
+6. src\views\ma  
+文件夹中新增index.vue与components文件夹。Index.vue文件作为首页输出内容代码，components/focus.vue 为单独提出的导航文件。
+
+#-------------------- 20201027开会讨论存在问题如下 --------------------
+1. 左侧tip和下方footer中的logo不要用纯图片改为用文字+CSS
+2. 左侧tip橙色底纹，是否包括ICON图标
+3. 将侧边栏固定，否则会出现错版。
+
+#-------------------- 20201028更新内容 --------------------  
+1. src\router\index.js 
+81行更改重定向路径"redirect"以及子路径中"path";
+2. src\components\CommonTip\index.vue  
+.tip-main将定位fixed改为absolute，修复小屏下拉穿入bug;
+3. src\components\CommonFooter\index.vue   
+.footer-main添加防穿样式;
+4. src\components\CommonNav\index.vue
+修改nav中.header-main为固定页首样式;
+5. src\styles\index.scss
+提取部分全站可共用文件到index.scss
+6. src\views\ma\home\index.vue
+整体嵌套结构进行更改，确认.list-body为内容输出区域，主内容区所有获取到的数据打入此处;
+因nav修改为固定页首样式，更改.main-wrapper对应属性
+右侧内容部分完成
+首页静态部分完成
+
+#-------------------- 20201029更新内容 --------------------  
+1. src\components\CommonTip\index.vue  
+svg部分调整结构状态去掉文件内部fill属性改为css方式更改颜色属性,解决了不能改色的bug
+660行，加入axios方式调取后台数据，返还结果数据可接收并可打出，但在focus部分中循环输出出现问题
+src中直接带入localhost地址,在引用取回的json数据时用vue语法输出出现错误，暂用静态方法代替
+focus被注释的部分，如果取消注释的话后台会一直报sockjs.js的错目前不知原因
+//后台接口配置文件
+2. vue.config.js
+加入proxy部分,是否起作用待验证
+搜索相关文章时，提示更改vue.config.js以及env.js进行配置，但项目中并未更改env.js也可调用后台数据
+此处有些疑惑。
+
+#-------------------- 20201029晚间更新内容 --------------------
+1. utils/request.js 中定义了baseURL, 可以直接写死www.lblbsy.com:8181/ 或者直接写小钟的电脑  192.168.110.170:8181
+-该方法是axios的写法定义了baseURL，proxy和sockjs的方式可以去掉
+-或者用第一行，注释第二行，然后在  .env.development 和 .env.production中改配置
+axios全部封装好了，直接import api/common，调用getData 和postData 就可以了
+-import { getData, postData } from "@/api/common"
+-import { LaobingUrl } from "@/api/laobing_url"
+2. 页面中记录用户登录身份，看一下  disk/index.vue 文件，先引入 mapGetters，
+-然后读取user_id 和 access_token ，这里有用户ID和登录会议token，可以用于判断是否登录
+3. store/getters.js 中存储了用户所有相关信息，可以用类似上面的代码加载到页面空间中。
+-比如手机号user_name, 真实名full_name:  ...mapGetters(['user_name', 'full_name'])
+
+4. 反向更新配置后台接口所更改的文件
+vue.config.js 删除proxy部分的内容
+
+*src\utils\request.js 关联了.env.development 以及 .env.production 中对应的部分
+-注意地址的配置，本地地址用于开发测试，外网地址用于测试数据接口
+
+#-------------------- 20201030更新内容 --------------------
+1. src\router\index.js
+由于默认路径部分存在#号存在多出不变，所以在new Router的声明中添加mode: 'history',该模式可以去掉地址栏中的#号 
+2. src\views\ma\home\index.vue
+更改部分css细节，更符合设计稿
+axios post方法接入后台数据并循环输入到focus部分当中，建议在json中加入文章链接以及index排序，便于后台管理
+*现在data中定义接收数据的数组，然后在created中通过this. 方法传递数据回数组进行全局调用
+以上方法为同页传参，如何在不同view中传参待验证
+3. src\components\CommonNav\index.vue
+更改部分css细节
+4. src\components\CommonFooter\index.vue
+更改部分css细节
+5. src\components\CommonTip\index.vue
+item hover svg文件反色bug已修复，方法为去掉svg文件中fill的部分
+*后续下载svg文件使用默认颜色即可，不要选择具体颜色，否则页面css无法进行样式更改
+6. src\styles\index.scss
+更改部分全局样式
+
+#-------------------- 20201102更新内容 --------------------
+1. src\views\ma\home\components\focus.vue, src\views\ma\home\index.vue
+将首页的focus部分代码转为使用组件的方式，js代码从首页中提取出去集成到focus中
+-更改相关方法后，实现了模板中调取数据，并将结果渲染在首页打出
+-使用的方法仍为单独调用axios.get函数，后续会改为使用集成的getData
+-方法可以改进的地方为：调用基础baseUrl+requestUrl的方式而不是写死地址
+2. src\styles\index.scss
+加入首页轮播按钮的修复样式，该样式在其他地方更改不生效，只可在全局变量中更改才可以
+-提取首页列表样式，右侧侧边栏样式到index.css中，首页样式清除
+3. src\views\ma\courier_station\index.vue, src\layout\ma\courier_station\index.vue
+新增老兵驿站对应view和layout，对应文件夹courier_station。router.js增加对应路由项
+4. src\components\CommonNav\index.vue
+增加路由跳转部分，但在85行实现跳转时，data return无法取出相应数据
+-改为直接在外部定义数组可以取出对应数值, data return内数组值如何取？
+*经测试undefined的原因是非法定义！Vue中不可以用下划线为开头，此处需要重新阅读vue相关材料
+
+#-------------------- 20201103更新内容 --------------------
+1. 老兵驿站部分增加focus组件
+2. src\styles\index.scss
+将部分非公用部分提取出返还到home/index.vue页面中
+3. 测试getData方法，接口提示需要身份验证由于还未完成用户部分，暂时还是使用axios.get方法
+4. 测试baseURL定义
+4.1 更改request.js中对应的第七行，使用全局变量
+4.2 更改.env.development设置VUE_APP_BASE_API = 'http://192.168.110.170:8181/test'
+4.3 更改.env.production设置VUE_APP_BASE_API = 'http://192.168.110.170:8181/test'
+4.4 laobing_url中加入测试地址以及变量focus_get_images
+4.5 页面测试返还值为 localhost/focus_get_images, baseURL设置未生效
+4.6 focus页面中引入 import baseURL from "@/utils/request.js" console.log()输出为方法
+
+#-------------------- 20201104更新内容 --------------------
+1. baseURL问题解决方案，按axios.get()方式进行，后续getData()需要做对应变更
+1.1 新建src\global\global.js文件，自定义basePath
+1.2 在src\main.js中引用并将其定义为全局变量
+1.3 在使用页面中通过this.方法进行使用(e.g. src\views\ma\home\components\focus.vue L54.this.GLOBAL.basePath)
+1.4 页面输出baseUrl以及requestUrl均正常
+****update优化方案****
+1.5 在1.1中的方法将写死的const basePath = 'http://192.168.110.170:8181'
+-更改为const basePath = process.env.VUE_APP_BASE_API; 该方法调用的是.env.development中定义的方法（正宗全局变量）
+-需要注意的是此项更改需要停止服务硬重启，VSCode自带重启不生效
+2. src\views\ma\courier_station\components\focus.vue
+老兵驿站焦点图组件接口调通，添加了a标签的链接参数，通过[?type=]传递soldier_station_id便于后续区分版块
+*href链接内容，最外层需要用""（双引号），所有内部拼接内容用''(单引号)拼接
+3. src\views\ma\home\index.vue
+增加首页优惠信息接口数据部分，测试用例json需要调整时间格式，增加属性包括不限于：优惠类型、详情页链接等内容
+4. src\views\ma\courier_station\index.vue
+增加驿站首页老营房模块接口对接，数据可正常对接，后续需要增加切换标签打出数据以及分页部分内容
+-目前想到两种方法1)手写JS清空当前列表div然后再填充 2)用elementUI的tab组件，明日测试
+-axios请求数据方法需要进行扩展，请求格式data中type_id需要编程活数据
+5. src\api\laobing_url.js
+集中配置接口地址，新增首页焦点图与优惠信息两个测试接口地址，老兵驿站增加焦点图以及文章列表两个标准接口
+
+#-------------------- 20201105更新内容 --------------------
+1. src\views\ma\home\components\coupon.vue
+新增首页优惠组件，首页优惠内容提取为单独组件，组件内获取相关数据
+2. src\views\ma\home\index.vue 提取右侧内容为组件src\views\ma\home\components\rightside.vue
+3. src\views\ma\courier_station\index.vue 提取右侧内容为组件
+-src\views\ma\courier_station\components\rightside.vue 以免页面过长，便于维护
+-分成组件后发现页面js报错call back错误，经查询是页面内钩子存在触发问题
+*注释掉页面内无用的 computed: 和created: 方法错误消失
+4. src\views\ma\courier_station\artical.vue
+从老兵驿站文章列表点击文章跳转到详情页出现了url变化，但页面不刷新（内容不变）的问题
+-在页面增加console.log()进行测试，发现已经进入新页面，但是并未渲染，而且页面出现其他不该出现的页面
+*因并未使用keep-alive属性，在对应的layout文件中将原来引入的view改为<router-view :key="key" />即可解决当前问题
+5. src\views\ma\courier_station\artical.vue
+页面布局、文章数据解析基本完成，页面部分元素后台尚未有返还值需要添加
+*解析富文本注意在对应标签中加入v-html="item.content"可以直接进行解析，从而不显示以字符串存储的标签
+
+#-------------------- 20201106更新内容 --------------------
+1. src\router\index.js
+将 mode:history 模式调整为hash模式，但在测试过程中需要调整链接地址，所以暂时将模式改回history模式
+2. src\api\laobing_url.js
+调整老兵驿站版块部分接口数据格式，调整页面对应输出部分
+3. 
+
+
+
+
+
