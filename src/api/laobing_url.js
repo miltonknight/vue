@@ -31,7 +31,7 @@ export const LaobingUrl = {
   // courier_station-list
   courier_station_artical_list: '/article/pageArticleBySortId',
   // courier_station-artical
-  courier_station_artical: '/soldierStation/findSoldierStatdionDetail'
+  courier_station_artical: '/article/findArticleDetail'
 
 }
 

@@ -11,7 +11,7 @@
             <div class="artical-main">
               <div class="artical-head">
                 <h1>标题：{{ ArticalDetail.data.title }}</h1>
-                <p><a href="">作者</a> {{ ArticalDetail.data.create_time }}</p>
+                <p><a href="">{{ ArticalDetail.data.writer }}writer</a> {{ ArticalDetail.data.create_time }}</p>
               </div>
               <div class="artical-body">
                 <p v-html="ArticalDetail.data.content"></p>
