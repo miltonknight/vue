@@ -57,6 +57,7 @@ export default {
     const prop = {
       "sort_id": 3 //文章分类
     };
+    console.log("prop:::::"+prop)
     //getData("http://192.168.110.170:8181/test/queryHomePageImgs")
     axios.post(allUrl, prop)
       .then(res => {

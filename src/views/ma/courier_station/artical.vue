@@ -10,7 +10,7 @@
           <div class="artical-container">
             <div class="artical-main">
               <div class="artical-head">
-                <h1>标题：{{ ArticalDetail.data.title }}</h1>
+                <h1>{{ ArticalDetail.data.title }}</h1>
                 <p><a href="">{{ ArticalDetail.data.writer }}writer</a> {{ ArticalDetail.data.create_time }}</p>
               </div>
               <div class="artical-body">
@@ -55,7 +55,7 @@
 
 <script>
 console.log("./views/ma/courier_station/artical is loaded~~~~~~~~~~~~~~~~~~~~");
-import CsRightSide from "@/views/ma/courier_station/components/rightside"
+import CsRightSideArtical from "@/views/ma/courier_station/components/rightside-artical"
 import axios from 'axios';
 import { LaobingUrl } from "@/api/laobing_url";
 // import { getData, postData } from "@/api/common";
@@ -65,7 +65,7 @@ export default {
   // components: { MaHomeheader },
   name: "CsArtical",
   components: {
-    CsRightSide
+    CsRightSideArtical
   },
   data() {
     return {
@@ -91,10 +91,12 @@ export default {
     console.log("::::::方法结束")
 
     const baseUrl = this.GLOBAL.basePath;
-    const allUrl = baseUrl + this.url
+    const allUrl = baseUrl + this.url;
+    console.log('allUrl:::'+allUrl);
     //json post prop
     const prop = {
-      "soldier_station_id": this.$route.query //文章id
+      "article_id": this.$route.query, //文章id
+      "uid": '0a44f30462e742879f5fbd15d2fda9e6'
     };
     axios.post(allUrl, prop)
       .then(res => {
