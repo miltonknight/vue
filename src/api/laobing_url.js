@@ -26,12 +26,12 @@ export const LaobingUrl = {
   // home coupon
   index_coupon: '/test/queryYouhuiData',
   //courier_station**********
-  // courier_station-focus
-  courier_station_focus: '/article/findModelCarousel',
-  // courier_station-list
-  courier_station_artical_list: '/article/pageArticleBySortId',
-  // courier_station-artical
-  courier_station_artical: '/article/findArticleDetail'
+  // whole site modular_focus
+  modular_focus: '/article/findModelCarousel',
+  // whole site artical-list
+  modular_artical_list: '/article/pageArticleBySortId',
+  // whole site artical
+  modular_articals: '/article/findArticleDetail'
 
 }
 

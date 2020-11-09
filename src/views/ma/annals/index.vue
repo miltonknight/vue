@@ -7,30 +7,22 @@
           <!-- <router-view :key="key" /> -->
 
           <!-- components:components/focus -->
-          <cs-focus />
+          <annals-focus />
           
           <!-- list -->
           <div class="list-container">
             <div class="list-main">
               <div class="list-head">
-                <h3>老兵驿站<span>Military Memory</span></h3>
-                <a href="/courier-station/index">查看更多</a>
+                <h3>老兵战史<span>Veteran war history</span></h3>
+                <a href="/annals/index">查看更多</a>
               </div>
               <div class="list-head list-head-sub">
-                <ul class="section-title">
-                  <li class="is-active">老营房</li>
-                  <li>老哨所</li>
-                  <li>老故事</li>
-                  <li>老家书</li>
-                  <li>老军装</li>
-                  <li>老连队</li>
-                  <li>老照片</li>
-                </ul>
+                版块分割部分
               </div>
               <div class="list-body">
                 <!-- 列表循环 -->
                 <!-- <a v-for="item in ArticalList.list" :key="item.id" :href="'/courier-station/artical?id=' + item.soldier_station_id" class="list-item"> -->
-                <a v-for="item in ArticalList.list" :key="item.id" :href="'/courier-station/artical?id=' + item.article_id" class="list-item">
+                <a v-for="item in ArticalList.list" :key="item.id" :href="'/annals/artical?id=' + item.article_id" class="list-item">
                   <div class="list-body-img">
                     <img :src="item.img_path" />
                     <i class="badge">{{item.sort_name}}</i>
@@ -80,7 +72,7 @@
           <div class="side-section">
             
             <!-- components:components/rightside -->
-            <cs-right-side />
+            <annals-right-side />
 
           </div>
         </div>
@@ -91,9 +83,9 @@
 </template>
 
 <script>
-console.log("./views/ma/courier_station/index is loaded~~~~~~~~~~~~~~~~~~~~");
-import CsFocus from "@/views/ma/courier_station/components/focus";
-import CsRightSide from "@/views/ma/courier_station/components/rightside"
+console.log("./views/ma/annals/index is loaded~~~~~~~~~~~~~~~~~~~~");
+import AnnalsFocus from "@/views/ma/annals/components/focus";
+import AnnalsRightSide from "@/views/ma/annals/components/rightside"
 import Pagination from "@/components/Pagination";
 import axios from 'axios';
 // import { getData, postData } from "@/api/common";
@@ -102,10 +94,10 @@ import { LaobingUrl } from "@/api/laobing_url";
 export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
-  name: "CourierStation",
+  name: "Annals",
   components: {
-    CsFocus, // 焦点图
-    CsRightSide,
+    AnnalsFocus, // 焦点图
+    AnnalsRightSide,
     Pagination
   },
   data() {

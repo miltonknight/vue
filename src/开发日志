@@ -166,7 +166,19 @@ item hover svg文件反色bug已修复，方法为去掉svg文件中fill的部�
 6. src\views\ma\courier_station\index.vue
 增加分页功能，具体方法为L147.fetchData()，对接服务器接口方面待测 
 
-
-
+#-------------------- 20201109更新内容 --------------------
+1. src\views\ma\courier_station\artical.vue
+文章详情页面，完善页面细节，数据接口部分待后台开发完成后进行对接，分页部分功能有问题讨论后更新
+2. src\api\laobing_url.js
+规范接口变量命名。由于文章列表、详情接口已经更改，由原单一模块接口改为全站统一接口，所以为了
+-标准化命名，特将相关接口地址变量重命名，更加规范便于后续调用。
+3. src\views\ma\annals, src\layout\ma\annals 
+新增老兵战史模块
+3.1 src\views\ma\annals\index.vue, src\layout\ma\annals\index.vue
+新增老兵战史首页(列表页)view，增加首页(列表页)layout
+3.2 src\views\ma\annals\artical.vue, src\layout\ma\annals\artical.vue
+新增老兵战史文章页view，增加文章页layout
+3.3 现有数据接口基本调通，可拆分组件已拆分
+3.4 存留问题：分页功能存在冲突，加入travel页面中的示例代码存在.then函数报错(程序钩子问题)待解决
 
 

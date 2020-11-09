@@ -1,4 +1,4 @@
-<!-- 老兵驿站文章右侧 -->
+<!-- 老兵战史文章右侧 -->
 <template>
   <div>
     <!-- 作者信息 -->
@@ -89,9 +89,9 @@
 </template>
 
 <script>
-console.log("@/views/ma/courier_station/components/rightside-artical.vue is loaded~~~~~~~~~~~~~~");
+console.log("@/views/ma/annals/components/rightside-artical.vue is loaded~~~~~~~~~~~~~~");
 export default {
-  name: "CsRightSideArtical",
+  name: "AnnalsRightSideArtical",
   components: {},
   data() {
     return {}

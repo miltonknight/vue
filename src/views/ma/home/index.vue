@@ -61,7 +61,7 @@
             <div class="list-main">
               <div class="list-head">
                 <h3>老兵战史<span>Veteran war history</span></h3>
-                <a href="">查看更多</a>
+                <a href="/annals/index">查看更多</a>
               </div>
               <div class="list-body">
                 <a href="" class="list-item">

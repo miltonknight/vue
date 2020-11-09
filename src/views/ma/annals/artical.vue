@@ -41,7 +41,7 @@
               </h3>
             </div>
             <div class="conment-body">
-              <textarea id="" name="" cols="" rows="5" placeholder="元芳你这么看？"></textarea>
+              <textarea name="" id="" cols="" rows="5" placeholder="元芳你这么看？"></textarea>
               <div class="text-btn">
                 <button>提交评论</button>
                 <span>0/1000</span>
@@ -108,7 +108,7 @@
           <div class="side-section">
             
             <!-- components:components/rightside -->
-            <cs-right-side-artical />
+            <annals-right-side-artical />
 
           </div>
         </div>
@@ -119,8 +119,8 @@
 </template>
 
 <script>
-console.log("./views/ma/courier_station/artical is loaded~~~~~~~~~~~~~~~~~~~~");
-import CsRightSideArtical from "@/views/ma/courier_station/components/rightside-artical"
+console.log("./views/ma/annals/artical is loaded~~~~~~~~~~~~~~~~~~~~");
+import AnnalsRightSideArtical from "@/views/ma/annals/components/rightside-artical"
 import axios from 'axios';
 import { LaobingUrl } from "@/api/laobing_url";
 // import { getData, postData } from "@/api/common";
@@ -128,9 +128,9 @@ import { LaobingUrl } from "@/api/laobing_url";
 export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
-  name: "CsArtical",
+  name: "AnnalsArtical",
   components: {
-    CsRightSideArtical
+   AnnalsRightSideArtical
   },
   data() {
     return {
@@ -147,7 +147,7 @@ export default {
   created: function() {
     // set default likebox
     console.log("::::::" + this.thumbup);
-    if (this.thumbup) {
+    if(this.thumbup) {
       var boxObj = document.getElementsByClassName("likebox");
       boxObj.classList = "likebox is-active";
       console.log(boxObj)
@@ -157,17 +157,18 @@ export default {
 
     const baseUrl = this.GLOBAL.basePath;
     const allUrl = baseUrl + this.url;
-    console.log('allUrl:::' + allUrl);
+    console.log('allUrl:::'+allUrl);
+    const aid= this.$route.query;
+    // json post prop
     // 获取url中的参数
     console.log("this.$route.query::::::" + this.$route.query.id);
-    // json post prop
     const prop = {
        //文章id
       "article_id": this.$route.query.id,
       // uid用户token中获取
       "uid": '0a44f30462e742879f5fbd15d2fda9e6'
     };
-    console.log("prop:::::::" + JSON.stringify(prop))
+    console.log("prop:::::::"+JSON.stringify(prop))
     axios.post(allUrl, prop)
       .then(res => {
         //data属性是固定的用法,用于获取后台的实际数据
@@ -403,4 +404,6 @@ export default {
     margin-left: 40px;
   }
 }  
+
+
 </style>

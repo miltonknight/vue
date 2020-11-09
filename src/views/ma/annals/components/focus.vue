@@ -1,14 +1,4 @@
 <template>
-  <!-- <div> -->
-    <!-- components' name -->
-    <!-- <div class="block">
-      <el-carousel height="300px">
-        <el-carousel-item v-for="item in 3" :key="item">
-          <h3 class="small">{{ item }}</h3>
-        </el-carousel-item>
-      </el-carousel>
-    </div>
-  </div> -->
  
   <div class="block" style="margin-bottom: 40px;">
     <el-carousel height="300px">
@@ -27,7 +17,7 @@
 
 <script>
 
-console.log("@/views/ma/courier_station/components/focus is loaded~~~~~~~~~~~~~~");
+console.log("@/views/ma/annals/components/focus is loaded~~~~~~~~~~~~~~");
 
 import axios from 'axios';
 // import { getData } from '@/api/common';
@@ -35,7 +25,7 @@ import axios from 'axios';
 import { LaobingUrl } from "@/api/laobing_url";
 
 export default {
-  name: "CsFocus",
+  name: "AnnalsFocus",
   components: {},
   data() {
     return {

@@ -9,6 +9,7 @@ import Weblayout from "@/layout/web/index";
 import MaLayout from "@/layout/ma/home/index";
 import MaCsLayout from "@/layout/ma/courier_station/index";
 import MaCsArticalLayout from "@/layout/ma/courier_station/artical";
+import MaAnnalsArticalLayout from "@/layout/ma/annals/artical";
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -79,7 +80,6 @@ export const constantRoutes = [
     ]
   },
   //test pages edited by Ma
-  //index
   {
     path: "/ma",
     // redirect: "/ma/",
@@ -96,20 +96,32 @@ export const constantRoutes = [
         meta: { title: "M测试首页", icon: "dashboard" }
       },
       {
-        // path: "/ma/home/index",
         path: "/courier-station/index",
         name: "MaCourierStationIndex",
         component: () => import("@/views/ma/courier_station/index"),
         meta: { title: "Ma测试老兵驿站", icon: "dashboard" }
       },
       {
-        // path: "/ma/home/index",
         path: "/courier-station/artical",
         name: "MaCourierStationArtical",
         component: () => import("@/views/ma/courier_station/artical"),
         // component: MaCsArticalLayout,
         meta: { title: "Ma测试老兵驿站文章", icon: "dashboard" }
+      },
+      {
+        path: "/annals/index",
+        name: "MaAnnalsIndex",
+        component: () => import("@/views/ma/annals/index"),
+        meta: { title: "Ma测试老兵战史", icon: "dashboard" }
+      },
+      {
+        path: "/annals/artical",
+        name: "MaAnnalsArtical",
+        component: () => import("@/views/ma/annals/artical"),
+        // component: MaCsArticalLayout,
+        meta: { title: "Ma测试老兵战史文章", icon: "dashboard" }
       }
+
     ]
   },
   // //courier_station

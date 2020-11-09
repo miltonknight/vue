@@ -178,8 +178,13 @@ div:focus {
         p {
           color: #787878;
           line-height: 1.5;
+          height: 42px;
           font-size: 14px;
           word-break: break-all;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          overflow: hidden;
         }
         .list-text-cate {
           position: absolute;
