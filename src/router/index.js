@@ -238,7 +238,7 @@ export const constantRoutes = [
 const createRouter = () =>
   new Router({
     // mode: 'history',该模式可以去掉地址栏中的#号  // require service support
-    mode: 'history',
+    // mode: 'history',
     scrollBehavior: () => ({ y: 0 }),
     routes: constantRoutes
   });
