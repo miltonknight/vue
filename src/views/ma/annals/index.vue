@@ -130,10 +130,10 @@ export default {
               console.log("Get Annals List Response:", data);
               resolve(data);
             }
-            this.$message({
-              message: msg,
-              type: "success"
-            });
+            // this.$message({
+            //   message: msg,
+            //   type: "success"
+            // });
           })
           .catch(error => {
             console.log(error);

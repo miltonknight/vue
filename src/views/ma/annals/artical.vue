@@ -41,7 +41,7 @@
               </h3>
             </div>
             <div class="conment-body">
-              <textarea name="" id="" cols="" rows="5" placeholder="元芳你这么看？"></textarea>
+              <textarea id="" name="" cols="" rows="5" placeholder="元芳你这么看？"></textarea>
               <div class="text-btn">
                 <button>提交评论</button>
                 <span>0/1000</span>
@@ -191,10 +191,10 @@ export default {
               console.log("Get Annals Artical Response:", data);
               resolve(data);
             }
-            this.$message({
-              message: msg,
-              type: "success"
-            });
+            // this.$message({
+            //   message: msg,
+            //   type: "success"
+            // });
           })
           .catch(error => {
             console.log(error);

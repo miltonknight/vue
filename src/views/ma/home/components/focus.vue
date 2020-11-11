@@ -61,10 +61,10 @@ export default {
               resolve(data);
             } else {
               reject(msg);
-              this.$message({
-                message: "没有查询到数据",
-                type: "success"
-              });
+              // this.$message({
+              //   message: "没有查询到数据",
+              //   type: "success"
+              // });
             }
           })
           .catch(error => {

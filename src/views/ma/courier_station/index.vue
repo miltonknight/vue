@@ -139,10 +139,10 @@ export default {
               console.log("Get CS List Response:", data);
               resolve(data);
             }
-            this.$message({
-              message: msg,
-              type: "success"
-            });
+            // this.$message({
+            //   message: msg,
+            //   type: "success"
+            // });
           })
           .catch(error => {
             console.log(error);

@@ -121,7 +121,7 @@
 <script>
 console.log("./views/ma/courier_station/artical is loaded~~~~~~~~~~~~~~~~~~~~");
 import CsRightSideArtical from "@/views/ma/courier_station/components/rightside-artical"
-import { getData, postData } from "@/api/common";
+import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 
 export default {
@@ -191,10 +191,10 @@ export default {
               console.log("Get CS Artical Response:", data);
               resolve(data);
             }
-            this.$message({
-              message: msg,
-              type: "success"
-            });
+            // this.$message({
+            //   message: msg,
+            //   type: "success"
+            // });
           })
           .catch(error => {
             console.log(error);
@@ -208,7 +208,7 @@ export default {
     fetchData() {
       // json post prop
       var params = {
-        //文章id
+        // 文章id
         "article_id": this.$route.query.id,
         // uid用户token中获取
         "uid": '0a44f30462e742879f5fbd15d2fda9e6'

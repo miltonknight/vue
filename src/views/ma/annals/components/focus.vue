@@ -6,7 +6,7 @@
         <!-- <a :href="item.link" :id="item.soldier_station_id"> -->
         <!-- 实现href传参，soldier_station_id写在type后方   -->
         <a :href="'/#/annals/artical?id=' + item.article_id">
-          <img :src="item.img_path" width="726px"/>
+          <img :src="item.img_path" width="726px" />
         </a>
         <h3>{{ item.title }}</h3>
       </el-carousel-item>
@@ -19,7 +19,7 @@
 
 console.log("@/views/ma/annals/components/focus is loaded~~~~~~~~~~~~~~");
 
-import { getData, postData } from "@/api/common";
+import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 
 export default {
@@ -45,8 +45,7 @@ export default {
   },
   created: function() {
     this.getFocus();
-  }
-  ,
+  },
   methods: {
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
@@ -57,10 +56,10 @@ export default {
               console.log("Annals Focus Response:", data);
               resolve(data);
             }
-            this.$message({
-              message: msg,
-              type: "success"
-            });
+            // this.$message({
+            //   message: msg,
+            //   type: "success"
+            // });
           })
           .catch(error => {
             console.log(error);
@@ -72,7 +71,7 @@ export default {
       });
     },
     getFocus() {
-      //json post prop
+      // json post prop
       var params = {
         "sort_id": 3
       };
