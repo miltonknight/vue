@@ -7,7 +7,7 @@
     </div>
     <div class="list-body">
       
-      <a v-for="item in coupon.data" :key="item.id" class="list-item">
+      <a v-for="item in coupon" :key="item.id" class="list-item">
         <div class="list-body-img">
           <img :src="item.srcPath" />
           <i class="badge badge-red">加油优惠</i>
@@ -30,12 +30,9 @@
 </template>
 
 <script>
-
 console.log("@/views/ma/home/components/coupon is loaded~~~~~~~~~~~~~~~~~");
 
-import axios from 'axios';
-import { getData } from '@/api/common';
-// import { getData, postData } from "@/api/common";
+import { getData, postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 
 export default {
@@ -52,14 +49,41 @@ export default {
     // message() {}
   },
   created: function() {
-    const baseUrl = this.GLOBAL.basePath;
-    axios.get(baseUrl + this.url)
-      .then(res => {
-        //data属性是固定的用法,用于获取后台的实际数据
-        this.coupon = res.data;
-        console.log(res.data);
-      }
-    );
+    this.fetchData();
+  },
+  methods: { 
+    postDataFromUI(url, data) {
+      return new Promise((resolve, reject) => {
+        postData(url, data)
+          .then(response => {
+            const { code, msg, data } = response;
+            if (code === 20000) {
+              console.log("Coupon List Response:", data);
+              resolve(data);
+            }
+            this.$message({
+              message: msg,
+              type: "success"
+            });
+          })
+          .catch(error => {
+            console.log(error);
+            this.$message({
+              message: error,
+              type: "success"
+            });
+          });
+      });
+    },
+    fetchData() {
+      var params = {
+        
+      };
+      this.postDataFromUI(LaobingUrl.index_coupon, params)
+        .then(response => {
+          this.coupon = response;
+        });
+    }
   }
 };
 </script>

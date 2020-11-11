@@ -10,16 +10,16 @@
           <div class="artical-container">
             <div class="artical-main">
               <div class="artical-head">
-                <h1>{{ ArticalDetail.data.title }}</h1>
-                <p><a href="">{{ ArticalDetail.data.writer }}writer</a> {{ ArticalDetail.data.create_time }}</p>
+                <h1>{{ ArticalDetail.title }}</h1>
+                <p><a href="">{{ ArticalDetail.writer }}writer</a> {{ ArticalDetail.create_time }}</p>
               </div>
               <div class="artical-body">
-                <p v-html="ArticalDetail.data.content"></p>
+                <p v-html="ArticalDetail.content"></p>
                 <img src="@/assets/img/artical.png" />
                 <p>数据库中文章内容较少填入测试文本“史无前例新品大爆发”，在“2020天猫双11全球狂欢季”新闻发布会上，阿里巴巴副总裁、天猫平台营运事业部总经理家洛身后的大屏幕上打出了这样一行大字。根据内部估算，今年将有5亿用户在双11期间主动访问新品会场，他们将让30个新品的成交额过亿，1000个新品成交金额过千万。</p>
                 <img src="@/assets/img/artical2.png" />
                 <p>当市场上有太多机会时，竞争比的是果敢与效率；但当市场趋于饱和时，竞争的重点就要回归到前瞻性视野和精细化运营。事实上，中国的互联网市场已经过了遍地是金、跑马圈地的粗放时代，巨头们的生存境况与它们对趋势的把控力息息相关，天猫小黑盒就充分体现了这一点。</p>
-                <p>点赞数量：{{ ArticalDetail.data.good_count }}</p>
+                <p>点赞数量：{{ ArticalDetail.good_count }}</p>
 
               </div>
               <div class="artical-foot">
@@ -121,16 +121,15 @@
 <script>
 console.log("./views/ma/annals/artical is loaded~~~~~~~~~~~~~~~~~~~~");
 import AnnalsRightSideArtical from "@/views/ma/annals/components/rightside-artical"
-import axios from 'axios';
 import { LaobingUrl } from "@/api/laobing_url";
-// import { getData, postData } from "@/api/common";
+import { postData } from "@/api/common";
 
 export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
   name: "AnnalsArtical",
   components: {
-   AnnalsRightSideArtical
+    AnnalsRightSideArtical
   },
   data() {
     return {
@@ -145,6 +144,8 @@ export default {
     
   // },
   created: function() {
+    this.fetchData();
+
     // set default likebox
     console.log("::::::" + this.thumbup);
     if(this.thumbup) {
@@ -154,29 +155,6 @@ export default {
       console.log("::::::应该加上了")
     }    
     console.log("::::::方法结束")
-
-    const baseUrl = this.GLOBAL.basePath;
-    const allUrl = baseUrl + this.url;
-    console.log('allUrl:::'+allUrl);
-    const aid= this.$route.query;
-    // json post prop
-    // 获取url中的参数
-    console.log("this.$route.query::::::" + this.$route.query.id);
-    const prop = {
-       //文章id
-      "article_id": this.$route.query.id,
-      // uid用户token中获取
-      "uid": '0a44f30462e742879f5fbd15d2fda9e6'
-    };
-    console.log("prop:::::::"+JSON.stringify(prop))
-    axios.post(allUrl, prop)
-      .then(res => {
-        //data属性是固定的用法,用于获取后台的实际数据
-        this.ArticalDetail = res.data;
-        console.log(res.data);
-        // console.log("res.data::::::::"+res.data.data.content);
-      }
-    );
   },
   methods: { 
     // like func
@@ -203,6 +181,42 @@ export default {
         total += 1;
         _count.innerHTML = total;
       }
+    },
+    postDataFromUI(url, data) {
+      return new Promise((resolve, reject) => {
+        postData(url, data)
+          .then(response => {
+            const { code, msg, data } = response;
+            if (code === 20000) {
+              console.log("Get Annals Artical Response:", data);
+              resolve(data);
+            }
+            this.$message({
+              message: msg,
+              type: "success"
+            });
+          })
+          .catch(error => {
+            console.log(error);
+            this.$message({
+              message: error,
+              type: "success"
+            });
+          });
+      });
+    },
+    fetchData() {
+      // json post prop
+      var params = {
+        //文章id
+        "article_id": this.$route.query.id,
+        // uid用户token中获取
+        "uid": '0a44f30462e742879f5fbd15d2fda9e6'
+      };
+      this.postDataFromUI(LaobingUrl.modular_articals, params)
+        .then(response => {
+          this.ArticalDetail = response;
+        });
     }
   }
 };
@@ -404,6 +418,4 @@ export default {
     margin-left: 40px;
   }
 }  
-
-
 </style>

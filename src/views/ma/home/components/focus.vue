@@ -12,8 +12,8 @@
   
   <div class="block" style="margin-bottom: 40px;">
     <el-carousel height="300px">
-      <el-carousel-item v-for="item in ret.data" :key="item.id">
-        <a :href="item.srcPath">
+      <el-carousel-item v-for="item in ret" :key="item.id">
+        <a :href="'/#/'+item.srcPath">
           <img
             :src="item.srcPath"
             :alt="item.intro"
@@ -29,13 +29,9 @@
 
 <script>
 
-console.log(
-  "@/views/ma/home/components/focus is loaded~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-);
+console.log("@/views/ma/home/components/focus is loaded~~~~~~~~~~~~~~~~~~");
 
-import axios from 'axios';
 import { getData } from '@/api/common';
-// import { getData, postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 
 export default {
@@ -52,18 +48,43 @@ export default {
     // message() {}
   },
   created: function() {
-    console.log("baseUrl::::::" + this.GLOBAL.basePath);
-    const baseUrl = this.GLOBAL.basePath;
-    console.log("request::::::" + this.url);
-    console.log("http::::" + baseUrl + this.url);
-    //getData("http://192.168.110.170:8181/test/queryHomePageImgs")
-    axios.get(baseUrl + this.url)
-      .then(res => {
-        //data属性是固定的用法,用于获取后台的实际数据
-        this.ret = res.data;
-        console.log(res.data);
-      }
-    );
+    this.fetchData();
+  },
+  methods: { 
+    getDataFromUI(url) {
+      return new Promise((resolve, reject) => {
+        getData(url)
+          .then(response => {
+            const { code, msg, data } = response;
+            if (code === 20000 && data != null) {
+              console.log("Index Focus Response:", data);
+              resolve(data);
+            } else {
+              reject(msg);
+              this.$message({
+                message: "没有查询到数据",
+                type: "success"
+              });
+            }
+          })
+          .catch(error => {
+            console.log(error);
+            this.$message({
+              message: error,
+              type: "success"
+            });
+          });
+      });
+    },
+    fetchData() {
+      var params = {
+        
+      };
+      this.getDataFromUI(LaobingUrl.index_focus_images, params)
+        .then(response => {
+          this.ret = response;
+        });
+    }
   }
 };
 </script>

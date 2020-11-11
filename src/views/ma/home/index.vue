@@ -18,7 +18,7 @@
             <div class="list-main">
               <div class="list-head">
                 <h3>老兵驿站<span>Military Memory</span></h3>
-                <a href="/courier-station/index">查看更多</a>
+                <a href="/#/courier-station/index">查看更多</a>
               </div>
               <div class="list-body img-list-box">
                 <div class="section-head">
@@ -61,7 +61,7 @@
             <div class="list-main">
               <div class="list-head">
                 <h3>老兵战史<span>Veteran war history</span></h3>
-                <a href="/annals/index">查看更多</a>
+                <a href="/#/annals/index">查看更多</a>
               </div>
               <div class="list-body">
                 <a href="" class="list-item">
@@ -410,7 +410,7 @@ export default {
   name: "HomePage",
   components: {
     Focus, // 焦点图
-    HomeCoupon, //优惠信息
+    HomeCoupon, // 优惠信息
     HomeRightSide
   },
   data() {
@@ -432,10 +432,7 @@ export default {
     //   }
     // );
   },
-  methods: {},
-  activated: function() {
-    this.getCase()
-  }
+  methods: {}
 };
 </script>
 
