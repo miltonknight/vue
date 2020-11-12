@@ -395,8 +395,16 @@ div:focus {
         }
       }
     }
+    .el-timeline {
+      padding: 0;
+    }
     .el-timeline-item__tail {
       border-left: 2px solid #e08714;
+      opacity: 0.2;
+    }
+    .el-timeline-item__node {
+      background-color: transparent;
+      border: 3px solid #e08714;
     }
   }
 }
@@ -438,4 +446,13 @@ div:focus {
   .rcm-section a:nth-child(2n) {
     margin: 0 0 10px 0;
   }
+}
+/****************** pagenation ***************/
+.el-pagination.is-background .btn-next, 
+.el-pagination.is-background .btn-prev, 
+.el-pagination.is-background .el-pager li {
+  color: #e08714;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: #e08714;
 }
