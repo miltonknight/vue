@@ -24,29 +24,21 @@
                 <a v-for="item in ArticalList.list" :key="item.id" :href="'/#/annals/artical?id=' + item.article_id" class="list-item">
                   <div class="list-body-img">
                     <img :src="item.img_path" />
-                    <i class="badge">{{item.sort_name}}</i>
+                    <i class="badge">{{ item.sort_name }}</i>
                   </div>
                   <div class="list-body-text">
-                    <h3>{{item.title}}</h3>
-                    <p>{{item.introduction}}</p>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.introduction }}</p>
                     <div class="list-text-cate">
-                      <span class="tip">{{item.sort_name}}</span>
+                      <span class="tip">{{ item.sort_name }}</span>
                       <span class="time">
-                        <i class="el-icon-time"></i>{{item.create_time}}
+                        <i class="el-icon-time"></i>{{ item.create_time }}
                       </span>
                     </div>
                   </div>
                 </a>
 
-                <!-- <pagination
-                  v-show="total > 0"
-                  :total="total"
-                  :page.sync="listQuery.page"
-                  :limit.sync="listQuery.limit"
-                  @pagination="fetchData"
-                /> -->
-
-                <!-- <pagination
+                <pagination
                   background
                   layout="prev, pager, next"
                   v-show="total > 0"
@@ -54,7 +46,7 @@
                   :page.sync="listQuery.page"
                   :limit.sync="listQuery.limit"
                   @pagination="fetchData"
-                /> -->
+                />
                 
               </div>
             </div>
@@ -100,17 +92,17 @@ export default {
   },
   data() {
     return {
-      //文章列表接口地址、接收数组
+      // 文章列表接口地址、接收数组
       url: LaobingUrl.modular_artical_list,
       ArticalList: [],
       // Pagination
-      total: 100,
+      total: 0,
       list: null,
       listLoading: true,
       listQuery: {
         sort_id: 2,
         page: 1,
-        limit: 20
+        limit: 10
       }
     };
   },
@@ -145,15 +137,21 @@ export default {
       });
     },
     fetchData() {
+      this.listLoading = true;
       // json post prop
-      var params = {
-        "sort_id":"2", //版块
-        "page": 1,  //
-        "limit": 10  //单页数量
-      };
-      this.postDataFromUI(LaobingUrl.modular_artical_list, params)
+      this.listQuery.page = this.listQuery.page;
+      this.listQuery.limit = this.listQuery.limit;
+      // this.postDataFromUI(LaobingUrl.modular_artical_list, params)
+      this.postDataFromUI(LaobingUrl.modular_artical_list, this.listQuery)
         .then(response => {
           this.ArticalList = response;
+          this.total = response.total;
+          this.list = response.list;
+          this.listLoading = false;
+        })
+        .catch(error => {
+          this.listLoading = false;
+          console.log(error);
         });
     }
   }
