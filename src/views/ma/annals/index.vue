@@ -1,3 +1,4 @@
+<!-- 老兵战史 -->
 <template>
   <div>
     <el-row :gutter="24">
