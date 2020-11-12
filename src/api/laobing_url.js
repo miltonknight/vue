@@ -25,13 +25,13 @@ export const LaobingUrl = {
   index_focus_images: '/test/queryHomePageImgs',
   // home coupon
   index_coupon: '/test/queryYouhuiData',
-  //courier_station**********
-  // whole site modular_focus
+  // whole site modular focus
   modular_focus: '/article/findModelCarousel',
-  // whole site artical-list
+  // whole site artical list
   modular_artical_list: '/article/pageArticleBySortId',
   // whole site artical
-  modular_articals: '/article/findArticleDetail'
-
+  modular_articals: '/article/findArticleDetail',
+  // temp add artical
+  temp_add_artical: '/article/insertArticle'
 }
 
