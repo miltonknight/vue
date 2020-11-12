@@ -77,10 +77,7 @@ export default {
       });
     },
     fetchData() {
-      var params = {
-        
-      };
-      this.getDataFromUI(LaobingUrl.index_focus_images, params)
+      this.getDataFromUI(LaobingUrl.index_focus_images)
         .then(response => {
           this.ret = response;
         });
