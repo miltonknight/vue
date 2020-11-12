@@ -12,7 +12,7 @@
         :on-success="handleSuccess"
         :before-upload="beforeUpload"
         class="editor-slide-upload"
-        action="http://localhost:8181/uploads/article"
+        action="http://192.168.110.170:8181/uploads/article"
         list-type="picture-card"
       >
         <el-button size="small" type="primary">
@@ -64,7 +64,7 @@ export default {
     },
     handleSuccess(response, file) {
       const uid = file.uid
-      const objKeyArr = Object.keys(this.listObj)
+      const objKeyArr = Object.keys(this.listObj) 
       for (let i = 0, len = objKeyArr.length; i < len; i++) {
         if (this.listObj[objKeyArr[i]].uid === uid) {
           this.listObj[objKeyArr[i]].url = response.data
