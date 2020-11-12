@@ -143,19 +143,19 @@ export default {
         {
           content: "中华人民共和国英雄烈士保护法",
           timestamp: "2018-04-12",
-          size: "large",
-          type: "primary",
-          color: "#e08714"
+          // size: "large",
+          type: "primary"
+          // color: "#e08714"
         },
         {
           content: "退役士兵安置条例",
-          timestamp: "2018-04-03",
-          color: "#e08714"
+          timestamp: "2018-04-03"
+          // color: "#e08714"
         },
         {
           content: "中华人民共和国兵役法",
-          timestamp: "2018-04-03",
-          color: "#e08714"
+          timestamp: "2018-04-03"
+          // color: "#e08714"
         }
       ]
     };
