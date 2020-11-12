@@ -10,20 +10,23 @@
         text-color="#fff"
         @select="handleSelect"
       >
-        <!-- <el-menu-item index="0">首页</el-menu-item>
-        <el-menu-item index="1">老兵旅游</el-menu-item>
-        <el-menu-item index="2">老兵医疗</el-menu-item>
-        <el-menu-item index="3">金融服务</el-menu-item>
-        <el-menu-item index="4">创业就业</el-menu-item>
-        <el-menu-item index="5">高端论坛</el-menu-item> -->
 
-        <el-menu-item index="/home/index">首页</el-menu-item>
+        <!-- <el-menu-item index="/home/index">首页</el-menu-item>
         <el-menu-item index="1">老兵旅游</el-menu-item>
         <el-menu-item index="2">老兵医疗</el-menu-item>
         <el-menu-item index="3">金融服务</el-menu-item>
         <el-menu-item index="4">创业就业</el-menu-item>
         <el-menu-item index="5">高端论坛</el-menu-item>
-        <el-menu-item index="/temp_upload/article">临时上传</el-menu-item>
+        <el-menu-item index="/temp_upload/article">临时上传</el-menu-item> -->
+
+        <el-menu-item index="/home/index">首页</el-menu-item>
+        <el-menu-item index="/courier-station/index">老兵驿站</el-menu-item>
+        <el-menu-item index="/annals/index">老兵战史</el-menu-item>
+        <el-menu-item index="4">老兵情怀</el-menu-item>
+        <el-menu-item index="5">老兵文化</el-menu-item>
+        <el-menu-item index="5">老兵风采</el-menu-item>
+        <el-menu-item index="5">老兵政策</el-menu-item>
+        <el-menu-item index="5">老兵论坛</el-menu-item>
       </el-menu>
 
       <div class="header-operations">
@@ -168,7 +171,7 @@ export default {
   /* el menu border bug fix */
   .el-menu--horizontal > .el-menu-item {
     transition: none;
-    width: 110px;
+    width: 100px;
     text-align: center;
     //this part is 4 bug fixing which is missing
     height: 50px;

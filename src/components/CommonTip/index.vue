@@ -37,6 +37,7 @@
         <el-menu-item index="10">
           <span><svg-icon icon-class="tip-house-moving" class-name="card-panel-icon" />搬家</span>
         </el-menu-item>
+        <el-menu-item index="11"><a href="/#/temp_upload/article">临时上传</a></el-menu-item>
       </el-menu>
       <a href="" class="tip-link">寻求合作</a>
       <a href="" class="tip-link">我要投稿</a>
