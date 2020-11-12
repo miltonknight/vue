@@ -120,6 +120,13 @@ export const constantRoutes = [
         component: () => import("@/views/ma/annals/artical"),
         // component: MaCsArticalLayout,
         meta: { title: "Ma测试老兵战史文章", icon: "dashboard" }
+      },
+      {
+        path: "/temp_upload/article",
+        name: "MaUploadArtical",
+        component: () => import("@/views/ma/temp_upload/article"),
+        // component: MaCsArticalLayout,
+        meta: { title: "Ma文章录入（临时）", icon: "dashboard" }
       }
 
     ]
