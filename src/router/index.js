@@ -7,8 +7,8 @@ Vue.use(Router);
 import Layout from "@/layout";
 import Weblayout from "@/layout/web/index";
 import MaLayout from "@/layout/ma/home/index";
-import MaCsLayout from "@/layout/ma/courier_station/index";
-import MaCsArticalLayout from "@/layout/ma/courier_station/artical";
+import MaCsLayout from "@/layout/ma/courier-station/index";
+import MaCsArticalLayout from "@/layout/ma/courier-station/artical";
 import MaAnnalsArticalLayout from "@/layout/ma/annals/artical";
 
 /**
@@ -93,33 +93,46 @@ export const constantRoutes = [
         path: "/home/index",
         name: "MaTestindex",
         component: () => import("@/views/ma/home/index"),
-        meta: { title: "M测试首页", icon: "dashboard" }
+        meta: { title: "Ma首页", icon: "dashboard" }
       },
       {
         path: "/courier-station/index",
         name: "MaCourierStationIndex",
-        component: () => import("@/views/ma/courier_station/index"),
-        meta: { title: "Ma测试老兵驿站", icon: "dashboard" }
+        component: () => import("@/views/ma/courier-station/index"),
+        meta: { title: "Ma老兵驿站", icon: "dashboard" }
       },
       {
         path: "/courier-station/artical",
         name: "MaCourierStationArtical",
-        component: () => import("@/views/ma/courier_station/artical"),
+        component: () => import("@/views/ma/courier-station/artical"),
         // component: MaCsArticalLayout,
-        meta: { title: "Ma测试老兵驿站文章", icon: "dashboard" }
+        meta: { title: "Ma老兵驿站文章", icon: "dashboard" }
       },
       {
         path: "/annals/index",
         name: "MaAnnalsIndex",
         component: () => import("@/views/ma/annals/index"),
-        meta: { title: "Ma测试老兵战史", icon: "dashboard" }
+        meta: { title: "Ma老兵战史", icon: "dashboard" }
       },
       {
         path: "/annals/artical",
         name: "MaAnnalsArtical",
         component: () => import("@/views/ma/annals/artical"),
         // component: MaCsArticalLayout,
-        meta: { title: "Ma测试老兵战史文章", icon: "dashboard" }
+        meta: { title: "Ma老兵战史文章", icon: "dashboard" }
+      },
+      {
+        path: "/case-studies/index",
+        name: "MaCaseStudiesIndex",
+        component: () => import("@/views/ma/case-studies/index"),
+        meta: { title: "Ma成功案例", icon: "dashboard" }
+      },
+      {
+        path: "/case-studies/artical",
+        name: "MaCaseStudiesArtical",
+        component: () => import("@/views/ma/case-studies/artical"),
+        // component: MaCsArticalLayout,
+        meta: { title: "Ma成功案例文章", icon: "dashboard" }
       },
       {
         path: "/temp_upload/article",
@@ -131,7 +144,7 @@ export const constantRoutes = [
 
     ]
   },
-  // //courier_station
+  // //courier-station
   // {
   //   path: "/courier-station",
   //   redirect: "/courier-station/index",
@@ -143,14 +156,14 @@ export const constantRoutes = [
   //       // path: "/ma/home/index",
   //       path: "/courier-station/index",
   //       name: "MaCourierStationIndex",
-  //       component: () => import("@/views/ma/courier_station/index"),
+  //       component: () => import("@/views/ma/courier-station/index"),
   //       meta: { title: "Ma测试老兵驿站", icon: "dashboard" }
   //     },
   //     {
   //       // path: "/ma/home/index",
   //       path: "/courier-station/artical",
   //       name: "MaCourierStationArtical",
-  //       component: () => import("@/views/ma/courier_station/artical"),
+  //       component: () => import("@/views/ma/courier-station/artical"),
   //       // component: MaCsArticalLayout,
   //       meta: { title: "Ma测试老兵驿站文章", icon: "dashboard" }
   //     }
