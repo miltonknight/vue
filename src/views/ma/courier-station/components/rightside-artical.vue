@@ -89,7 +89,7 @@
 </template>
 
 <script>
-console.log("@/views/ma/courier_station/components/rightside-artical.vue is loaded~~~~~~~~~~~~~~");
+console.log("@/views/ma/courier-station/components/rightside-artical.vue is loaded~~~~~~~~~~~~~~");
 export default {
   name: "CsRightSideArtical",
   components: {},

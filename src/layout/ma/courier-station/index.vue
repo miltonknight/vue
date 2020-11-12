@@ -35,7 +35,7 @@
 import CommonNav from "@/components/CommonNav";
 import CommonFooter from "@/components/CommonFooter";
 import CommonTip from "@/components/CommonTip";
-import CourierStation from "@/views/ma/courier_station";
+import CourierStation from "@/views/ma/courier-station";
 
 export default {
   name: "MaCsLayout",

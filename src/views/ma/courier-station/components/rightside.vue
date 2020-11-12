@@ -51,7 +51,7 @@
 </template>
 
 <script>
-console.log("@/views/ma/courier_station/components/rightside.vue is loaded~~~~~~~~~~~~~~");
+console.log("@/views/ma/courier-station/components/rightside.vue is loaded~~~~~~~~~~~~~~");
 export default {
   name: "CsRightSide",
   components: {},

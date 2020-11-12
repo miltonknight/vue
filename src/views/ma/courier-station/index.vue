@@ -82,9 +82,9 @@
 </template>
 
 <script>
-console.log("./views/ma/courier_station/index is loaded~~~~~~~~~~~~~~~~~~~~");
-import CsFocus from "@/views/ma/courier_station/components/focus";
-import CsRightSide from "@/views/ma/courier_station/components/rightside"
+console.log("./views/ma/courier-station/index is loaded~~~~~~~~~~~~~~~~~~~~");
+import CsFocus from "@/views/ma/courier-station/components/focus";
+import CsRightSide from "@/views/ma/courier-station/components/rightside"
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";

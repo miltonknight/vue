@@ -119,10 +119,11 @@
 </template>
 
 <script>
-console.log("./views/ma/courier_station/artical is loaded~~~~~~~~~~~~~~~~~~~~");
-import CsRightSideArtical from "@/views/ma/courier_station/components/rightside-artical"
+console.log("./views/ma/courier-station/artical is loaded~~~~~~~~~~~~~~~~~~~~");
+import CsRightSideArtical from "@/views/ma/courier-station/components/rightside-artical"
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
+import { mapGetters } from "vuex";
 
 export default {
   // name: 'MaHomeHeader',
@@ -140,9 +141,9 @@ export default {
       thumbup: true
     };
   },
-  // computed: { 
-    
-  // },
+  computed: {
+    ...mapGetters(["user_id", "access_token"])
+  },
   created: function() {
     this.fetchData();
 
@@ -208,10 +209,11 @@ export default {
     fetchData() {
       // json post prop
       var params = {
-        // 文章id
+        // 从url中获取文章id
         "article_id": this.$route.query.id,
         // uid用户token中获取
-        "uid": '0a44f30462e742879f5fbd15d2fda9e6'
+        // "uid": '0a44f30462e742879f5fbd15d2fda9e6'
+        "uid": this.user_id
       };
       this.postDataFromUI(LaobingUrl.modular_articals, params)
         .then(response => {

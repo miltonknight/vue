@@ -17,7 +17,7 @@
 
 <script>
 
-console.log("@/views/ma/courier_station/components/focus is loaded~~~~~~~~~~~~~~");
+console.log("@/views/ma/courier-station/components/focus is loaded~~~~~~~~~~~~~~");
 
 import { getData, postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
