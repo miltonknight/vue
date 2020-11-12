@@ -94,8 +94,17 @@ export default {
 .pagination-container {
   background: #fff;
   padding: 32px 16px;
+  text-align: center;
 }
 .pagination-container.hidden {
   display: none;
+}
+.el-pagination.is-background .btn-next, 
+.el-pagination.is-background .btn-prev, 
+.el-pagination.is-background .el-pager li {
+  color: #e08714;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: #e08714;
 }
 </style>
