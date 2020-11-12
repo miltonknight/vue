@@ -21,7 +21,7 @@ module.exports = {
         "allowFirstLine": false
       }
     }],
-    "vue/singleline-html-element-content-newline": "off",
+    "vue/singleline-html-element-content-newline":"off",
     "vue/multiline-html-element-content-newline":"off",
     "vue/name-property-casing": ["error", "PascalCase"],
     "vue/no-v-html": "off",
@@ -190,8 +190,7 @@ module.exports = {
     'yoda': [2, 'never'],
     'prefer-const': 2,
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    'object-curly-spacing': [2, 'always', {
-      objectsInObjects: false
+    'object-curly-spacing': [2, 'always', {      objectsInObjects: false
     }],
     'array-bracket-spacing': [2, 'never']
   }
