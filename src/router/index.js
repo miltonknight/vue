@@ -135,6 +135,32 @@ export const constantRoutes = [
         meta: { title: "Ma成功案例文章", icon: "dashboard" }
       },
       {
+        path: "/famous/people/index",
+        name: "MaFamousPeopleIndex",
+        component: () => import("@/views/ma/famous/people/index"),
+        meta: { title: "Ma成功案例", icon: "dashboard" }
+      },
+      {
+        path: "/famous/people/artical",
+        name: "MaFamousPeopleArtical",
+        component: () => import("@/views/ma/famous/people/artical"),
+        // component: MaCsArticalLayout,
+        meta: { title: "Ma成功案例文章", icon: "dashboard" }
+      },
+      {
+        path: "/famous/enterprise/index",
+        name: "MaFamousEnterpriseIndex",
+        component: () => import("@/views/ma/famous/enterprise/index"),
+        meta: { title: "Ma成功案例", icon: "dashboard" }
+      },
+      {
+        path: "/famous/enterprise/artical",
+        name: "MaFamousEnterpriseArtical",
+        component: () => import("@/views/ma/famous/enterprise/artical"),
+        // component: MaCsArticalLayout,
+        meta: { title: "Ma成功案例文章", icon: "dashboard" }
+      },
+      {
         path: "/temp_upload/article",
         name: "MaUploadArtical",
         component: () => import("@/views/ma/temp_upload/article"),
