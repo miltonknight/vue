@@ -23,7 +23,7 @@
         <el-menu-item index="3">金融服务</el-menu-item>
         <el-menu-item index="4">创业就业</el-menu-item>
         <el-menu-item index="5">高端论坛</el-menu-item>
-       
+        <el-menu-item index="/temp_upload/article">临时上传</el-menu-item>
       </el-menu>
 
       <div class="header-operations">
@@ -168,7 +168,7 @@ export default {
   /* el menu border bug fix */
   .el-menu--horizontal > .el-menu-item {
     transition: none;
-    width: 120px;
+    width: 110px;
     text-align: center;
     //this part is 4 bug fixing which is missing
     height: 50px;
