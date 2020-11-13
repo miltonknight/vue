@@ -1,4 +1,3 @@
-
 export const LaobingUrl = {
   user_login: "/oauth/token",
   user_getProfile: '/profile/authapi/profile',
@@ -20,11 +19,7 @@ export const LaobingUrl = {
   disk_generate_download_code: '/diskFile/authapi/generateCode',
   disk_user_getProfile: '/profile/authapi/profile/vue',
   article_add_article: '/cultureArticle/authapi/article/add',
-  // test urls
-  // home focus
-  index_focus_images: '/test/queryHomePageImgs',
-  // home coupon
-  index_coupon: '/test/queryYouhuiData',
+  // -------------------- whole site modulars
   // whole site modular focus
   modular_focus: '/article/findModelCarousel',
   // whole site artical list
@@ -32,6 +27,13 @@ export const LaobingUrl = {
   // whole site artical
   modular_articals: '/article/findArticleDetail',
   // temp add artical
-  temp_add_artical: '/article/insertArticle'
+  temp_add_artical: '/article/insertArticle',
+  // -------------------- homepage apis
+  // index_focus
+  index_focus: '/homepage/findHomepageFocus',
+  // index_coupon
+  // index_coupon: '/homepage/findHomepageFocus',
+  // index_artical
+  index_artical: '/homepage/findHomepageModule'
 }
 
