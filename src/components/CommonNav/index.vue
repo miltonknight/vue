@@ -17,14 +17,14 @@
         <el-menu-item index="3">金融服务</el-menu-item>
         <el-menu-item index="4">创业就业</el-menu-item>
         <el-menu-item index="5">高端论坛</el-menu-item>
-        <el-menu-item index="/temp_upload/article">临时上传</el-menu-item> -->
+        <el-menu-item index="/temp-upload/article">临时上传</el-menu-item> -->
 
         <el-menu-item index="/home/index">首页</el-menu-item>
         <el-menu-item index="/courier-station/index">老兵驿站</el-menu-item>
         <el-menu-item index="/annals/index">老兵战史</el-menu-item>
         <el-menu-item index="4">老兵情怀</el-menu-item>
         <el-menu-item index="5">老兵文化</el-menu-item>
-        <el-menu-item index="5">老兵风采</el-menu-item>
+        <el-menu-item index="/famous/enterprise/index">老兵风采</el-menu-item>
         <el-menu-item index="5">老兵政策</el-menu-item>
         <el-menu-item index="5">老兵论坛</el-menu-item>
       </el-menu>

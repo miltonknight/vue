@@ -161,9 +161,9 @@ export const constantRoutes = [
         meta: { title: "Ma成功案例文章", icon: "dashboard" }
       },
       {
-        path: "/temp_upload/article",
+        path: "/temp-upload/article",
         name: "MaUploadArtical",
-        component: () => import("@/views/ma/temp_upload/article"),
+        component: () => import("@/views/ma/temp-upload/article"),
         // component: MaCsArticalLayout,
         meta: { title: "Ma文章录入（临时）", icon: "dashboard" }
       }
