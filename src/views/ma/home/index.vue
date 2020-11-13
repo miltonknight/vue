@@ -6,116 +6,24 @@
         <div class="grid-content bg-purple">
           <!-- <router-view :key="key" /> -->
 
+          <!-- 焦点图 -->
           <!-- components:components/focus -->
-          <focus />
+          <home-focus />
 
           <div class="list-container">
             
+            <!-- 优惠信息 -->
             <!-- components:components/coupon -->
-            <home-coupon />
+            <!-- <home-coupon /> -->
 
             <!-- 老兵驿站 -->
-            <div class="list-main">
-              <div class="list-head">
-                <h3>老兵驿站<span>Military Memory</span></h3>
-                <a href="/#/courier-station/index">查看更多</a>
-              </div>
-              <div class="list-body img-list-box">
-                <div class="section-head">
-                  <ul class="section-title">
-                    <li class="is-active">老营房</li>
-                    <li>老哨所</li>
-                    <li>老故事</li>
-                    <li>老家书</li>
-                    <li>老军装</li>
-                    <li>老连队</li>
-                    <li>老照片</li>
-                  </ul>
-                </div>
-                <a href="" class="img-list">
-                  <div class="img-list-main">
-                    <img src="@/assets/img/list-img2.png" />
-                    <span>老营房——大兴沟军营，我永久的怀念</span>
-                  </div>
-                  <p>军营还在，军人不见了。看不见引以为荣的“国防绿”，听不到铿锵有力的军力的军歌声力的军歌声歌声...</p>
-                </a>
-                <a href="" class="img-list">
-                  <div class="img-list-main">
-                    <img src="@/assets/img/list-img2.png" />
-                    <span>老营房——大兴沟军营，我永久的怀念</span>
-                  </div>
-                  <p>军营还在，军人不见了。看不见引以为荣的“国防绿”，听不到铿锵有力的军歌力的军歌声力的军歌声声...</p>
-                </a>
-                <a href="" class="img-list">
-                  <div class="img-list-main">
-                    <img src="@/assets/img/list-img2.png" />
-                    <span>老营房——大兴沟军营，我永久的怀念</span>
-                  </div>
-                  <p>军营还在，军人不见了。看不见引以为荣的“国防绿”，听不到铿锵有力的军歌声力的军歌声力的军歌声...</p>
-                </a>
-              </div>
-            </div>
+            <!-- components:components/courier-station -->
+            <home-courier-station />
             <!-- 老兵驿站end -->
 
             <!-- 老兵战史 -->
-            <div class="list-main">
-              <div class="list-head">
-                <h3>老兵战史<span>Veteran war history</span></h3>
-                <a href="/#/annals/index">查看更多</a>
-              </div>
-              <div class="list-body">
-                <a href="" class="list-item">
-                  <div class="list-body-img">
-                    <img src="@/assets/img/list-img.png" />
-                    <i class="badge">战史</i>
-                  </div>
-                  <div class="list-body-text">
-                    <h3>中国有我！— 抗日英雄杨靖宇</h3>
-                    <p>杨靖宇是在极端艰苦的条件下进行抗日斗争的。缺衣少食，在零下四十多度的严寒中，只能吃草破，树根，橡子面，粗涩硬冷，难以下咽。</p>
-                    <div class="list-text-cate">
-                      <span class="tip">老兵战史</span>
-                      <span class="time">
-                        <i class="el-icon-time"></i>2020-10-26
-                      </span>
-                    </div>
-                  </div>
-                </a>
-                <a href="" class="list-item">
-                  <div class="list-body-img">
-                    <img src="@/assets/img/list-img.png" />
-                    <i class="badge">战例</i>
-                  </div>
-                  <div class="list-body-text">
-                    <h3>
-                      解放战争时期，一野、二野、三野、四野的总司令和政委都是谁？
-                    </h3>
-                    <p>解放战争时期，在我军转入战略反攻之际，1948年11月，将全军各部队按地名划分为四大野战军，即:西北野战军、中原野战军、华东野战军和东北野战军。</p>
-                    <div class="list-text-cate">
-                      <span class="tip">老兵战史</span>
-                      <span class="time">
-                        <i class="el-icon-time"></i>2020-10-26
-                      </span>
-                    </div>
-                  </div>
-                </a>
-                <a href="" class="list-item">
-                  <div class="list-body-img">
-                    <img src="@/assets/img/list-img.png" />
-                    <i class="badge">非军事行动</i>
-                  </div>
-                  <div class="list-body-text">
-                    <h3>汶川地震中军人救援的瞬间催人泪下，军民一家亲</h3>
-                    <p>十年弹指一挥间，流走的是岁月，永驻的是精神。十年前汶川那场浩劫，过往的点点滴滴，回忆起来就会情不自禁流下眼泪，有悲伤，有感动。天灾无情人有情。2008年5月16日，消防战士在映秀抢救幸存者。</p>
-                    <div class="list-text-cate">
-                      <span class="tip">老兵战史</span>
-                      <span class="time">
-                        <i class="el-icon-time" />2020-10-26
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
+            <!-- components:components/annals -->
+            <home-annals />
             <!-- 老兵战史end -->
 
             <!-- 老兵情怀 -->
@@ -133,14 +41,14 @@
                 </a>
               </div>
               <div class="list-body">
-                <a href="" class="img-list">
+                <a href="" class="img-list" style="margin-right:6px;">
                   <div class="img-list-main">
                     <img src="@/assets/img/list-img2.png" />
                     <span>守护民族之光 — 老兵大病救助</span>
                   </div>
                   <p>军营还在，军人不见了。看不见引以为荣的“国防绿”，听不到铿锵有力的军力的军歌声力的军歌声歌声...</p>
                 </a>
-                <a href="" class="img-list">
+                <a href="" class="img-list" style="margin-right:6px;">
                   <div class="img-list-main">
                     <img src="@/assets/img/list-img2.png" />
                     <span>守护民族之光 — 老救助</span>
@@ -198,13 +106,13 @@
               </div>
 
               <div class="list-body culture-list-box">
-                <a href="" class="img-list nonebg">
+                <a href="" class="img-list nonebg" style="margin-right:6px;">
                   <div class="img-list-main">
                     <img src="@/assets/img/9.png" />
                   </div>
                   <p>军旅书法家 王文杰 作品</p>
                 </a>
-                <a href="" class="img-list nonebg">
+                <a href="" class="img-list nonebg" style="margin-right:6px;">
                   <div class="img-list-main">
                     <img src="@/assets/img/9.png" />
                   </div>
@@ -397,8 +305,10 @@
 
 <script>
 console.log("./views/ma/home/index is loaded~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-import Focus from "@/views/ma/home/components/focus"
-import HomeCoupon from "@/views/ma/home/components/coupon"
+import HomeFocus from "@/views/ma/home/components/focus"
+// import HomeCoupon from "@/views/ma/home/components/coupon"
+import HomeCourierStation from "@/views/ma/home/components/courier-station"
+import HomeAnnals from "@/views/ma/home/components/annals"
 import HomeRightSide from "@/views/ma/home/components/rightside"
 // import axios from 'axios'
 // import { getData, postData } from "@/api/common";
@@ -409,28 +319,18 @@ export default {
   // components: { MaHomeheader },
   name: "HomePage",
   components: {
-    Focus, // 焦点图
-    HomeCoupon, // 优惠信息
+    HomeFocus, // 焦点图
+    // HomeCoupon, // 优惠信息
+    HomeCourierStation, // 老兵驿站
+    HomeAnnals, // 老兵战史
     HomeRightSide
   },
   data() {
     return {
-      //优惠信息接收数组
-      // coupon: [],
-      // url: LaobingUrl.index_coupon
     };
   },
   computed: { },
   created: function() {
-    // const baseUrl = this.GLOBAL.basePath;
-
-    // axios.get(baseUrl + this.url)
-    //   .then(res => {
-    //     //data属性是固定的用法,用于获取后台的实际数据
-    //     this.coupon = res.data;
-    //     console.log(res.data);
-    //   }
-    // );
   },
   methods: {}
 };
