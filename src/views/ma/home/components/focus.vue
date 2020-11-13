@@ -12,11 +12,11 @@
   
   <div class="block" style="margin-bottom: 40px;">
     <el-carousel height="300px">
-      <el-carousel-item v-for="item in ret" :key="item.id">
-        <a :href="'/#/'+item.srcPath">
+      <el-carousel-item v-for="item in ret" :key="item.title">
+        <a :href="'/#/' + item.link">
           <img
-            :src="item.srcPath"
-            :alt="item.intro"
+            :src="item.img_path"
+            :alt="item.introduction"
             width="726px"
           />
         </a>
@@ -31,17 +31,18 @@
 
 console.log("@/views/ma/home/components/focus is loaded~~~~~~~~~~~~~~~~~~");
 
-import { getData } from '@/api/common';
+import { postData } from '@/api/common';
 import { LaobingUrl } from "@/api/laobing_url";
 
 export default {
-  name: "Focus",
+  name: "HomeFocus",
   components: {},
   data() {
     return {
       // focus数据接收数组
       ret: [],
-      url: LaobingUrl.index_focus_images
+      url: LaobingUrl.index_focus,
+      param: {}
     }
   },
   computed: {
@@ -51,9 +52,9 @@ export default {
     this.fetchData();
   },
   methods: { 
-    getDataFromUI(url) {
+    postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
-        getData(url)
+        postData(url, data)
           .then(response => {
             const { code, msg, data } = response;
             if (code === 20000 && data != null) {
@@ -77,7 +78,7 @@ export default {
       });
     },
     fetchData() {
-      this.getDataFromUI(LaobingUrl.index_focus_images)
+      this.postDataFromUI(this.url, this.param)
         .then(response => {
           this.ret = response;
         });
