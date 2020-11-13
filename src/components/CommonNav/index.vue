@@ -24,7 +24,16 @@
         <el-menu-item index="/annals/index">老兵战史</el-menu-item>
         <el-menu-item index="4">老兵情怀</el-menu-item>
         <el-menu-item index="5">老兵文化</el-menu-item>
-        <el-menu-item index="/famous/enterprise/index">老兵风采</el-menu-item>
+        <!-- <el-menu-item index="/famous/enterprise/index">老兵风采</el-menu-item> -->
+        <el-submenu index="2"
+          background-color="#3b3b3b"
+          text-color="#fff"
+          active-text-color="#ffd04b"
+        >
+          <template slot="title">老兵风采</template>
+          <el-menu-item index="/famous/people/index">老兵名人大辞典</el-menu-item>
+          <el-menu-item index="/famous/enterprise/index">老兵名企展播</el-menu-item>
+        </el-submenu>
         <el-menu-item index="5">老兵政策</el-menu-item>
         <el-menu-item index="5">老兵论坛</el-menu-item>
       </el-menu>
@@ -163,19 +172,28 @@ export default {
   }
   /* el menu bug fix */
   .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover,
-  .el-menu-item.is-active {
+  .el-menu-item.is-active,
+  .el-menu--popup .el-menu--popup-bottom-start li,
+  .el-menu--horizontal > .el-menu--popup > .el-menu-item:not(.is-disabled):hover {
+    color: #fff !important;
+    background-color: #e08714 !important;
+    border-bottom: none;
+  }
+  .el-menu--horizontal>.el-submenu.is-active .el-submenu__title
+  {
     color: #fff !important;
     background-color: #e08714 !important;
     border-bottom: none;
   }
   /* el menu border bug fix */
-  .el-menu--horizontal > .el-menu-item {
+  .el-menu--horizontal > .el-menu-item,
+  .el-menu--horizontal>.el-submenu .el-submenu__title {
     transition: none;
     width: 100px;
     text-align: center;
     //this part is 4 bug fixing which is missing
-    height: 50px;
-    line-height: 50px;
+    height: 50px!important;
+    line-height: 50px!important;
   }
 }
 </style>
