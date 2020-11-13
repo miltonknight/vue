@@ -32,7 +32,7 @@
 <script>
 console.log("@/views/ma/home/components/coupon is loaded~~~~~~~~~~~~~~~~~");
 
-import { getData, postData } from "@/api/common";
+import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 
 export default {
@@ -40,7 +40,7 @@ export default {
   components: {},
   data() {
     return {
-      //优惠信息接收数组
+      // 优惠信息接收数组
       coupon: [],
       url: LaobingUrl.index_coupon
     }
