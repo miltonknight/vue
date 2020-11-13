@@ -93,8 +93,8 @@ item hover svg文件反色bug已修复，方法为去掉svg文件中fill的部�
 2. src\styles\index.scss
 加入首页轮播按钮的修复样式，该样式在其他地方更改不生效，只可在全局变量中更改才可以
 -提取首页列表样式，右侧侧边栏样式到index.css中，首页样式清除
-3. src\views\ma\courier_station\index.vue, src\layout\ma\courier_station\index.vue
-新增老兵驿站对应view和layout，对应文件夹courier_station。router.js增加对应路由项
+3. src\views\ma\courier-station\index.vue, src\layout\ma\courier-station\index.vue
+新增老兵驿站对应view和layout，对应文件夹courier-station。router.js增加对应路由项
 4. src\components\CommonNav\index.vue
 增加路由跳转部分，但在85行实现跳转时，data return无法取出相应数据
 -改为直接在外部定义数组可以取出对应数值, data return内数组值如何取？
@@ -123,12 +123,12 @@ item hover svg文件反色bug已修复，方法为去掉svg文件中fill的部�
 1.5 在1.1中的方法将写死的const basePath = 'http://192.168.110.170:8181'
 -更改为const basePath = process.env.VUE_APP_BASE_API; 该方法调用的是.env.development中定义的方法（正宗全局变量）
 -需要注意的是此项更改需要停止服务硬重启，VSCode自带重启不生效
-2. src\views\ma\courier_station\components\focus.vue
+2. src\views\ma\courier-station\components\focus.vue
 老兵驿站焦点图组件接口调通，添加了a标签的链接参数，通过[?type=]传递soldier_station_id便于后续区分版块
 *href链接内容，最外层需要用""（双引号），所有内部拼接内容用''(单引号)拼接
 3. src\views\ma\home\index.vue
 增加首页优惠信息接口数据部分，测试用例json需要调整时间格式，增加属性包括不限于：优惠类型、详情页链接等内容
-4. src\views\ma\courier_station\index.vue
+4. src\views\ma\courier-station\index.vue
 增加驿站首页老营房模块接口对接，数据可正常对接，后续需要增加切换标签打出数据以及分页部分内容
 -目前想到两种方法1)手写JS清空当前列表div然后再填充 2)用elementUI的tab组件，明日测试
 -axios请求数据方法需要进行扩展，请求格式data中type_id需要编程活数据
@@ -139,15 +139,15 @@ item hover svg文件反色bug已修复，方法为去掉svg文件中fill的部�
 1. src\views\ma\home\components\coupon.vue
 新增首页优惠组件，首页优惠内容提取为单独组件，组件内获取相关数据
 2. src\views\ma\home\index.vue 提取右侧内容为组件src\views\ma\home\components\rightside.vue
-3. src\views\ma\courier_station\index.vue 提取右侧内容为组件
--src\views\ma\courier_station\components\rightside.vue 以免页面过长，便于维护
+3. src\views\ma\courier-station\index.vue 提取右侧内容为组件
+-src\views\ma\courier-station\components\rightside.vue 以免页面过长，便于维护
 -分成组件后发现页面js报错call back错误，经查询是页面内钩子存在触发问题
 *注释掉页面内无用的 computed: 和created: 方法错误消失
-4. src\views\ma\courier_station\artical.vue
+4. src\views\ma\courier-station\artical.vue
 从老兵驿站文章列表点击文章跳转到详情页出现了url变化，但页面不刷新（内容不变）的问题
 -在页面增加console.log()进行测试，发现已经进入新页面，但是并未渲染，而且页面出现其他不该出现的页面
 *因并未使用keep-alive属性，在对应的layout文件中将原来引入的view改为<router-view :key="key" />即可解决当前问题
-5. src\views\ma\courier_station\artical.vue
+5. src\views\ma\courier-station\artical.vue
 页面布局、文章数据解析基本完成，页面部分元素后台尚未有返还值需要添加
 *解析富文本注意在对应标签中加入v-html="item.content"可以直接进行解析，从而不显示以字符串存储的标签
 
@@ -156,18 +156,18 @@ item hover svg文件反色bug已修复，方法为去掉svg文件中fill的部�
 将 mode:history 模式调整为hash模式，但在测试过程中需要调整链接地址，所以暂时将模式改回history模式
 2. src\api\laobing_url.js
 调整老兵驿站版块部分接口数据格式，调整页面对应输出部分
-3. src\views\ma\courier_station\artical.vue
+3. src\views\ma\courier-station\artical.vue
 文章详情页面调整数据接口，请求参数以json形式添加，增加点赞部分的关联，其他数据表待完善
-4. src\views\ma\courier_station\components\rightside-artical.vue
+4. src\views\ma\courier-station\components\rightside-artical.vue
 组件内去掉无用的顶部推荐，增加作者信息、推荐文章板块预留
 5. src\router\index.js
 将路由中独立的老兵驿站，path: "/courier-station/index"，path: "/courier-station/artical"部分合并
 -到/ma 下作为子路由
-6. src\views\ma\courier_station\index.vue
+6. src\views\ma\courier-station\index.vue
 增加分页功能，具体方法为L147.fetchData()，对接服务器接口方面待测 
 
 #-------------------- 20201109更新内容 --------------------
-1. src\views\ma\courier_station\artical.vue
+1. src\views\ma\courier-station\artical.vue
 文章详情页面，完善页面细节，数据接口部分待后台开发完成后进行对接，分页部分功能有问题讨论后更新
 2. src\api\laobing_url.js
 规范接口变量命名。由于文章列表、详情接口已经更改，由原单一模块接口改为全站统一接口，所以为了
@@ -180,5 +180,73 @@ item hover svg文件反色bug已修复，方法为去掉svg文件中fill的部�
 新增老兵战史文章页view，增加文章页layout
 3.3 现有数据接口基本调通，可拆分组件已拆分
 3.4 存留问题：分页功能存在冲突，加入travel页面中的示例代码存在.then函数报错(程序钩子问题)待解决
+**参考user/index.vue页面 addUser()方法。
+
+#-------------------- 20201110更新内容 --------------------
+1. src\views\ma\courier-station\components\focus.vue
+请求数据改为封装好的postData()方法，此方法需要首页先登录才取得token才可以获取相关数据否则报错
+2. src\views\login\index.vue
+登录页更改验证成功跳转页面为测试首页 /ma
+3. src\views\ma\courier-station, src\views\ma\annals
+相关文件的axios调用均改为系统封装的getData()/postData()方法，且该方法可以去掉baseUrl*
+*重新审核系统路径公共方法
+4. 前台后台要分开两套代码
+
+#-------------------- 20201111更新内容 --------------------
+1. 对现有vue页面的axios请求做优化，取消获取数据成功后msg的调用
+2. src\views\login\index.vue
+首页样式调整
+3. public\favicon.ico
+更换网站favicon
+4. src\styles\index.scss
+调整首页老兵政策相关样式代码
+5. src\views\ma\courier-station\article.vue
+临时上传文章接口页面，除单张图片上传以外其余参数均可成功对接
+从cookies里面获取user_id，因测试时直接给页面赋值失败，所以用created里面的方法进行赋值
+6. src\components\Tinymce\components\EditorImage.vue
+action部分地址如何指定？目前是统一上传，是否需要一个单独的图片上传接口来进行图片预接收
+7. npm run build:prod 生成工程文件
+
+#-------------------- 20201112更新内容 --------------------
+1. src\views\ma\annals\index.vue, src\views\ma\courier-station\index.vue
+修改分页部分代码，将示例中get方法改为post方法，增加参数部分的传递
+2. ESLint 替换为eslint-config-airbnb编码规范
+3. src\views\ma\courier-station\article.vue
+目前除图片服务器返还地址有问题外，其他都是正常与接口对接
+4. src\layout\ma\case-studies, src\views\ma\case-studies
+新增成功案例模块相关layout, views以及对应接口方法
+5. src\components\CommonNav\index.vue
+调整为新版导航
+6. src\components\CommonTip\index.vue
+将临时上传按钮添加到做导航中，不影响Nav布局
+7. src\views\ma\famous\people, src\layout\ma\famous
+新增老兵风采-老兵名人大辞典模块相关layout, views以及对应接口方法
+
+#-------------------- 20201113更新内容 --------------------
+1. src\views\ma\famous\enterprise 
+新增老兵风采-名企展播模块相关views以及对应接口方法
+2. src\views\ma\famous\people\index.vue, src\views\ma\famous\enterprise\index.vue,
+   src\views\ma\courier-station\index.vue, src\views\ma\annals\index.vue
+完善列表页分类搜索方法
+3. src\views\ma\home\components\courier-station.vue
+将首页老兵驿站部分拆分为组件，更改为新的接口地址对接数据
+4. src\views\ma\home\components\focus.vue
+调整首页焦点图接口，更改为新的接口地址对接数据
+5. src\components\CaseStudies\index.vue
+提取首页成功案例为全局组件
+6. src\views\ma\home\components\annals.vue
+将首页老兵战史部分拆分为组件，更改为新的接口地址对接数据
+7. src\api\laobing_url.js
+重新规划首页模块对应接口地址变量
+8. src\components\CommonTip\index.vue
+左导航调整首页链接
+9. src\views\ma\home\index.vue
+首页增加更多组件，老兵战史、老兵驿站、成功案例
+10. src\views\ma\home\components\rightside.vue
+首页右侧组件新增成功案例组件
+
+
+
+
 
 
