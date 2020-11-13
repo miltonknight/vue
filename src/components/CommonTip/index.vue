@@ -7,7 +7,7 @@
         text-color="#3b3b3b"
         @select="handleSelect"
       >
-        <el-menu-item index="1">
+        <el-menu-item index="/home/index">
           <span><svg-icon icon-class="tip-home" class-name="card-panel-icon" />首页</span>
         </el-menu-item>
         <el-menu-item index="2">
@@ -59,6 +59,7 @@ export default {
   },
   methods: {
     handleSelect(key, keyPath) {
+      this.$router.push(key);
       console.log(key, keyPath);
     }
   }
@@ -102,9 +103,10 @@ export default {
           color: #4696a3;
         }
       }
-      .el-menu-item:focus, .el-menu-item:hover {
+      .el-menu-item:focus, .el-menu-item:hover,
+      .el-menu-item.is-active {
         color: #fff!important;
-        background: transparent;
+        background-color: transparent!important;
           
         span {
           color: #fff!important;
