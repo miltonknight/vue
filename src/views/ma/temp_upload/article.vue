@@ -66,7 +66,6 @@ export default {
   computed: {
     ...mapGetters(["user_id", "access_token"])
   },
-  
   created: function() {
     // get user_id and set to form.create_uid
     this.form.create_uid = this.user_id;
