@@ -80,43 +80,7 @@
     <!-- 最新活动end -->
 
     <!-- 成功案例 -->
-    <div class="side-main">
-      <div class="side-head">
-        <h3>
-          <svg-icon icon-class="hdot" class-name="card-panel-icon" />成功案例
-          <a href="/#/case-studies/index">更多案例</a>
-        </h3>
-      </div>
-      <div class="side-body">
-        <div class="side-img-box">
-          <img src="@/assets/img/side-demo4.png" alt="" />
-          <i class="badge badge-blue">NEW</i>
-        </div>
-        <div class="side-body">
-          <div class="slist-box">
-            <div class="slist-box-img">
-              <img src="@/assets/img/side-demo5.png" alt="" />
-            </div>
-            <p>苹果发布iPhone12当天，罗永浩&转转开了场“旧机发布会”</p>
-            <span>2020-09-30</span>
-          </div>
-          <div class="slist-box">
-            <div class="slist-box-img">
-              <img src="@/assets/img/side-demo5.png" alt="" />
-            </div>
-            <p>苹果发布iPhone12当天，罗永浩&转转开了场“旧机发布会”</p>
-            <span>2020-09-30</span>
-          </div>
-          <div class="slist-box">
-            <div class="slist-box-img">
-              <img src="@/assets/img/side-demo5.png" alt="" />
-            </div>
-            <p>苹果发布iPhone12当天，罗永浩&转转开了场“旧机发布会”</p>
-            <span>2020-09-30</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <case-studies />
     <!-- 成功案例end -->
 
     <!-- AD -->
@@ -131,9 +95,12 @@
 
 <script>
 console.log("@/views/ma/home/components/rightside.vue is loaded~~~~~~~~~~~~~~");
+import CaseStudies from "@/components/CaseStudies"
 export default {
   name: "HomeRightSide",
-  components: {},
+  components: {
+    CaseStudies // 成功案例
+  },
   data() {
     return {
       // timeline data
