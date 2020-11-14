@@ -30,7 +30,7 @@ export default {
       // focus数据接收数组
       ret: [],
       url: LaobingUrl.modular_focus,
-      sort_id: 3,
+      sort_id: 32,
       total: 0,
       list: null,
       listLoading: true,
