@@ -17,12 +17,14 @@
                 <h3>老兵战史<span>Veteran war history</span></h3>
               </div>
               <div class="list-head list-head-sub">
+                 <!-- @click="searchBySort()" -->
                 版块分割部分
+
               </div>
               <div class="list-body">
                 <!-- 列表循环 -->
                 <!-- <a v-for="item in ArticalList.list" :key="item.id" :href="'/courier-station/artical?id=' + item.soldier_station_id" class="list-item"> -->
-                <a v-for="item in ArticalList.list" :key="item.id" :href="'/#/annals/artical?id=' + item.article_id" class="list-item">
+                <a v-for="item in ArticalList.list" :key="item.id" :href="'/#/annals/artical?id=' + item.article_id + '&sort_id=' + item.sort_id" class="list-item">
                   <div class="list-body-img">
                     <img :src="item.img_path" />
                     <i class="badge">{{ item.sort_name }}</i>
@@ -101,7 +103,7 @@ export default {
       list: null,
       listLoading: true,
       listQuery: {
-        sort_id: 2,
+        sort_id: 2, // 版块id
         page: 1,
         limit: 10
       }
@@ -140,8 +142,8 @@ export default {
     fetchData() {
       this.listLoading = true;
       // json post prop
-      this.listQuery.page = this.listQuery.page;
-      this.listQuery.limit = this.listQuery.limit;
+      // this.listQuery.page = this.listQuery.page;
+      // this.listQuery.limit = this.listQuery.limit;
       // this.postDataFromUI(LaobingUrl.modular_artical_list, params)
       this.postDataFromUI(LaobingUrl.modular_artical_list, this.listQuery)
         .then(response => {
@@ -154,6 +156,12 @@ export default {
           this.listLoading = false;
           console.log(error);
         });
+    },
+    searchBySort(sortId) {
+      this.listQuery.sort_id = sortId;
+      this.listQuery.page = 1;
+      this.listQuery.limit = 10;
+      fetchData();
     }
   }
 };

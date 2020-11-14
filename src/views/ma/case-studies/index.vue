@@ -99,7 +99,7 @@ export default {
       list: null,
       listLoading: true,
       listQuery: {
-        sort_id: 2,
+        sort_id: 32, // 版块id
         page: 1,
         limit: 10
       }
@@ -138,8 +138,8 @@ export default {
     fetchData() {
       this.listLoading = true;
       // json post prop
-      this.listQuery.page = this.listQuery.page;
-      this.listQuery.limit = this.listQuery.limit;
+      // this.listQuery.page = this.listQuery.page;
+      // this.listQuery.limit = this.listQuery.limit;
       // this.postDataFromUI(LaobingUrl.modular_artical_list, params)
       this.postDataFromUI(LaobingUrl.modular_artical_list, this.listQuery)
         .then(response => {

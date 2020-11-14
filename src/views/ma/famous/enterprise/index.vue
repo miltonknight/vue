@@ -18,7 +18,7 @@
                 <famous-enterprise-focus />
                 <!-- 列表循环 -->
                 <!-- <a v-for="item in ArticalList.list" :key="item.id" :href="'/courier-station/artical?id=' + item.soldier_station_id" class="list-item"> -->
-                <a v-for="item in ArticalList.list" :key="item.id" :href="'/#/famous/enterprise/artical?id=' + item.article_id" class="list-item">
+                <a v-for="item in ArticalList.list" :key="item.id" :href="'/#/famous/enterprise/artical?id=' + item.article_id + '&sort_id=' + item.sort_id" class="list-item">
                   <div class="list-body-img">
                     <img :src="item.img_path" />
                     <i class="badge">{{ item.sort_name }}</i>

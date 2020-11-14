@@ -211,6 +211,7 @@ export default {
       var params = {
         // 从url中获取文章id
         "article_id": this.$route.query.id,
+        "sort_id": this.$route.query.sort_id,
         // uid用户token中获取
         // "uid": '0a44f30462e742879f5fbd15d2fda9e6'
         "uid": this.user_id

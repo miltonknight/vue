@@ -41,7 +41,7 @@
                   </div>
                 </a> -->
 
-                <a v-for="item in ArticalList.list" :key="item.id" :href="'/#/famous/people/artical?id=' + item.article_id" class="img-list-famous">
+                <a v-for="item in ArticalList.list" :key="item.id" :href="'/#/famous/people/artical?id=' + item.article_id + '&sort_id=' + item.sort_id" class="img-list-famous">
                   <div class="img-list-main">
                     <img :src="item.img_path" />
                   </div>
@@ -113,7 +113,7 @@ export default {
       listQuery: {
         sort_id: 2, // 版块id
         page: 1,
-        limit: 10
+        limit: 12
       }
     };
   },

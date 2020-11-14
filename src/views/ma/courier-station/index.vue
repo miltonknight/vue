@@ -1,3 +1,4 @@
+<!-- 老兵驿站 -->
 <template>
   <div>
     <el-row :gutter="24">
@@ -17,26 +18,26 @@
               </div>
               <div class="list-head list-head-sub">
                 <ul class="section-title">
-                  <li class="is-active">老营房</li>
-                  <li>老哨所</li>
-                  <li>老故事</li>
-                  <li>老家书</li>
-                  <li>老军装</li>
-                  <li>老连队</li>
-                  <li>老照片</li>
+                  <li class="is-active" @click="searchBySort(2)">老营房</li>
+                  <li @click="searchBySort(3)">老哨所</li>
+                  <li @click="searchBySort(4)">老故事</li>
+                  <li @click="searchBySort(5)">老家书</li>
+                  <li @click="searchBySort(6)">老军装</li>
+                  <li @click="searchBySort(7)">老连队</li>
+                  <li @click="searchBySort(8)">老照片</li>
                 </ul>
               </div>
               <div class="list-body">
                 <!-- 列表循环 -->
                 <!-- <a v-for="item in ArticalList.list" :key="item.id" :href="'/courier-station/artical?id=' + item.soldier_station_id" class="list-item"> -->
-                <a v-for="item in ArticalList.list" :key="item.id" :href="'/#/courier-station/artical?id=' + item.article_id" class="list-item">
+                <a v-for="item in ArticalList.list" :key="item.id" :href="'/#/courier-station/artical?id=' + item.article_id + '&sort_id=' + item.sort_id" class="list-item">
                   <div class="list-body-img">
                     <img :src="item.img_path" />
                     <i class="badge">{{ item.sort_name }}</i>
                   </div>
                   <div class="list-body-text">
-                    <h3>{{item.title}}</h3>
-                    <p>{{item.introduction}}</p>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.introduction }}</p>
                     <div class="list-text-cate">
                       <span class="tip">{{ item.sort_name }}</span>
                       <span class="time">
@@ -108,7 +109,7 @@ export default {
       list: null,
       listLoading: true,
       listQuery: {
-        sort_id: 2,
+        sort_id: 2, // 版块id
         page: 1,
         limit: 10
       }
@@ -148,8 +149,8 @@ export default {
     fetchData() {
       this.listLoading = true;
       // json post prop
-      this.listQuery.page = this.listQuery.page;
-      this.listQuery.limit = this.listQuery.limit;
+      // this.listQuery.page = this.listQuery.page;
+      // this.listQuery.limit = this.listQuery.limit;
       // this.postDataFromUI(LaobingUrl.modular_artical_list, params)
       this.postDataFromUI(LaobingUrl.modular_artical_list, this.listQuery)
         .then(response => {
@@ -162,6 +163,12 @@ export default {
           this.listLoading = false;
           console.log(error);
         });
+    },
+    searchBySort(sortId) {
+      this.listQuery.sort_id = sortId;
+      this.listQuery.page = 1;
+      this.listQuery.limit = 10;
+      fetchData();
     }
   }
 };
@@ -183,6 +190,7 @@ export default {
 
 .list-head-sub {
   border-bottom: 1px solid #d7d7d7!important;
+  margin-bottom: 30px!important;
 
   .section-title {
     display: flex;

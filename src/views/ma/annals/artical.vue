@@ -209,12 +209,17 @@ export default {
     fetchData() {
       // json post prop
       var params = {
-        // 从url中获取文章id
+        // 从url中获取文章id, sortid
         "article_id": this.$route.query.id,
+        "sort_id": this.$route.query.sort_id,
         // uid用户token中获取
         // "uid": '0a44f30462e742879f5fbd15d2fda9e6'
         "uid": this.user_id
       };
+      console.log("::::::::::::::::::::>>>>>>>>>");
+      console.log(this.$route.path);
+      // this.$route.path = '/annals/index'; // read only
+      console.log("::::::::::::::::::::>>>>>>>>>");
       this.postDataFromUI(LaobingUrl.modular_articals, params)
         .then(response => {
           this.ArticalDetail = response;

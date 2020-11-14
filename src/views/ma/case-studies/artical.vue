@@ -34,7 +34,7 @@
           <!-- 内容 end -->
 
           <!-- 新评论 -->
-          <div class="new-comment-box">
+          <!-- <div class="new-comment-box">
             <div class="comment-head">
               <h3>
                 <svg-icon icon-class="hdot" class-name="card-panel-icon" />参与评论
@@ -48,11 +48,11 @@
               </div>
             </div>
             <p>请回复有价值的信息，无意义的评论将很快被删除，账号将被禁止发言。</p>
-          </div>
+          </div> -->
           <!-- 新评论end -->
 
           <!-- 评论列表 -->
-          <div class="comment-box">
+          <!-- <div class="comment-box">
             <div class="comment-head">
               <h3>
                 <svg-icon icon-class="hdot" class-name="card-panel-icon" />评论区
@@ -95,7 +95,7 @@
 
               </dl>
             </div>
-          </div>
+          </div> -->
           <!-- 评论列表end -->
 
         </div>
@@ -211,6 +211,7 @@ export default {
       var params = {
         // 从url中获取文章id
         "article_id": this.$route.query.id,
+        "sort_id": this.$route.query.sort_id,
         // uid用户token中获取
         // "uid": '0a44f30462e742879f5fbd15d2fda9e6'
         "uid": this.user_id
