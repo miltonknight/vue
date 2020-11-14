@@ -1,9 +1,10 @@
+<!-- :default-active="$route.path" -->
 <template>
   <div class="header-main">
     <div class="header-container">
       <el-menu
         router=""
-        :default-active="$route.path"
+        :default-active = activeIndex
         class="el-menu-demo"
         mode="horizontal"
         background-color="#3b3b3b"
@@ -22,10 +23,10 @@
         <el-menu-item index="/home/index">首页</el-menu-item>
         <el-menu-item index="/courier-station/index">老兵驿站</el-menu-item>
         <el-menu-item index="/annals/index">老兵战史</el-menu-item>
-        <el-menu-item index="4">老兵情怀</el-menu-item>
-        <el-menu-item index="5">老兵文化</el-menu-item>
+        <el-menu-item index="3">老兵情怀</el-menu-item>
+        <el-menu-item index="4">老兵文化</el-menu-item>
         <!-- <el-menu-item index="/famous/enterprise/index">老兵风采</el-menu-item> -->
-        <el-submenu index="2"
+        <el-submenu index="5"
           background-color="#3b3b3b"
           text-color="#fff"
           active-text-color="#ffd04b"
@@ -34,8 +35,8 @@
           <el-menu-item index="/famous/people/index">老兵名人大辞典</el-menu-item>
           <el-menu-item index="/famous/enterprise/index">老兵名企展播</el-menu-item>
         </el-submenu>
-        <el-menu-item index="5">老兵政策</el-menu-item>
-        <el-menu-item index="5">老兵论坛</el-menu-item>
+        <el-menu-item index="6">老兵政策</el-menu-item>
+        <el-menu-item index="7">老兵论坛</el-menu-item>
       </el-menu>
 
       <div class="header-operations">
@@ -64,15 +65,19 @@ export default {
   data() {
     return {
       activeIndex: "0",
-      activeIndex2: "0"
-      // indexArray : [
-      //   {index: 0, path: "/home/index", title: "首页0"},
-      //   {index: 1, path: "/home/index", title: "首页1"},
-      //   {index: 2, path: "/home/index", title: "首页2"},
-      //   {index: 3, path: "/home/index", title: "首页3"},
-      //   {index: 4, path: "/home/index", title: "首页4"},
-      //   {index: 5, path: "/home/index", title: "首页5"}
-      // ]
+      activeIndex2: "0",
+      indexArray : [
+        {index: "0", path: "/home/index", title: "首页"},
+        {index: "1", path: "/courier-station/index", title: "老兵驿站"},
+        {index: "2", path: "/annals/index", title: "老兵战史"},
+        {index: "3", path: "/home/index", title: "老兵情怀"},
+        {index: "4", path: "/home/index", title: "老兵文化"},
+        {index: "5", path: "/home/index", title: "老兵风采"},
+        {index: "5-1", path: "/famous/people/index", title: "老兵名人大辞典"},
+        {index: "5-2", path: "/famous/enterprise/index", title: "老兵名企展播"},
+        {index: "6", path: "/home/index", title: "老兵政策"},
+        {index: "7", path: "/home/index", title: "老兵论坛"}
+      ]
     };
   },
   methods: {
@@ -189,7 +194,7 @@ export default {
   .el-menu--horizontal > .el-menu-item,
   .el-menu--horizontal>.el-submenu .el-submenu__title {
     transition: none;
-    width: 100px;
+    width: 98px;
     text-align: center;
     //this part is 4 bug fixing which is missing
     height: 50px!important;
