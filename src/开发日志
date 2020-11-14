@@ -245,6 +245,19 @@ action部分地址如何指定？目前是统一上传，是否需要一个单�
 10. src\views\ma\home\components\rightside.vue
 首页右侧组件新增成功案例组件
 
+#-------------------- 20201114更新内容 --------------------
+1. src\views\ma\annals\artical.vue, 
+   src\views\ma\case-studies\artical.vue,
+   src\views\ma\courier-station\artical.vue, 
+   src\views\ma\famous\enterprise\artical.vue,
+   src\views\ma\famous\people\artical.vue
+链接中增加sort_id属性，用于返还给请求端口，请求中增加sort_id属性
+2. src\views\ma\annals\index.vue, 
+   src\views\ma\annals\index.vue,
+   src\views\ma\courier-station\index.vue, 
+   src\views\ma\famous\enterprise\index.vue,
+   src\views\ma\famous\people\index.vue
+列表链接中增加sort_id字段，用于文章页返还sort_id属性
 
 
 
