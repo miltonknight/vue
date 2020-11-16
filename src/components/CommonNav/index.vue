@@ -71,7 +71,7 @@ export default {
         {index: "1", path: "/courier-station/index", title: "老兵驿站"},
         {index: "2", path: "/annals/index", title: "老兵战史"},
         {index: "3", path: "/home/index", title: "老兵情怀"},
-        {index: "4", path: "/home/index", title: "老兵文化"},
+        {index: "4", path: "/culture/index", title: "老兵文化"},
         {index: "5", path: "/home/index", title: "老兵风采"},
         {index: "5-1", path: "/famous/people/index", title: "老兵名人大辞典"},
         {index: "5-2", path: "/famous/enterprise/index", title: "老兵名企展播"},
