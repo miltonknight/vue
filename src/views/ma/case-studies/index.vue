@@ -77,7 +77,7 @@ console.log("./views/ma/case-studies/index is loaded~~~~~~~~~~~~~~~~~~~~");
 import CaseStudiesFocus from "@/views/ma/case-studies/components/focus";
 import CaseStudiesRightSide from "@/views/ma/case-studies/components/rightside"
 import Pagination from "@/components/Pagination";
-import { getData, postData } from "@/api/common";
+import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 
 export default {

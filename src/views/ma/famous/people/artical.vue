@@ -152,7 +152,7 @@ export default {
 
     // set default likebox
     console.log("::::::" + this.thumbup);
-    if(this.thumbup) {
+    if (this.thumbup) {
       var boxObj = document.getElementsByClassName("likebox");
       boxObj.classList = "likebox is-active";
       console.log(boxObj)
@@ -202,10 +202,10 @@ export default {
           })
           .catch(error => {
             console.log(error);
-            this.$message({
-              message: error,
-              type: "success"
-            });
+            // this.$message({
+            //   message: error,
+            //   type: "success"
+            // });
           });
       });
     },
