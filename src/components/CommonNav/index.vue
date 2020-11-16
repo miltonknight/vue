@@ -67,16 +67,16 @@ export default {
       activeIndex: "/home/index", // 使用数字页面无法识别初始状态
       activeIndex2: "0",
       indexArray : [
-        {index: "0", path: "/home/index", title: "首页"},
-        {index: "1", path: "/courier-station/index", title: "老兵驿站"},
-        {index: "2", path: "/annals/index", title: "老兵战史"},
-        {index: "3", path: "/home/index", title: "老兵情怀"},
-        {index: "4", path: "/culture/index", title: "老兵文化"},
-        {index: "5", path: "/home/index", title: "老兵风采"},
-        {index: "5-1", path: "/famous/people/index", title: "老兵名人大辞典"},
-        {index: "5-2", path: "/famous/enterprise/index", title: "老兵名企展播"},
-        {index: "6", path: "/home/index", title: "老兵政策"},
-        {index: "7", path: "/home/index", title: "老兵论坛"}
+        { index: "0", path: "/home/index", title: "首页" },
+        { index: "1", path: "/courier-station/index", title: "老兵驿站" },
+        { index: "2", path: "/annals/index", title: "老兵战史" },
+        { index: "3", path: "/home/index", title: "老兵情怀" },
+        { index: "4", path: "/culture/index", title: "老兵文化" },
+        { index: "5", path: "/home/index", title: "老兵风采" },
+        { index: "5-1", path: "/famous/people/index", title: "老兵名人大辞典" },
+        { index: "5-2", path: "/famous/enterprise/index", title: "老兵名企展播" },
+        { index: "6", path: "/home/index", title: "老兵政策" },
+        { index: "7", path: "/home/index", title: "老兵论坛" }
       ]
     };
   },
