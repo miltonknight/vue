@@ -10,15 +10,16 @@ export const TOKEN_KEYS = {
 
 export function getTokenByKey(key) {
   return Cookies.get(key);
-  
 }
 
 export function setTokenByKey(key, token) {
   // return Cookies.set(key, token);
-  return Cookies.set(key, token, { expires: 1 }) // set for 1 hour
-  // 时间单位是天 1/24为一个小时,  第三个参数不传就是永不过期
-  // Cookies.set('access_token', str, { expires: 1 / 24 }); 
-  // const inFifteenMinutes = new Date(new Date().getTime() + 8 * 60 * 60 * 1000)
+  // 设置超期时间
+  const inFifteenMinutes = new Date(new Date().getTime() + 10 * 60 * 60 * 1000);
+  console.log(":::::::::::::::::>>>>");
+  console.log(inFifteenMinutes);
+  // 第三个参数不传就是永不过期
+  return Cookies.set(key, token, { expires: inFifteenMinutes }) // set for 1 hour
 }
 
 export function removeAllTOken() {
