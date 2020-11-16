@@ -300,6 +300,12 @@
       </el-col>
       <!-- 右侧内容end -->
     </el-row>
+    <el-backtop>
+      <div class="backtobox">
+        <div><img src="@/assets/img/cservice.png" /></div>
+        <div><img src="@/assets/img/backtop.png" /></div>
+      </div>
+    </el-backtop>
   </div>
 </template>
 
@@ -424,6 +430,45 @@ export default {
       &:nth-last-child(1) {
         border-right: none;
       }
+    }
+  }
+}
+.el-backtop {
+  left: 50%!important;
+  bottom: 320px!important;
+  margin-left: 542px!important;
+  width: 50px;
+  height: 100px;
+  box-shadow: none;
+
+  &:hover {
+    box-shadow: none;
+    background: none!important; 
+  }
+}
+.backtobox {
+  width: 50px;
+  height: 100px;
+
+  div {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border: 1px solid #e08714;
+    display: flex;
+    align-items: center;
+    /*实现水平居中*/
+    justify-content: center;
+    text-align: center;
+    border-radius: 3px 3px 0 0;
+
+    &:nth-last-child(1) {
+      border-top: none;
+      border-radius: 0 0 3px 3px;
+    }
+    img {
+      width: 25px;
+      height: 25px;
     }
   }
 }
