@@ -18,8 +18,84 @@
               </div>
               <div class="list-head list-head-sub">
                  <!-- @click="searchBySort()" -->
-                版块分割部分
-
+                <template>
+                  <el-tabs v-model="activeName" @tab-click="handleClick">
+                    <el-tab-pane label="战史" name="first">
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_1.png" />
+                        <span>土地革命战争</span>
+                      </div>
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_2.png" />
+                        <span>抗日战争</span>
+                      </div>
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_3.png" />
+                        <span>解放战争</span>
+                      </div>
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_4.png" />
+                        <span>中印边境<br />自卫反击战</span>
+                      </div>
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_5.png" />
+                        <span>中苏珍宝岛<br />自卫反击战</span>
+                      </div>
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_6.png" />
+                        <span>对越自卫反击战</span>
+                      </div>
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_7.png" />
+                        <span>世界著名战役</span>
+                      </div>
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_8.png" />
+                        <span>走麦城</span>
+                      </div>
+                    </el-tab-pane>
+                    <el-tab-pane label="战例" name="second">
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_1.png" />
+                        <span>一野</span>
+                      </div>
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_2.png" />
+                        <span>二野</span>
+                      </div>
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_3.png" />
+                        <span>三野</span>
+                      </div>
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_4.png" />
+                        <span>四野</span>
+                      </div>
+                    </el-tab-pane>
+                    <el-tab-pane label="非军事行动" name="third">
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_1.png" />
+                        <span>抗震</span>
+                      </div>
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_2.png" />
+                        <span>抗洪</span>
+                      </div>
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_3.png" />
+                        <span>维和</span>
+                      </div>
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_4.png" />
+                        <span>抗疫</span>
+                      </div>
+                      <div class="tab-boxes">
+                        <img src="@/assets/img/annals1_5.png" />
+                        <span>抢险（灭火）</span>
+                      </div>
+                    </el-tab-pane>
+                  </el-tabs>
+                </template>
               </div>
               <div class="list-body">
                 <!-- 列表循环 -->
@@ -95,6 +171,7 @@ export default {
   },
   data() {
     return {
+      activeName: 'first',
       // 文章列表接口地址、接收数组
       url: LaobingUrl.modular_artical_list,
       ArticalList: [],
@@ -116,6 +193,9 @@ export default {
   mounted() {
   },
   methods: { 
+    handleClick(tab, event) {
+      console.log(tab, event);
+    },
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
         postData(url, data)
@@ -200,6 +280,46 @@ export default {
     li:hover, li.is-active {
       border-bottom: 3px solid #e08714;
     }
+  }
+}
+.list-container .list-main .list-head {
+  height: auto;
+}
+.el-tabs__content {
+  
+  .tab-boxes {
+    width: 174px;
+    height: 85px;
+    margin: 0 10px 10px 0;
+    position: relative;
+    float: left;
+    cursor: pointer;
+
+    span {
+      font-size: 20px;
+      line-height: 1.4;
+      width: 100%;
+      height: 100%;
+      background: rgba($color: #000000, $alpha: 0.5);
+      color: #fff;
+      position: absolute;
+      top: 0;
+      display: flex;
+      /*实现垂直居中*/
+      align-items: center;
+      /*实现水平居中*/
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  .tab-boxes:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+.list-head-sub {
+
+  .el-tabs__item {
+    width: 242px;
   }
 }
 </style>
