@@ -64,7 +64,7 @@ export default {
   props: {},
   data() {
     return {
-      activeIndex: "0",
+      activeIndex: "/home/index", // 使用数字页面无法识别初始状态
       activeIndex2: "0",
       indexArray : [
         {index: "0", path: "/home/index", title: "首页"},
@@ -91,6 +91,7 @@ export default {
     // example function for login 
     login: function() {
       alert("jump to model login")
+      console.log("activeIndex:>>>" + this.activeIndex);
     },
     // example function for mail 
     mail: function() {
