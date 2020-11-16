@@ -168,7 +168,7 @@ export default {
       this.listQuery.sort_id = sortId;
       this.listQuery.page = 1;
       this.listQuery.limit = 10;
-      fetchData();
+      this.fetchData();
     }
   }
 };

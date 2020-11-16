@@ -15,10 +15,10 @@
               </div>
               <div class="list-head list-head-sub">
                 <ul class="section-title">
-                  <li class="is-active" @click="searchBySort()">老兵典型模范</li>
-                  <li @click="searchBySort()">老兵科学家</li>
-                  <li @click="searchBySort()">老兵艺术家</li>
-                  <li @click="searchBySort()">老兵企业家</li>
+                  <li class="is-active" @click="searchBySort(35)">老兵典型模范</li>
+                  <li @click="searchBySort(36)">老兵科学家</li>
+                  <li @click="searchBySort(37)">老兵艺术家</li>
+                  <li @click="searchBySort(38)">老兵企业家</li>
                 </ul>
               </div>
               <div class="list-body">
@@ -43,10 +43,10 @@
 
                 <a v-for="item in ArticalList.list" :key="item.id" :href="'/#/famous/people/artical?id=' + item.article_id + '&sort_id=' + item.sort_id" class="img-list-famous">
                   <div class="img-list-main">
-                    <img :src="item.img_path" />
+                    <img :src="item.img" />
                   </div>
-                  <h3>{{ item.title }}</h3>
-                  <span>全国战斗英雄 一等功臣</span>
+                  <h3>{{ item.name }}</h3>
+                  <span v-for="honour in item.honour_list" :key="honour">{{ honour }}</span>
                   <p>{{ item.introduction }}</p>
                   <span class="famous-dict"></span>
                 </a>
@@ -104,14 +104,14 @@ export default {
   data() {
     return {
       // 文章列表接口地址、接收数组
-      url: LaobingUrl.modular_artical_list,
+      url: LaobingUrl.famous_people,
       ArticalList: [],
       // Pagination
       total: 0,
       list: null,
       listLoading: true,
       listQuery: {
-        sort_id: 2, // 版块id
+        sort_id: 35, // 版块id
         page: 1,
         limit: 12
       }
@@ -153,7 +153,7 @@ export default {
       // this.listQuery.page = this.listQuery.page;
       // this.listQuery.limit = this.listQuery.limit;
       // this.postDataFromUI(LaobingUrl.modular_artical_list, params)
-      this.postDataFromUI(LaobingUrl.modular_artical_list, this.listQuery)
+      this.postDataFromUI(LaobingUrl.famous_people, this.listQuery)
         .then(response => {
           this.ArticalList = response;
           this.total = response.total;
@@ -245,7 +245,7 @@ export default {
     font-size: 12px;
     font-weight: normal;
     color: #a0a0a0;
-    margin: 0 15px;
+    margin: 0 0 0 15px;
   }
   p {
     text-align: left;

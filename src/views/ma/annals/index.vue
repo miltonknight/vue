@@ -21,75 +21,75 @@
                 <template>
                   <el-tabs v-model="activeName" @tab-click="handleClick">
                     <el-tab-pane label="战史" name="first">
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(13)">
                         <img src="@/assets/img/annals1_1.png" />
                         <span>土地革命战争</span>
                       </div>
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(14)">
                         <img src="@/assets/img/annals1_2.png" />
                         <span>抗日战争</span>
                       </div>
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(16)">
                         <img src="@/assets/img/annals1_3.png" />
                         <span>解放战争</span>
                       </div>
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(17)">
                         <img src="@/assets/img/annals1_4.png" />
                         <span>中印边境<br />自卫反击战</span>
                       </div>
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(18)">
                         <img src="@/assets/img/annals1_5.png" />
                         <span>中苏珍宝岛<br />自卫反击战</span>
                       </div>
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(19)">
                         <img src="@/assets/img/annals1_6.png" />
                         <span>对越自卫反击战</span>
                       </div>
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(20)">
                         <img src="@/assets/img/annals1_7.png" />
                         <span>世界著名战役</span>
                       </div>
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(21)">
                         <img src="@/assets/img/annals1_8.png" />
                         <span>走麦城</span>
                       </div>
                     </el-tab-pane>
                     <el-tab-pane label="战例" name="second">
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(22)">
                         <img src="@/assets/img/annals1_1.png" />
                         <span>一野</span>
                       </div>
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(23)">
                         <img src="@/assets/img/annals1_2.png" />
                         <span>二野</span>
                       </div>
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(24)">
                         <img src="@/assets/img/annals1_3.png" />
                         <span>三野</span>
                       </div>
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(25)">
                         <img src="@/assets/img/annals1_4.png" />
                         <span>四野</span>
                       </div>
                     </el-tab-pane>
                     <el-tab-pane label="非军事行动" name="third">
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(26)">
                         <img src="@/assets/img/annals1_1.png" />
                         <span>抗震</span>
                       </div>
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(27)">
                         <img src="@/assets/img/annals1_2.png" />
                         <span>抗洪</span>
                       </div>
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(28)">
                         <img src="@/assets/img/annals1_3.png" />
                         <span>维和</span>
                       </div>
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(29)">
                         <img src="@/assets/img/annals1_4.png" />
                         <span>抗疫</span>
                       </div>
-                      <div class="tab-boxes">
+                      <div class="tab-boxes" @click="searchBySort(30)">
                         <img src="@/assets/img/annals1_5.png" />
                         <span>抢险（灭火）</span>
                       </div>
@@ -171,7 +171,7 @@ export default {
   },
   data() {
     return {
-      activeName: 'first',
+      activeName: 'first', // tab active
       // 文章列表接口地址、接收数组
       url: LaobingUrl.modular_artical_list,
       ArticalList: [],
@@ -180,7 +180,7 @@ export default {
       list: null,
       listLoading: true,
       listQuery: {
-        sort_id: 2, // 版块id
+        sort_id: 13, // 版块id
         page: 1,
         limit: 10
       }
@@ -241,13 +241,13 @@ export default {
       this.listQuery.sort_id = sortId;
       this.listQuery.page = 1;
       this.listQuery.limit = 10;
-      fetchData();
+      this.fetchData();
     }
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 
 /******* new home page ***************/
 .el-row {
@@ -320,6 +320,21 @@ export default {
 
   .el-tabs__item {
     width: 242px;
+    text-align: center;
+    font-size: 16px;
+  }
+  .el-tabs__item:hover {
+    color: #e08714;
+  }  
+  .el-tabs__item.is-active {
+    color: #e08714;
+  }
+  .el-tabs__active-bar {
+    background-color: #e08714;
+    height: 3px;
+  }
+  .el-tabs__item:hover {
+    color: #e08714;
   }
 }
 </style>
