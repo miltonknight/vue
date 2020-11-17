@@ -13,13 +13,21 @@
               <div class="list-head">
                 <h3>老兵名人大辞典<span>The Veteran's Dictionary</span></h3>
               </div>
-              <div class="list-head list-head-sub">
-                <ul class="section-title">
+              <div class="list-head list-head-sub-famous">
+                <!-- <ul class="section-title">
                   <li class="is-active" @click="searchBySort(35)">老兵典型模范</li>
                   <li @click="searchBySort(36)">老兵科学家</li>
                   <li @click="searchBySort(37)">老兵艺术家</li>
                   <li @click="searchBySort(38)">老兵企业家</li>
-                </ul>
+                </ul> -->
+                <template>
+                  <el-tabs v-model="activeName" @tab-click="handleClick">
+                    <el-tab-pane label="老兵典型模范" name="35"></el-tab-pane>
+                    <el-tab-pane label="老兵科学家" name="36"></el-tab-pane>
+                    <el-tab-pane label="老兵艺术家" name="37"></el-tab-pane>
+                    <el-tab-pane label="老兵企业家" name="38"></el-tab-pane>
+                  </el-tabs>
+                </template>
               </div>
               <div class="list-body">
                 <!-- 列表循环 -->
@@ -103,6 +111,7 @@ export default {
   },
   data() {
     return {
+      activeName: '35', // tab active
       // 文章列表接口地址、接收数组
       url: LaobingUrl.famous_people,
       ArticalList: [],
@@ -124,6 +133,10 @@ export default {
   mounted() {
   },
   methods: { 
+    handleClick(tab, event) {
+      console.log(tab, event);
+      this.searchBySort(tab.name);
+    },
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
         postData(url, data)
@@ -149,10 +162,6 @@ export default {
     },
     fetchData() {
       this.listLoading = true;
-      // json post prop
-      // this.listQuery.page = this.listQuery.page;
-      // this.listQuery.limit = this.listQuery.limit;
-      // this.postDataFromUI(LaobingUrl.modular_artical_list, params)
       this.postDataFromUI(LaobingUrl.famous_people, this.listQuery)
         .then(response => {
           this.ArticalList = response;
@@ -169,13 +178,13 @@ export default {
       this.listQuery.sort_id = sortId;
       this.listQuery.page = 1;
       this.listQuery.limit = 10;
-      fetchData();
+      this.fetchData();
     }
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 
 /******* new home page ***************/
 .el-row {
@@ -189,7 +198,7 @@ export default {
   }
 }
 
-.list-head-sub {
+.list-head-sub-famous {
   border-bottom: 1px solid #d7d7d7!important;
   margin-bottom: 30px!important;
 
@@ -209,6 +218,59 @@ export default {
     li:hover, li.is-active {
       border-bottom: 3px solid #e08714;
     }
+  }
+}
+
+.list-head-sub-famous {
+  border-bottom: 1px solid #d7d7d7!important;
+  margin-bottom: 30px!important;
+
+  .section-title {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    li {
+      flex-grow: 7;
+      text-align: center;
+      list-style: none;
+      height: 38px;
+      cursor: pointer;
+    }
+    li:hover, li.is-active {
+      border-bottom: 3px solid #e08714;
+    }
+  }
+}
+.list-container .list-main .list-head {
+  height: auto;
+}
+.list-head-sub-famous {
+  .el-tabs__nav {
+      display: flex;
+
+    .el-tabs__item {
+      width: 180px!important;
+      flex-grow: 1;
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+  .el-tabs__item:hover {
+    color: #e08714;
+  }  
+  .el-tabs__item.is-active {
+    color: #e08714;
+  }
+  .el-tabs__active-bar {
+    background-color: #e08714;
+    height: 3px;
+  }
+  .el-tabs__item:hover {
+    color: #e08714;
+  }
+  .el-tabs__nav-wrap::after {
+    background-color: transparent;
   }
 }
 /******* famous list */

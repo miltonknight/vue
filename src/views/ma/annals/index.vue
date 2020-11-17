@@ -17,7 +17,7 @@
                 <h3>老兵战史<span>Veteran war history</span></h3>
               </div>
               <div class="list-head list-head-sub">
-                 <!-- @click="searchBySort()" -->
+                <!-- @click="searchBySort()" -->
                 <template>
                   <el-tabs v-model="activeName" @tab-click="handleClick">
                     <el-tab-pane label="战史" name="first">
@@ -221,10 +221,6 @@ export default {
     },
     fetchData() {
       this.listLoading = true;
-      // json post prop
-      // this.listQuery.page = this.listQuery.page;
-      // this.listQuery.limit = this.listQuery.limit;
-      // this.postDataFromUI(LaobingUrl.modular_artical_list, params)
       this.postDataFromUI(LaobingUrl.modular_artical_list, this.listQuery)
         .then(response => {
           this.ArticalList = response;
@@ -247,7 +243,7 @@ export default {
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 
 /******* new home page ***************/
 .el-row {
@@ -285,43 +281,16 @@ export default {
 .list-container .list-main .list-head {
   height: auto;
 }
-.el-tabs__content {
-  
-  .tab-boxes {
-    width: 174px;
-    height: 85px;
-    margin: 0 10px 10px 0;
-    position: relative;
-    float: left;
-    cursor: pointer;
-
-    span {
-      font-size: 20px;
-      line-height: 1.4;
-      width: 100%;
-      height: 100%;
-      background: rgba($color: #000000, $alpha: 0.5);
-      color: #fff;
-      position: absolute;
-      top: 0;
-      display: flex;
-      /*实现垂直居中*/
-      align-items: center;
-      /*实现水平居中*/
-      justify-content: center;
-      text-align: center;
-    }
-  }
-  .tab-boxes:nth-child(4n) {
-    margin-right: 0;
-  }
-}
 .list-head-sub {
+  .el-tabs__nav {
+      display: flex;
 
-  .el-tabs__item {
-    width: 242px;
-    text-align: center;
-    font-size: 16px;
+    .el-tabs__item {
+      width: 242px!important;
+      flex-grow: 1;
+      text-align: center;
+      font-size: 16px;
+    }
   }
   .el-tabs__item:hover {
     color: #e08714;
@@ -335,6 +304,37 @@ export default {
   }
   .el-tabs__item:hover {
     color: #e08714;
+  }
+  .el-tabs__content {
+  
+    .tab-boxes {
+      width: 174px;
+      height: 85px;
+      margin: 0 10px 10px 0;
+      position: relative;
+      float: left;
+      cursor: pointer;
+
+      span {
+        font-size: 20px;
+        line-height: 1.4;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000000, $alpha: 0.5);
+        color: #fff;
+        position: absolute;
+        top: 0;
+        display: flex;
+        /*实现垂直居中*/
+        align-items: center;
+        /*实现水平居中*/
+        justify-content: center;
+        text-align: center;
+      }
+    }
+    .tab-boxes:nth-child(4n) {
+      margin-right: 0;
+    }
   }
 }
 </style>
