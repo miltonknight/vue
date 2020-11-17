@@ -24,7 +24,19 @@
         <el-menu-item index="/courier-station/index">老兵驿站</el-menu-item>
         <el-menu-item index="/annals/index">老兵战史</el-menu-item>
         <el-menu-item index="3">老兵情怀</el-menu-item>
-        <el-menu-item index="4">老兵文化</el-menu-item>
+        <!-- <el-menu-item index="4">老兵文化</el-menu-item> -->
+        <el-submenu index="4"
+          background-color="#3b3b3b"
+          text-color="#fff"
+          active-text-color="#ffd04b"
+        >
+          <template slot="title">老兵文化</template>
+          <el-menu-item index="/culture/on-tao/index">名家讲坛</el-menu-item>
+          <el-menu-item index="4-2">资料库</el-menu-item>
+          <el-menu-item index="4-3">新媒体</el-menu-item>
+          <el-menu-item index="4-4">比赛活动</el-menu-item>
+          <el-menu-item index="4-5">网络晚会</el-menu-item>
+        </el-submenu>
         <!-- <el-menu-item index="/famous/enterprise/index">老兵风采</el-menu-item> -->
         <el-submenu index="5"
           background-color="#3b3b3b"
@@ -66,13 +78,18 @@ export default {
     return {
       activeIndex: "/home/index", // 使用数字页面无法识别初始状态
       activeIndex2: "0",
-      indexArray : [
+      indexArray: [
         { index: "0", path: "/home/index", title: "首页" },
         { index: "1", path: "/courier-station/index", title: "老兵驿站" },
         { index: "2", path: "/annals/index", title: "老兵战史" },
         { index: "3", path: "/home/index", title: "老兵情怀" },
-        { index: "4", path: "/culture/index", title: "老兵文化" },
-        { index: "5", path: "/home/index", title: "老兵风采" },
+        { index: "4", path: "/culture", title: "老兵文化" },
+        { index: "4-1", path: "/culture/on-tao/index", title: "名家讲坛" },
+        { index: "4-2", path: "/culture/index", title: "资料库" },
+        { index: "4-3", path: "/culture/index", title: "新媒体" },
+        { index: "4-4", path: "/culture/index", title: "比赛活动" },
+        { index: "4-5", path: "/culture/index", title: "网络晚会" },
+        { index: "5", path: "/famous/", title: "老兵风采" },
         { index: "5-1", path: "/famous/people/index", title: "老兵名人大辞典" },
         { index: "5-2", path: "/famous/enterprise/index", title: "老兵名企展播" },
         { index: "6", path: "/home/index", title: "老兵政策" },
