@@ -7,9 +7,9 @@
         text-color="#3b3b3b"
         @select="handleSelect"
       >
-        <el-menu-item index="/home/index">
+        <!-- <el-menu-item index="/home/index">
           <span><svg-icon icon-class="tip-home" class-name="card-panel-icon" />首页</span>
-        </el-menu-item>
+        </el-menu-item> -->
         <el-menu-item index="2">
           <span><svg-icon icon-class="tip-legal-adviser" class-name="card-panel-icon" />法律</span>
         </el-menu-item>
