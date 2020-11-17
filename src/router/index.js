@@ -161,6 +161,19 @@ export const constantRoutes = [
         meta: { title: "Ma成功案例文章", icon: "dashboard" }
       },
       {
+        path: "/culture/on-tao/index",
+        name: "MaCultureIndex",
+        component: () => import("@/views/ma/culture/on-tao/index"),
+        meta: { title: "Ma老兵文化-老兵问道", icon: "dashboard" }
+      },
+      {
+        path: "/culture/on-tao/artical",
+        name: "MaCultureArtical",
+        component: () => import("@/views/ma/culture/on-tao/artical"),
+        // component: MaCsArticalLayout,
+        meta: { title: "Ma老兵文化-老兵问道文章", icon: "dashboard" }
+      },
+      {
         path: "/temp-upload/article",
         name: "MaUploadArtical",
         component: () => import("@/views/ma/temp-upload/article"),
