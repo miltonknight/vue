@@ -14,7 +14,7 @@
         </div>
         <div class="bullshit__headline">{{ message }}</div>
         <div class="bullshit__info">看看地址对不对，要不就点下边的按钮回首页去</div>
-        <a href="/home/index" class="bullshit__return-home">回到首页</a>
+        <a href="/#/home/index" class="bullshit__return-home">回到首页</a>
       </div>
     </div>
   </div>
