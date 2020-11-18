@@ -58,11 +58,13 @@
                   <p>{{ item.introduction }}</p>
                   <span class="famous-dict"></span>
                 </a>
+                <!-- 暂无数据 -->
+                <div v-show="zwsj" class="zwsj">暂无数据</div>
 
                 <pagination
                   background
-                  layout="prev, pager, next"
                   v-show="total > 0"
+                  layout="prev, pager, next"
                   :total="total"
                   :page.sync="listQuery.page"
                   :limit.sync="listQuery.limit"
@@ -98,7 +100,7 @@
 console.log("./views/ma/famous/people/index is loaded~~~~~~~~~~~~~~~~~~~~");
 import FamousPeopleRightSide from "@/views/ma/famous/people/components/rightside"
 import Pagination from "@/components/Pagination";
-import { getData, postData } from "@/api/common";
+import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 
 export default {
@@ -123,7 +125,8 @@ export default {
         sort_id: 35, // 版块id
         page: 1,
         limit: 12
-      }
+      },
+      zwsj: false
     };
   },
   // computed: { },
@@ -143,6 +146,12 @@ export default {
           .then(response => {
             const { code, msg, data } = response;
             if (code === 20000) {
+              if (data.code === 50003) {
+                // console.log("::::::::::data.data.code" + response.data.code)
+                response.data.total = 0
+                // console.log(response.data.total)
+                this.zwsj = true
+              }  
               console.log("Get Annals List Response:", data);
               resolve(data);
             }

@@ -1,4 +1,4 @@
-<!-- 老兵文化 -->
+<!-- 老兵文化-老兵问道 -->
 <template>
   <div>
     <el-row :gutter="24">
@@ -48,6 +48,8 @@
                     </div>
                   </div>
                 </a>
+                <!-- 暂无数据 -->
+                <div v-show="zwsj" class="zwsj">暂无数据</div>
 
                 <pagination
                   background
@@ -115,7 +117,8 @@ export default {
         sort_id: 56, // 版块id
         page: 1,
         limit: 10
-      }
+      },
+      zwsj: false
     };
   },
   // computed: { },
@@ -135,7 +138,13 @@ export default {
           .then(response => {
             const { code, msg, data } = response;
             if (code === 20000) {
-              console.log("Get CS List Response:", data);
+              if (data.code === 50003) {
+                // console.log("::::::::::data.data.code" + response.data.code)
+                response.data.total = 0
+                // console.log(response.data.total)
+                this.zwsj = true
+              }  
+              console.log("Get Annals List Response:", data);
               resolve(data);
             }
             // this.$message({
@@ -219,7 +228,7 @@ export default {
       display: flex;
 
     .el-tabs__item {
-      width: 180z px!important;
+      width: 180px!important;
       flex-grow: 1;
       text-align: center;
       font-size: 16px;
