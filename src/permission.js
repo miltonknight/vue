@@ -9,7 +9,7 @@ import getPageTitle from '@/utils/get-page-title'
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
 //此处添加白名单 例如'/ma'
-const whiteList = ['/login', '/register', '/web', '/test', '/ma'] // no redirect whitelist
+const whiteList = ['/login', '/register', '/web', '/test', '/ma', '/home/index'] // no redirect whitelist
 
 router.beforeEach(async(to, from, next) => {
   // start progress bar
@@ -53,8 +53,9 @@ router.beforeEach(async(to, from, next) => {
       next()
     } else {
       // other pages that do not have permission to access are redirected to the login page.
-      next(`/login?redirect=${to.path}`)
-      NProgress.done()
+      // next(`/login?redirect=${to.path}`)
+      // NProgress.done()
+      next() // 临时允许访问所有路径
     }
   }
 })
