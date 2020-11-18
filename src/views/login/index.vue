@@ -12,10 +12,10 @@
             <span class="svg-container">
               <svg-icon icon-class="tel" />
             </span>
+              <!-- placeholder="Username" -->
             <el-input
               ref="username"
               v-model="loginForm.username"
-              placeholder="Username"
               name="username"
               type="text"
               tabindex="1"
@@ -27,12 +27,12 @@
             <span class="svg-container">
               <svg-icon icon-class="password" />
             </span>
+              <!-- placeholder="Password" -->
             <el-input
               :key="passwordType"
               ref="password"
               v-model="loginForm.password"
               :type="passwordType"
-              placeholder="Password"
               name="password"
               tabindex="2"
               auto-complete="on"
@@ -74,8 +74,10 @@ export default {
     }
     return {
       loginForm: {
-        username: '13555800207',
-        password: '123456'
+        // username: '13555800207',
+        // password: '123456'
+        username: '',
+        password: ''
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
