@@ -1,3 +1,4 @@
+<!-- 老兵文化-老兵问道 -->
 <template>
   <div>
     <el-row :gutter="24">
@@ -189,7 +190,7 @@ export default {
           .then(response => {
             const { code, msg, data } = response;
             if (code === 20000) {
-              console.log("Get CS Artical Response:", data);
+              console.log("Get Culture on Tao Artical Response:", data);
               resolve(data);
             }
             // this.$message({
