@@ -14,7 +14,8 @@
         </div>
         <div class="bullshit__headline">{{ message }}</div>
         <div class="bullshit__info">看看地址对不对，要不就点下边的按钮回首页去</div>
-        <a href="/#/home/index" class="bullshit__return-home">回到首页</a>
+        <a href="/#/home/index" class="bullshit__return-home" style="margin-right:20px">5秒后自动跳转</a>
+        <a href="/#/home/index" class="bullshit__return-home">立即跳转</a>
       </div>
     </div>
   </div>
@@ -27,6 +28,23 @@ export default {
   computed: {
     message() {
       return '地址好像不对嗷，这可咋整...'
+    }
+  },
+  created: function() {
+    this.countDown();
+  },
+  methods: {
+    countDown() {
+      var time = 5;
+      setInterval(function(){
+        if (time==0){
+            location.href = "/#/home/index";
+            time = 5
+        }else{
+            // span.innerHTML = time;
+            time--; 
+        }
+      },1000);
     }
   }
 }
