@@ -174,6 +174,19 @@ export const constantRoutes = [
         meta: { title: "Ma老兵文化-老兵问道文章", icon: "dashboard" }
       },
       {
+        path: "/culture/storage/index",
+        name: "MaCultureStorage",
+        component: () => import("@/views/ma/culture/storage/index"),
+        meta: { title: "Ma老兵文化-资料库", icon: "dashboard" }
+      },
+      // {
+      //   path: "/culture/storage/artical",
+      //   name: "MaCultureArtical",
+      //   component: () => import("@/views/ma/culture/storage/artical"),
+      //   // component: MaCsArticalLayout,
+      //   meta: { title: "Ma老兵文化-老兵问道文章", icon: "dashboard" }
+      // },
+      {
         path: "/temp-upload/article",
         name: "MaUploadArtical",
         component: () => import("@/views/ma/temp-upload/article"),
@@ -183,32 +196,7 @@ export const constantRoutes = [
 
     ]
   },
-  // //courier-station
-  // {
-  //   path: "/courier-station",
-  //   redirect: "/courier-station/index",
-  //   name: "MaCourierStation",
-  //   meta: { title: "M测试老兵驿站", icon: "user" },
-  //   component: MaCsLayout,
-  //   children: [
-  //     {
-  //       // path: "/ma/home/index",
-  //       path: "/courier-station/index",
-  //       name: "MaCourierStationIndex",
-  //       component: () => import("@/views/ma/courier-station/index"),
-  //       meta: { title: "Ma测试老兵驿站", icon: "dashboard" }
-  //     },
-  //     {
-  //       // path: "/ma/home/index",
-  //       path: "/courier-station/artical",
-  //       name: "MaCourierStationArtical",
-  //       component: () => import("@/views/ma/courier-station/artical"),
-  //       // component: MaCsArticalLayout,
-  //       meta: { title: "Ma测试老兵驿站文章", icon: "dashboard" }
-  //     }
-  //   ]
-  // },
-
+  
   {
     path: "/user",
     component: Layout,
