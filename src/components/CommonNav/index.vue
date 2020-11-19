@@ -25,20 +25,22 @@
         <el-menu-item index="/annals/index">老兵战史</el-menu-item>
         <el-menu-item index="3">老兵情怀</el-menu-item>
         <!-- <el-menu-item index="4">老兵文化</el-menu-item> -->
-        <el-submenu index="4"
+        <el-submenu 
+          index="4"
           background-color="#3b3b3b"
           text-color="#fff"
           active-text-color="#ffd04b"
         >
           <template slot="title">老兵文化</template>
           <el-menu-item index="/culture/on-tao/index">名家讲坛</el-menu-item>
-          <el-menu-item index="4-2">资料库</el-menu-item>
+          <el-menu-item index="/culture/storage/index">资料库</el-menu-item>
           <el-menu-item index="4-3">新媒体</el-menu-item>
           <el-menu-item index="4-4">比赛活动</el-menu-item>
           <el-menu-item index="4-5">网络晚会</el-menu-item>
         </el-submenu>
         <!-- <el-menu-item index="/famous/enterprise/index">老兵风采</el-menu-item> -->
-        <el-submenu index="5"
+        <el-submenu 
+          index="5"
           background-color="#3b3b3b"
           text-color="#fff"
           active-text-color="#ffd04b"
