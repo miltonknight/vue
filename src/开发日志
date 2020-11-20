@@ -266,10 +266,51 @@ export function setTokenByKey(key, token) {
   const inFifteenMinutes = new Date(new Date().getTime() + 8 * 60 * 60 * 1000);
   return Cookies.set(TokenKey, token, { expires: inFifteenMinutes })
 }
-.set 方法加入有效期参数
+.set 方法加入有效期参数，设置token声明周期
 
+#-------------------- 20201115更新内容 --------------------
+1. src\components\CommonNav\index.vue 
+activeIndex: "/home/index", // nav默认选中由数字改为使用具体路径，使用数字页面无法识别初始状态
+2. 首页增加backtop
+3. src/views/ma/famous/people/index.vue,
+   src/views/ma/annals/index.vue,
+   src/views/ma/courier-station/index.vue,
+增加分类搜索方法
+4. src\api\laobing_url.js
+增加老兵风采部分接口地址
 
+#-------------------- 20201116更新内容 --------------------
+1. src\components\CommonNav\index.vue
+新增老兵文化子分类
+2. src\views\ma\culture, src\layout\ma\culture
+新增老兵文化板块相关layouts, views
+@存在问题====>>列表页面total属性在没有数据的时候console报错，是否要进行处理
+-例如.catch(error)方法中返回数据为空的默认状态
+3. src\views\ma\annals\index.vue, src\views\ma\courier-station\index.vue,
+   src\views\ma\culture\on-tao\index.vue, src\views\ma\famous\people\index.vue
+老兵战史，老兵驿站，老兵文化-问道，老兵风采-名人大辞典列表页tab搜索方法优化
+4. src\views\ma\culture\on-tao\index.vue, src\views\ma\culture\on-tao\artical.vue
+新增老兵问道列表页、内容页
+5. src\views\ma\culture\storage
+新增老兵文化数据库页面
 
+#-------------------- 20201117更新内容 --------------------
+1. 老兵驿站、老兵战史、成功案例、老兵文化、老兵风采页面列表页增加处理code=50003暂无数据的处理方法
+-解决了20201116中存在的问题
+2.优化全站tab-click相关方法，目前子版块首页都运用统一代码组，整体样式后续会提取出来作为全局样式
+
+#-------------------- 20201118更新内容 --------------------
+1. src\views\ma\culture\storage\index.vue
+数据库5分类页面运用v-show绑定固定div显示，从而实现单页同时出现5种不同列表
+-后台数据接口方面需要配合页面显示信息进行完善
+
+#-------------------- 20201119更新内容 --------------------
+1. 首页宽度规范化，整体调整相关页面样式，调整对应页面影响到的其他元素
+2. $this.message方法注释掉
+3. src\router\index.js 修改默认路径
+4. 404页面增加自动跳转到首页
+5. src\views\ma\culture\storage\index.vue
+完善资料库页面相关元素细节
 
 
 
