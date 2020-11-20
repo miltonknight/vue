@@ -96,7 +96,7 @@ export default {
 <style scoped lang="scss">
 .footer-main {
   width: 100%;
-  min-width: 1030px;
+  min-width: 1390px;
   height: 300px;
   margin: 0 auto;
   background-color: #3b3b3b;

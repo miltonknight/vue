@@ -73,7 +73,7 @@ export default {
   top: 80px;
   width: 180px;
   padding-top: 145px;
-  margin-left: -715px;  
+  margin-left: -727px;  
   background: url(~@/assets/img/logo.png) #fefefe no-repeat;
 
   .tip-container {
