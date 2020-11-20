@@ -51,7 +51,7 @@
 
                 <a v-for="item in ArticalList.list" :key="item.id" :href="'/#/famous/people/artical?id=' + item.article_id + '&sort_id=' + item.sort_id" class="img-list-famous">
                   <div class="img-list-main">
-                    <img :src="item.img" />
+                    <img :src="item.img">
                   </div>
                   <h3>{{ item.name }}</h3>
                   <span v-for="honour in item.honour_list" :key="honour">{{ honour }}</span>

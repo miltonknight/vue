@@ -38,9 +38,9 @@
                 <div v-show="zwsj" class="zwsj">暂无数据</div>
 
                 <pagination
+                  v-show="total > 0"
                   background
                   layout="prev, pager, next"
-                  v-show="total > 0"
                   :total="total"
                   :page.sync="listQuery.page"
                   :limit.sync="listQuery.limit"
@@ -77,7 +77,7 @@ console.log("./views/ma/famous/enterprise/index is loaded~~~~~~~~~~~~~~~~~~~~");
 import FamousEnterpriseFocus from "@/views/ma/famous/enterprise/components/focus"
 import FamousEnterpriseRightSide from "@/views/ma/famous/enterprise/components/rightside"
 import Pagination from "@/components/Pagination";
-import { getData, postData } from "@/api/common";
+import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 
 export default {
@@ -164,7 +164,7 @@ export default {
       this.listQuery.sort_id = sortId;
       this.listQuery.page = 1;
       this.listQuery.limit = 10;
-      fetchData();
+      this.fetchData();
     }
   }
 };

@@ -1,33 +1,30 @@
 <template>
-   <div class="list-main">
-      <div class="list-head">
-        <h3>老兵驿站<span>Military Memory</span></h3>
-        <a href="/#/courier-station/index">查看更多</a>
-      </div>
-      <div class="list-body img-list-box">
-        <div class="section-head">
-          <ul class="section-title">
-            <li class="is-active">老营房</li>
-            <li>老哨所</li>
-            <li>老故事</li>
-            <li>老家书</li>
-            <li>老军装</li>
-            <li>老连队</li>
-            <li>老照片</li>
-          </ul>
-        </div>
-
-        <a v-for="item in ret" :key="item.article_id" :href="'/#/courier-station/artical?id=' + item.article_id" class="img-list">
-          <div class="img-list-main">
-            <img :src="item.small_img_path" />
-            <span>{{ item.title }}</span>
-          </div>
-          <p>{{ item.introduction }}</p>
-        </a>
-
-      </div>
+  <div class="list-main">
+    <div class="list-head">
+      <h3>老兵驿站<span>Military Memory</span></h3>
+      <a href="/#/courier-station/index">查看更多</a>
     </div>
-    
+    <div class="list-body img-list-box">
+      <div class="section-head">
+        <ul class="section-title">
+          <li class="is-active">老营房</li>
+          <li>老哨所</li>
+          <li>老故事</li>
+          <li>老家书</li>
+          <li>老军装</li>
+          <li>老连队</li>
+          <li>老照片</li>
+        </ul>
+      </div>
+      <a v-for="item in ret" :key="item.article_id" :href="'/#/courier-station/artical?id=' + item.article_id" class="img-list">
+        <div class="img-list-main">
+          <img :src="item.small_img_path" />
+          <span>{{ item.title }}</span>
+        </div>
+        <p>{{ item.introduction }}</p>
+      </a>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -36,7 +33,6 @@ console.log("@/views/ma/home/components/courier-station is loaded~~~~~~~~~~~~~~~
 
 import { postData } from '@/api/common';
 import { LaobingUrl } from "@/api/laobing_url";
-import { param } from '@/utils';
 
 export default {
   name: "HomeCourierStation",

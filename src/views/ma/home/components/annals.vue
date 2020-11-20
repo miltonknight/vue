@@ -8,7 +8,7 @@
 
       <a v-for="item in ret" :key="item.article_id" :href="'/#/annals/artical?id=' + item.article_id" class="list-item">
         <div class="list-body-img">
-          <img :src="item.small_img_path" />
+          <img :src="item.small_img_path">
           <i class="badge">{{ item.sort_name }}</i>
         </div>
         <div class="list-body-text">

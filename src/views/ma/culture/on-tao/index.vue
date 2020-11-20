@@ -34,7 +34,7 @@
                 <!-- <a v-for="item in ArticalList.list" :key="item.id" :href="'/courier-station/artical?id=' + item.soldier_station_id" class="list-item"> -->
                 <a v-for="item in ArticalList.list" :key="item.id" :href="'/#/culture/on-tao/artical?id=' + item.article_id + '&sort_id=' + item.sort_id" class="list-item">
                   <div class="list-body-img">
-                    <img :src="item.img_path" />
+                    <img :src="item.img_path">
                     <i class="badge">{{ item.sort_name }}</i>
                   </div>
                   <div class="list-body-text">
@@ -52,9 +52,9 @@
                 <div v-show="zwsj" class="zwsj">暂无数据</div>
 
                 <pagination
+                  v-show="total > 0"
                   background
                   layout="prev, pager, next"
-                  v-show="total > 0"
                   :total="total"
                   :page.sync="listQuery.page"
                   :limit.sync="listQuery.limit"
@@ -106,7 +106,7 @@ export default {
   data() {
     return {
       activeName: '56', // tab active
-      //文章列表接口地址、接收数组
+      // 文章列表接口地址、接收数组
       url: LaobingUrl.modular_artical_list,
       ArticalList: [],
       // Pagination

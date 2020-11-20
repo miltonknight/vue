@@ -44,7 +44,7 @@
                 <!-- book list -->
                 <div v-show="books" class="storage-list">
                   <div class="list-serach">
-                    <el-input placeholder="输入您想要查询的书籍名称" v-model="inputBook" class="input-with-select">
+                    <el-input v-model="inputBook" placeholder="输入您想要查询的书籍名称" class="input-with-select">
                       <el-button slot="append" icon="el-icon-search"></el-button>
                     </el-input>
                   </div>
@@ -216,7 +216,7 @@
                 <!-- music list -->
                 <div v-show="musics" class="storage-list">
                   <div class="list-serach">
-                    <el-input placeholder="输入您想要查询的音乐名称" v-model="inputMusic" class="input-with-select">
+                    <el-input v-model="inputMusic" placeholder="输入您想要查询的音乐名称" class="input-with-select">
                       <el-button slot="append" icon="el-icon-search"></el-button>
                     </el-input>
                   </div>
