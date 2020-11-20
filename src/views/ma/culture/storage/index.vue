@@ -40,10 +40,16 @@
                 </template>
               </div>
               <div class="list-body">
+
                 <!-- book list -->
-                <div v-show="books" style="padding-bottom:5px 0">
-                  
-                  <a class="book-list">
+                <div v-show="books" class="storage-list">
+                  <div class="list-serach">
+                    <el-input placeholder="输入您想要查询的书籍名称" v-model="inputBook" class="input-with-select">
+                      <el-button slot="append" icon="el-icon-search"></el-button>
+                    </el-input>
+                  </div>
+
+                  <a class="book-list" href="/#/">
                     <img src="@/assets/img/booklist.jpg" alt="">
                     <p>精装修订版正版DK第一次世界大战全纪录战全</p>
                   </a>
@@ -106,13 +112,271 @@
                   <a class="book-list">
                     <img src="@/assets/img/booklist.jpg" alt="">
                     <p>精装修订版正版DK第一次世界大战全纪录战全</p>
+                  </a>
+                </div>
+                <!-- book list end -->
+
+                <!-- video list -->
+                <div v-show="videos" class="storage-list">
+
+                  <a href="/#/culture/storage/articalVideo" class="video-list">
+                    <div class="video-box">
+                      <img src="@/assets/img/videolist.jpg" alt="">
+                      <div class="video-box-play"></div>
+                      <i class="video-box-time">1:32</i>
+                    </div>
+                    <h3>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</h3>
+                    <p>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</p>
+                    <div class="video-info">
+                      <!-- <span class="tip">{{ item.sort_name }}</span>
+                      <span class="time"><i class="el-icon-time"></i>{{ item.create_time }}</span> -->
+                      <span class="source">老兵老兵网</span>
+                      <span class="time"><i class="el-icon-time"></i>2020-11-19</span>
+                    </div>
+                  </a>
+                  <a class="video-list">
+                    <div class="video-box">
+                      <img src="@/assets/img/videolist.jpg" alt="">
+                      <div class="video-box-play"></div>
+                      <i class="video-box-time">1:32</i>
+                    </div>
+                    <h3>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</h3>
+                    <p>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</p>
+                    <div class="video-info">
+                      <!-- <span class="tip">{{ item.sort_name }}</span>
+                      <span class="time"><i class="el-icon-time"></i>{{ item.create_time }}</span> -->
+                      <span class="source">老兵老兵网</span>
+                      <span class="time"><i class="el-icon-time"></i>2020-11-19</span>
+                    </div>
+                  </a>
+                  <a class="video-list">
+                    <div class="video-box">
+                      <img src="@/assets/img/videolist.jpg" alt="">
+                      <div class="video-box-play"></div>
+                      <i class="video-box-time">1:32</i>
+                    </div>
+                    <h3>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</h3>
+                    <p>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</p>
+                    <div class="video-info">
+                      <!-- <span class="tip">{{ item.sort_name }}</span>
+                      <span class="time"><i class="el-icon-time"></i>{{ item.create_time }}</span> -->
+                      <span class="source">老兵老兵网</span>
+                      <span class="time"><i class="el-icon-time"></i>2020-11-19</span>
+                    </div>
+                  </a>
+                  <a class="video-list">
+                    <div class="video-box">
+                      <img src="@/assets/img/videolist.jpg" alt="">
+                      <div class="video-box-play"></div>
+                      <i class="video-box-time">1:32</i>
+                    </div>
+                    <h3>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</h3>
+                    <p>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</p>
+                    <div class="video-info">
+                      <!-- <span class="tip">{{ item.sort_name }}</span>
+                      <span class="time"><i class="el-icon-time"></i>{{ item.create_time }}</span> -->
+                      <span class="source">老兵老兵网</span>
+                      <span class="time"><i class="el-icon-time"></i>2020-11-19</span>
+                    </div>
+                  </a>
+                  <a class="video-list">
+                    <div class="video-box">
+                      <img src="@/assets/img/videolist.jpg" alt="">
+                      <div class="video-box-play"></div>
+                      <i class="video-box-time">1:32</i>
+                    </div>
+                    <h3>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</h3>
+                    <p>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</p>
+                    <div class="video-info">
+                      <!-- <span class="tip">{{ item.sort_name }}</span>
+                      <span class="time"><i class="el-icon-time"></i>{{ item.create_time }}</span> -->
+                      <span class="source">老兵老兵网</span>
+                      <span class="time"><i class="el-icon-time"></i>2020-11-19</span>
+                    </div>
+                  </a>
+                  <a class="video-list">
+                    <div class="video-box">
+                      <img src="@/assets/img/videolist.jpg" alt="">
+                      <div class="video-box-play"></div>
+                      <i class="video-box-time">1:32</i>
+                    </div>
+                    <h3>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</h3>
+                    <p>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</p>
+                    <div class="video-info">
+                      <!-- <span class="tip">{{ item.sort_name }}</span>
+                      <span class="time"><i class="el-icon-time"></i>{{ item.create_time }}</span> -->
+                      <span class="source">老兵老兵网</span>
+                      <span class="time"><i class="el-icon-time"></i>2020-11-19</span>
+                    </div>
                   </a>
 
                 </div>
-                <div v-show="videos" style="padding-bottom:5px 0">videosvideosvideosvideosvideos</div>
-                <div v-show="musics" style="padding-bottom:5px 0">musicsmusicsmusicsmusicsmusics</div>
-                <div v-show="paintings" style="padding-bottom:5px 0">paintingspaintingspaintingspaintings</div>
-                <div v-show="pictures" style="padding-bottom:5px 0">picturespicturespicturespicturespictures</div>
+                <!-- video list end -->
+
+                <!-- music list -->
+                <div v-show="musics" class="storage-list">
+                  <div class="list-serach">
+                    <el-input placeholder="输入您想要查询的音乐名称" v-model="inputMusic" class="input-with-select">
+                      <el-button slot="append" icon="el-icon-search"></el-button>
+                    </el-input>
+                  </div>
+                  <ul class="music-list">
+                    <li>
+                      <router-link to="/">
+                        <div class="music-order">1</div>
+                        <div class="music-operate">
+                          <i class="el-icon-video-play"></i>
+                        </div>
+                        <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                        <div class="music-time">7:15</div>
+                        <div class="music-writer">作者名称作者名称作者名称</div>
+                      </router-link>  
+                    </li>
+                    <li>
+                      <router-link to="/">
+                        <div class="music-order">2</div>
+                        <div class="music-operate">
+                          <i class="el-icon-video-play"></i>
+                        </div>
+                        <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                        <div class="music-time">7:15</div>
+                        <div class="music-writer">作者名称作者名称作者名称</div>
+                      </router-link>  
+                    </li>
+                    <li>
+                      <router-link to="/">
+                        <div class="music-order">3</div>
+                        <div class="music-operate">
+                          <i class="el-icon-video-play"></i>
+                        </div>
+                        <div class="music-name">音乐作品名称音乐作品名称音乐作品名称音乐作品名称</div>
+                        <div class="music-time">7:15</div>
+                        <div class="music-writer">作者名称</div>
+                      </router-link>  
+                    </li>
+                    <li>
+                      <router-link to="/">
+                        <div class="music-order">4</div>
+                        <div class="music-operate">
+                          <i class="el-icon-video-play"></i>
+                        </div>
+                        <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                        <div class="music-time">7:15</div>
+                        <div class="music-writer">作者名称</div>
+                      </router-link>  
+                    </li>
+                    <li>
+                      <router-link to="/">
+                        <div class="music-order">5</div>
+                        <div class="music-operate">
+                          <i class="el-icon-video-play"></i>
+                        </div>
+                        <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                        <div class="music-time">7:15</div>
+                        <div class="music-writer">作者名称</div>
+                      </router-link>  
+                    </li>
+                    <li>
+                      <router-link to="/">
+                        <div class="music-order">6</div>
+                        <div class="music-operate">
+                          <i class="el-icon-video-play"></i>
+                        </div>
+                        <div class="music-name">音乐作品名称</div>
+                        <div class="music-time">7:15</div>
+                        <div class="music-writer">作者名称</div>
+                      </router-link>  
+                    </li>
+                    <li>
+                      <router-link to="/">
+                        <div class="music-order">7</div>
+                        <div class="music-operate">
+                          <i class="el-icon-video-play"></i>
+                        </div>
+                        <div class="music-name">音乐作品名称</div>
+                        <div class="music-time">7:15</div>
+                        <div class="music-writer">作者名称</div>
+                      </router-link>  
+                    </li>
+                    <li>
+                      <router-link to="/">
+                        <div class="music-order">8</div>
+                        <div class="music-operate">
+                          <i class="el-icon-video-play"></i>
+                        </div>
+                        <div class="music-name">音乐作品名称</div>
+                        <div class="music-time">7:15</div>
+                        <div class="music-writer">作者名称</div>
+                      </router-link>  
+                    </li>
+                    <li>
+                      <router-link to="/">
+                        <div class="music-order">9</div>
+                        <div class="music-operate">
+                          <i class="el-icon-video-play"></i>
+                        </div>
+                        <div class="music-name">音乐作品名称</div>
+                        <div class="music-time">7:15</div>
+                        <div class="music-writer">作者名称</div>
+                      </router-link>  
+                    </li>
+                    <li>
+                      <router-link to="/">
+                        <div class="music-order">10</div>
+                        <div class="music-operate">
+                          <i class="el-icon-video-play"></i>
+                        </div>
+                        <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                        <div class="music-time">7:15</div>
+                        <div class="music-writer">作者名称作者名称作者名称</div>
+                      </router-link>  
+                    </li>
+                  </ul>
+
+                </div>
+                <!-- music list end -->
+                
+                <!-- paintings -->
+                <div v-show="paintings" class="storage-list">
+                  
+                  <a href="#" class="painting-list">
+                    <img src="@/assets/img/paintinglist.jpg" alt="">
+                    <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
+                  </a>
+                  <a href="#" class="painting-list">
+                    <img src="@/assets/img/paintinglist.jpg" alt="">
+                    <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
+                  </a>
+                  <a href="#" class="painting-list">
+                    <img src="@/assets/img/paintinglist.jpg" alt="">
+                    <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
+                  </a>
+                  <a href="#" class="painting-list">
+                    <img src="@/assets/img/paintinglist.jpg" alt="">
+                    <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
+                  </a>
+                  <a href="#" class="painting-list">
+                    <img src="@/assets/img/paintinglist.jpg" alt="">
+                    <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
+                  </a>
+                  <a href="#" class="painting-list">
+                    <img src="@/assets/img/paintinglist.jpg" alt="">
+                    <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
+                  </a>
+                  <a href="#" class="painting-list">
+                    <img src="@/assets/img/paintinglist.jpg" alt="">
+                    <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
+                  </a>
+                  <a href="#" class="painting-list">
+                    <img src="@/assets/img/paintinglist.jpg" alt="">
+                    <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
+                  </a>
+                </div>
+                <!-- paintings end -->
+
+                <div v-show="pictures" style="padding-bottom:5px 0">
+                  waterfall datas import some components to solve this. <br />or this can be handled in a normal way like other pages
+                </div>
 
                 <!-- 列表循环 -->
                 <!-- <a v-for="item in ArticalList.list" :key="item.id" :href="'/courier-station/artical?id=' + item.soldier_station_id" class="list-item"> -->
@@ -136,9 +400,9 @@
                 <div v-show="zwsj" class="zwsj">暂无数据</div>
 
                 <pagination
+                  v-show="total > 0"
                   background
                   layout="prev, pager, next"
-                  v-show="total > 0"
                   :total="total"
                   :page.sync="listQuery.page"
                   :limit.sync="listQuery.limit"
@@ -174,7 +438,6 @@
 console.log("./views/ma/culture/index is loaded~~~~~~~~~~~~~~~~~~~~");
 import CultureRight from "@/views/ma/culture/components/right"
 import Pagination from "@/components/Pagination";
-import StorageBooks from "@/views/ma/culture/storage/components/books"
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 
@@ -184,13 +447,12 @@ export default {
   name: "Culture",
   components: {
     CultureRight,
-    StorageBooks,
     Pagination
   },
   data() {
     return {
       activeName: '60', // tab active
-      //文章列表接口地址、接收数组
+      // 文章列表接口地址、接收数组
       url: LaobingUrl.modular_artical_list,
       ArticalList: [],
       // Pagination
@@ -208,7 +470,9 @@ export default {
       videos: false,
       musics: false,
       paintings: false, // 书画
-      pictures: false
+      pictures: false,
+      inputBook: '',
+      inputMusic: ''
     };
   },
   // computed: { },
@@ -220,7 +484,7 @@ export default {
   methods: { 
     handleClick(tab, event) {
       console.log(tab, event);
-      switch(tab.name){
+      switch (tab.name) {
         case "60":
           console.log("case 60::::::::::")
           this.books = "ture"
@@ -362,7 +626,7 @@ export default {
       display: flex;
 
     .el-tabs__item {
-      width: 145px!important;
+      width: 144px!important;
       flex-grow: 1;
       text-align: center;
       font-size: 16px;
@@ -405,11 +669,25 @@ export default {
 }
 
 /******** lists */
+.storage-list {
+  clear: both;
+  overflow: hidden;
+}
+.list-serach {
+  width: 80%;
+  margin: 0 auto 20px;
+
+  .el-button {
+    background-color: #e08714!important;
+    color: #fff!important;
+    border: 1px solid #e08714!important;
+  }
+}
 .book-list {
   display: block;
-  width: 174px;
+  width: 172px;
   height: 224px;
-  padding: 30px 15px 0;
+  padding: 15px 15px 10px;
   margin: 0 10px 10px 0;
   float: left;
   text-align: center;
@@ -418,8 +696,8 @@ export default {
   box-shadow: 0.5px 0.5px 2px rgba(0,0,0,0.2);
 
   img {
-    width: 134px;
-    height: 134px;
+    width: 150px;
+    height: 150px;
   }
   p {
     font-size: 10px;
@@ -427,8 +705,158 @@ export default {
     line-height: 1.4;
     text-align: left;
   }
-  &:nth-child(4n) {
+  &:nth-child(4n+1) {
     margin: 0 0px 10px 0;
+  }
+}
+.video-list {
+  width: 340px;
+  height: auto;
+  float: left;
+  margin: 0 40px 40px 0;
+
+  .video-box {
+    width: 343px;
+    height: 190px;
+    position: relative;
+    margin-bottom: 10px;
+
+    img {
+      width: 343px;
+      height: 190px;
+    }
+    .video-box-play {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -25px 0 0 -25px;
+      background: url('~@/assets/img/play.png');
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    .video-box-time {
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+      background: rgba(55,55,55,0.8);
+      color: #fff;
+      padding: 4px 7px;
+      font-style: normal;
+      font-size: 12px;
+      border-radius: 3px;
+    }
+  }
+  .video-info {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #a7a7a7;
+
+    // span.source {
+    //   // color: #a7a7a7;
+    // }
+    span.time {
+      float: right;
+      // color: #a7a7a7;
+      margin-right: 10px;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+  h3 {
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 10px auto;
+    height: 50px;
+  }
+  p {
+    font-size: 14px;
+    height: 42px;
+    line-height: 1.4;
+    margin: 0 0 10px 0;
+  }
+  &:nth-child(2n) {
+    margin: 0 0px 40px 0;
+  }
+}
+.music-list {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style:none;
+    margin: 0;
+    clear: both;
+    overflow: hidden;
+    background-color: #f8f7f8;
+
+    &:nth-child(2n) {
+      background-color: #fff;
+    }
+
+    div {
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 10px;
+      font-size: 14px;
+    }
+  }
+  .music-order {
+    width: 40px;
+    text-align: center;
+  }
+  .music-operate {
+    width: 40px;
+    text-align: center;
+    padding: 2px 10px;
+
+    i {
+      font-size: 16px;
+    }
+  }
+  .music-name {
+    width: 330px;
+  }
+  .music-time {
+    width: 60px;
+    text-align: center;
+  }
+  .music-writer {
+    width: 250px;
+  }
+}
+.painting-list {
+  display: block;
+  width: 226px;
+  height: 368px;
+  overflow: hidden;
+  background: #edf1f4;
+  float: left;
+  margin: 0 20px 20px 0;
+  border-radius: 3px;
+
+  img {
+    width: 226px;
+    height: 248px;
+  }
+  p {
+    font-size: 13px;
+    line-height: 1.4;
+    padding: 15px;
+    margin: 0;
+    height: 120px;
+    color: #787878;
+  }
+  &:nth-child(3n) {
+    margin: 0 0 20px 0;
   }
 }
 </style>
