@@ -255,17 +255,6 @@ export default {
 <style lang="scss">
 
 /******* new home page ***************/
-.el-row {
-  margin-right: 0 !important;
-
-  .el-col.el-col-17 {
-    padding-right: 0 !important;
-  }
-  .el-col.el-col-7 {
-    padding-right: 0 !important;
-  }
-}
-
 .list-head-sub {
   border-bottom: 1px solid #d7d7d7!important;
 
@@ -295,7 +284,7 @@ export default {
       display: flex;
 
     .el-tabs__item {
-      width: 242px!important;
+      width: 240px!important;
       flex-grow: 1;
       text-align: center;
       font-size: 16px;
@@ -317,12 +306,17 @@ export default {
   .el-tabs__content {
   
     .tab-boxes {
-      width: 174px;
+      width: 172px;
       height: 85px;
       margin: 0 10px 10px 0;
       position: relative;
       float: left;
       cursor: pointer;
+
+      img {
+        width: 172px;
+        height: 85px;
+      }
 
       span {
         font-size: 20px;
