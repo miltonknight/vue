@@ -1,60 +1,22 @@
 <!-- 老兵驿站文章右侧 -->
 <template>
   <div>
-    <!-- 作者信息 -->
+    <!-- 顶部推荐 -->
     <div class="side-main">
-      <div class="artical-side">
-        <div class="writer-box">
-          <div class="writer-head">
-            <img src="@/assets/img/head.png" alt="">
-          </div>
-          <div class="writer-info">
-            王大壮<p><span>特邀作者</span></p>
-          </div>
-          <div class="writer-follow">关注</div>  
-          <p class="writer-intro">老兵老兵网官方特邀作者。多年写作经验，谙熟老兵文化事业。</p>
-        </div>  
-        <div class="artical-side-list">
-          <div class="list-head">
-            <span class="list-head-ttl">发表文章 999 篇</span>
-          </div>
-          <div class="list-body">
-            <span class="list-head-ttl">最近发布</span>
-            <dl>
-              <dt>教育股集体下跌，教育股还是好的投资吗？</dt>
-              <dd>1小时前</dd>
-              <dt>教育股集体下跌，教育股还是好的投资吗？</dt>
-              <dd>1小时前</dd>
-              <dt>教育股集体下跌，教育股还是好的投资吗？</dt>
-              <dd>1小时前</dd>
-            </dl>
-          </div>
+      <div class="top-section">
+        <div class="rcm-bbs">
+          <img src="@/assets/img/bbs.png" alt="" />
+          <i class="badge badge-blue">论坛</i>
         </div>
-      </div>
-      <div class="more">阅读更多内容</div>
-    </div>
-    <!-- 作者信息end -->
-
-    <!-- 推荐文章 -->
-    <div class="side-main">
-      <div class="artical-side">
-       
-        <div class="artical-side-list">
-          <div class="list-head">
-            <span class="list-head-ttl">下一篇</span>
-          </div>
-          <!-- link string is needed -->
-          <router-link to="/">
-            <div class="list-body">
-              <p>26岁银行柜女，每天被男友质问：“你今天是想我多一点，还是想辞职多一点？”</p>
-              <p class="intro">不论是“破茧成蝶”还是“凤凰涅槃”，不都是得剥掉一次皮重新来过吗？</p>
-              <span>1小时前</span>
-            </div>
-          </router-link>
+        <div class="rcm-section">
+          <a href="">老兵论道</a>
+          <a href="">休闲养生</a>
+          <a href="">医学前沿</a>
+          <a href="">户外运动</a>
         </div>
       </div>
     </div>
-    <!-- 推荐文章end -->
+    <!-- 顶部推荐end -->
 
     <!-- 热门活动 -->
     <div class="side-main">

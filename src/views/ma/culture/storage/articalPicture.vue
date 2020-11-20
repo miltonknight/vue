@@ -1,4 +1,4 @@
-<!-- 老兵文化-视频 -->
+<!-- 老兵文化-老兵问道 -->
 <template>
   <div>
     <el-row :gutter="24">
@@ -10,16 +10,14 @@
           <!-- 内容 -->
           <div class="artical-container">
             <div class="artical-main">
-              <div class="music-play-box">
-                <img src="@/assets/img/record.png">
+              <div class="artical-head">
+                <h1>{{ ArticalDetail.title }}</h1>
+                <p><a href="">{{ ArticalDetail.writer }}writer</a> {{ ArticalDetail.create_time }}</p>
               </div>
-
-              <h3>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</h3>
-              <p>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</p>
-
-              <div class="video-infos">
-                <span>999999次播放</span>
-                <span class="time">老兵老兵网<i class="el-icon-time"></i>2020-11-20 </span>
+              <div class="artical-body">
+                <img src="@/assets/img/picturelist.jpg" />
+                <p>老兵老兵网  转采与2020年xx月xx日 xx时xx分xx秒</p>
+                <p>图片来源：花瓣网</p>
               </div>
 
             </div>
@@ -99,117 +97,10 @@
       <el-col :span="7">
         <div class="grid-content bg-purple">
           <div class="side-section">
-            <div class="side-main">
-              <div class="side-head">
-                <h3>
-                  <svg-icon icon-class="hdot" class-name="card-panel-icon" />接下来播放
-                </h3>
-              </div>
-              <div class="side-body">
-                <!-- <a v-for="item in Artical" :key="item.article_id" :href="'/#/case-studies/artical?id=' + item.article_id" >
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img :src="item.small_img_path" />
-                    </div>
-                    <p>{{ item.title }}</p>
-                    <span>{{ item.create_time }}</span>
-                  </div>
-                </a> -->
-
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-
-              </div>
-            </div>
             
+            <!-- components:components/rightside -->
+            <culture-right-side-artical />
+
           </div>
         </div>
       </el-col>
@@ -219,7 +110,8 @@
 </template>
 
 <script>
-console.log("./views/ma/culture/artical is loaded~~~~~~~~~~~~~~~~~~~~");
+console.log("./views/ma/culture/storage/articalPainting is loaded~~~~~~~~~~~~~~~~~~~~");
+import CultureRightSideArtical from "@/views/ma/culture/components/rightside-artical"
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";
@@ -227,13 +119,17 @@ import { mapGetters } from "vuex";
 export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
-  name: "CultureVideoArtical",
-  components: { },
+  name: "CultureArtical",
+  components: {
+    CultureRightSideArtical
+  },
   data() {
     return {
       // artical
       url: LaobingUrl.modular_articals,
-      ArticalDetail: []
+      ArticalDetail: [],
+      // like flag
+      thumbup: true
     };
   },
   computed: {
@@ -241,8 +137,43 @@ export default {
   },
   created: function() {
     this.fetchData();
+
+    // set default likebox
+    console.log("::::::" + this.thumbup);
+    if (this.thumbup) {
+      var boxObj = document.getElementsByClassName("likebox");
+      boxObj.classList = "likebox is-active";
+      console.log(boxObj)
+      console.log("::::::应该加上了")
+    }    
+    console.log("::::::方法结束")
   },
   methods: { 
+    // like func
+    likeFlag() {
+      var total;
+      var _count = document.getElementById("likeNum");
+      total = parseInt(_count.innerHTML);
+      // console.log(total);
+
+      var flag = event.target.className;
+      // console.log(flag)
+      var _flag = flag.match("is-active");
+      // console.log(_flag);
+      if (_flag != null) {
+        // console.log("turn to gray");
+        event.target.classList.remove("is-active");
+        // total num -1
+        total -= 1;
+        _count.innerHTML = total;
+      } else {
+        // console.log("turn to red");
+        event.target.classList.add("is-active");
+        // total num +1
+        total += 1;
+        _count.innerHTML = total;
+      }
+    },
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
         postData(url, data)
@@ -292,22 +223,38 @@ export default {
   .artical-main {
     width: 100%;
     margin-bottom: 40px;
-    h3 {
-      font-size: 22px;
-    }
-    .video-infos {
-      height: 20px;
-      line-height: 20px;
+
+    .artical-head {
+      width: 100%;
       font-size: 14px;
+      margin-bottom: 40px;
 
-      span.time {
-        float: right;
-        color: #a7a7a7;
-        margin-right: 10px;
+      h1 {
+        font-size: 30px;
+        margin: 0 0 1em;
+      }
+      a {
+        color: #4696a3;
+        margin-right: 20px;
+      }
+    }
+    .artical-body {
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
 
-        i {
-          margin: 0 10px;
-        }
+      p {
+        font-size: 12px;
+        line-height: 1.5;
+        text-align: center;
+        color: #787878;
+      }
+      img {
+        max-width: 100%;
+        margin: 0 auto;
+        border: 10px solid #fff;
+        box-shadow: 0.5px 0.5px 10px rgba(0,0,0,0.2);
+        margin-bottom: 20px;
       }
     }
   }

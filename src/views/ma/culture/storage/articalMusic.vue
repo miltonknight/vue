@@ -1,4 +1,4 @@
-<!-- 老兵文化-视频 -->
+<!-- 老兵文化-音乐 -->
 <template>
   <div>
     <el-row :gutter="24">
@@ -10,16 +10,59 @@
           <!-- 内容 -->
           <div class="artical-container">
             <div class="artical-main">
-              <div class="music-play-box">
-                <img src="@/assets/img/record.png">
+              <div class="music-box">
+                <div class="music-play-box">
+                  <img src="@/assets/img/record.png">
+                </div>
+                <div class="music-stuff-box">
+                  <h3>第五交响曲命运: 第一乐章</h3>
+                  <p><span>演奏/演唱：</span>Ludwig van Beethoven</p>
+                  <p><span>所属专辑：</span>贝多芬-西方乐圣</p>
+                  <div class="music-progress">播放控件预留</div>
+                  <p>纯音乐，无歌词</p>
+                </div>
               </div>
 
-              <h3>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</h3>
-              <p>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</p>
+              <div class="music-recommend">
+                <h3>
+                  <svg-icon icon-class="hdot" class-name="card-panel-icon" />歌词
+                </h3>
+              </div>
 
-              <div class="video-infos">
-                <span>999999次播放</span>
-                <span class="time">老兵老兵网<i class="el-icon-time"></i>2020-11-20 </span>
+              <div class="music-lyric">
+                <p>鱼缸旅馆 - 王源</p>
+                <p>词：李格弟</p>
+                <p>曲：陈建骐</p>
+                <p>制作人：陈建骐 George Chen</p>
+                <p>编曲：问题总部 It's your fault</p>
+                <p>吉他：萧玮德 Wade Hsiao/黄子恩 John Huang</p>
+                <p>键盘：吴昱陞 Sam Wu</p>
+                <p>贝斯：陈建安 Jason Chen</p>
+                <p>鼓：林子祈 Benny Lin </p>
+                <p>和声编写：丁佳慧 Hana Lin/吴昱陞 Sam Wu</p>
+                <p>和声：丁佳慧 Hana Lin</p>
+                <p>录音师：吴昱陞 Sam Wu/萧玮德 Wade Hsiao/黄子恩 John Huang/徐威Aaron Xu（vocal）</p>
+                <p>录音室：V-Studio（上海）/Gannnnn Studio（台北）</p>
+                <p>混音师：吴昱陞 Sam Wu</p>
+                <p>混音室：Gannnnn Studio</p>
+                <p>母带后期混音师：孙仲舒 MT Sun</p>
+                <p>你真的无法想象</p>
+                <p>我就像是住在一个鱼缸</p>
+                <p>鱼缸旅馆里该有的什么都有</p>
+                <p>像一个小小的时空胶囊</p>
+                <p>那些说爱我的人</p>
+                <p>都可以清楚地追踪我</p>
+                <p>不像鱼无视目光只有鱼自己</p>
+                <p>我努力做他们热爱的我</p>
+                <p>我与陌生的自己窃窃私语</p>
+                <p>就像看到透明人一览无遗</p>
+                <p>我没有退缩也没有闪躲</p>
+                <p>当我流泪也没有人看穿</p>
+                <p>那些不爱我的人</p>
+                <p>也可以无谓地注视我</p>
+                <p>看我在鱼缸里因无聊而崩溃</p>
+                <p>我努力让他们也会爱我</p>
+                <p>我与陌生的自己窃窃私语</p>
               </div>
 
             </div>
@@ -102,7 +145,7 @@
             <div class="side-main">
               <div class="side-head">
                 <h3>
-                  <svg-icon icon-class="hdot" class-name="card-panel-icon" />接下来播放
+                  <svg-icon icon-class="hdot" class-name="card-panel-icon" />推荐音乐
                 </h3>
               </div>
               <div class="side-body">
@@ -115,98 +158,48 @@
                     <span>{{ item.create_time }}</span>
                   </div>
                 </a> -->
-
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-                <a href="/">
-                  <div class="slist-box">
-                    <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png">
-                    </div>
-                    <p>接下来要播放的标题/名字</p>
-                    <span>2020-09-11</span>
-                  </div>
-                </a>
-
+                <ul class="music-rcmd-lsit">
+                  <li>
+                    <div class="music-order">1</div>
+                    <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                  </li>
+                  <li>
+                    <div class="music-order">2</div>
+                    <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                  </li>
+                  <li>
+                    <div class="music-order">3</div>
+                    <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                  </li>
+                  <li>
+                    <div class="music-order">4</div>
+                    <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                  </li>
+                  <li>
+                    <div class="music-order">5</div>
+                    <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                  </li>
+                  <li>
+                    <div class="music-order">6</div>
+                    <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                  </li>
+                  <li>
+                    <div class="music-order">7</div>
+                    <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                  </li>
+                  <li>
+                    <div class="music-order">8</div>
+                    <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                  </li>
+                  <li>
+                    <div class="music-order">9</div>
+                    <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                  </li>
+                  <li>
+                    <div class="music-order">10</div>
+                    <div class="music-name">音乐作品名称音乐作品名称音乐作品名称</div>
+                  </li>
+                </ul>
               </div>
             </div>
             
@@ -292,24 +285,107 @@ export default {
   .artical-main {
     width: 100%;
     margin-bottom: 40px;
+
     h3 {
       font-size: 22px;
     }
-    .video-infos {
-      height: 20px;
-      line-height: 20px;
-      font-size: 14px;
 
-      span.time {
-        float: right;
-        color: #a7a7a7;
-        margin-right: 10px;
+    .music-box {
+      clear: both;
+      overflow: hidden;
 
-        i {
-          margin: 0 10px;
+      .music-play-box {
+        width: 206px;
+        height: 206px;
+        float: left;
+        margin-right: 50px;
+      }
+      .music-stuff-box {
+        width: 464px;
+        height: 206px;
+        float: left;
+        h3 {
+          font-size: 24px;
+          margin: 0;
+        }
+        p {
+          text-align: left;
+
+          span {
+            color: #a8a8a8;
+            margin: 0;
+          }
+        }
+        .music-progress {
+          height: 60px;
+          width: 350px;
+          border: 1px solid #ccc;
         }
       }
     }
+    .music-recommend {
+      width: 100%;
+      height: 38px;
+      line-height: 38px;
+      margin-bottom: 10px;
+      // border-bottom: 1px solid #e08714;
+
+      h3 {
+        color: #3b3b3b;
+        font-size: 20px;
+        margin: 0;
+
+        svg {
+          width: 16px;
+          height: 18px;
+          margin-right: 5px;
+        }
+      }
+    }
+    .music-lyric {
+      font-size: 14px;
+      margin: 20px 0 50px;
+    }
+  }
+}
+.music-rcmd-lsit {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style:none;
+    margin: 0;
+    clear: both;
+    overflow: hidden;
+    background-color: #f8f7f8;
+
+    &:nth-child(2n) {
+      background-color: #fff;
+    }
+
+    div {
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 10px;
+      font-size: 14px;
+    }
+  }
+  .music-order {
+    width: 40px;
+    text-align: center;
+  }
+  .music-operate {
+    width: 40px;
+    text-align: center;
+    padding: 2px 10px;
+
+    i {
+      font-size: 16px;
+    }
+  }
+  .music-name {
+    width: 260px;
   }
 }
 .new-comment-box {

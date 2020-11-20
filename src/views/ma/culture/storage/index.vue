@@ -119,7 +119,7 @@
                 <!-- video list -->
                 <div v-show="videos" class="storage-list">
 
-                  <a href="/#/culture/storage/articalVideo" class="video-list">
+                  <a class="video-list" href="/#/culture/storage/articalVideo">
                     <div class="video-box">
                       <img src="@/assets/img/videolist.jpg" alt="">
                       <div class="video-box-play"></div>
@@ -134,7 +134,7 @@
                       <span class="time"><i class="el-icon-time"></i>2020-11-19</span>
                     </div>
                   </a>
-                  <a class="video-list">
+                  <a class="video-list" href="/#/culture/storage/articalVideo">
                     <div class="video-box">
                       <img src="@/assets/img/videolist.jpg" alt="">
                       <div class="video-box-play"></div>
@@ -149,7 +149,7 @@
                       <span class="time"><i class="el-icon-time"></i>2020-11-19</span>
                     </div>
                   </a>
-                  <a class="video-list">
+                  <a class="video-list" href="/#/culture/storage/articalVideo">
                     <div class="video-box">
                       <img src="@/assets/img/videolist.jpg" alt="">
                       <div class="video-box-play"></div>
@@ -164,7 +164,7 @@
                       <span class="time"><i class="el-icon-time"></i>2020-11-19</span>
                     </div>
                   </a>
-                  <a class="video-list">
+                  <a class="video-list" href="/#/culture/storage/articalVideo">
                     <div class="video-box">
                       <img src="@/assets/img/videolist.jpg" alt="">
                       <div class="video-box-play"></div>
@@ -179,7 +179,7 @@
                       <span class="time"><i class="el-icon-time"></i>2020-11-19</span>
                     </div>
                   </a>
-                  <a class="video-list">
+                  <a class="video-list" href="/#/culture/storage/articalVideo">
                     <div class="video-box">
                       <img src="@/assets/img/videolist.jpg" alt="">
                       <div class="video-box-play"></div>
@@ -194,7 +194,7 @@
                       <span class="time"><i class="el-icon-time"></i>2020-11-19</span>
                     </div>
                   </a>
-                  <a class="video-list">
+                  <a class="video-list" href="/#/culture/storage/articalVideo">
                     <div class="video-box">
                       <img src="@/assets/img/videolist.jpg" alt="">
                       <div class="video-box-play"></div>
@@ -222,7 +222,7 @@
                   </div>
                   <ul class="music-list">
                     <li>
-                      <router-link to="/">
+                      <router-link to="/culture/storage/articalMusic">
                         <div class="music-order">1</div>
                         <div class="music-operate">
                           <i class="el-icon-video-play"></i>
@@ -233,7 +233,7 @@
                       </router-link>  
                     </li>
                     <li>
-                      <router-link to="/">
+                      <router-link to="/culture/storage/articalMusic">
                         <div class="music-order">2</div>
                         <div class="music-operate">
                           <i class="el-icon-video-play"></i>
@@ -244,7 +244,7 @@
                       </router-link>  
                     </li>
                     <li>
-                      <router-link to="/">
+                      <router-link to="/culture/storage/articalMusic">
                         <div class="music-order">3</div>
                         <div class="music-operate">
                           <i class="el-icon-video-play"></i>
@@ -255,7 +255,7 @@
                       </router-link>  
                     </li>
                     <li>
-                      <router-link to="/">
+                      <router-link to="/culture/storage/articalMusic">
                         <div class="music-order">4</div>
                         <div class="music-operate">
                           <i class="el-icon-video-play"></i>
@@ -266,7 +266,7 @@
                       </router-link>  
                     </li>
                     <li>
-                      <router-link to="/">
+                      <router-link to="/culture/storage/articalMusic">
                         <div class="music-order">5</div>
                         <div class="music-operate">
                           <i class="el-icon-video-play"></i>
@@ -277,7 +277,7 @@
                       </router-link>  
                     </li>
                     <li>
-                      <router-link to="/">
+                      <router-link to="/culture/storage/articalMusic">
                         <div class="music-order">6</div>
                         <div class="music-operate">
                           <i class="el-icon-video-play"></i>
@@ -288,7 +288,7 @@
                       </router-link>  
                     </li>
                     <li>
-                      <router-link to="/">
+                      <router-link to="/culture/storage/articalMusic">
                         <div class="music-order">7</div>
                         <div class="music-operate">
                           <i class="el-icon-video-play"></i>
@@ -299,7 +299,7 @@
                       </router-link>  
                     </li>
                     <li>
-                      <router-link to="/">
+                      <router-link to="/culture/storage/articalMusic">
                         <div class="music-order">8</div>
                         <div class="music-operate">
                           <i class="el-icon-video-play"></i>
@@ -310,7 +310,7 @@
                       </router-link>  
                     </li>
                     <li>
-                      <router-link to="/">
+                      <router-link to="/culture/storage/articalMusic">
                         <div class="music-order">9</div>
                         <div class="music-operate">
                           <i class="el-icon-video-play"></i>
@@ -321,7 +321,7 @@
                       </router-link>  
                     </li>
                     <li>
-                      <router-link to="/">
+                      <router-link to="/culture/storage/articalMusic">
                         <div class="music-order">10</div>
                         <div class="music-operate">
                           <i class="el-icon-video-play"></i>
@@ -339,43 +339,82 @@
                 <!-- paintings -->
                 <div v-show="paintings" class="storage-list">
                   
-                  <a href="#" class="painting-list">
+                  <a class="painting-list" href="/#/culture/storage/articalPainting">
                     <img src="@/assets/img/paintinglist.jpg" alt="">
                     <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
                   </a>
-                  <a href="#" class="painting-list">
+                  <a class="painting-list" href="/#/culture/storage/articalPainting">
                     <img src="@/assets/img/paintinglist.jpg" alt="">
                     <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
                   </a>
-                  <a href="#" class="painting-list">
+                  <a class="painting-list" href="/#/culture/storage/articalPainting">
                     <img src="@/assets/img/paintinglist.jpg" alt="">
                     <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
                   </a>
-                  <a href="#" class="painting-list">
+                  <a class="painting-list" href="/#/culture/storage/articalPainting">
                     <img src="@/assets/img/paintinglist.jpg" alt="">
                     <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
                   </a>
-                  <a href="#" class="painting-list">
+                  <a class="painting-list" href="/#/culture/storage/articalPainting">
                     <img src="@/assets/img/paintinglist.jpg" alt="">
                     <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
                   </a>
-                  <a href="#" class="painting-list">
+                  <a class="painting-list" href="/#/culture/storage/articalPainting">
                     <img src="@/assets/img/paintinglist.jpg" alt="">
                     <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
                   </a>
-                  <a href="#" class="painting-list">
+                  <a class="painting-list" href="/#/culture/storage/articalPainting">
                     <img src="@/assets/img/paintinglist.jpg" alt="">
                     <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
                   </a>
-                  <a href="#" class="painting-list">
+                  <a class="painting-list" href="/#/culture/storage/articalPainting">
                     <img src="@/assets/img/paintinglist.jpg" alt="">
                     <p>丁谦，字浩文，斋号万籁草堂，1958年生，河南周口人。中国书法家协会理事，中国硬笔书法协会副主席，中国文化艺术界慈善志愿者主席团主席。</p>
                   </a>
                 </div>
                 <!-- paintings end -->
 
-                <div v-show="pictures" style="padding-bottom:5px 0">
-                  waterfall datas import some components to solve this. <br />or this can be handled in a normal way like other pages
+                <div v-show="pictures" class="storage-list">
+                  <a class="piciure-list" href="/#/culture/storage/articalPicture">
+                    <div class="piciure-box"></div>
+                    <p>这个地方是个图片的描述</p>
+                    <p class="tip">老兵老兵网</p>
+                  </a>
+                  <a class="piciure-list" href="/#/culture/storage/articalPicture">
+                    <div class="piciure-box"></div>
+                    <p>这个地方是个图片的描述</p>
+                    <p class="tip">老兵老兵网</p>
+                  </a>
+                  <a class="piciure-list" href="/#/culture/storage/articalPicture">
+                    <div class="piciure-box"></div>
+                    <p>这个地方是个图片的描述</p>
+                    <p class="tip">老兵老兵网</p>
+                  </a>
+                  <a class="piciure-list" href="/#/culture/storage/articalPicture">
+                    <div class="piciure-box"></div>
+                    <p>这个地方是个图片的描述</p>
+                    <p class="tip">老兵老兵网</p>
+                  </a>
+                  <a class="piciure-list" href="/#/culture/storage/articalPicture">
+                    <div class="piciure-box"></div>
+                    <p>这个地方是个图片的描述</p>
+                    <p class="tip">老兵老兵网</p>
+                  </a>
+                  <a class="piciure-list" href="/#/culture/storage/articalPicture">
+                    <div class="piciure-box"></div>
+                    <p>这个地方是个图片的描述</p>
+                    <p class="tip">老兵老兵网</p>
+                  </a>
+                  <a class="piciure-list" href="/#/culture/storage/articalPicture">
+                    <div class="piciure-box"></div>
+                    <p>这个地方是个图片的描述</p>
+                    <p class="tip">老兵老兵网</p>
+                  </a>
+                  <a class="piciure-list" href="/#/culture/storage/articalPicture">
+                    <div class="piciure-box"></div>
+                    <p>这个地方是个图片的描述</p>
+                    <p class="tip">老兵老兵网</p>
+                  </a>
                 </div>
 
                 <!-- 列表循环 -->
@@ -859,4 +898,40 @@ export default {
     margin: 0 0 20px 0;
   }
 }
+.piciure-list {
+  display: block;
+  width: 226px;
+  height: 305px;
+  overflow: hidden;
+  float: left;
+  margin: 0 20px 20px 0;
+  border-radius: 3px;
+  border: 1px solid #edf1f4;
+  box-shadow: 0.5px 0.5px 2px rgba(0,0,0,0.2);
+  
+  .piciure-box {
+    width: 226px;
+    height: 226px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    background-image: url('~@/assets/img/picturelist.jpg');
+  }
+  p {
+    font-size: 13px;
+    line-height: 1.4;
+    padding: 15px;
+    margin: 0;
+    color: #787878;
+  }
+  p.tip {
+    border-top: 1px solid #edf1f4;
+    padding: 5px 15px;
+  }
+  &:nth-child(3n) {
+    margin: 0 0 20px 0;
+  }
+}
+
 </style>
