@@ -154,10 +154,10 @@ export default {
           })
           .catch(error => {
             console.log(error);
-            this.$message({
-              message: error,
-              type: "success"
-            });
+            // this.$message({
+            //   message: error,
+            //   type: "success"
+            // });
           });
       });
     },
@@ -188,16 +188,6 @@ export default {
 <style lang="scss" >
 
 /******* new home page ***************/
-.el-row {
-  margin-right: 0 !important;
-
-  .el-col.el-col-17 {
-    padding-right: 0 !important;
-  }
-  .el-col.el-col-7 {
-    padding-right: 0 !important;
-  }
-}
 
 .list-head-sub-culture {
   border-bottom: 1px solid #d7d7d7!important;

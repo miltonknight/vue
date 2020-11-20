@@ -13,7 +13,7 @@ export default {
   components: { Homeheader },
   computed: {
     message() {
-      return '欢迎光临老兵老兵网.'
+      return '欢迎光临老兵老兵网.111'
     }
   }
 }

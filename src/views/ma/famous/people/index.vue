@@ -162,10 +162,10 @@ export default {
           })
           .catch(error => {
             console.log(error);
-            this.$message({
-              message: error,
-              type: "success"
-            });
+            // this.$message({
+            //   message: error,
+            //   type: "success"
+            // });
           });
       });
     },
