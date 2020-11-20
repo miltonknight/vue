@@ -38,7 +38,8 @@ import MaAnnalsArticalLayout from "@/layout/ma/annals/artical";
 export const constantRoutes = [
   {
     path: "/",
-    component: () => import("@/views/home/index"),
+    redirect: "/ma/home/index",
+    component: () => import("@/views/ma/home/index"),
     hidden: true
   },
 
@@ -179,13 +180,13 @@ export const constantRoutes = [
         component: () => import("@/views/ma/culture/storage/index"),
         meta: { title: "Ma老兵文化-资料库", icon: "dashboard" }
       },
-      // {
-      //   path: "/culture/storage/artical",
-      //   name: "MaCultureArtical",
-      //   component: () => import("@/views/ma/culture/storage/artical"),
-      //   // component: MaCsArticalLayout,
-      //   meta: { title: "Ma老兵文化-老兵问道文章", icon: "dashboard" }
-      // },
+      {
+        path: "/culture/storage/articalVideo",
+        name: "MaCultureVideoArtical",
+        component: () => import("@/views/ma/culture/storage/articalVideo"),
+        // component: MaCsArticalLayout,
+        meta: { title: "Ma老兵文化-视频详情", icon: "dashboard" }
+      },
       {
         path: "/temp-upload/article",
         name: "MaUploadArtical",
