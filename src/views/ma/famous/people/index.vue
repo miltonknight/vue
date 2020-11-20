@@ -62,8 +62,8 @@
                 <div v-show="zwsj" class="zwsj">暂无数据</div>
 
                 <pagination
-                  background
                   v-show="total > 0"
+                  background
                   layout="prev, pager, next"
                   :total="total"
                   :page.sync="listQuery.page"
@@ -285,7 +285,7 @@ export default {
 /******* famous list */
 .img-list-famous {
   display: inline-block;
-  width: 235px;
+  width: 229px;
   height: 400px;
   background: #edf1f4;
   margin: 0 10px 10px 0;
@@ -297,12 +297,12 @@ export default {
 
   .img-list-famous-main {
     position: relative;
-    width: 235px;
-    height: 235px;
+    width: 229px;
+    height: 229px;
   }
   img {
-    width: 235px;
-    height: 235px;
+    width: 229px;
+    height: 229px;
     border-radius: 3px 3px 0 0;
   }
   h3 {

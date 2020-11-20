@@ -22,10 +22,7 @@
     <div class="side-main">
       <div class="side-head">
         <h3>
-          <svg-icon icon-class="hdot" class-name="card-panel-icon" />老兵政策<a
-            href=""
-            >更多政策</a
-          >
+          <svg-icon icon-class="hdot" class-name="card-panel-icon" />老兵政策<a href="">更多政策</a>
         </h3>
       </div>
       <div class="side-body">
