@@ -83,7 +83,7 @@
     <!-- AD -->
     <div class="side-main">
       <div class="side-img-box">
-        <img src="@/assets/img/side-demo6.png" alt="" />
+        <img src="@/assets/img/side-demo6.png" alt="">
       </div>
     </div>
     <!-- AD end -->

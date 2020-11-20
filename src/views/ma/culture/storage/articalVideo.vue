@@ -1,4 +1,4 @@
-<!-- 老兵文化-老兵问道 -->
+<!-- 老兵文化-视频 -->
 <template>
   <div>
     <el-row :gutter="24">
@@ -10,8 +10,8 @@
           <!-- 内容 -->
           <div class="artical-container">
             <div class="artical-main">
-              <div class="video-play-box">
-                <img src="@/assets/img/videoplay.jpg" />
+              <div class="music-play-box">
+                <img src="@/assets/img/record.png">
               </div>
 
               <h3>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</h3>
@@ -116,91 +116,91 @@
                   </div>
                 </a> -->
 
-                <a href='/#/'>
+                <a href="/">
                   <div class="slist-box">
                     <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png" />
+                      <img src="~@/assets/img/side-demo5.png">
                     </div>
                     <p>接下来要播放的标题/名字</p>
                     <span>2020-09-11</span>
                   </div>
                 </a>
-                <a href='/#/'>
+                <a href="/">
                   <div class="slist-box">
                     <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png" />
+                      <img src="~@/assets/img/side-demo5.png">
                     </div>
                     <p>接下来要播放的标题/名字</p>
                     <span>2020-09-11</span>
                   </div>
                 </a>
-                <a href='/#/'>
+                <a href="/">
                   <div class="slist-box">
                     <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png" />
+                      <img src="~@/assets/img/side-demo5.png">
                     </div>
                     <p>接下来要播放的标题/名字</p>
                     <span>2020-09-11</span>
                   </div>
                 </a>
-                <a href='/#/'>
+                <a href="/">
                   <div class="slist-box">
                     <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png" />
+                      <img src="~@/assets/img/side-demo5.png">
                     </div>
                     <p>接下来要播放的标题/名字</p>
                     <span>2020-09-11</span>
                   </div>
                 </a>
-                <a href='/#/'>
+                <a href="/">
                   <div class="slist-box">
                     <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png" />
+                      <img src="~@/assets/img/side-demo5.png">
                     </div>
                     <p>接下来要播放的标题/名字</p>
                     <span>2020-09-11</span>
                   </div>
                 </a>
-                <a href='/#/'>
+                <a href="/">
                   <div class="slist-box">
                     <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png" />
+                      <img src="~@/assets/img/side-demo5.png">
                     </div>
                     <p>接下来要播放的标题/名字</p>
                     <span>2020-09-11</span>
                   </div>
                 </a>
-                <a href='/#/'>
+                <a href="/">
                   <div class="slist-box">
                     <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png" />
+                      <img src="~@/assets/img/side-demo5.png">
                     </div>
                     <p>接下来要播放的标题/名字</p>
                     <span>2020-09-11</span>
                   </div>
                 </a>
-                <a href='/#/'>
+                <a href="/">
                   <div class="slist-box">
                     <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png" />
+                      <img src="~@/assets/img/side-demo5.png">
                     </div>
                     <p>接下来要播放的标题/名字</p>
                     <span>2020-09-11</span>
                   </div>
                 </a>
-                <a href='/#/'>
+                <a href="/">
                   <div class="slist-box">
                     <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png" />
+                      <img src="~@/assets/img/side-demo5.png">
                     </div>
                     <p>接下来要播放的标题/名字</p>
                     <span>2020-09-11</span>
                   </div>
                 </a>
-                <a href='/#/'>
+                <a href="/">
                   <div class="slist-box">
                     <div class="slist-box-img">
-                      <img src="~@/assets/img/side-demo5.png" />
+                      <img src="~@/assets/img/side-demo5.png">
                     </div>
                     <p>接下来要播放的标题/名字</p>
                     <span>2020-09-11</span>
