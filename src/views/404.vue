@@ -38,13 +38,14 @@ export default {
       var time = 5;
       setInterval(function(){
         if (time==0){
-            location.href = "/#/home/index";
-            time = 5
-        }else{
-            // span.innerHTML = time;
-            time--; 
+          // location.href = "/#/home/index";
+          history.go(-1);
+          time = 5;
+        } else {
+          // span.innerHTML = time;
+          time--; 
         }
-      },1000);
+      }, 1000);
     }
   }
 }
