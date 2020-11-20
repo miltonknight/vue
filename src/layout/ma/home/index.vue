@@ -213,6 +213,11 @@ export default {
     
     .el-col.el-col-17 {
       padding-right: 0!important;
+      width: 720px;
+    }
+    .el-col.el-col-7 {
+      padding-left: 20px!important;
+      width: 310px;
     }
   }
 }

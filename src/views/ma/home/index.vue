@@ -363,7 +363,7 @@ export default {
 /******* famous list */
 .img-list-famous {
   display: inline-block;
-  width: 234px;
+  width: 228px;
   height: 400px;
   background: #edf1f4;
   margin-right: 7px;
@@ -375,8 +375,8 @@ export default {
 
   .img-list-famous-main {
     position: relative;
-    width: 234px;
-    height: 234px;
+    width: 228px;
+    height: 228px;
   }
   img {
     width: 100%;
