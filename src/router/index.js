@@ -188,6 +188,27 @@ export const constantRoutes = [
         meta: { title: "Ma老兵文化-视频详情", icon: "dashboard" }
       },
       {
+        path: "/culture/storage/articalMusic",
+        name: "MaCultureMusicArtical",
+        component: () => import("@/views/ma/culture/storage/articalMusic"),
+        // component: MaCsArticalLayout,
+        meta: { title: "Ma老兵文化-音乐详情", icon: "dashboard" }
+      },
+      {
+        path: "/culture/storage/articalPainting",
+        name: "MaCulturePaintingArtical",
+        component: () => import("@/views/ma/culture/storage/articalPainting"),
+        // component: MaCsArticalLayout,
+        meta: { title: "Ma老兵文化-书画详情", icon: "dashboard" }
+      },
+      {
+        path: "/culture/storage/articalPicture",
+        name: "MaCulturePictureArtical",
+        component: () => import("@/views/ma/culture/storage/articalPicture"),
+        // component: MaCsArticalLayout,
+        meta: { title: "Ma老兵文化-图片详情", icon: "dashboard" }
+      },
+      {
         path: "/temp-upload/article",
         name: "MaUploadArtical",
         component: () => import("@/views/ma/temp-upload/article"),
