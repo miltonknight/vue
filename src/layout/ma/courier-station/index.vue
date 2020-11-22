@@ -42,7 +42,7 @@ export default {
   components: { CommonNav, CommonFooter, CommonTip, CourierStation},
   data() {
     return {
-      activeIndex: "1"
+      // activeIndex: "/annals/index"
     };
   },
   // mixins: [ResizeMixin],

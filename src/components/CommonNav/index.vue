@@ -24,7 +24,6 @@
         <el-menu-item index="/courier-station/index">老兵驿站</el-menu-item>
         <el-menu-item index="/annals/index">老兵战史</el-menu-item>
         <el-menu-item index="3">老兵情怀</el-menu-item>
-        <!-- <el-menu-item index="4">老兵文化</el-menu-item> -->
         <el-submenu 
           index="4"
           background-color="#3b3b3b"
@@ -38,7 +37,6 @@
           <el-menu-item index="4-4">比赛活动</el-menu-item>
           <el-menu-item index="4-5">网络晚会</el-menu-item>
         </el-submenu>
-        <!-- <el-menu-item index="/famous/enterprise/index">老兵风采</el-menu-item> -->
         <el-submenu 
           index="5"
           background-color="#3b3b3b"
@@ -87,7 +85,7 @@ export default {
         { index: "3", path: "/home/index", title: "老兵情怀" },
         { index: "4", path: "/culture", title: "老兵文化" },
         { index: "4-1", path: "/culture/on-tao/index", title: "名家讲坛" },
-        { index: "4-2", path: "/culture/index", title: "资料库" },
+        { index: "4-2", path: "/culture/storage/index", title: "资料库" },
         { index: "4-3", path: "/culture/index", title: "新媒体" },
         { index: "4-4", path: "/culture/index", title: "比赛活动" },
         { index: "4-5", path: "/culture/index", title: "网络晚会" },
@@ -102,10 +100,6 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
-      console.log(key);
-      // console.log( this.indexArray );
-      // console.log( this.indexArray[key].path );
-      // this.$router.push({ path: this.indexArray[key].path });
     },
     // example function for login 
     login: function() {

@@ -1,4 +1,6 @@
 const getters = {
+  // 上导航
+  // nav: state => state.app.nav,
   // 侧边栏
   sidebar: state => state.app.sidebar,
   // 设备
