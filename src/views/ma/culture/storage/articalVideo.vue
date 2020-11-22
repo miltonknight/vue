@@ -10,8 +10,8 @@
           <!-- 内容 -->
           <div class="artical-container">
             <div class="artical-main">
-              <div class="music-play-box">
-                <img src="@/assets/img/record.png">
+              <div class="video-play-box">
+                <img src="@/assets/img/videoplay.jpg" />
               </div>
 
               <h3>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</h3>
