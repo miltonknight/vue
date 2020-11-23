@@ -334,6 +334,8 @@ watch函数监听数值变化，如果navactive值变化则改变导航变量nav
 this.$store.state.navactive = '/xxxx/index';
 1.4 更改现有存在导航的页面共17(列表、文章详情)
 2. 全局规范化、标准化代码，检查拼写错误等。更新后console无报错信息
+3. src\router\index.js
+注释掉无用/后台路径，默认 / 路径，改为redirect为/ma
 
 
 
