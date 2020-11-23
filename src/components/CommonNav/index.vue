@@ -4,7 +4,8 @@
     <div class="header-container">
       <el-menu
         router=""
-        :default-active = activeIndex
+        :default-active="navselected"
+        :active="navselected"
         class="el-menu-demo"
         mode="horizontal"
         background-color="#3b3b3b"
@@ -78,6 +79,7 @@ export default {
     return {
       activeIndex: "/home/index", // 使用数字页面无法识别初始状态
       activeIndex2: "0",
+      navselected: "/home/index",
       indexArray: [
         { index: "0", path: "/home/index", title: "首页" },
         { index: "1", path: "/courier-station/index", title: "老兵驿站" },
@@ -98,13 +100,9 @@ export default {
     };
   },
   methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
-    },
     // example function for login 
     login: function() {
       alert("jump to model login")
-      console.log("activeIndex:>>>" + this.activeIndex);
     },
     // example function for mail 
     mail: function() {
@@ -113,21 +111,21 @@ export default {
     // example function for msg 
     msg: function() {
       alert("jump to model msg")
-    }
+    },
+    getNavType(){
+      this.navselected = this.$store.state.navactive;
+      // store.state.navactive里值变化的时候，设置navselected
+    },
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
+      // 按钮选中之后设置当前的index为store里的值。
+      this.$store.state.navactive = key;
+    },
   },
-  getNavType() {
-    // store.state.adminleftnavnum里值变化的时候，设置navselected,获取当前Nav index
-    this.navselected = this.$store.state.adminleftnavnum;
-    console.log("get index number :::::::" + this.$store.state.adminleftnavnum);
+  watch: {
+    // 监测store.state
+    '$store.state.navactive': 'getNavType'
   }
-  // selectItems(){
-  //   //按钮选中之后设置当前的index为store里的值。
-  //   var _index = this.$store.state.adminleftnavnum;
-  //   this.$router.push() {
-
-  //   }
-  //   this.$router.push({path:'/eleme'})
-  // },
 };
 </script>
 
