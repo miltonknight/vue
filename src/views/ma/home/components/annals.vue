@@ -6,7 +6,7 @@
     </div>
     <div class="list-body">
 
-      <a v-for="item in ret" :key="item.article_id" :href="'/#/annals/artical?id=' + item.article_id" class="list-item">
+      <a v-for="item in ret" :key="item.article_id" :href="'/#/annals/article?id=' + item.article_id" class="list-item">
         <div class="list-body-img">
           <img :src="item.small_img_path">
           <i class="badge">{{ item.sort_name }}</i>
@@ -39,7 +39,7 @@ export default {
     return {
       // annals数据接收数组
       ret: [],
-      url: LaobingUrl.index_artical,
+      url: LaobingUrl.index_article,
       param: {
         sort_id: 9 // 版块id=9
       }

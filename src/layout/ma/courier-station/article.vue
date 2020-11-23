@@ -15,8 +15,8 @@
           <!-- main content box -->
           <div class="main-box">
 
-            <!-- components:src\views\ma\courier-station\artical.vue -->
-            <!-- <cs-artical /> -->
+            <!-- components:src\views\ma\courier-station\article.vue -->
+            <!-- <cs-article /> -->
             <router-view :key="key" />
          
           </div>  
@@ -36,11 +36,11 @@
 import CommonNav from "@/components/CommonNav";
 import CommonFooter from "@/components/CommonFooter";
 import CommonTip from "@/components/CommonTip";
-import CsArtical from "@/views/ma/courier-station/artical";
+import CsArticle from "@/views/ma/courier-station/article";
 
 export default {
-  name: "MaCsArticalLayout",
-  components: { CommonNav, CommonFooter, CommonTip, CsArtical},
+  name: "MaCsArticleLayout",
+  components: { CommonNav, CommonFooter, CommonTip, CsArticle},
   data() {
     return {
       activeIndex: "1"

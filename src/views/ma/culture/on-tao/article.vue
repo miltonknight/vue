@@ -8,24 +8,24 @@
           <!-- <router-view :key="key" /> -->
 
           <!-- 内容 -->
-          <div class="artical-container">
-            <div class="artical-main">
-              <div class="artical-head">
-                <h1>{{ ArticalDetail.title }}</h1>
-                <p><a href="">{{ ArticalDetail.writer }}writer</a> {{ ArticalDetail.create_time }}</p>
+          <div class="article-container">
+            <div class="article-main">
+              <div class="article-head">
+                <h1>{{ ArticleDetail.title }}</h1>
+                <p><a href="">{{ ArticleDetail.writer }}writer</a> {{ ArticleDetail.create_time }}</p>
               </div>
-              <div class="artical-body">
-                <p v-html="ArticalDetail.content"></p>
-                <!-- <img src="@/assets/img/artical.png" />
+              <div class="article-body">
+                <p v-html="ArticleDetail.content"></p>
+                <!-- <img src="@/assets/img/article.png" />
                 <p>数据库中文章内容较少填入测试文本“史无前例新品大爆发”，在“2020天猫双11全球狂欢季”新闻发布会上，阿里巴巴副总裁、天猫平台营运事业部总经理家洛身后的大屏幕上打出了这样一行大字。根据内部估算，今年将有5亿用户在双11期间主动访问新品会场，他们将让30个新品的成交额过亿，1000个新品成交金额过千万。</p>
-                <img src="@/assets/img/artical2.png" />
+                <img src="@/assets/img/article2.png" />
                 <p>当市场上有太多机会时，竞争比的是果敢与效率；但当市场趋于饱和时，竞争的重点就要回归到前瞻性视野和精细化运营。事实上，中国的互联网市场已经过了遍地是金、跑马圈地的粗放时代，巨头们的生存境况与它们对趋势的把控力息息相关，天猫小黑盒就充分体现了这一点。</p>
-                <p>点赞数量：{{ ArticalDetail.good_count }}</p> -->
+                <p>点赞数量：{{ ArticleDetail.good_count }}</p> -->
 
               </div>
-              <div class="artical-foot">
+              <div class="article-foot">
                 <div class="thumbup">
-                  <div class="likebox" @click='likeFlag()'></div>
+                  <div class="likebox" @click="likeFlag()"></div>
                   <p id="likeNum">123</p>
                   <p>好文章，需要你的鼓励</p>
                 </div>
@@ -109,7 +109,7 @@
           <div class="side-section">
             
             <!-- components:components/rightside -->
-            <culture-right-side-artical />
+            <culture-right-side-article />
 
           </div>
         </div>
@@ -120,8 +120,8 @@
 </template>
 
 <script>
-console.log("./views/ma/culture/artical is loaded~~~~~~~~~~~~~~~~~~~~");
-import CultureRightSideArtical from "@/views/ma/culture/components/rightside-artical"
+console.log("./views/ma/culture/article is loaded~~~~~~~~~~~~~~~~~~~~");
+import CultureRightSideArticle from "@/views/ma/culture/components/rightside-article"
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";
@@ -129,15 +129,15 @@ import { mapGetters } from "vuex";
 export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
-  name: "CultureArtical",
+  name: "CultureArticle",
   components: {
-    CultureRightSideArtical
+    CultureRightSideArticle
   },
   data() {
     return {
-      // artical
-      url: LaobingUrl.modular_articals,
-      ArticalDetail: [],
+      // article
+      url: LaobingUrl.modular_articles,
+      ArticleDetail: [],
       // like flag
       thumbup: true
     };
@@ -188,9 +188,10 @@ export default {
       return new Promise((resolve, reject) => {
         postData(url, data)
           .then(response => {
-            const { code, msg, data } = response;
+            // const { code, msg, data } = response;
+            const { code, data } = response;
             if (code === 20000) {
-              console.log("Get Culture on Tao Artical Response:", data);
+              console.log("Get Culture on Tao Article Response:", data);
               resolve(data);
             }
             // this.$message({
@@ -217,9 +218,9 @@ export default {
         // "uid": '0a44f30462e742879f5fbd15d2fda9e6'
         "uid": this.user_id
       };
-      this.postDataFromUI(LaobingUrl.modular_articals, params)
+      this.postDataFromUI(LaobingUrl.modular_articles, params)
         .then(response => {
-          this.ArticalDetail = response;
+          this.ArticleDetail = response;
         });
     }
   }
@@ -227,14 +228,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.artical-container {
+.article-container {
   margin-bottom: 35px;
 
-  .artical-main {
+  .article-main {
     width: 100%;
     margin-bottom: 40px;
 
-    .artical-head {
+    .article-head {
       width: 100%;
       font-size: 14px;
       margin-bottom: 40px;
@@ -248,7 +249,7 @@ export default {
         margin-right: 20px;
       }
     }
-    .artical-body {
+    .article-body {
       width: 100%;
       margin-bottom: 40px;
       text-align: center;
@@ -263,7 +264,7 @@ export default {
         margin: 0 auto;
       }
     }
-    .artical-foot {
+    .article-foot {
       width: 100%;
 
       .thumbup {

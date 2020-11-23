@@ -1,7 +1,7 @@
 <template>
   <div class="components-container">
     <div>
-      <H2 align='center'>文章录入（临时）入口</H2>
+      <H2 align="center">文章录入（临时）入口</H2>
       <el-form ref="form" :model="form" label-width="100px">
         <el-form-item label="文章标题">
           <el-input v-model="form.title" />
@@ -50,12 +50,12 @@ export default {
     return {
       form: {
         title: "",
-        introduction:"文章简介",
-        content: `请开始编辑`,
+        introduction: "文章简介",
+        content: '请开始编辑',
         tag: "", // 作用域？用在哪里？
         categoryId: 1, // 作用域？用在哪里？
         writer: '', // 文章作者昵称
-        create_uid: 'user', // 文章作者id
+        create_uid: 'user', // 文章作者id
         top_show_flag: false, // 是否推荐模块首页 true-是 false-否
         topImage: '', // 干啥的?
         top_img_path: "", // 模块主页图片地址
@@ -73,10 +73,11 @@ export default {
   },
   methods: {
     onSubmit() {
-      this.postDataFromUI(LaobingUrl.temp_add_artical, this.form)
+      this.postDataFromUI(LaobingUrl.temp_add_article, this.form)
       .then(res => {
           const { code, msg, data } = res.data;
-          if (data) {
+          // if (data) {
+          if (code === 20000) {
             this.form = data;
             this.$message({
               message: msg,

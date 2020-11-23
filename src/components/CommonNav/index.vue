@@ -1,10 +1,9 @@
-<!-- :default-active="$route.path" -->
 <template>
   <div class="header-main">
     <div class="header-container">
       <el-menu
         router=""
-        :default-active="navselected"
+        :default-active="navselected"
         :active="navselected"
         class="el-menu-demo"
         mode="horizontal"
@@ -99,6 +98,10 @@ export default {
       ]
     };
   },
+  watch: {
+    // 监测store.state
+    '$store.state.navactive': 'getNavType'
+  },
   methods: {
     // example function for login 
     login: function() {
@@ -112,7 +115,7 @@ export default {
     msg: function() {
       alert("jump to model msg")
     },
-    getNavType(){
+    getNavType() {
       this.navselected = this.$store.state.navactive;
       // store.state.navactive里值变化的时候，设置navselected
     },
@@ -120,11 +123,7 @@ export default {
       console.log(key, keyPath);
       // 按钮选中之后设置当前的index为store里的值。
       this.$store.state.navactive = key;
-    },
-  },
-  watch: {
-    // 监测store.state
-    '$store.state.navactive': 'getNavType'
+    }
   }
 };
 </script>
@@ -159,7 +158,7 @@ export default {
     flex-shrink: 0;
   }
   .header-operations {
-    display: inline-block;
+    display: block;
     height: 50px;
     width: 220px;
     float: right;

@@ -5,11 +5,7 @@ Vue.use(Router);
 
 /* Layout */
 import Layout from "@/layout";
-import Weblayout from "@/layout/web/index";
 import MaLayout from "@/layout/ma/home/index";
-import MaCsLayout from "@/layout/ma/courier-station/index";
-import MaCsArticalLayout from "@/layout/ma/courier-station/artical";
-import MaAnnalsArticalLayout from "@/layout/ma/annals/artical";
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -80,7 +76,7 @@ export const constantRoutes = [
       }
     ]
   },
-  //test pages edited by Ma
+  // test pages edited by Ma
   {
     path: "/ma",
     // redirect: "/ma/",
@@ -103,10 +99,10 @@ export const constantRoutes = [
         meta: { title: "Ma老兵驿站", icon: "dashboard" }
       },
       {
-        path: "/courier-station/artical",
-        name: "MaCourierStationArtical",
-        component: () => import("@/views/ma/courier-station/artical"),
-        // component: MaCsArticalLayout,
+        path: "/courier-station/article",
+        name: "MaCourierStationArticle",
+        component: () => import("@/views/ma/courier-station/article"),
+        // component: MaCsArticleLayout,
         meta: { title: "Ma老兵驿站文章", icon: "dashboard" }
       },
       {
@@ -116,10 +112,10 @@ export const constantRoutes = [
         meta: { title: "Ma老兵战史", icon: "dashboard" }
       },
       {
-        path: "/annals/artical",
-        name: "MaAnnalsArtical",
-        component: () => import("@/views/ma/annals/artical"),
-        // component: MaCsArticalLayout,
+        path: "/annals/article",
+        name: "MaAnnalsArticle",
+        component: () => import("@/views/ma/annals/article"),
+        // component: MaCsArticleLayout,
         meta: { title: "Ma老兵战史文章", icon: "dashboard" }
       },
       {
@@ -129,10 +125,10 @@ export const constantRoutes = [
         meta: { title: "Ma成功案例", icon: "dashboard" }
       },
       {
-        path: "/case-studies/artical",
-        name: "MaCaseStudiesArtical",
-        component: () => import("@/views/ma/case-studies/artical"),
-        // component: MaCsArticalLayout,
+        path: "/case-studies/article",
+        name: "MaCaseStudiesArticle",
+        component: () => import("@/views/ma/case-studies/article"),
+        // component: MaCsArticleLayout,
         meta: { title: "Ma成功案例文章", icon: "dashboard" }
       },
       {
@@ -142,10 +138,10 @@ export const constantRoutes = [
         meta: { title: "Ma成功案例", icon: "dashboard" }
       },
       {
-        path: "/famous/people/artical",
-        name: "MaFamousPeopleArtical",
-        component: () => import("@/views/ma/famous/people/artical"),
-        // component: MaCsArticalLayout,
+        path: "/famous/people/article",
+        name: "MaFamousPeopleArticle",
+        component: () => import("@/views/ma/famous/people/article"),
+        // component: MaCsArticleLayout,
         meta: { title: "Ma成功案例文章", icon: "dashboard" }
       },
       {
@@ -155,10 +151,10 @@ export const constantRoutes = [
         meta: { title: "Ma成功案例", icon: "dashboard" }
       },
       {
-        path: "/famous/enterprise/artical",
-        name: "MaFamousEnterpriseArtical",
-        component: () => import("@/views/ma/famous/enterprise/artical"),
-        // component: MaCsArticalLayout,
+        path: "/famous/enterprise/article",
+        name: "MaFamousEnterpriseArticle",
+        component: () => import("@/views/ma/famous/enterprise/article"),
+        // component: MaCsArticleLayout,
         meta: { title: "Ma成功案例文章", icon: "dashboard" }
       },
       {
@@ -168,10 +164,10 @@ export const constantRoutes = [
         meta: { title: "Ma老兵文化-老兵问道", icon: "dashboard" }
       },
       {
-        path: "/culture/on-tao/artical",
-        name: "MaCultureArtical",
-        component: () => import("@/views/ma/culture/on-tao/artical"),
-        // component: MaCsArticalLayout,
+        path: "/culture/on-tao/article",
+        name: "MaCultureArticle",
+        component: () => import("@/views/ma/culture/on-tao/article"),
+        // component: MaCsArticleLayout,
         meta: { title: "Ma老兵文化-老兵问道文章", icon: "dashboard" }
       },
       {
@@ -181,38 +177,38 @@ export const constantRoutes = [
         meta: { title: "Ma老兵文化-资料库", icon: "dashboard" }
       },
       {
-        path: "/culture/storage/articalVideo",
-        name: "MaCultureVideoArtical",
-        component: () => import("@/views/ma/culture/storage/articalVideo"),
-        // component: MaCsArticalLayout,
+        path: "/culture/storage/articleVideo",
+        name: "MaCultureVideoArticle",
+        component: () => import("@/views/ma/culture/storage/articleVideo"),
+        // component: MaCsArticleLayout,
         meta: { title: "Ma老兵文化-视频详情", icon: "dashboard" }
       },
       {
-        path: "/culture/storage/articalMusic",
-        name: "MaCultureMusicArtical",
-        component: () => import("@/views/ma/culture/storage/articalMusic"),
-        // component: MaCsArticalLayout,
+        path: "/culture/storage/articleMusic",
+        name: "MaCultureMusicArticle",
+        component: () => import("@/views/ma/culture/storage/articleMusic"),
+        // component: MaCsArticleLayout,
         meta: { title: "Ma老兵文化-音乐详情", icon: "dashboard" }
       },
       {
-        path: "/culture/storage/articalPainting",
-        name: "MaCulturePaintingArtical",
-        component: () => import("@/views/ma/culture/storage/articalPainting"),
-        // component: MaCsArticalLayout,
+        path: "/culture/storage/articlePainting",
+        name: "MaCulturePaintingArticle",
+        component: () => import("@/views/ma/culture/storage/articlePainting"),
+        // component: MaCsArticleLayout,
         meta: { title: "Ma老兵文化-书画详情", icon: "dashboard" }
       },
       {
-        path: "/culture/storage/articalPicture",
-        name: "MaCulturePictureArtical",
-        component: () => import("@/views/ma/culture/storage/articalPicture"),
-        // component: MaCsArticalLayout,
+        path: "/culture/storage/articlePicture",
+        name: "MaCulturePictureArticle",
+        component: () => import("@/views/ma/culture/storage/articlePicture"),
+        // component: MaCsArticleLayout,
         meta: { title: "Ma老兵文化-图片详情", icon: "dashboard" }
       },
       {
         path: "/temp-upload/article",
-        name: "MaUploadArtical",
+        name: "MaUploadArticle",
         component: () => import("@/views/ma/temp-upload/article"),
-        // component: MaCsArticalLayout,
+        // component: MaCsArticleLayout,
         meta: { title: "Ma文章录入（临时）", icon: "dashboard" }
       }
 

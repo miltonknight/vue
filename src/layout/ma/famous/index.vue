@@ -35,7 +35,7 @@
 import CommonNav from "@/components/CommonNav";
 import CommonFooter from "@/components/CommonFooter";
 import CommonTip from "@/components/CommonTip";
-// import AnnalsArtical from "@/views/ma/annals/artical";
+// import AnnalsArticle from "@/views/ma/annals/article";
 
 export default {
   name: "MaFamousLayout",

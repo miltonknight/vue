@@ -3,7 +3,7 @@
   <div>
     <!-- 作者信息 -->
     <div class="side-main">
-      <div class="artical-side">
+      <div class="article-side">
         <div class="writer-box">
           <div class="writer-head">
             <img src="@/assets/img/head.png" alt="">
@@ -93,7 +93,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.artical-side {
+.article-side {
   border: 1px solid #f5f7f9;
   border-top: 3px solid #4696a3;
   border-bottom: none;

@@ -1,9 +1,9 @@
-<!-- 老兵风采名-人大辞典右侧 -->
+<!-- 老兵风采名-名企展播 -->
 <template>
   <div>
     <!-- 作者信息 -->
     <div class="side-main">
-      <div class="artical-side">
+      <div class="article-side">
         <div class="writer-box">
           <div class="writer-head">
             <img src="@/assets/img/head.png" alt="">
@@ -14,7 +14,7 @@
           <div class="writer-follow">关注</div>  
           <p class="writer-intro">老兵老兵网官方特邀作者。多年写作经验，谙熟老兵文化事业。</p>
         </div>  
-        <div class="artical-side-list">
+        <div class="article-side-list">
           <div class="list-head">
             <span class="list-head-ttl">发表文章 999 篇</span>
           </div>
@@ -37,9 +37,9 @@
 
     <!-- 推荐文章 -->
     <div class="side-main">
-      <div class="artical-side">
+      <div class="article-side">
        
-        <div class="artical-side-list">
+        <div class="article-side-list">
           <div class="list-head">
             <span class="list-head-ttl">下一篇</span>
           </div>
@@ -89,9 +89,9 @@
 </template>
 
 <script>
-console.log("@/views/ma/famous/people/components/rightside-artical.vue is loaded~~~~~~~~~~~~~~");
+console.log("@/views/ma/famous/enterprise/components/rightside-article.vue is loaded~~~~~~~~~~~~~~");
 export default {
-  name: "FamousPeopleRightSideArtical",
+  name: "FamousEnterpriseRightSideArticle",
   components: {},
   data() {
     return {}
@@ -105,7 +105,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.artical-side {
+.article-side {
   border: 1px solid #f5f7f9;
   border-top: 3px solid #4696a3;
   border-bottom: none;
@@ -166,7 +166,7 @@ export default {
       margin: 30px 0 0 0;
     }
   }
-  .artical-side-list {
+  .article-side-list {
     width: 100%;
 
     .list-head {

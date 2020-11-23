@@ -1,3 +1,4 @@
+<!-- 老兵文化-老兵问道 -->
 <template>
   <div>
     <el-row :gutter="24">
@@ -7,28 +8,18 @@
           <!-- <router-view :key="key" /> -->
 
           <!-- 内容 -->
-          <div class="artical-container">
-            <div class="artical-main">
-              <div class="artical-head">
-                <h1>{{ ArticalDetail.title }}</h1>
-                <p><a href="">{{ ArticalDetail.writer }}writer</a> {{ ArticalDetail.create_time }}</p>
+          <div class="article-container">
+            <div class="article-main">
+              <div class="article-head">
+                <h1>{{ ArticleDetail.title }}</h1>
+                <p><a href="">{{ ArticleDetail.writer }}writer</a> {{ ArticleDetail.create_time }}</p>
               </div>
-              <div class="artical-body">
-                <p v-html="ArticalDetail.content"></p>
-                <!-- <img src="@/assets/img/artical.png" />
-                <p>数据库中文章内容较少填入测试文本“史无前例新品大爆发”，在“2020天猫双11全球狂欢季”新闻发布会上，阿里巴巴副总裁、天猫平台营运事业部总经理家洛身后的大屏幕上打出了这样一行大字。根据内部估算，今年将有5亿用户在双11期间主动访问新品会场，他们将让30个新品的成交额过亿，1000个新品成交金额过千万。</p>
-                <img src="@/assets/img/artical2.png" />
-                <p>当市场上有太多机会时，竞争比的是果敢与效率；但当市场趋于饱和时，竞争的重点就要回归到前瞻性视野和精细化运营。事实上，中国的互联网市场已经过了遍地是金、跑马圈地的粗放时代，巨头们的生存境况与它们对趋势的把控力息息相关，天猫小黑盒就充分体现了这一点。</p>
-                <p>点赞数量：{{ ArticalDetail.good_count }}</p> -->
+              <div class="article-body">
+                <img src="@/assets/img/picturelist.jpg" />
+                <p>老兵老兵网  转采与2020年xx月xx日 xx时xx分xx秒</p>
+                <p>图片来源：花瓣网</p>
+              </div>
 
-              </div>
-              <div class="artical-foot">
-                <div class="thumbup">
-                  <div class="likebox" @click='likeFlag()'></div>
-                  <p id="likeNum">123</p>
-                  <p>好文章，需要你的鼓励</p>
-                </div>
-              </div>
             </div>
           </div>
           <!-- 内容 end -->
@@ -83,7 +74,7 @@
                   <div class="reply"><svg-icon icon-class="heart" class-name="card-panel-icon" /><span>123</span><a href="">回复</a></div>
                 </dt>
                 <dd>这篇文章写得真是好极了，好破天际。让全国亿万老兵泪目！</dd>
-                  <dl class="sub_comments">
+                <dl class="sub_comments">
                   <dt>
                     <img src="@/assets/img/head-s.png" alt="">
                     <span>老兵老兵老王</span>
@@ -108,7 +99,7 @@
           <div class="side-section">
             
             <!-- components:components/rightside -->
-            <cs-right-side-artical />
+            <culture-right-side-article />
 
           </div>
         </div>
@@ -119,8 +110,8 @@
 </template>
 
 <script>
-console.log("./views/ma/courier-station/artical is loaded~~~~~~~~~~~~~~~~~~~~");
-import CsRightSideArtical from "@/views/ma/courier-station/components/rightside-artical"
+console.log("./views/ma/culture/storage/articlePainting is loaded~~~~~~~~~~~~~~~~~~~~");
+import CultureRightSideArticle from "@/views/ma/culture/components/rightside-article"
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";
@@ -128,15 +119,15 @@ import { mapGetters } from "vuex";
 export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
-  name: "CsArtical",
+  name: "CultureArticle",
   components: {
-    CsRightSideArtical
+    CultureRightSideArticle
   },
   data() {
     return {
-      // artical
-      url: LaobingUrl.modular_articals,
-      ArticalDetail: [],
+      // article
+      url: LaobingUrl.modular_articles,
+      ArticleDetail: [],
       // like flag
       thumbup: true
     };
@@ -146,51 +137,17 @@ export default {
   },
   created: function() {
     this.fetchData();
-    this.$store.state.navactive = '/courier-station/index';
-
-    // set default likebox
-    console.log("::::::" + this.thumbup);
-    if (this.thumbup) {
-      var boxObj = document.getElementsByClassName("likebox");
-      boxObj.classList = "likebox is-active";
-      console.log(boxObj)
-      console.log("::::::应该加上了")
-    }    
-    console.log("::::::方法结束")
+    this.$store.state.navactive = '/culture/storage/index';
   },
   methods: { 
-    // like func
-    likeFlag() {
-      var total;
-      var _count = document.getElementById("likeNum");
-      total = parseInt(_count.innerHTML);
-      // console.log(total);
-
-      var flag = event.target.className;
-      // console.log(flag)
-      var _flag = flag.match("is-active");
-      // console.log(_flag);
-      if (_flag != null) {
-        // console.log("turn to gray");
-        event.target.classList.remove("is-active");
-        // total num -1
-        total -= 1;
-        _count.innerHTML = total;
-      } else {
-        // console.log("turn to red");
-        event.target.classList.add("is-active");
-        // total num +1
-        total += 1;
-        _count.innerHTML = total;
-      }
-    },
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
         postData(url, data)
           .then(response => {
             const { code, msg, data } = response;
             if (code === 20000) {
-              console.log("Get CS Artical Response:", data);
+              console.log("Get Culture on Tao Article Response:", data);
+              console.log(msg);
               resolve(data);
             }
             // this.$message({
@@ -217,9 +174,9 @@ export default {
         // "uid": '0a44f30462e742879f5fbd15d2fda9e6'
         "uid": this.user_id
       };
-      this.postDataFromUI(LaobingUrl.modular_articals, params)
+      this.postDataFromUI(LaobingUrl.modular_articles, params)
         .then(response => {
-          this.ArticalDetail = response;
+          this.ArticleDetail = response;
         });
     }
   }
@@ -227,14 +184,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.artical-container {
+.article-container {
   margin-bottom: 35px;
 
-  .artical-main {
+  .article-main {
     width: 100%;
     margin-bottom: 40px;
 
-    .artical-head {
+    .article-head {
       width: 100%;
       font-size: 14px;
       margin-bottom: 40px;
@@ -248,50 +205,25 @@ export default {
         margin-right: 20px;
       }
     }
-    .artical-body {
+    .article-body {
       width: 100%;
       margin-bottom: 40px;
       text-align: center;
-      overflow: hidden;
 
       p {
-        font-size: 16px;
+        font-size: 12px;
         line-height: 1.5;
-        text-align: left;
-
-        img {
-          max-width: 100%;
-          margin: 0 auto;
-        }
+        text-align: center;
+        color: #787878;
       }
       img {
         max-width: 100%;
         margin: 0 auto;
+        border: 10px solid #fff;
+        box-shadow: 0.5px 0.5px 10px rgba(0,0,0,0.2);
+        margin-bottom: 20px;
       }
     }
-    .artical-foot {
-      width: 100%;
-
-      .thumbup {
-        width: 100%;
-        height: 130px;
-        text-align: center;
-        font-size: 12px;
-        .likebox {
-          width: 73px;
-          height: 73px;
-          margin: 0 auto 20px;
-          // background: url(../../../assets/img/like-gray.png);
-          background: url(~@/assets/img/like-gray.png);
-        }
-        .likebox.is-active {
-          background: url(~@/assets/img/like-red.png);
-        }
-        p {
-          margin: 10px 0;
-        }
-      }
-    }   
   }
 }
 .new-comment-box {

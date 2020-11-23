@@ -3,7 +3,7 @@ const state = {
     navactive: "/home/index" 
 }
 const mutations = {
-    increment (state) {
+    increment(state) {
         state.count++
     }
 }
@@ -13,5 +13,3 @@ export default {
     mutations
     // actions
 }  
-
-    

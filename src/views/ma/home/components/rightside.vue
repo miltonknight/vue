@@ -47,10 +47,7 @@
     <div class="side-main">
       <div class="side-head">
         <h3>
-          <svg-icon icon-class="hdot" class-name="card-panel-icon" />最新活动<a
-            href=""
-            >更多活动</a
-          >
+          <svg-icon icon-class="hdot" class-name="card-panel-icon" />最新活动<a href="">更多活动</a>
         </h3>
       </div>
       <div class="side-body">

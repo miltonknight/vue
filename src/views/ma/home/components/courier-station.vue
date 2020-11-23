@@ -16,7 +16,7 @@
           <li>老照片</li>
         </ul>
       </div>
-      <a v-for="item in ret" :key="item.article_id" :href="'/#/courier-station/artical?id=' + item.article_id" class="img-list">
+      <a v-for="item in ret" :key="item.article_id" :href="'/#/courier-station/article?id=' + item.article_id" class="img-list">
         <div class="img-list-main">
           <img :src="item.small_img_path" />
           <span>{{ item.title }}</span>
@@ -41,7 +41,7 @@ export default {
     return {
       // 老兵驿站数据接收数组
       ret: [],
-      url: LaobingUrl.index_artical,
+      url: LaobingUrl.index_article,
       param: {
         sort_id: 1
       }

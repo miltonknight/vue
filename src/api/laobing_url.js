@@ -22,19 +22,19 @@ export const LaobingUrl = {
   // -------------------- whole site modulars
   // whole site modular focus
   modular_focus: '/article/findModelCarousel',
-  // whole site artical list
-  modular_artical_list: '/article/pageArticleBySortId',
-  // whole site artical
-  modular_articals: '/article/findArticleDetail',
-  // temp add artical
-  temp_add_artical: '/article/insertArticle',
+  // whole site article list
+  modular_article_list: '/article/pageArticleBySortId',
+  // whole site article
+  modular_articles: '/article/findArticleDetail',
+  // temp add article
+  temp_add_article: '/article/insertArticle',
   // -------------------- homepage apis
   // index_focus
   index_focus: '/homepage/findHomepageFocus',
   // index_coupon
   // index_coupon: '/homepage/findHomepageFocus',
-  // index_artical
-  index_artical: '/homepage/findHomepageModule',
+  // index_article
+  index_article: '/homepage/findHomepageModule',
   // famous_list
   famous_people: '/veteranFamous/pageVereranFamous'
 }

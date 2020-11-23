@@ -8,8 +8,8 @@
           <!-- <router-view :key="key" /> -->
 
           <!-- 内容 -->
-          <div class="artical-container">
-            <div class="artical-main">
+          <div class="article-container">
+            <div class="article-main">
               <div class="music-box">
                 <div class="music-play-box">
                   <img src="@/assets/img/record.png">
@@ -119,7 +119,7 @@
                   <div class="reply"><svg-icon icon-class="heart" class-name="card-panel-icon" /><span>123</span><a href="">回复</a></div>
                 </dt>
                 <dd>这篇文章写得真是好极了，好破天际。让全国亿万老兵泪目！</dd>
-                  <dl class="sub_comments">
+                <dl class="sub_comments">
                   <dt>
                     <img src="@/assets/img/head-s.png" alt="">
                     <span>老兵老兵老王</span>
@@ -149,7 +149,7 @@
                 </h3>
               </div>
               <div class="side-body">
-                <!-- <a v-for="item in Artical" :key="item.article_id" :href="'/#/case-studies/artical?id=' + item.article_id" >
+                <!-- <a v-for="item in Article" :key="item.article_id" :href="'/#/case-studies/article?id=' + item.article_id" >
                   <div class="slist-box">
                     <div class="slist-box-img">
                       <img :src="item.small_img_path" />
@@ -212,7 +212,7 @@
 </template>
 
 <script>
-console.log("./views/ma/culture/artical is loaded~~~~~~~~~~~~~~~~~~~~");
+console.log("./views/ma/culture/article is loaded~~~~~~~~~~~~~~~~~~~~");
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";
@@ -220,13 +220,13 @@ import { mapGetters } from "vuex";
 export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
-  name: "CultureVideoArtical",
+  name: "CultureVideoArticle",
   components: { },
   data() {
     return {
-      // artical
-      url: LaobingUrl.modular_articals,
-      ArticalDetail: []
+      // article
+      url: LaobingUrl.modular_articles,
+      ArticleDetail: []
     };
   },
   computed: {
@@ -241,9 +241,10 @@ export default {
       return new Promise((resolve, reject) => {
         postData(url, data)
           .then(response => {
-            const { code, msg, data } = response;
+            // const { code, msg, data } = response;
+            const { code, data } = response;
             if (code === 20000) {
-              console.log("Get Culture on Tao Artical Response:", data);
+              console.log("Get Culture on Tao Article Response:", data);
               resolve(data);
             }
             // this.$message({
@@ -270,9 +271,9 @@ export default {
         // "uid": '0a44f30462e742879f5fbd15d2fda9e6'
         "uid": this.user_id
       };
-      this.postDataFromUI(LaobingUrl.modular_articals, params)
+      this.postDataFromUI(LaobingUrl.modular_articles, params)
         .then(response => {
-          this.ArticalDetail = response;
+          this.ArticleDetail = response;
         });
     }
   }
@@ -280,10 +281,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.artical-container {
+.article-container {
   margin-bottom: 35px;
 
-  .artical-main {
+  .article-main {
     width: 100%;
     margin-bottom: 40px;
 

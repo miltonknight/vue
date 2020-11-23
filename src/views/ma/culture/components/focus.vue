@@ -5,8 +5,8 @@
       <el-carousel-item v-for="item in ret" :key="item.id">
         <!-- <a :href="item.link" :id="item.soldier_station_id"> -->
         <!-- 实现href传参，soldier_station_id写在type后方   -->
-        <a :href="'/#/culture/artical?id=' + item.article_id">
-          <img :src="item.img_path" width="726px"/>
+        <a :href="'/#/culture/article?id=' + item.article_id">
+          <img :src="item.img_path" width="726px" />
         </a>
         <h3>{{ item.title }}</h3>
       </el-carousel-item>
@@ -19,7 +19,7 @@
 
 console.log("@/views/ma/culture/components/focus is loaded~~~~~~~~~~~~~~");
 
-import { getData, postData } from "@/api/common";
+import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 
 export default {
@@ -51,7 +51,8 @@ export default {
       return new Promise((resolve, reject) => {
         postData(url, data)
           .then(response => {
-            const { code, msg, data } = response;
+            // const { code, msg, data } = response;
+            const { code, data } = response;
             if (code === 20000) {
               console.log("CS Focus Response:", data);
               resolve(data);

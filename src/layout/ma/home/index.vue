@@ -35,11 +35,10 @@
 import CommonNav from "@/components/CommonNav";
 import CommonFooter from "@/components/CommonFooter";
 import CommonTip from "@/components/CommonTip";
-import HomePage from "@/views/ma/home";
 
 export default {
   name: "MaLayout",
-  components: { CommonNav, CommonFooter, CommonTip, HomePage},
+  components: { CommonNav, CommonFooter, CommonTip },
   data() {
     return {
       activeIndex: "1"

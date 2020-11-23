@@ -36,8 +36,8 @@ export default {
   methods: {
     countDown() {
       var time = 5;
-      setInterval(function(){
-        if (time==0) {
+      setInterval(function() {
+        if (time === 0) {
           // location.href = "/#/home/index";
           history.go(-1);
           time = 5;

@@ -15,8 +15,8 @@
           <!-- main content box -->
           <div class="main-box">
 
-            <!-- components:src\views\ma\culture\artical.vue -->
-            <!-- <cs-artical /> -->
+            <!-- components:src\views\ma\annals\article.vue -->
+            <!-- <cs-article /> -->
             <router-view :key="key" />
          
           </div>  
@@ -36,11 +36,11 @@
 import CommonNav from "@/components/CommonNav";
 import CommonFooter from "@/components/CommonFooter";
 import CommonTip from "@/components/CommonTip";
-import CultureArtical from "@/views/ma/culture/artical";
+import CaseStudiesArticle from "@/views/ma/case-studies/article";
 
 export default {
-  name: "MaCultureArticalLayout",
-  components: { CommonNav, CommonFooter, CommonTip, CultureArtical},
+  name: "MaCaseStudiesArticleLayout",
+  components: { CommonNav, CommonFooter, CommonTip, CaseStudiesArticle},
   data() {
     return {
       activeIndex: "1"

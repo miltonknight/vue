@@ -6,7 +6,7 @@
       <el-carousel-item v-for="item in ret" :key="item.id">
         <!-- <a :href="item.link" :id="item.soldier_station_id"> -->
         <!-- 实现href传参，soldier_station_id写在type后方   -->
-        <a :href="'/#/famous/enterprise/artical?id=' + item.article_id">
+        <a :href="'/#/famous/enterprise/article?id=' + item.article_id">
           <img :src="item.img_path" width="726px" />
         </a>
         <h3>{{ item.title }}</h3>
@@ -55,6 +55,7 @@ export default {
             const { code, msg, data } = response;
             if (code === 20000) {
               console.log("Annals Focus Response:", data);
+              console.log(msg);
               resolve(data);
             }
             // this.$message({

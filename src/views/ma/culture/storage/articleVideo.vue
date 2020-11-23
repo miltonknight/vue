@@ -1,4 +1,4 @@
-<!-- 老兵风采-名人大辞典 -->
+<!-- 老兵文化-视频 -->
 <template>
   <div>
     <el-row :gutter="24">
@@ -8,30 +8,20 @@
           <!-- <router-view :key="key" /> -->
 
           <!-- 内容 -->
-          <div class="artical-container">
-            <div class="artical-main">
-              <div class="artical-head">
-                <h1>{{ ArticalDetail.title }}</h1>
-                <p><a href="">{{ ArticalDetail.writer }}writer</a> {{ ArticalDetail.create_time }}   关注</p>
+          <div class="article-container">
+            <div class="article-main">
+              <div class="video-play-box">
+                <img src="@/assets/img/videoplay.jpg" />
               </div>
-              <div class="artical-body">
-                <p v-html="ArticalDetail.content"></p>
-                <!-- 以下内容添加真实数据后可删除 -->
-                <p>老兵名人大辞典示例文章</p>
-                <!-- <img src="@/assets/img/artical.png" />
-                <p>数据库中文章内容较少填入测试文本“史无前例新品大爆发”，在“2020天猫双11全球狂欢季”新闻发布会上，阿里巴巴副总裁、天猫平台营运事业部总经理家洛身后的大屏幕上打出了这样一行大字。根据内部估算，今年将有5亿用户在双11期间主动访问新品会场，他们将让30个新品的成交额过亿，1000个新品成交金额过千万。</p>
-                <img src="@/assets/img/artical2.png" />
-                <p>当市场上有太多机会时，竞争比的是果敢与效率；但当市场趋于饱和时，竞争的重点就要回归到前瞻性视野和精细化运营。事实上，中国的互联网市场已经过了遍地是金、跑马圈地的粗放时代，巨头们的生存境况与它们对趋势的把控力息息相关，天猫小黑盒就充分体现了这一点。</p> -->
-                <!-- 以下内容添加真实数据后可删除end -->
-                <p>点赞数量：{{ ArticalDetail.good_count }}</p>
+
+              <h3>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</h3>
+              <p>中国人民解放军93岁生日 湖州一群90多岁老兵含泪讲述当兵初心</p>
+
+              <div class="video-infos">
+                <span>999999次播放</span>
+                <span class="time">老兵老兵网<i class="el-icon-time"></i>2020-11-20 </span>
               </div>
-              <div class="artical-foot">
-                <div class="thumbup">
-                  <div class="likebox" @click='likeFlag()'></div>
-                  <p id="likeNum">123</p>
-                  <p>好文章，需要你的鼓励</p>
-                </div>
-              </div>
+
             </div>
           </div>
           <!-- 内容 end -->
@@ -86,7 +76,7 @@
                   <div class="reply"><svg-icon icon-class="heart" class-name="card-panel-icon" /><span>123</span><a href="">回复</a></div>
                 </dt>
                 <dd>这篇文章写得真是好极了，好破天际。让全国亿万老兵泪目！</dd>
-                  <dl class="sub_comments">
+                <dl class="sub_comments">
                   <dt>
                     <img src="@/assets/img/head-s.png" alt="">
                     <span>老兵老兵老王</span>
@@ -109,10 +99,117 @@
       <el-col :span="7">
         <div class="grid-content bg-purple">
           <div class="side-section">
-            
-            <!-- components:components/rightside -->
-            <famous-people-right-side />
+            <div class="side-main">
+              <div class="side-head">
+                <h3>
+                  <svg-icon icon-class="hdot" class-name="card-panel-icon" />接下来播放
+                </h3>
+              </div>
+              <div class="side-body">
+                <!-- <a v-for="item in Article" :key="item.article_id" :href="'/#/case-studies/article?id=' + item.article_id" >
+                  <div class="slist-box">
+                    <div class="slist-box-img">
+                      <img :src="item.small_img_path" />
+                    </div>
+                    <p>{{ item.title }}</p>
+                    <span>{{ item.create_time }}</span>
+                  </div>
+                </a> -->
 
+                <a href="/">
+                  <div class="slist-box">
+                    <div class="slist-box-img">
+                      <img src="~@/assets/img/side-demo5.png">
+                    </div>
+                    <p>接下来要播放的标题/名字</p>
+                    <span>2020-09-11</span>
+                  </div>
+                </a>
+                <a href="/">
+                  <div class="slist-box">
+                    <div class="slist-box-img">
+                      <img src="~@/assets/img/side-demo5.png">
+                    </div>
+                    <p>接下来要播放的标题/名字</p>
+                    <span>2020-09-11</span>
+                  </div>
+                </a>
+                <a href="/">
+                  <div class="slist-box">
+                    <div class="slist-box-img">
+                      <img src="~@/assets/img/side-demo5.png">
+                    </div>
+                    <p>接下来要播放的标题/名字</p>
+                    <span>2020-09-11</span>
+                  </div>
+                </a>
+                <a href="/">
+                  <div class="slist-box">
+                    <div class="slist-box-img">
+                      <img src="~@/assets/img/side-demo5.png">
+                    </div>
+                    <p>接下来要播放的标题/名字</p>
+                    <span>2020-09-11</span>
+                  </div>
+                </a>
+                <a href="/">
+                  <div class="slist-box">
+                    <div class="slist-box-img">
+                      <img src="~@/assets/img/side-demo5.png">
+                    </div>
+                    <p>接下来要播放的标题/名字</p>
+                    <span>2020-09-11</span>
+                  </div>
+                </a>
+                <a href="/">
+                  <div class="slist-box">
+                    <div class="slist-box-img">
+                      <img src="~@/assets/img/side-demo5.png">
+                    </div>
+                    <p>接下来要播放的标题/名字</p>
+                    <span>2020-09-11</span>
+                  </div>
+                </a>
+                <a href="/">
+                  <div class="slist-box">
+                    <div class="slist-box-img">
+                      <img src="~@/assets/img/side-demo5.png">
+                    </div>
+                    <p>接下来要播放的标题/名字</p>
+                    <span>2020-09-11</span>
+                  </div>
+                </a>
+                <a href="/">
+                  <div class="slist-box">
+                    <div class="slist-box-img">
+                      <img src="~@/assets/img/side-demo5.png">
+                    </div>
+                    <p>接下来要播放的标题/名字</p>
+                    <span>2020-09-11</span>
+                  </div>
+                </a>
+                <a href="/">
+                  <div class="slist-box">
+                    <div class="slist-box-img">
+                      <img src="~@/assets/img/side-demo5.png">
+                    </div>
+                    <p>接下来要播放的标题/名字</p>
+                    <span>2020-09-11</span>
+                  </div>
+                </a>
+                <a href="/">
+                  <div class="slist-box">
+                    <div class="slist-box-img">
+                      <img src="~@/assets/img/side-demo5.png">
+                    </div>
+                    <p>接下来要播放的标题/名字</p>
+                    <span>2020-09-11</span>
+                  </div>
+                </a>
+
+              </div>
+            </div>
+            
           </div>
         </div>
       </el-col>
@@ -122,26 +219,21 @@
 </template>
 
 <script>
-console.log("./views/ma/famous/people/artical is loaded~~~~~~~~~~~~~~~~~~~~");
-import FamousPeopleRightSide from "@/views/ma/famous/people/components/rightside"
-import { LaobingUrl } from "@/api/laobing_url";
+console.log("./views/ma/culture/article is loaded~~~~~~~~~~~~~~~~~~~~");
 import { postData } from "@/api/common";
+import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";
 
 export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
-  name: "FamousPeopleArtical",
-  components: {
-    FamousPeopleRightSide
-  },
+  name: "CultureVideoArticle",
+  components: { },
   data() {
     return {
-      // artical
-      url: LaobingUrl.modular_articals,
-      ArticalDetail: [],
-      // like flag
-      thumbup: true
+      // article
+      url: LaobingUrl.modular_articles,
+      ArticleDetail: []
     };
   },
   computed: {
@@ -149,50 +241,17 @@ export default {
   },
   created: function() {
     this.fetchData();
-    this.$store.state.navactive = '/famous/people/index';
-    // set default likebox
-    console.log("::::::" + this.thumbup);
-    if (this.thumbup) {
-      var boxObj = document.getElementsByClassName("likebox");
-      boxObj.classList = "likebox is-active";
-      console.log(boxObj)
-      console.log("::::::应该加上了")
-    }    
-    console.log("::::::方法结束")
+    this.$store.state.navactive = '/culture/storage/index';
   },
   methods: { 
-    // like func
-    likeFlag() {
-      var total;
-      var _count = document.getElementById("likeNum");
-      total = parseInt(_count.innerHTML);
-      // console.log(total);
-
-      var flag = event.target.className;
-      // console.log(flag)
-      var _flag = flag.match("is-active");
-      // console.log(_flag);
-      if (_flag != null) {
-        // console.log("turn to gray");
-        event.target.classList.remove("is-active");
-        // total num -1
-        total -= 1;
-        _count.innerHTML = total;
-      } else {
-        // console.log("turn to red");
-        event.target.classList.add("is-active");
-        // total num +1
-        total += 1;
-        _count.innerHTML = total;
-      }
-    },
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
         postData(url, data)
           .then(response => {
-            const { code, msg, data } = response;
+            // const { code, msg, data } = response;
+            const { code, data } = response;
             if (code === 20000) {
-              console.log("Get Annals Artical Response:", data);
+              console.log("Get Culture on Tao Article Response:", data);
               resolve(data);
             }
             // this.$message({
@@ -219,9 +278,9 @@ export default {
         // "uid": '0a44f30462e742879f5fbd15d2fda9e6'
         "uid": this.user_id
       };
-      this.postDataFromUI(LaobingUrl.modular_articals, params)
+      this.postDataFromUI(LaobingUrl.modular_articles, params)
         .then(response => {
-          this.ArticalDetail = response;
+          this.ArticleDetail = response;
         });
     }
   }
@@ -229,65 +288,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.artical-container {
+.article-container {
   margin-bottom: 35px;
 
-  .artical-main {
+  .article-main {
     width: 100%;
     margin-bottom: 40px;
-
-    .artical-head {
-      width: 100%;
+    h3 {
+      font-size: 22px;
+    }
+    .video-infos {
+      height: 20px;
+      line-height: 20px;
       font-size: 14px;
-      margin-bottom: 40px;
 
-      h1 {
-        font-size: 30px;
-        margin: 0 0 1em;
-      }
-      a {
-        color: #4696a3;
-        margin-right: 20px;
+      span.time {
+        float: right;
+        color: #a7a7a7;
+        margin-right: 10px;
+
+        i {
+          margin: 0 10px;
+        }
       }
     }
-    .artical-body {
-      width: 100%;
-      margin-bottom: 40px;
-      text-align: center;
-
-      p {
-        font-size: 16px;
-        line-height: 1.5;
-        text-align: left;
-      }
-      img {
-        max-width: 100%;
-        margin: 0 auto;
-      }
-    }
-    .artical-foot {
-      width: 100%;
-
-      .thumbup {
-        width: 100%;
-        height: 130px;
-        text-align: center;
-        font-size: 12px;
-        .likebox {
-          width: 73px;
-          height: 73px;
-          margin: 0 auto 20px;
-          // background: url(../../../assets/img/like-gray.png);
-          background: url(~@/assets/img/like-gray.png);
-        }
-        .likebox.is-active {
-          background: url(~@/assets/img/like-red.png);
-        }
-        p {
-          margin: 10px 0;
-        }
-      }
-    }   
   }
 }
 .new-comment-box {

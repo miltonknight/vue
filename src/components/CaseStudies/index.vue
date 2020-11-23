@@ -14,8 +14,8 @@
       </div>
       <div class="side-body">
 
-        <!-- <router-link v-for="item in Artical" :key="item.article_id" to="'/#/case-studies/artical?id=' + item.article_id'"> -->
-        <a v-for="item in Artical" :key="item.article_id" :href="'/#/case-studies/artical?id=' + item.article_id" >
+        <!-- <router-link v-for="item in Article" :key="item.article_id" to="'/#/case-studies/article?id=' + item.article_id'"> -->
+        <a v-for="item in Article" :key="item.article_id" :href="'/#/case-studies/article?id=' + item.article_id">
           <div class="slist-box">
             <div class="slist-box-img">
               <img :src="item.small_img_path" />
@@ -42,8 +42,8 @@ export default {
   name: "CaseStudies",
   data() {
     return {
-      Artical: [],
-      url: LaobingUrl.index_artical,
+      Article: [],
+      url: LaobingUrl.index_article,
       param: {
         sort_id: 32 // 版块id=32成功案例
       }
@@ -81,7 +81,7 @@ export default {
     fetchData() {
       this.postDataFromUI(this.url, this.param)
         .then(response => {
-          this.Artical = response;
+          this.Article = response;
           console.log("homepage Case Studies Json:::::::::")
           console.log(response)
         });

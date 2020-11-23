@@ -31,8 +31,8 @@
               </div>
               <div class="list-body">
                 <!-- 列表循环 -->
-                <!-- <a v-for="item in ArticalList.list" :key="item.id" :href="'/courier-station/artical?id=' + item.soldier_station_id" class="list-item"> -->
-                <a v-for="item in ArticalList.list" :key="item.id" :href="'/#/culture/on-tao/artical?id=' + item.article_id + '&sort_id=' + item.sort_id" class="list-item">
+                <!-- <a v-for="item in ArticleList.list" :key="item.id" :href="'/courier-station/article?id=' + item.soldier_station_id" class="list-item"> -->
+                <a v-for="item in ArticleList.list" :key="item.id" :href="'/#/culture/on-tao/article?id=' + item.article_id + '&sort_id=' + item.sort_id" class="list-item">
                   <div class="list-body-img">
                     <img :src="item.img_path">
                     <i class="badge">{{ item.sort_name }}</i>
@@ -107,8 +107,8 @@ export default {
     return {
       activeName: '56', // tab active
       // 文章列表接口地址、接收数组
-      url: LaobingUrl.modular_artical_list,
-      ArticalList: [],
+      url: LaobingUrl.modular_article_list,
+      ArticleList: [],
       // Pagination
       total: 0,
       list: null,
@@ -137,7 +137,8 @@ export default {
       return new Promise((resolve, reject) => {
         postData(url, data)
           .then(response => {
-            const { code, msg, data } = response;
+            // const { code, msg, data } = response;
+            const { code, data } = response;
             if (code === 20000) {
               if (data.code === 50003) {
                 // console.log("::::::::::data.data.code" + response.data.code)
@@ -164,9 +165,9 @@ export default {
     },
     fetchData() {
       this.listLoading = true;
-      this.postDataFromUI(LaobingUrl.modular_artical_list, this.listQuery)
+      this.postDataFromUI(LaobingUrl.modular_article_list, this.listQuery)
         .then(response => {
-          this.ArticalList = response;
+          this.ArticleList = response;
           this.total = response.total;
           this.list = response.list;
           this.listLoading = false;
