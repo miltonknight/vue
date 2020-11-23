@@ -205,7 +205,7 @@ export default {
   .el-menu--horizontal > .el-menu-item,
   .el-menu--horizontal>.el-submenu .el-submenu__title {
     transition: none;
-    width: 98px;
+    width: 96px;
     text-align: center;
     //this part is 4 bug fixing which is missing
     height: 50px!important;
