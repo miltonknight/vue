@@ -220,8 +220,7 @@ export const constantRoutes = [
       }
 
     ]
-  }
-  // ,
+  },
   
   // {
   //   path: "/user",
@@ -301,8 +300,8 @@ export const constantRoutes = [
   //       component: () => import("@/views/test/LaobingCodeValidate"),
   //       meta: { title: "老兵码验证", icon: "star" }
   //     }
-    ]
-  },
+  //   ]
+  // },
 
   // 404 page must be placed at the end !!!
   { path: "*", redirect: "/404", hidden: true }
