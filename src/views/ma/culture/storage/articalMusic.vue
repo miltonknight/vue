@@ -234,6 +234,7 @@ export default {
   },
   created: function() {
     this.fetchData();
+    this.$store.state.navactive = '/culture/storage/index';
   },
   methods: { 
     postDataFromUI(url, data) {

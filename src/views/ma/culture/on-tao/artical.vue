@@ -84,7 +84,7 @@
                   <div class="reply"><svg-icon icon-class="heart" class-name="card-panel-icon" /><span>123</span><a href="">回复</a></div>
                 </dt>
                 <dd>这篇文章写得真是好极了，好破天际。让全国亿万老兵泪目！</dd>
-                  <dl class="sub_comments">
+                <dl class="sub_comments">
                   <dt>
                     <img src="@/assets/img/head-s.png" alt="">
                     <span>老兵老兵老王</span>
@@ -147,7 +147,7 @@ export default {
   },
   created: function() {
     this.fetchData();
-
+    this.$store.state.navactive = '/culture/on-tao/index';
     // set default likebox
     console.log("::::::" + this.thumbup);
     if (this.thumbup) {

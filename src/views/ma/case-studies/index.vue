@@ -111,6 +111,7 @@ export default {
   // computed: { },
   created: function() {
     this.fetchData();
+    this.$store.state.navactive = '/case-studies/index';
   },
   mounted() {
   },

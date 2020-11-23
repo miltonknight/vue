@@ -137,43 +137,9 @@ export default {
   },
   created: function() {
     this.fetchData();
-
-    // set default likebox
-    console.log("::::::" + this.thumbup);
-    if (this.thumbup) {
-      var boxObj = document.getElementsByClassName("likebox");
-      boxObj.classList = "likebox is-active";
-      console.log(boxObj)
-      console.log("::::::应该加上了")
-    }    
-    console.log("::::::方法结束")
+    this.$store.state.navactive = '/culture/storage/index';
   },
   methods: { 
-    // like func
-    likeFlag() {
-      var total;
-      var _count = document.getElementById("likeNum");
-      total = parseInt(_count.innerHTML);
-      // console.log(total);
-
-      var flag = event.target.className;
-      // console.log(flag)
-      var _flag = flag.match("is-active");
-      // console.log(_flag);
-      if (_flag != null) {
-        // console.log("turn to gray");
-        event.target.classList.remove("is-active");
-        // total num -1
-        total -= 1;
-        _count.innerHTML = total;
-      } else {
-        // console.log("turn to red");
-        event.target.classList.add("is-active");
-        // total num +1
-        total += 1;
-        _count.innerHTML = total;
-      }
-    },
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
         postData(url, data)

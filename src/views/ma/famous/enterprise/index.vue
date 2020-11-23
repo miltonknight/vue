@@ -109,6 +109,7 @@ export default {
   // computed: { },
   created: function() {
     this.fetchData();
+    this.$store.state.navactive = '/famous/enterprise/index';
   },
   mounted() {
   },

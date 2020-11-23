@@ -149,6 +149,7 @@ export default {
   },
   created: function() {
     this.fetchData();
+    this.$store.state.navactive = '/famous/enterprise/index';
 
     // set default likebox
     console.log("::::::" + this.thumbup);

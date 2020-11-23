@@ -133,6 +133,7 @@ export default {
   // computed: { },
   created: function() {
     this.fetchData();
+    this.$store.state.navactive = '/courier-station/index';
   },
   mounted() {
   },

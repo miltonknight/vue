@@ -146,6 +146,7 @@ export default {
   },
   created: function() {
     this.fetchData();
+    this.$store.state.navactive = '/case-studies/index';
 
     // set default likebox
     console.log("::::::" + this.thumbup);

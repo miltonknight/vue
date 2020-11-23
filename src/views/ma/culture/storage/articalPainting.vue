@@ -25,7 +25,7 @@
               </div>
               <div class="artical-foot">
                 <div class="thumbup">
-                  <div class="likebox" @click='likeFlag()'></div>
+                  <div class="likebox" @click="likeFlag()"></div>
                   <p id="likeNum">123</p>
                   <p>好文章，需要你的鼓励</p>
                 </div>
@@ -84,7 +84,7 @@
                   <div class="reply"><svg-icon icon-class="heart" class-name="card-panel-icon" /><span>123</span><a href="">回复</a></div>
                 </dt>
                 <dd>这篇文章写得真是好极了，好破天际。让全国亿万老兵泪目！</dd>
-                  <dl class="sub_comments">
+                <dl class="sub_comments">
                   <dt>
                     <img src="@/assets/img/head-s.png" alt="">
                     <span>老兵老兵老王</span>
@@ -147,43 +147,9 @@ export default {
   },
   created: function() {
     this.fetchData();
-
-    // set default likebox
-    console.log("::::::" + this.thumbup);
-    if (this.thumbup) {
-      var boxObj = document.getElementsByClassName("likebox");
-      boxObj.classList = "likebox is-active";
-      console.log(boxObj)
-      console.log("::::::应该加上了")
-    }    
-    console.log("::::::方法结束")
+    this.$store.state.navactive = '/culture/storage/index';
   },
   methods: { 
-    // like func
-    likeFlag() {
-      var total;
-      var _count = document.getElementById("likeNum");
-      total = parseInt(_count.innerHTML);
-      // console.log(total);
-
-      var flag = event.target.className;
-      // console.log(flag)
-      var _flag = flag.match("is-active");
-      // console.log(_flag);
-      if (_flag != null) {
-        // console.log("turn to gray");
-        event.target.classList.remove("is-active");
-        // total num -1
-        total -= 1;
-        _count.innerHTML = total;
-      } else {
-        // console.log("turn to red");
-        event.target.classList.add("is-active");
-        // total num +1
-        total += 1;
-        _count.innerHTML = total;
-      }
-    },
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
         postData(url, data)

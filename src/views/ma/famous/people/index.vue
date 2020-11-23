@@ -132,6 +132,7 @@ export default {
   // computed: { },
   created: function() {
     this.fetchData();
+    this.$store.state.navactive = '/famous/people/index';
   },
   mounted() {
   },
