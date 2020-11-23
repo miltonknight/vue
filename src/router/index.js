@@ -205,6 +205,13 @@ export const constantRoutes = [
         meta: { title: "Ma老兵文化-图片详情", icon: "dashboard" }
       },
       {
+        path: "/culture/new-media/index",
+        name: "MaCultureNewMediaIndex",
+        component: () => import("@/views/ma/culture/new-media/index"),
+        // component: MaCsArticleLayout,
+        meta: { title: "Ma老兵文化-新媒体矩阵", icon: "dashboard" }
+      },
+      {
         path: "/temp-upload/article",
         name: "MaUploadArticle",
         component: () => import("@/views/ma/temp-upload/article"),

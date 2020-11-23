@@ -33,7 +33,7 @@
           <template slot="title">老兵文化</template>
           <el-menu-item index="/culture/on-tao/index">名家讲坛</el-menu-item>
           <el-menu-item index="/culture/storage/index">资料库</el-menu-item>
-          <el-menu-item index="4-3">新媒体</el-menu-item>
+          <el-menu-item index="/culture/new-media/index">新媒体</el-menu-item>
           <el-menu-item index="4-4">比赛活动</el-menu-item>
           <el-menu-item index="4-5">网络晚会</el-menu-item>
         </el-submenu>
@@ -87,7 +87,7 @@ export default {
         { index: "4", path: "/culture", title: "老兵文化" },
         { index: "4-1", path: "/culture/on-tao/index", title: "名家讲坛" },
         { index: "4-2", path: "/culture/storage/index", title: "资料库" },
-        { index: "4-3", path: "/culture/index", title: "新媒体" },
+        { index: "4-3", path: "/culture/new-media/index", title: "新媒体" },
         { index: "4-4", path: "/culture/index", title: "比赛活动" },
         { index: "4-5", path: "/culture/index", title: "网络晚会" },
         { index: "5", path: "/famous/", title: "老兵风采" },
