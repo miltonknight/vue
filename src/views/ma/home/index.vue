@@ -337,6 +337,7 @@ export default {
   },
   computed: { },
   created: function() {
+    this.$store.state.navactive = '/home/index';
   },
   methods: {}
 };
@@ -454,7 +455,8 @@ export default {
     width: 50px;
     height: 50px;
     text-align: center;
-    border: 1px solid #e08714;
+    // border: 1px solid #e08714;
+    border: 1px solid #f7e0c1;
     display: flex;
     align-items: center;
     /*实现水平居中*/
