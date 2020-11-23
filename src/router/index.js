@@ -34,7 +34,7 @@ import MaLayout from "@/layout/ma/home/index";
 export const constantRoutes = [
   {
     path: "/",
-    redirect: "/ma/home/index",
+    redirect: "/ma",
     component: () => import("@/views/ma/home/index"),
     hidden: true
   },
@@ -50,10 +50,10 @@ export const constantRoutes = [
     component: () => import("@/views/www/register")
   },
 
-  {
-    path: "/laobing",
-    component: () => import("@/views/loginlb/index")
-  },
+  // {
+  //   path: "/laobing",
+  //   component: () => import("@/views/loginlb/index")
+  // },
 
   {
     path: "/404",
@@ -61,28 +61,28 @@ export const constantRoutes = [
     hidden: true
   },
 
-  {
-    path: "/admin",
-    redirect: "/admin/dashboard",
-    name: "dashboard",
-    meta: { title: "数据中心", icon: "user" },
-    component: Layout,
-    children: [
-      {
-        path: "/admin/dashboard",
-        name: "Dashboard",
-        component: () => import("@/views/dashboard/index"),
-        meta: { title: "数据中心", icon: "dashboard" }
-      }
-    ]
-  },
+  // {
+  //   path: "/admin",
+  //   redirect: "/admin/dashboard",
+  //   name: "dashboard",
+  //   meta: { title: "数据中心", icon: "user" },
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: "/admin/dashboard",
+  //       name: "Dashboard",
+  //       component: () => import("@/views/dashboard/index"),
+  //       meta: { title: "数据中心", icon: "dashboard" }
+  //     }
+  //   ]
+  // },
   // test pages edited by Ma
   {
     path: "/ma",
     // redirect: "/ma/",
     redirect: "/home/index",
     name: "MaTest",
-    meta: { title: "testpage", icon: "user" },
+    meta: { title: "LBLB.Wang", icon: "user" },
     component: MaLayout,
     children: [
       {
@@ -90,216 +90,217 @@ export const constantRoutes = [
         path: "/home/index",
         name: "MaTestindex",
         component: () => import("@/views/ma/home/index"),
-        meta: { title: "Ma首页", icon: "dashboard" }
+        meta: { title: "首页", icon: "dashboard" }
       },
       {
         path: "/courier-station/index",
         name: "MaCourierStationIndex",
         component: () => import("@/views/ma/courier-station/index"),
-        meta: { title: "Ma老兵驿站", icon: "dashboard" }
+        meta: { title: "老兵驿站", icon: "dashboard" }
       },
       {
         path: "/courier-station/article",
         name: "MaCourierStationArticle",
         component: () => import("@/views/ma/courier-station/article"),
         // component: MaCsArticleLayout,
-        meta: { title: "Ma老兵驿站文章", icon: "dashboard" }
+        meta: { title: "老兵驿站-文章", icon: "dashboard" }
       },
       {
         path: "/annals/index",
         name: "MaAnnalsIndex",
         component: () => import("@/views/ma/annals/index"),
-        meta: { title: "Ma老兵战史", icon: "dashboard" }
+        meta: { title: "老兵战史", icon: "dashboard" }
       },
       {
         path: "/annals/article",
         name: "MaAnnalsArticle",
         component: () => import("@/views/ma/annals/article"),
         // component: MaCsArticleLayout,
-        meta: { title: "Ma老兵战史文章", icon: "dashboard" }
+        meta: { title: "老兵战史-文章", icon: "dashboard" }
       },
       {
         path: "/case-studies/index",
         name: "MaCaseStudiesIndex",
         component: () => import("@/views/ma/case-studies/index"),
-        meta: { title: "Ma成功案例", icon: "dashboard" }
+        meta: { title: "成功案例", icon: "dashboard" }
       },
       {
         path: "/case-studies/article",
         name: "MaCaseStudiesArticle",
         component: () => import("@/views/ma/case-studies/article"),
         // component: MaCsArticleLayout,
-        meta: { title: "Ma成功案例文章", icon: "dashboard" }
+        meta: { title: "成功案例-文章", icon: "dashboard" }
       },
       {
         path: "/famous/people/index",
         name: "MaFamousPeopleIndex",
         component: () => import("@/views/ma/famous/people/index"),
-        meta: { title: "Ma成功案例", icon: "dashboard" }
+        meta: { title: "老兵名人大辞典", icon: "dashboard" }
       },
       {
         path: "/famous/people/article",
         name: "MaFamousPeopleArticle",
         component: () => import("@/views/ma/famous/people/article"),
         // component: MaCsArticleLayout,
-        meta: { title: "Ma成功案例文章", icon: "dashboard" }
+        meta: { title: "老兵名人大辞典-人物", icon: "dashboard" }
       },
       {
         path: "/famous/enterprise/index",
         name: "MaFamousEnterpriseIndex",
         component: () => import("@/views/ma/famous/enterprise/index"),
-        meta: { title: "Ma成功案例", icon: "dashboard" }
+        meta: { title: "老兵名企展播", icon: "dashboard" }
       },
       {
         path: "/famous/enterprise/article",
         name: "MaFamousEnterpriseArticle",
         component: () => import("@/views/ma/famous/enterprise/article"),
         // component: MaCsArticleLayout,
-        meta: { title: "Ma成功案例文章", icon: "dashboard" }
+        meta: { title: "老兵名企展播-文章", icon: "dashboard" }
       },
       {
         path: "/culture/on-tao/index",
         name: "MaCultureIndex",
         component: () => import("@/views/ma/culture/on-tao/index"),
-        meta: { title: "Ma老兵文化-老兵问道", icon: "dashboard" }
+        meta: { title: "老兵文化-老兵问道", icon: "dashboard" }
       },
       {
         path: "/culture/on-tao/article",
         name: "MaCultureArticle",
         component: () => import("@/views/ma/culture/on-tao/article"),
         // component: MaCsArticleLayout,
-        meta: { title: "Ma老兵文化-老兵问道文章", icon: "dashboard" }
+        meta: { title: "老兵文化-老兵问道-文章", icon: "dashboard" }
       },
       {
         path: "/culture/storage/index",
         name: "MaCultureStorage",
         component: () => import("@/views/ma/culture/storage/index"),
-        meta: { title: "Ma老兵文化-资料库", icon: "dashboard" }
+        meta: { title: "老兵文化-资料库", icon: "dashboard" }
       },
       {
         path: "/culture/storage/articleVideo",
         name: "MaCultureVideoArticle",
         component: () => import("@/views/ma/culture/storage/articleVideo"),
         // component: MaCsArticleLayout,
-        meta: { title: "Ma老兵文化-视频详情", icon: "dashboard" }
+        meta: { title: "老兵文化-视频", icon: "dashboard" }
       },
       {
         path: "/culture/storage/articleMusic",
         name: "MaCultureMusicArticle",
         component: () => import("@/views/ma/culture/storage/articleMusic"),
         // component: MaCsArticleLayout,
-        meta: { title: "Ma老兵文化-音乐详情", icon: "dashboard" }
+        meta: { title: "老兵文化-音乐", icon: "dashboard" }
       },
       {
         path: "/culture/storage/articlePainting",
         name: "MaCulturePaintingArticle",
         component: () => import("@/views/ma/culture/storage/articlePainting"),
         // component: MaCsArticleLayout,
-        meta: { title: "Ma老兵文化-书画详情", icon: "dashboard" }
+        meta: { title: "老兵文化-书画", icon: "dashboard" }
       },
       {
         path: "/culture/storage/articlePicture",
         name: "MaCulturePictureArticle",
         component: () => import("@/views/ma/culture/storage/articlePicture"),
         // component: MaCsArticleLayout,
-        meta: { title: "Ma老兵文化-图片详情", icon: "dashboard" }
+        meta: { title: "老兵文化-图片", icon: "dashboard" }
       },
       {
         path: "/culture/new-media/index",
         name: "MaCultureNewMediaIndex",
         component: () => import("@/views/ma/culture/new-media/index"),
         // component: MaCsArticleLayout,
-        meta: { title: "Ma老兵文化-新媒体矩阵", icon: "dashboard" }
+        meta: { title: "老兵文化-新媒体矩阵", icon: "dashboard" }
       },
       {
         path: "/temp-upload/article",
         name: "MaUploadArticle",
         component: () => import("@/views/ma/temp-upload/article"),
         // component: MaCsArticleLayout,
-        meta: { title: "Ma文章录入（临时）", icon: "dashboard" }
+        meta: { title: "文章录入（临时）", icon: "dashboard" }
       }
 
     ]
-  },
+  }
+  // ,
   
-  {
-    path: "/user",
-    component: Layout,
-    redirect: "/user/index",
-    name: "User",
-    meta: { title: "用户管理", icon: "user" },
-    children: [
-      {
-        path: "index",
-        name: "UserList",
-        component: () => import("@/views/user/index"),
-        meta: { title: "用户列表", icon: "user" }
-      }
-    ]
-  },
+  // {
+  //   path: "/user",
+  //   component: Layout,
+  //   redirect: "/user/index",
+  //   name: "User",
+  //   meta: { title: "用户管理", icon: "user" },
+  //   children: [
+  //     {
+  //       path: "index",
+  //       name: "UserList",
+  //       component: () => import("@/views/user/index"),
+  //       meta: { title: "用户列表", icon: "user" }
+  //     }
+  //   ]
+  // },
 
-  {
-    path: "/travel",
-    component: Layout,
-    redirect: "/travel/index",
-    meta: { title: "旅游板块", icon: "tree" },
-    children: [
-      {
-        path: "index",
-        name: "travel",
-        component: () => import("@/views/travel/index"),
-        meta: { title: "订单管理", icon: "form" }
-      }
-    ]
-  },
+  // {
+  //   path: "/travel",
+  //   component: Layout,
+  //   redirect: "/travel/index",
+  //   meta: { title: "旅游板块", icon: "tree" },
+  //   children: [
+  //     {
+  //       path: "index",
+  //       name: "travel",
+  //       component: () => import("@/views/travel/index"),
+  //       meta: { title: "订单管理", icon: "form" }
+  //     }
+  //   ]
+  // },
 
-  {
-    path: "/culture",
-    redirect: "/culture/subject",
-    name: "culture",
-    meta: { title: "老兵文化", icon: "education" },
-    component: Layout,
-    children: [
-      {
-        path: "subject",
-        name: "subject",
-        meta: { title: "科目管理", icon: "dashboard" },
-        component: () => import("@/views/culture/subject")
-      },
-      {
-        path: "article",
-        name: "article",
-        meta: { title: "文章编辑", icon: "dashboard" },
-        component: () => import("@/views/culture/article")
-      }
-    ]
-  },
+  // {
+  //   path: "/culture",
+  //   redirect: "/culture/subject",
+  //   name: "culture",
+  //   meta: { title: "老兵文化", icon: "education" },
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: "subject",
+  //       name: "subject",
+  //       meta: { title: "科目管理", icon: "dashboard" },
+  //       component: () => import("@/views/culture/subject")
+  //     },
+  //     {
+  //       path: "article",
+  //       name: "article",
+  //       meta: { title: "文章编辑", icon: "dashboard" },
+  //       component: () => import("@/views/culture/article")
+  //     }
+  //   ]
+  // },
 
-  {
-    path: "/test",
-    redirect: "/test/web",
-    name: "testPage",
-    meta: { title: "测试页面", icon: "example" },
-    component: Layout,
-    children: [
-      {
-        path: "reg",
-        name: "register",
-        meta: { title: "注册", icon: "dashboard" },
-        component: () => import("@/views/www/register")
-      },
-      {
-        path: "profile",
-        name: "profile",
-        component: () => import("@/views/user/profile"),
-        meta: { title: "资料提交", icon: "user" }
-      },
-      {
-        path: "validate",
-        name: "validate",
-        component: () => import("@/views/test/LaobingCodeValidate"),
-        meta: { title: "老兵码验证", icon: "star" }
-      }
+  // {
+  //   path: "/test",
+  //   redirect: "/test/web",
+  //   name: "testPage",
+  //   meta: { title: "测试页面", icon: "example" },
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: "reg",
+  //       name: "register",
+  //       meta: { title: "注册", icon: "dashboard" },
+  //       component: () => import("@/views/www/register")
+  //     },
+  //     {
+  //       path: "profile",
+  //       name: "profile",
+  //       component: () => import("@/views/user/profile"),
+  //       meta: { title: "资料提交", icon: "user" }
+  //     },
+  //     {
+  //       path: "validate",
+  //       name: "validate",
+  //       component: () => import("@/views/test/LaobingCodeValidate"),
+  //       meta: { title: "老兵码验证", icon: "star" }
+  //     }
     ]
   },
 
@@ -310,7 +311,6 @@ export const constantRoutes = [
 const createRouter = () =>
   new Router({
     // mode: 'history',该模式可以去掉地址栏中的#号  // require service support
-    // mode: 'history',
     scrollBehavior: () => ({ y: 0 }),
     routes: constantRoutes
   });
