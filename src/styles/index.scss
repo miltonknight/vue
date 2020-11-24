@@ -517,12 +517,20 @@ div:focus {
 
   p {
     font-size: 16px;
-    line-height: 1.5;
-    text-align: left;
+    line-height: 2;
+    margin-bottom: 26px;
+    vertical-align: baseline;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-break: break-word;
+    box-sizing: border-box;
+    letter-spacing: 0;
+    text-align: justify;
   }
   img {
-    max-width: 100%;
-    margin: 20px auto;
-    border-radius: 3px;
+    display: block;
+    margin: 30px auto;
+    max-width: 690px;
+    border-radius: 5px;
   }
 }
