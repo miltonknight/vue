@@ -74,7 +74,7 @@
 
 <script>
 
-console.log("@/components/CommonFooter/index is loaded~~~~~~~~~~~~~~~~~~~");
+console.log("Components：@/CommonFooter is loaded");
 
 export default {
   // name: "MaHomeheader",

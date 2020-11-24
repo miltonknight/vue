@@ -32,11 +32,10 @@
 // import ResizeMixin from "../../mixin/ResizeHandler";
 import CommonNav from "@/components/CommonNav";
 import CommonFooter from "@/components/CommonFooter";
-import CommonTip from "@/components/CommonTip";
 
 export default {
   name: "MaLayout404",
-  components: { CommonNav, CommonFooter, CommonTip },
+  components: { CommonNav, CommonFooter },
   data() {
     return {
       activeIndex: "1"

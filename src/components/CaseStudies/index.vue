@@ -33,7 +33,8 @@
 </template>
 
 <script>
-console.log("@/components/CaseStudies/index is loaded~~~~~~~~~~~~~~~~~~~");
+console.log("Components：@/CaseStudies is loaded");
+
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 

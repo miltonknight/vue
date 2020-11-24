@@ -22,12 +22,9 @@
 </template>
 
 <script>
-import CommonNav from "@/components/CommonNav";
-import CommonFooter from "@/components/CommonFooter";
-import CommonTip from "@/components/CommonTip";
 export default {
   name: 'Page404',
-  components: { CommonNav, CommonFooter, CommonTip },
+  components: { },
   computed: {
     message() {
       return '地址好像不对嗷，这可咋整...'

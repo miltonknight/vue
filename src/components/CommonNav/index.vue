@@ -69,7 +69,7 @@
 </template>
 
 <script>
-console.log("@/components/CommonNav/index is loaded~~~~~~~~~~~~~~~~");
+console.log("Components：@/CommonNav is loaded");
 export default {
   // name: "MaHomeheader",
   name: "CommonNav",

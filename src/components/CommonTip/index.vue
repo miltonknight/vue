@@ -46,8 +46,7 @@
 </template>
 
 <script>
-
-console.log("@/components/CommonTip/index is loaded~~~~~~~~~~");
+console.log("Components：@/CommonTip is loaded");
 
 export default {
   name: "CommonTip",

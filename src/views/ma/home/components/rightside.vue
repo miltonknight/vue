@@ -88,7 +88,8 @@
 </template>
 
 <script>
-console.log("@/views/ma/home/components/rightside.vue is loaded~~~~~~~~~~~~~~");
+console.log("home/components: rightside is loaded");
+
 import CaseStudies from "@/components/CaseStudies"
 export default {
   name: "HomeRightSide",

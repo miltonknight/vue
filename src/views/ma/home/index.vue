@@ -310,7 +310,7 @@
 </template>
 
 <script>
-console.log("./views/ma/home/index is loaded~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+console.log("Views: /home/index is loaded");
 import HomeFocus from "@/views/ma/home/components/focus"
 // import HomeCoupon from "@/views/ma/home/components/coupon"
 import HomeCourierStation from "@/views/ma/home/components/courier-station"
