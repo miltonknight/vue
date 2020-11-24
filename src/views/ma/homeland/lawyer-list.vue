@@ -15,7 +15,7 @@
             <!-- 全部法律 -->
             <div class="list-main">
               <div class="list-head">
-               <h3>找律师<span>Find a laywer</span></h3>
+              <h3>找律师<span>Find a laywer</span></h3>
               </div>
               <div class="list-body">
 
