@@ -22,25 +22,29 @@
 </template>
 
 <script>
-
+import CommonNav from "@/components/CommonNav";
+import CommonFooter from "@/components/CommonFooter";
+import CommonTip from "@/components/CommonTip";
 export default {
   name: 'Page404',
+  components: { CommonNav, CommonFooter, CommonTip },
   computed: {
     message() {
       return '地址好像不对嗷，这可咋整...'
     }
   },
   created: function() {
-    this.countDown();
+    // this.countDown();
   },
   methods: {
     countDown() {
       var time = 5;
-      setInterval(function() {
+      var timer = setInterval(function() {
         if (time === 0) {
           // location.href = "/#/home/index";
           history.go(-1);
           time = 5;
+          clearInterval(timer);
         } else {
           // span.innerHTML = time;
           time--; 
@@ -57,6 +61,7 @@ export default {
   position: absolute;
   top: 40%;
   left: 50%;
+  width: 1000px;
 }
 .wscn-http404 {
   position: relative;
