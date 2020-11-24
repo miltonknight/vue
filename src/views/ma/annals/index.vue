@@ -72,7 +72,7 @@
                         <span>四野</span>
                       </div>
                     </el-tab-pane>
-                    <el-tab-pane label="非军事行动" name="third">
+                    <el-tab-pane label="非战争军事行动" name="third">
                       <div class="tab-boxes" @click="searchBySort(26)">
                         <img src="@/assets/img/annals1_1.png" />
                         <span>抗震</span>
