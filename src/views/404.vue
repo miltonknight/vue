@@ -31,7 +31,7 @@ export default {
     }
   },
   created: function() {
-    this.countDown();
+    // this.countDown();
   },
   methods: {
     countDown() {

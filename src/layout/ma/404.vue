@@ -15,7 +15,7 @@
           <!-- main content box -->
           <div class="main-box">
 
-            <!-- <home-page /> -->
+            <!-- <404-page /> -->
             <router-view :key="key" />
 
           </div>  
@@ -38,7 +38,7 @@ export default {
   components: { CommonNav, CommonFooter },
   data() {
     return {
-      activeIndex: "1"
+      // activeIndex: "1"
     };
   },
   // mixins: [ResizeMixin],
