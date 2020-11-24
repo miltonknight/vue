@@ -160,6 +160,8 @@ div:focus {
       margin-bottom: 20px;
       clear: both;
       width: 100%;
+      overflow: hidden;
+      min-height: 145px;
       // display: flex;
 
       .list-item {
@@ -509,7 +511,7 @@ div:focus {
   text-align: center;
   color: #ccc;
 }
-/************* artical **********/
+/************* article **********/
 .article-container {
   margin-bottom: 35px;
   padding: 0 20px 0 10px;
@@ -536,6 +538,7 @@ div:focus {
     }
     .article-body {
       width: 100%;
+      min-height: 200px;
       margin-bottom: 40px;
       text-align: center;
 
