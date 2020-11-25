@@ -53,12 +53,12 @@ export default {
 
 <style lang="scss" scoped>
 .lost {
-  width: 80%;
+  width: 1000px;
   margin: 0 auto;
 
   .lost-pic {
-    width: 781px;
-    height: 478px;
+    width: 1000px;
+    height: 500px;
     margin: 120px auto 30px;
   }
   p {
