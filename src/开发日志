@@ -350,5 +350,12 @@ this.$store.state.navactive = '/xxxx/index';
 -及页面中焦点图、法律法规、常见问题、找律师、右侧等组件，共计12页面
 -页面部分基本完成，接口待调试
 
+#-------------------- 20201125更新内容 --------------------
+1. src\layout\ma\policy\index.vue
+新增老兵政策Layout
+2. src\router\index.js L301
+新增伪子路由，否则无法引用新layout
+3. src\views\ma\policy
+新增政策index article
 
  

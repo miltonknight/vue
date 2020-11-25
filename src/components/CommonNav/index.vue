@@ -47,7 +47,7 @@
           <el-menu-item index="/famous/people/index">老兵名人大辞典</el-menu-item>
           <el-menu-item index="/famous/enterprise/index">老兵名企展播</el-menu-item>
         </el-submenu>
-        <el-menu-item index="6">老兵政策</el-menu-item>
+        <el-menu-item index="/ma/policy/index">老兵政策</el-menu-item>
         <el-menu-item index="7">老兵论坛</el-menu-item>
       </el-menu>
 
@@ -93,7 +93,7 @@ export default {
         { index: "5", path: "/famous/", title: "老兵风采" },
         { index: "5-1", path: "/famous/people/index", title: "老兵名人大辞典" },
         { index: "5-2", path: "/famous/enterprise/index", title: "老兵名企展播" },
-        { index: "6", path: "/home/index", title: "老兵政策" },
+        { index: "6", path: "/ma/policy/index", title: "老兵政策" },
         { index: "7", path: "/home/index", title: "老兵论坛" }
       ]
     };

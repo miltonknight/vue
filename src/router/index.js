@@ -7,6 +7,7 @@ Vue.use(Router);
 import Layout from "@/layout";
 import MaLayout from "@/layout/ma/home/index";
 import MaLayout404 from "@/layout/ma/404";
+import MaPolicyLayout from "@/layout/ma/policy/index";
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -80,7 +81,7 @@ export const constantRoutes = [
   {
     path: "/admin",
     redirect: "/admin/dashboard",
-    name: "dashboard",
+    name: "admin",
     meta: { title: "数据中心", icon: "user" },
     component: Layout,
     children: [
@@ -276,6 +277,16 @@ export const constantRoutes = [
         // component: MaCsArticleLayout,
         meta: { title: "律师-老兵家园", icon: "dashboard" }
       },
+      // {
+      //   path: "/policy/index",
+      //   name: "MaPolicyIndex",
+      //   meta: { 
+      //     title: "老兵政策", 
+      //     icon: "dashboard",
+      //     layuout: MaPolicyLayout 
+      //   },
+      //   component: () => import("@/views/ma/policy/index")
+      // },
       {
         path: "/temp-upload/article",
         name: "MaUploadArticle",
@@ -284,6 +295,27 @@ export const constantRoutes = [
         meta: { title: "文章录入（临时）", icon: "dashboard" }
       }
 
+    ]
+  },
+  {
+    path: "/ma/policy",
+    redirect: "/ma/policy/index",
+    name: "policy",
+    meta: { title: "老兵政策", icon: "user" },
+    component: MaPolicyLayout,
+    children: [
+      {
+        path: "/ma/policy/index",
+        name: "MaPolicyList",
+        component: () => import("@/views/ma/policy/index"),
+        meta: { title: "老兵政策", icon: "dashboard" }
+      },
+      {
+        path: "/ma/policy/article",
+        name: "MaPolicyArticle",
+        component: () => import("@/views/ma/policy/article"),
+        meta: { title: "老兵政策", icon: "dashboard" }
+      }
     ]
   },
   
