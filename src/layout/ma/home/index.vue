@@ -31,6 +31,7 @@
 </template>
 
 <script>
+console.log("Layout：@/home/index is loaded");
 // import ResizeMixin from "../../mixin/ResizeHandler";
 import CommonNav from "@/components/CommonNav";
 import CommonFooter from "@/components/CommonFooter";
