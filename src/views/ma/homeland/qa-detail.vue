@@ -109,7 +109,6 @@ export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
   name: "HomeLandQaDetail",
-  components: {  },
   data() {
     return {
       // article

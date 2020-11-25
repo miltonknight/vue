@@ -15,7 +15,7 @@
             <!-- 全部法律 -->
             <div class="list-main">
               <div class="list-head">
-              <h3>常见问题解答<span>Q&A</span></h3>
+                <h3>常见问题解答<span>Q&A</span></h3>
               </div>
               <div class="list-body">
                 <div class="list-serach">

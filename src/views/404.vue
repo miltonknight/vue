@@ -38,7 +38,7 @@ export default {
   // created: { },
   methods: {
     lucky() {
-      var temp = Math.floor((Math.random()*100)+1);
+      var temp = Math.floor((Math.random() * 100) + 1);
       temp = temp % this.indexArray.length
       // console.log(temp)
       // console.log(this.indexArray[temp])

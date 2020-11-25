@@ -80,7 +80,6 @@ export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
   name: "HomeLandLawyerDetail",
-  components: {  },
   data() {
     return {
       // article
