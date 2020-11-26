@@ -4,11 +4,7 @@
     <div class="banner">
       <img src="@/assets/img/banner-policy.jpg" alt="">
     </div>
-    <!-- <div class="side-head">
-      <h3>
-        <svg-icon icon-class="hdot" class-name="card-panel-icon" />老兵政策
-      </h3>
-    </div> -->
+    
     <div class="policy-main">
       <el-tabs :tab-position="tabPosition" class="policy-tab">
         <el-tab-pane label="权益维护">
@@ -347,9 +343,6 @@ export default {
     padding-left: 40px;
     margin-bottom: 30px;
   }
-  .policy-body {
-
-  } 
   .policy-list {
     list-style: none;
     margin: 0;
