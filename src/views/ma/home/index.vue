@@ -295,6 +295,9 @@
             <!-- components:components/rightside -->
             <home-right-side />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -316,7 +319,8 @@ import HomeFocus from "@/views/ma/home/components/focus"
 // import HomeCoupon from "@/views/ma/home/components/coupon"
 import HomeCourierStation from "@/views/ma/home/components/courier-station"
 import HomeAnnals from "@/views/ma/home/components/annals"
-import HomeRightSide from "@/views/ma/home/components/rightside"
+import HomeRightSide from "@/views/ma/home/components/rightside";
+import Activities from "@/components/Activities";
 // import axios from 'axios'
 // import { getData, postData } from "@/api/common";
 // import { LaobingUrl } from "@/api/laobing_url";
@@ -330,7 +334,8 @@ export default {
     // HomeCoupon, // 优惠信息
     HomeCourierStation, // 老兵驿站
     HomeAnnals, // 老兵战史
-    HomeRightSide
+    HomeRightSide,
+    Activities
   },
   data() {
     return {

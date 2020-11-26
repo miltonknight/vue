@@ -113,6 +113,9 @@
             <!-- components:components/rightside -->
             <famous-enterprise-right-side />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -122,8 +125,9 @@
 </template>
 
 <script>
-console.log("./views/ma/famous/enterprise/article is loaded~~~~~~~~~~~~~~~~~~~~");
-import FamousEnterpriseRightSide from "@/views/ma/famous/enterprise/components/rightside"
+console.log("Views: /famous/enterprise/article is loaded");
+import FamousEnterpriseRightSide from "@/views/ma/famous/enterprise/components/rightside";
+import Activities from "@/components/Activities";
 import { LaobingUrl } from "@/api/laobing_url";
 import { postData } from "@/api/common";
 import { mapGetters } from "vuex";
@@ -133,7 +137,8 @@ export default {
   // components: { MaHomeheader },
   name: "FamousEnterpriseArticle",
   components: {
-    FamousEnterpriseRightSide
+    FamousEnterpriseRightSide,
+    Activities
   },
   data() {
     return {

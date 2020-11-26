@@ -37,6 +37,9 @@
             <!-- components:components/rightside -->
             <home-land-right-side />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -59,6 +62,7 @@ import HomeLandLaws from "./components/laws"
 import HomeLandQa from "./components/qa"
 import HomeLandFindLawyer from "./components/lawyer"
 import HomeLandRightSide from "./components/rightside"
+import Activities from "@/components/Activities";
 
 // import { postData } from "@/api/common";
 // import { LaobingUrl } from "@/api/laobing_url";
@@ -72,7 +76,8 @@ export default {
     HomeLandLaws, // 法律法规
     HomeLandQa, // 常见问题
     HomeLandFindLawyer, // 找律师
-    HomeLandRightSide // 右侧
+    HomeLandRightSide, // 右侧
+    Activities
   },
   data() {
     return {

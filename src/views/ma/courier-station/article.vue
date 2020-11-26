@@ -110,6 +110,9 @@
             <!-- components:components/rightside -->
             <cs-right-side-article />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -119,8 +122,9 @@
 </template>
 
 <script>
-console.log("./views/ma/courier-station/article is loaded~~~~~~~~~~~~~~~~~~~~");
+console.log("Views: /courier-station/article is loaded");
 import CsRightSideArticle from "@/views/ma/courier-station/components/rightside-article"
+import Activities from "@/components/Activities";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";
@@ -130,7 +134,8 @@ export default {
   // components: { MaHomeheader },
   name: "CsArticle",
   components: {
-    CsRightSideArticle
+    CsRightSideArticle,
+    Activities
   },
   data() {
     return {

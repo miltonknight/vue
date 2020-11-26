@@ -219,7 +219,7 @@
 </template>
 
 <script>
-console.log("./views/ma/culture/article is loaded~~~~~~~~~~~~~~~~~~~~");
+console.log("Views: /culture/article is loaded");
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";

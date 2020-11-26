@@ -111,6 +111,9 @@
             <!-- components:components/rightside -->
             <culture-right-side-article />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -120,8 +123,9 @@
 </template>
 
 <script>
-console.log("./views/ma/culture/storage/articlePainting is loaded~~~~~~~~~~~~~~~~~~~~");
-import CultureRightSideArticle from "@/views/ma/culture/components/rightside-article"
+console.log("Views: /culture/storage/articlePainting is loaded");
+import CultureRightSideArticle from "@/views/ma/culture/components/rightside-article";
+import Activities from "@/components/Activities";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";
@@ -131,7 +135,8 @@ export default {
   // components: { MaHomeheader },
   name: "CultureArticle",
   components: {
-    CultureRightSideArticle
+    CultureRightSideArticle,
+    Activities
   },
   data() {
     return {

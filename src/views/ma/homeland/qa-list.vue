@@ -87,6 +87,9 @@
             <!-- components:components/rightside -->
             <home-land-right-side />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -106,7 +109,7 @@ console.log("Views: /homeland/qa-list is loaded");
 
 import HomeLandFocus from "./components/focus"
 import HomeLandRightSide from "./components/rightside"
-
+import Activities from "@/components/Activities";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
@@ -117,6 +120,7 @@ export default {
   name: "HomeLandQaList",
   components: {
     HomeLandFocus, // 焦点图
+    Activities,
     Pagination,
     HomeLandRightSide // 右侧
   },

@@ -31,6 +31,9 @@
             <!-- components:components/rightside -->
             <home-land-right-side />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -42,7 +45,8 @@
 <script>
 console.log("Views: /homeland/law-detail is loaded");
 
-import HomeLandRightSide from "./components/rightside"
+import HomeLandRightSide from "./components/rightside";
+import Activities from "@/components/Activities";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";
@@ -51,7 +55,10 @@ export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
   name: "HomeLandLawDetail",
-  components: { HomeLandRightSide },
+  components: { 
+    HomeLandRightSide,
+    Activities
+  },
   data() {
     return {
       // article

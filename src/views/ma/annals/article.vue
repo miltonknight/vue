@@ -110,6 +110,9 @@
             <!-- components:components/rightside -->
             <annals-right-side-article />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -121,6 +124,7 @@
 <script>
 console.log("./views/ma/annals/article is loaded~~~~~~~~~~~~~~~~~~~~");
 import AnnalsRightSideArticle from "@/views/ma/annals/components/rightside-article"
+import Activities from "@/components/Activities";
 import { LaobingUrl } from "@/api/laobing_url";
 import { postData } from "@/api/common";
 import { mapGetters } from "vuex";
@@ -130,7 +134,8 @@ export default {
   // components: { MaHomeheader },
   name: "AnnalsArticle",
   components: {
-    AnnalsRightSideArticle
+    AnnalsRightSideArticle,
+    Activities
   },
   data() {
     return {

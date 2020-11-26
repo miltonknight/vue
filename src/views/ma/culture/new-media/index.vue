@@ -62,6 +62,9 @@
             <!-- components:components/rightside -->
             <culture-right />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -71,8 +74,9 @@
 </template>
 
 <script>
-console.log("./views/ma/culture/new-media/index is loaded~~~~~~~~~~~~~~~~~~~~");
-import CultureRight from "@/views/ma/culture/components/right"
+console.log("Views: /culture/new-media/index is loaded");
+import CultureRight from "@/views/ma/culture/components/right";
+import Activities from "@/components/Activities";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
@@ -83,6 +87,7 @@ export default {
   name: "CultureNewMedia",
   components: {
     CultureRight,
+    Activities,
     Pagination
   },
   data() {
