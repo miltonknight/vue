@@ -144,7 +144,7 @@ export default {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 1030px;
+    width: 1040px;
     margin: 0 auto;
   }
   .header-logo {
