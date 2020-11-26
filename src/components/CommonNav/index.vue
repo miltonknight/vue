@@ -23,7 +23,7 @@
         <el-menu-item index="/home/index">首页</el-menu-item>
         <el-menu-item index="/courier-station/index">老兵驿站</el-menu-item>
         <el-menu-item index="/annals/index">老兵战史</el-menu-item>
-        <el-menu-item index="3">老兵情怀</el-menu-item>
+        <el-menu-item index="/ma/sentiment/index">老兵情怀</el-menu-item>
         <el-submenu 
           index="4"
           background-color="#3b3b3b"
@@ -83,7 +83,7 @@ export default {
         { index: "0", path: "/home/index", title: "首页" },
         { index: "1", path: "/courier-station/index", title: "老兵驿站" },
         { index: "2", path: "/annals/index", title: "老兵战史" },
-        { index: "3", path: "/home/index", title: "老兵情怀" },
+        { index: "3", path: "/ma/policy/index", title: "老兵情怀" },
         { index: "4", path: "/culture", title: "老兵文化" },
         { index: "4-1", path: "/culture/on-tao/index", title: "名家讲坛" },
         { index: "4-2", path: "/culture/storage/index", title: "资料库" },

@@ -8,6 +8,7 @@ import Layout from "@/layout";
 import MaLayout from "@/layout/ma/home/index";
 import MaLayout404 from "@/layout/ma/404";
 import MaPolicyLayout from "@/layout/ma/policy/index";
+import MaSentimentLayout from "@/layout/ma/sentiment/index";
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -306,17 +307,10 @@ export const constantRoutes = [
     children: [
       {
         path: "/ma/policy/index",
-        name: "MaPolicyList",
+        name: "MaPolicyIndex",
         component: () => import("@/views/ma/policy/index"),
         meta: { title: "老兵政策", icon: "dashboard" }
       }
-      // ,
-      // {
-      //   path: "/ma/policy/article",
-      //   name: "MaPolicyArticle",
-      //   component: () => import("@/views/ma/policy/article"),
-      //   meta: { title: "老兵政策", icon: "dashboard" }
-      // }
     ]
   },
   {
@@ -332,6 +326,28 @@ export const constantRoutes = [
         component: () => import("@/views/ma/policy/article"),
         meta: { title: "老兵政策", icon: "dashboard" }
       }
+    ]
+  },
+  {
+    path: "/ma/sentiment",
+    redirect: "/ma/sentiment/index",
+    name: "sentiment",
+    meta: { title: "老兵情怀", icon: "user" },
+    component: MaSentimentLayout,
+    children: [
+      {
+        path: "/ma/sentiment/index",
+        name: "MaSentimentIndex",
+        component: () => import("@/views/ma/sentiment/index"),
+        meta: { title: "老兵情怀", icon: "dashboard" }
+      }
+      // ,
+      // {
+      //   path: "/ma/policy/article",
+      //   name: "MaPolicyArticle",
+      //   component: () => import("@/views/ma/policy/article"),
+      //   meta: { title: "老兵政策", icon: "dashboard" }
+      // }
     ]
   },
   
