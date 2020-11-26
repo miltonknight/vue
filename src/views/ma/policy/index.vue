@@ -150,7 +150,6 @@
 
 <script>
 console.log("Views: /policy/index is loaded-------------------------------");
-import Activities from "@/components/Activities";
 // import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
@@ -162,7 +161,6 @@ export default {
   name: "Policy",
   components: {
     // Pagination
-    Activities
   },
   data() {
     return {
