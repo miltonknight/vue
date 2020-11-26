@@ -309,7 +309,23 @@ export const constantRoutes = [
         name: "MaPolicyList",
         component: () => import("@/views/ma/policy/index"),
         meta: { title: "老兵政策", icon: "dashboard" }
-      },
+      }
+      // ,
+      // {
+      //   path: "/ma/policy/article",
+      //   name: "MaPolicyArticle",
+      //   component: () => import("@/views/ma/policy/article"),
+      //   meta: { title: "老兵政策", icon: "dashboard" }
+      // }
+    ]
+  },
+  {
+    path: "/ma/policy/article",
+    redirect: "/ma/policy/article",
+    name: "policyArticle",
+    meta: { title: "老兵政策", icon: "user" },
+    component: MaLayout,
+    children: [
       {
         path: "/ma/policy/article",
         name: "MaPolicyArticle",

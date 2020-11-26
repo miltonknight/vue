@@ -70,7 +70,7 @@
             <div class="list-main">
               <div class="list-head">
                 <h3>老兵文化<span>Veteran culture</span></h3>
-                <a href="">查看更多</a>
+                <a href="/#/culture/on-tao/index">查看更多</a>
               </div>
               <div class="list-body">
                 <a href="" class="list-item">
@@ -197,7 +197,7 @@
             <div class="list-main">
               <div class="list-head">
                 <h3>老兵风采<span>Veteran presence</span></h3>
-                <a href="">查看更多</a>
+                <a href="/#/famous/people/index">查看更多</a>
               </div>
               <div class="list-body">
                 <a href="" class="img-list-famous">

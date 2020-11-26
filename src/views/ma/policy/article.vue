@@ -10,16 +10,16 @@
           <div class="article-container">
             <div class="article-main">
               <div class="article-head">
-                <h1>{{ ArticleDetail.title }}</h1>
-                <p><a href="">{{ ArticleDetail.writer }}writer</a> {{ ArticleDetail.create_time }}</p>
+                <h1>{{ ArticleDetail.title }}标题标题标题</h1>
+                <p><a href="">{{ ArticleDetail.writer }}作者</a> {{ ArticleDetail.create_time }}</p>
               </div>
               <div class="article-body">
                 <p v-html="ArticleDetail.content"></p>
-                <!-- <img src="@/assets/img/article.png" />
+                <img src="@/assets/img/article.png" />
                 <p>数据库中文章内容较少填入测试文本“史无前例新品大爆发”，在“2020天猫双11全球狂欢季”新闻发布会上，阿里巴巴副总裁、天猫平台营运事业部总经理家洛身后的大屏幕上打出了这样一行大字。根据内部估算，今年将有5亿用户在双11期间主动访问新品会场，他们将让30个新品的成交额过亿，1000个新品成交金额过千万。</p>
                 <img src="@/assets/img/article2.png" />
                 <p>当市场上有太多机会时，竞争比的是果敢与效率；但当市场趋于饱和时，竞争的重点就要回归到前瞻性视野和精细化运营。事实上，中国的互联网市场已经过了遍地是金、跑马圈地的粗放时代，巨头们的生存境况与它们对趋势的把控力息息相关，天猫小黑盒就充分体现了这一点。</p>
-                <p>点赞数量：{{ ArticleDetail.good_count }}</p> -->
+                <p>点赞数量：{{ ArticleDetail.good_count }}</p>
 
               </div>
               <div class="article-foot">
@@ -108,7 +108,10 @@
           <div class="side-section">
             
             <!-- components:components/rightside -->
-            <cs-right-side-article />
+            <policy-right-side-article />
+            
+            <!-- components:@components/Activities -->
+            <activities />
 
           </div>
         </div>
@@ -119,8 +122,10 @@
 </template>
 
 <script>
-console.log("./views/ma/courier-station/article is loaded~~~~~~~~~~~~~~~~~~~~");
-import CsRightSideArticle from "@/views/ma/courier-station/components/rightside-article"
+console.log("View: /policy/article is loaded")
+
+import PolicyRightSideArticle from "./components/rightside-article";
+import Activities from "@/components/Activities";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";
@@ -130,7 +135,8 @@ export default {
   // components: { MaHomeheader },
   name: "PolicyArticle",
   components: {
-    CsRightSideArticle
+    PolicyRightSideArticle,
+    Activities
   },
   data() {
     return {
@@ -142,14 +148,14 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["user_id", "access_token"])
+    ...mapGetters(["user_id", "access_token", "navactive"])
   },
   created: function() {
     this.fetchData();
+    // console.log("navactive::::::" + this.$store.state.navactive);
     this.$store.state.navactive = '/ma/policy/index';
   },
   methods: { 
-    
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
         postData(url, data)

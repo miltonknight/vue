@@ -15,7 +15,7 @@
           <div class="policy-header">权益维护</div>
           <div class="policy-body">
             <ul class="policy-list">
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
+              <li><a href="/#/ma/policy/article">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
               <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
               <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
               <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
@@ -29,7 +29,7 @@
           </div>
         </el-tab-pane>
         <el-tab-pane label="退役安置">
-          <div class="policy-header">退役安置</div>
+          <div class="policy-header">军转干部安置 / 退役士兵安置</div>
           <div class="policy-body">
             <ul class="policy-list">
               <li><a href="">中华人民共和国222英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
@@ -153,10 +153,12 @@
 </template>
 
 <script>
-console.log("Views: /policy/index is loaded");
+console.log("Views: /policy/index is loaded-------------------------------");
+import Activities from "@/components/Activities";
 // import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
+import { mapGetters } from "vuex";
 
 export default {
   // name: 'MaHomeHeader',
@@ -164,11 +166,13 @@ export default {
   name: "Policy",
   components: {
     // Pagination
+    Activities
   },
   data() {
     return {
       tabPosition: 'left',
       activeName: '60', // tab active
+      navselected: '/ma/policy/index',
       // 文章列表接口地址、接收数组
       url: LaobingUrl.modular_article_list,
       ArticleList: [],
@@ -180,25 +184,23 @@ export default {
         sort_id: 60, // 版块id
         page: 1,
         limit: 10
-      },
-      zwsj: false,
-      // 定义五个版块显示状态v-show
-      books: true,
-      videos: false,
-      musics: false,
-      paintings: false, // 书画
-      pictures: false,
-      inputBook: '',
-      inputMusic: ''
+      }
+      
     };
   },
-  // computed: { },
+  computed: { 
+    ...mapGetters(["user_id", "access_token", "navactive"])
+  },
   created: function() {
     // this.fetchData();
     this.$store.state.navactive = '/ma/policy/index';
   },
   mounted() {
-  },
+    // console.log("this.$store.state.navactive：：：：：：：：：：：：：")
+    // console.log(this.$store.state.navactive)
+    // console.log(this.navselected)
+    // this.$forceUpdate( this.$store.state.navactive )
+   },
   methods: { 
     handleClick(tab, event) {
       console.log(tab, event);
@@ -331,9 +333,7 @@ export default {
   }
   .el-tabs__content {
     padding: 0 20px;
-
   }
-
 }
 .policy-main {
 
