@@ -7,7 +7,7 @@
       </div>
       <el-tabs v-model="activeName" class="sentiment-tab" @tab-click="handleClick">
         <el-tab-pane label="大病救助" name="first">
-          <a class="senti-box">
+          <a class="senti-box" href="/#/ma/sentiment/critical-detail">
             <div class="senti-img">
               <img src="@/assets/img/senti-img.jpg" alt="">
             </div>
