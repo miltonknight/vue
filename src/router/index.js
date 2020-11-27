@@ -340,14 +340,13 @@ export const constantRoutes = [
         name: "MaSentimentIndex",
         component: () => import("@/views/ma/sentiment/index"),
         meta: { title: "老兵情怀", icon: "dashboard" }
+      },
+      {
+        path: "/ma/sentiment/critical-detail",
+        name: "MaSentimentCriticalDetail",
+        component: () => import("@/views/ma/sentiment/critical-detail"),
+        meta: { title: "公告-大病救助-老兵情怀", icon: "dashboard" }
       }
-      // ,
-      // {
-      //   path: "/ma/policy/article",
-      //   name: "MaPolicyArticle",
-      //   component: () => import("@/views/ma/policy/article"),
-      //   meta: { title: "老兵政策", icon: "dashboard" }
-      // }
     ]
   },
   
