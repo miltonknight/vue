@@ -345,7 +345,7 @@ export const constantRoutes = [
         path: "/ma/sentiment/critical-detail",
         name: "MaSentimentCriticalDetail",
         component: () => import("@/views/ma/sentiment/critical-detail"),
-        meta: { title: "公告-大病救助-老兵情怀", icon: "dashboard" }
+        meta: { title: "大病救助-老兵情怀", icon: "dashboard" }
       }
     ]
   },
