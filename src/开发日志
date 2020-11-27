@@ -358,4 +358,35 @@ this.$store.state.navactive = '/xxxx/index';
 3. src\views\ma\policy
 新增政策index article
 
- 
+#-------------------- 20201126更新内容 --------------------
+1. src\styles\index.scss
+全局布局样式修改，整体宽度修改
+2. src\components\Activities\index.vue
+新增全局组件Activiities，替换原页面中存在最新活动的部分，共40个
+3. src\views\ma\policy\index.vue, src\views\ma\policy\article.vue
+将老兵政策相关链接更新到上导航以及首页对应位置，nav active存在小bug，
+-直接跳转到页面高亮位置错误，刷新后正常
+4. src\views\ma\sentiment\index.vue, src\layout\ma\sentiment\index.vue
+新增老兵情怀（救助）版块view, layout
+
+#-------------------- 20201127更新内容 --------------------
+1. src\views\ma\sentiment\critical-detail.vue
+增加老兵情怀大病救助相关页面共8，1页面内容需要确认
+2. src\router\index.js
+增加老兵情怀，大病救助相关路由
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
