@@ -65,6 +65,9 @@
             
             <!-- components:components/rightside -->
             <case-studies-right-side />
+            
+            <!-- components:@components/Activities -->
+            <activities />
 
           </div>
         </div>
@@ -77,7 +80,8 @@
 <script>
 console.log("./views/ma/case-studies/index is loaded~~~~~~~~~~~~~~~~~~~~");
 import CaseStudiesFocus from "@/views/ma/case-studies/components/focus";
-import CaseStudiesRightSide from "@/views/ma/case-studies/components/rightside"
+import CaseStudiesRightSide from "@/views/ma/case-studies/components/rightside";
+import Activities from "@/components/Activities";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
@@ -89,7 +93,8 @@ export default {
   components: {
     CaseStudiesFocus, // 焦点图
     CaseStudiesRightSide,
-    Pagination
+    Pagination,
+    Activities
   },
   data() {
     return {

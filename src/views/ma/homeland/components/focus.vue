@@ -1,54 +1,61 @@
 <template>
-  <div>
-  1111111111111111111111122222222222222222222233333333
-  </div>  
+  <div class="block" style="margin-bottom: 40px;">
+    <el-carousel height="300px">
+      <el-carousel-item v-for="item in ret" :key="item.title">
+        <a :href="'/#/' + item.link">
+          <img
+            :src="item.img_path"
+            :alt="item.introduction"
+            width="726px"
+          />
+        </a>
+        <h3>{{ item.title }}</h3>
+      </el-carousel-item>
+    </el-carousel>
+  </div>
+    
 </template>
 
 <script>
+console.log("homeland/components: focus is loaded");
 
-console.log("@/views/ma/culture/storage/components/books is loaded~~~~~~~~~~~~~~");
-
-import { getData, postData } from "@/api/common";
+import { postData } from '@/api/common';
 import { LaobingUrl } from "@/api/laobing_url";
 
 export default {
-  name: "StorageBooks",
+  name: "HomeLandFocus",
   components: {},
   data() {
     return {
       // focus数据接收数组
       ret: [],
-      url: LaobingUrl.modular_focus,
-      sort_id: 3,
-      total: 0,
-      list: null,
-      listLoading: true,
-      listQuery: {
-        page: 1,
-        limit: 10
-      }
+      url: LaobingUrl.index_focus,
+      param: {}
     }
   },
   computed: {
-    // ...mapGetters(["user_id", "access_token"])
+    // message() {}
   },
   created: function() {
     this.fetchData();
   },
-  methods: {
+  methods: { 
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
         postData(url, data)
           .then(response => {
             const { code, msg, data } = response;
-            if (code === 20000) {
-              console.log("CS Focus Response:", data);
+            // const { code, data } = response;
+            if (code === 20000 && data != null) {
+              console.log("Law Focus Response:", data);
               resolve(data);
+            } else {
+              reject(msg);
+              // this.$message({
+              //   message: "没有查询到数据",
+              //   type: "success"
+              // });
             }
-            // this.$message({
-            //   message: msg,
-            //   type: "success"
-            // });
           })
           .catch(error => {
             console.log(error);
@@ -60,14 +67,9 @@ export default {
       });
     },
     fetchData() {
-      // json post prop
-      var params = {
-        "sort_id": 3
-      };
-      this.postDataFromUI(LaobingUrl.modular_focus, params)
+      this.postDataFromUI(this.url, this.param)
         .then(response => {
           this.ret = response;
-          console.log(response);
         });
     }
   }

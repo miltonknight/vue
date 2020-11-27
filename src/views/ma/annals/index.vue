@@ -72,7 +72,7 @@
                         <span>四野</span>
                       </div>
                     </el-tab-pane>
-                    <el-tab-pane label="非军事行动" name="third">
+                    <el-tab-pane label="非战争军事行动" name="third">
                       <div class="tab-boxes" @click="searchBySort(26)">
                         <img src="@/assets/img/annals1_1.png" />
                         <span>抗震</span>
@@ -146,6 +146,9 @@
             <!-- components:components/rightside -->
             <annals-right-side />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -158,6 +161,7 @@
 console.log("./views/ma/annals/index is loaded~~~~~~~~~~~~~~~~~~~~");
 import AnnalsFocus from "@/views/ma/annals/components/focus";
 import AnnalsRightSide from "@/views/ma/annals/components/rightside"
+import Activities from "@/components/Activities";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
@@ -169,7 +173,8 @@ export default {
   components: {
     AnnalsFocus, // 焦点图
     AnnalsRightSide,
-    Pagination
+    Pagination,
+    Activities
   },
   data() {
     return {

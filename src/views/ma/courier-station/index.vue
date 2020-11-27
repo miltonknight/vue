@@ -87,6 +87,9 @@
             <!-- components:components/rightside -->
             <cs-right-side />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -96,9 +99,10 @@
 </template>
 
 <script>
-console.log("./views/ma/courier-station/index is loaded~~~~~~~~~~~~~~~~~~~~");
+console.log("Views: /courier-station/index is loaded");
 import CsFocus from "@/views/ma/courier-station/components/focus";
 import CsRightSide from "@/views/ma/courier-station/components/rightside"
+import Activities from "@/components/Activities";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
@@ -110,6 +114,7 @@ export default {
   components: {
     CsFocus, // 焦点图
     CsRightSide,
+    Activities,
     Pagination
   },
   data() {

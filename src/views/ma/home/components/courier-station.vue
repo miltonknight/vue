@@ -28,8 +28,7 @@
 </template>
 
 <script>
-
-console.log("@/views/ma/home/components/courier-station is loaded~~~~~~~~~~~~~~~~~~");
+console.log("home/components: courier-station is loaded");
 
 import { postData } from '@/api/common';
 import { LaobingUrl } from "@/api/laobing_url";

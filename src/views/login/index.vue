@@ -12,7 +12,7 @@
             <span class="svg-container">
               <svg-icon icon-class="tel" />
             </span>
-              <!-- placeholder="Username" -->
+            <!-- placeholder="Username" -->
             <el-input
               ref="username"
               v-model="loginForm.username"
@@ -27,7 +27,7 @@
             <span class="svg-container">
               <svg-icon icon-class="password" />
             </span>
-              <!-- placeholder="Password" -->
+            <!-- placeholder="Password" -->
             <el-input
               :key="passwordType"
               ref="password"

@@ -23,7 +23,7 @@
         <el-menu-item index="/home/index">首页</el-menu-item>
         <el-menu-item index="/courier-station/index">老兵驿站</el-menu-item>
         <el-menu-item index="/annals/index">老兵战史</el-menu-item>
-        <el-menu-item index="3">老兵情怀</el-menu-item>
+        <el-menu-item index="/ma/sentiment/index">老兵情怀</el-menu-item>
         <el-submenu 
           index="4"
           background-color="#3b3b3b"
@@ -47,7 +47,7 @@
           <el-menu-item index="/famous/people/index">老兵名人大辞典</el-menu-item>
           <el-menu-item index="/famous/enterprise/index">老兵名企展播</el-menu-item>
         </el-submenu>
-        <el-menu-item index="6">老兵政策</el-menu-item>
+        <el-menu-item index="/ma/policy/index">老兵政策</el-menu-item>
         <el-menu-item index="7">老兵论坛</el-menu-item>
       </el-menu>
 
@@ -69,7 +69,7 @@
 </template>
 
 <script>
-console.log("@/components/CommonNav/index is loaded~~~~~~~~~~~~~~~~");
+console.log("Components：@/CommonNav is loaded");
 export default {
   // name: "MaHomeheader",
   name: "CommonNav",
@@ -83,7 +83,7 @@ export default {
         { index: "0", path: "/home/index", title: "首页" },
         { index: "1", path: "/courier-station/index", title: "老兵驿站" },
         { index: "2", path: "/annals/index", title: "老兵战史" },
-        { index: "3", path: "/home/index", title: "老兵情怀" },
+        { index: "3", path: "/ma/policy/index", title: "老兵情怀" },
         { index: "4", path: "/culture", title: "老兵文化" },
         { index: "4-1", path: "/culture/on-tao/index", title: "名家讲坛" },
         { index: "4-2", path: "/culture/storage/index", title: "资料库" },
@@ -93,7 +93,7 @@ export default {
         { index: "5", path: "/famous/", title: "老兵风采" },
         { index: "5-1", path: "/famous/people/index", title: "老兵名人大辞典" },
         { index: "5-2", path: "/famous/enterprise/index", title: "老兵名企展播" },
-        { index: "6", path: "/home/index", title: "老兵政策" },
+        { index: "6", path: "/ma/policy/index", title: "老兵政策" },
         { index: "7", path: "/home/index", title: "老兵论坛" }
       ]
     };
@@ -144,7 +144,7 @@ export default {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 1030px;
+    width: 1040px;
     margin: 0 auto;
   }
   .header-logo {

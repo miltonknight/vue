@@ -88,6 +88,9 @@
             <!-- components:components/rightside -->
             <famous-people-right-side />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -97,8 +100,9 @@
 </template>
 
 <script>
-console.log("./views/ma/famous/people/index is loaded~~~~~~~~~~~~~~~~~~~~");
-import FamousPeopleRightSide from "@/views/ma/famous/people/components/rightside"
+console.log("Views: /famous/people/index is loaded");
+import FamousPeopleRightSide from "@/views/ma/famous/people/components/rightside";
+import Activities from "@/components/Activities";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
@@ -109,6 +113,7 @@ export default {
   name: "FamousPeople",
   components: {
     FamousPeopleRightSide,
+    Activities,
     Pagination
   },
   data() {

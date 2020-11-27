@@ -78,6 +78,9 @@
             <!-- components:components/rightside -->
             <culture-right-side />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -87,9 +90,10 @@
 </template>
 
 <script>
-console.log("./views/ma/culture/index is loaded~~~~~~~~~~~~~~~~~~~~");
+console.log("Views: /culture/index is loaded");
 import CultureFocus from "@/views/ma/culture/components/focus";
-import CultureRightSide from "@/views/ma/culture/components/rightside"
+import CultureRightSide from "@/views/ma/culture/components/rightside";
+import Activities from "@/components/Activities";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
@@ -101,6 +105,7 @@ export default {
   components: {
     CultureFocus, // 焦点图
     CultureRightSide,
+    Activities,
     Pagination
   },
   data() {

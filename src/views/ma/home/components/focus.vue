@@ -1,15 +1,5 @@
 <template>
-  <!-- <div> -->
-    <!-- components' name -->
-    <!-- <div class="block">
-      <el-carousel height="300px">
-        <el-carousel-item v-for="item in 3" :key="item">
-          <h3 class="small">{{ item }}</h3>
-        </el-carousel-item>
-      </el-carousel>
-    </div>
-  </div> -->
-  
+    
   <div class="block" style="margin-bottom: 40px;">
     <el-carousel height="300px">
       <el-carousel-item v-for="item in ret" :key="item.title">
@@ -28,8 +18,7 @@
 </template>
 
 <script>
-
-console.log("@/views/ma/home/components/focus is loaded~~~~~~~~~~~~~~~~~~");
+console.log("home/components: focus is loaded");
 
 import { postData } from '@/api/common';
 import { LaobingUrl } from "@/api/laobing_url";

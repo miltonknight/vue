@@ -110,6 +110,9 @@
             <!-- components:components/rightside -->
             <cs-right-side-article />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -119,8 +122,9 @@
 </template>
 
 <script>
-console.log("./views/ma/courier-station/article is loaded~~~~~~~~~~~~~~~~~~~~");
+console.log("Views: /courier-station/article is loaded");
 import CsRightSideArticle from "@/views/ma/courier-station/components/rightside-article"
+import Activities from "@/components/Activities";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";
@@ -130,7 +134,8 @@ export default {
   // components: { MaHomeheader },
   name: "CsArticle",
   components: {
-    CsRightSideArticle
+    CsRightSideArticle,
+    Activities
   },
   data() {
     return {
@@ -228,205 +233,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.article-container {
-  margin-bottom: 35px;
 
-  .article-main {
-    width: 100%;
-    margin-bottom: 40px;
-
-    .article-head {
-      width: 100%;
-      font-size: 14px;
-      margin-bottom: 40px;
-
-      h1 {
-        font-size: 30px;
-        margin: 0 0 1em;
-      }
-      a {
-        color: #4696a3;
-        margin-right: 20px;
-      }
-    }
-    .article-body {
-      width: 100%;
-      margin-bottom: 40px;
-      text-align: center;
-      overflow: hidden;
-
-      p {
-        font-size: 16px;
-        line-height: 1.5;
-        text-align: left;
-
-        img {
-          max-width: 100%;
-          margin: 0 auto;
-        }
-      }
-      img {
-        max-width: 100%;
-        margin: 0 auto;
-      }
-    }
-    .article-foot {
-      width: 100%;
-
-      .thumbup {
-        width: 100%;
-        height: 130px;
-        text-align: center;
-        font-size: 12px;
-        .likebox {
-          width: 73px;
-          height: 73px;
-          margin: 0 auto 20px;
-          // background: url(../../../assets/img/like-gray.png);
-          background: url(~@/assets/img/like-gray.png);
-        }
-        .likebox.is-active {
-          background: url(~@/assets/img/like-red.png);
-        }
-        p {
-          margin: 10px 0;
-        }
-      }
-    }   
-  }
-}
-.new-comment-box {
-  width: 100%;
-  margin-bottom: 35px;
-
-  .comment-head {
-    width: 100%;
-    height: 38px;
-    line-height: 38px;
-    margin-bottom: 10px;
-
-    h3 {
-      color: #3b3b3b;
-      font-size: 20px;
-      margin: 0;
-    
-      svg {
-        width: 16px;
-        height: 18px;
-        margin-right: 10px;
-      }
-    }
-  }
-  .conment-body {
-    border-radius: 3px;
-    border: 2px solid #f5f7f9;
-
-    textarea {
-      width: 100%;
-      resize: none;
-      border: none;
-      padding: 5px;
-      font-size: 14px;
-
-      &:focus {
-        border: none;
-        outline: none; 
-      }
-    }
-    .text-btn {
-      background: #f5f7f9;
-      width: 100%;
-      height: 46px;
-      line-height: 46px;
-      padding: 7px 0;
-      clear: both;
-
-      button {
-        float: right;
-        margin: 0 10px;
-        width: 92px;
-        height: 32px;
-        line-height: 32px;
-        font-size: 14px;
-        background: #e08714;
-        color: #fff;
-        border: none;
-        border-radius: 3px;
-        outline: none;
-      }
-      span {
-        float: right;
-        color: #a8a8a8;
-        height: 32px;
-        line-height: 32px;
-        font-size: 14px;
-      }
-    }
-  }
-  p {
-    font-size: 14px;
-    color: #a8a8a8;
-  }
-} 
-.comment-box {
-  width: 100%;
-  margin-bottom: 35px;
-
-  .comment-head {
-    width: 100%;
-    height: 38px;
-    line-height: 38px;
-    margin-bottom: 10px;
-
-    h3 {
-      color: #3b3b3b;
-      font-size: 20px;
-      margin: 0;
-    
-      svg {
-        width: 16px;
-        height: 18px;
-        margin-right: 10px;
-      }
-    }
-  }
-  .comments, .sub_comments {
-    font-size: 14px;
-
-    dt {
-      display: flex;
-      color: #3b3b3b;
-
-      img {
-        width: 28px;
-        height: 28px;
-        margin-right: 10px;
-      }
-      span {
-        margin-right: 10px;
-       
-        &:nth-last-child(1) {
-          color: #a7a7a7;
-        }
-      }
-      .reply {
-        margin-left: auto;
-        font-size: 12px;
-
-        span {
-          margin: 0 5px 0 2px;
-        }
-        a {
-          color: #4285f4;
-        }
-      }
-    }
-    dd {
-      word-break: break-all;
-    }
-  }
-  .sub_comments {
-    margin-left: 40px;
-  }
-}  
 </style>

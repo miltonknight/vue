@@ -10,31 +10,35 @@
         <!-- <el-menu-item index="/home/index">
           <span><svg-icon icon-class="tip-home" class-name="card-panel-icon" />首页</span>
         </el-menu-item> -->
-        <el-menu-item index="2">
-          <span><svg-icon icon-class="tip-legal-adviser" class-name="card-panel-icon" />法律</span>
+        <el-menu-item index="1">
+          <!-- <router-link to="/homeland/law"> -->
+          <a href="/#/homeland/index">
+            <span><svg-icon icon-class="tip-legal-adviser" class-name="card-panel-icon" />法律</span>
+          </a>
+          <!-- </router-link> -->
         </el-menu-item>
-        <el-menu-item index="3">
+        <el-menu-item index="2">
           <span><svg-icon icon-class="tip-medical-treatment" class-name="card-panel-icon" />医疗</span>
         </el-menu-item>
-        <el-menu-item index="4">
+        <el-menu-item index="3">
           <span><svg-icon icon-class="tip-travel" class-name="card-panel-icon" />旅游</span>
         </el-menu-item>
-        <el-menu-item index="5">
+        <el-menu-item index="4">
           <span><svg-icon icon-class="tip-catering" class-name="card-panel-icon" />老军号餐饮</span>
         </el-menu-item>
-        <el-menu-item index="6">
+        <el-menu-item index="5">
           <span><svg-icon icon-class="tip-corporation" class-name="card-panel-icon" />创业就业</span>
         </el-menu-item>
-        <el-menu-item index="7">
+        <el-menu-item index="6">
           <span><svg-icon icon-class="tip-address-book" class-name="card-panel-icon" />通讯</span>
         </el-menu-item>
-        <el-menu-item index="8">
+        <el-menu-item index="7">
           <span><svg-icon icon-class="tip-finance" class-name="card-panel-icon" />金融</span>
         </el-menu-item>
-        <el-menu-item index="9">
+        <el-menu-item index="8">
           <span><svg-icon icon-class="tip-refueling" class-name="card-panel-icon" />加油</span>
         </el-menu-item>
-        <el-menu-item index="10">
+        <el-menu-item index="9">
           <span><svg-icon icon-class="tip-house-moving" class-name="card-panel-icon" />搬家</span>
         </el-menu-item>
       </el-menu>
@@ -46,8 +50,7 @@
 </template>
 
 <script>
-
-console.log("@/components/CommonTip/index is loaded~~~~~~~~~~");
+console.log("Components：@/CommonTip is loaded");
 
 export default {
   name: "CommonTip",

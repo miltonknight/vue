@@ -30,7 +30,7 @@
             <div class="list-main">
               <div class="list-head">
                 <h3>老兵情怀<span>Veteran feelings</span></h3>
-                <a href="">查看更多</a>
+                <a href="/#/ma/sentiment/index">查看更多</a>
               </div>
               <div class="list-body">
                 <a href="" class="img-list slide">
@@ -70,7 +70,7 @@
             <div class="list-main">
               <div class="list-head">
                 <h3>老兵文化<span>Veteran culture</span></h3>
-                <a href="">查看更多</a>
+                <a href="/#/culture/on-tao/index">查看更多</a>
               </div>
               <div class="list-body">
                 <a href="" class="list-item">
@@ -197,7 +197,7 @@
             <div class="list-main">
               <div class="list-head">
                 <h3>老兵风采<span>Veteran presence</span></h3>
-                <a href="">查看更多</a>
+                <a href="/#/famous/people/index">查看更多</a>
               </div>
               <div class="list-body">
                 <a href="" class="img-list-famous">
@@ -295,6 +295,9 @@
             <!-- components:components/rightside -->
             <home-right-side />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -310,12 +313,14 @@
 </template>
 
 <script>
-console.log("./views/ma/home/index is loaded~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+console.log("Views: /home/index is loaded");
+
 import HomeFocus from "@/views/ma/home/components/focus"
 // import HomeCoupon from "@/views/ma/home/components/coupon"
 import HomeCourierStation from "@/views/ma/home/components/courier-station"
 import HomeAnnals from "@/views/ma/home/components/annals"
-import HomeRightSide from "@/views/ma/home/components/rightside"
+import HomeRightSide from "@/views/ma/home/components/rightside";
+import Activities from "@/components/Activities";
 // import axios from 'axios'
 // import { getData, postData } from "@/api/common";
 // import { LaobingUrl } from "@/api/laobing_url";
@@ -329,7 +334,8 @@ export default {
     // HomeCoupon, // 优惠信息
     HomeCourierStation, // 老兵驿站
     HomeAnnals, // 老兵战史
-    HomeRightSide
+    HomeRightSide,
+    Activities
   },
   data() {
     return {

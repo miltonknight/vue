@@ -64,6 +64,9 @@
             <!-- components:components/rightside -->
             <famous-enterprise-right-side />
 
+            <!-- components:@components/Activities -->
+            <activities />
+
           </div>
         </div>
       </el-col>
@@ -73,9 +76,10 @@
 </template>
 
 <script>
-console.log("./views/ma/famous/enterprise/index is loaded~~~~~~~~~~~~~~~~~~~~");
+console.log("Views: /famous/enterprise/index is loaded");
 import FamousEnterpriseFocus from "@/views/ma/famous/enterprise/components/focus"
-import FamousEnterpriseRightSide from "@/views/ma/famous/enterprise/components/rightside"
+import FamousEnterpriseRightSide from "@/views/ma/famous/enterprise/components/rightside";
+import Activities from "@/components/Activities";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
@@ -87,6 +91,7 @@ export default {
   components: {
     FamousEnterpriseFocus,
     FamousEnterpriseRightSide,
+    Activities,
     Pagination
   },
   data() {

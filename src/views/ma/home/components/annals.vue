@@ -26,8 +26,7 @@
 </template>
 
 <script>
-
-console.log("@/views/ma/home/components/annals is loaded~~~~~~~~~~~~~~~~~~");
+console.log("home/components: annals is loaded");
 
 import { postData } from '@/api/common';
 import { LaobingUrl } from "@/api/laobing_url";

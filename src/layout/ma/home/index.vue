@@ -31,6 +31,7 @@
 </template>
 
 <script>
+console.log("Layout：@/home/index is loaded");
 // import ResizeMixin from "../../mixin/ResizeHandler";
 import CommonNav from "@/components/CommonNav";
 import CommonFooter from "@/components/CommonFooter";
@@ -194,29 +195,6 @@ export default {
           font-size: 12px;
         }
       }
-    }
-  }
-}
-
-/*********  index rebuild ***********/
-.main-wrapper {
-  min-height: 1000px;
-  padding-top: 50px;
-
-  .main-box {
-    width: 1030px;
-    margin: 20px auto;
-  }
-  .el-row {
-    margin-right: 0!important;
-    
-    .el-col.el-col-17 {
-      padding-right: 0!important;
-      width: 720px;
-    }
-    .el-col.el-col-7 {
-      padding-left: 20px!important;
-      width: 310px;
     }
   }
 }

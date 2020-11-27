@@ -219,7 +219,7 @@
 </template>
 
 <script>
-console.log("./views/ma/culture/article is loaded~~~~~~~~~~~~~~~~~~~~");
+console.log("Views: /culture/article is loaded");
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";
@@ -289,14 +289,9 @@ export default {
 
 <style lang="scss" scoped>
 .article-container {
-  margin-bottom: 35px;
 
   .article-main {
-    width: 100%;
-    margin-bottom: 40px;
-    h3 {
-      font-size: 22px;
-    }
+    
     .video-infos {
       height: 20px;
       line-height: 20px;
@@ -314,138 +309,5 @@ export default {
     }
   }
 }
-.new-comment-box {
-  width: 100%;
-  margin-bottom: 35px;
 
-  .comment-head {
-    width: 100%;
-    height: 38px;
-    line-height: 38px;
-    margin-bottom: 10px;
-
-    h3 {
-      color: #3b3b3b;
-      font-size: 20px;
-      margin: 0;
-    
-      svg {
-        width: 16px;
-        height: 18px;
-        margin-right: 10px;
-      }
-    }
-  }
-  .conment-body {
-    border-radius: 3px;
-    border: 2px solid #f5f7f9;
-
-    textarea {
-      width: 100%;
-      resize: none;
-      border: none;
-      padding: 5px;
-      font-size: 14px;
-
-      &:focus {
-        border: none;
-        outline: none; 
-      }
-    }
-    .text-btn {
-      background: #f5f7f9;
-      width: 100%;
-      height: 46px;
-      line-height: 46px;
-      padding: 7px 0;
-      clear: both;
-
-      button {
-        float: right;
-        margin: 0 10px;
-        width: 92px;
-        height: 32px;
-        line-height: 32px;
-        font-size: 14px;
-        background: #e08714;
-        color: #fff;
-        border: none;
-        border-radius: 3px;
-        outline: none;
-      }
-      span {
-        float: right;
-        color: #a8a8a8;
-        height: 32px;
-        line-height: 32px;
-        font-size: 14px;
-      }
-    }
-  }
-  p {
-    font-size: 14px;
-    color: #a8a8a8;
-  }
-} 
-.comment-box {
-  width: 100%;
-  margin-bottom: 35px;
-
-  .comment-head {
-    width: 100%;
-    height: 38px;
-    line-height: 38px;
-    margin-bottom: 10px;
-
-    h3 {
-      color: #3b3b3b;
-      font-size: 20px;
-      margin: 0;
-    
-      svg {
-        width: 16px;
-        height: 18px;
-        margin-right: 10px;
-      }
-    }
-  }
-  .comments, .sub_comments {
-    font-size: 14px;
-
-    dt {
-      display: flex;
-      color: #3b3b3b;
-
-      img {
-        width: 28px;
-        height: 28px;
-        margin-right: 10px;
-      }
-      span {
-        margin-right: 10px;
-       
-        &:nth-last-child(1) {
-          color: #a7a7a7;
-        }
-      }
-      .reply {
-        margin-left: auto;
-        font-size: 12px;
-
-        span {
-          margin: 0 5px 0 2px;
-        }
-        a {
-          color: #4285f4;
-        }
-      }
-    }
-    dd {
-      word-break: break-all;
-    }
-  }
-  .sub_comments {
-    margin-left: 40px;
-  }
-}  
 </style>
