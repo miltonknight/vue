@@ -74,7 +74,8 @@
             <div class="critical-body">
               <h1>申请救助信息登记</h1>
               <div class="critical-infos">
-                <el-form ref="form" :model="form" label-width="120px">
+                <p>*本页所有信息均为必填</p>
+                <el-form ref="form" :model="form" label-width="150px">
                   <el-form-item label="姓名">
                     <el-input v-model="form.name"></el-input>
                   </el-form-item>
@@ -737,6 +738,14 @@ export default {
 .critical-infos {
   width: 600px;
   margin: 50px auto;
+
+  p {
+    text-align: center;
+    color: red;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: bold;
+  }
 
   .el-textarea__inner {
     height: 115px;
