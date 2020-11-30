@@ -73,6 +73,113 @@
           <el-tab-pane label="报名初核" name="second">
             <div class="critical-body">
               <h1>申请救助信息登记</h1>
+              <div class="critical-infos">
+                <el-form ref="form" :model="form" label-width="120px">
+                  <el-form-item label="姓名">
+                    <el-input v-model="form.name"></el-input>
+                  </el-form-item>
+                  <el-form-item label="性别">
+                    <el-radio-group v-model="form.sex">
+                      <el-radio label="男"></el-radio>
+                      <el-radio label="女"></el-radio>
+                    </el-radio-group>
+                  </el-form-item>
+                  <el-form-item label="联系电话">
+                    <el-input v-model="form.telephone"></el-input>
+                  </el-form-item>
+                  <el-form-item label="证件类型">
+                    <el-select v-model="form.id" placeholder="证件类型">
+                      <el-option label="身份证" value="110"></el-option>
+                      <el-option label="军官证" value="220"></el-option>
+                    </el-select>
+                  </el-form-item>
+                  <el-form-item label="证件号码">
+                    <el-input v-model="form.idnumbers"></el-input>
+                  </el-form-item>
+                  <el-form-item label="申请救助简述">
+                    <el-input type="textarea" v-model="form.desc"></el-input>
+                  </el-form-item>
+                  <el-form-item label="证件正反面">
+                    <el-upload
+                      action="https://jsonplaceholder.typicode.com/posts/"
+                      list-type="picture-card"
+                      :on-preview="handlePictureCardPreview"
+                      :on-remove="handleRemove">
+                      <i class="el-icon-plus"></i>
+                    </el-upload>
+                    <el-dialog :visible.sync="dialogVisible">
+                      <img width="100%" :src="dialogImageUrl" alt="">
+                    </el-dialog>
+                  </el-form-item>
+
+                  <el-form-item label="医疗证明信息">
+                    <el-upload
+                      action="https://jsonplaceholder.typicode.com/posts/"
+                      list-type="picture-card"
+                      :on-preview="handlePictureCardPreview"
+                      :on-remove="handleRemove">
+                      <i class="el-icon-plus"></i>
+                    </el-upload>
+                    <el-dialog :visible.sync="dialogVisible">
+                      <img width="100%" :src="dialogImageUrl" alt="">
+                    </el-dialog>
+                  </el-form-item>
+
+                  <el-form-item label="医疗发票信息">
+                    <el-upload
+                      action="https://jsonplaceholder.typicode.com/posts/"
+                      list-type="picture-card"
+                      :on-preview="handlePictureCardPreview"
+                      :on-remove="handleRemove">
+                      <i class="el-icon-plus"></i>
+                    </el-upload>
+                    <el-dialog :visible.sync="dialogVisible">
+                      <img width="100%" :src="dialogImageUrl" alt="">
+                    </el-dialog>
+                  </el-form-item>
+
+                  <el-form-item label="贫困证明及资产证明">
+                    <el-upload
+                      action="https://jsonplaceholder.typicode.com/posts/"
+                      list-type="picture-card"
+                      :on-preview="handlePictureCardPreview"
+                      :on-remove="handleRemove">
+                      <i class="el-icon-plus"></i>
+                    </el-upload>
+                    <el-dialog :visible.sync="dialogVisible">
+                      <img width="100%" :src="dialogImageUrl" alt="">
+                    </el-dialog>
+                  </el-form-item>
+
+                  <el-form-item label="立功授奖信息证明">
+                    <el-upload
+                      action="https://jsonplaceholder.typicode.com/posts/"
+                      list-type="picture-card"
+                      :on-preview="handlePictureCardPreview"
+                      :on-remove="handleRemove">
+                      <i class="el-icon-plus"></i>
+                    </el-upload>
+                    <el-dialog :visible.sync="dialogVisible">
+                      <img width="100%" :src="dialogImageUrl" alt="">
+                    </el-dialog>
+                  </el-form-item>
+
+                  <el-form-item label="申请救助的视频短片">
+                    <el-upload
+                      action="https://jsonplaceholder.typicode.com/posts/"
+                      list-type="picture-card"
+                      :on-preview="handlePictureCardPreview"
+                      :on-remove="handleRemove">
+                      <i class="el-icon-plus"></i>
+                    </el-upload>
+                    <el-dialog :visible.sync="dialogVisible">
+                      <img width="100%" :src="dialogImageUrl" alt="">
+                    </el-dialog>
+                  </el-form-item>
+
+                  <el-button size="small" class="success" @click="submitUpload">确认提交</el-button>
+                </el-form>
+              </div>
               
             </div>
 
@@ -342,6 +449,7 @@
 <script>
 console.log("Views: /sentiment/critical-detail is loaded");
 // import Pagination from "@/components/Pagination";
+import Tinymce from "@/components/Tinymce";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 
@@ -350,6 +458,7 @@ export default {
   // components: { MaHomeheader },
   name: "SentimentCriticalDetail",
   components: {
+    Tinymce
     // Pagination
   },
   data() {
@@ -358,6 +467,8 @@ export default {
       // 文章列表接口地址、接收数组
       url: LaobingUrl.modular_article_list,
       ArticleList: [],
+      ialogImageUrl: '',
+      dialogVisible: false,
       // Pagination
       total: 0,
       list: null,
@@ -366,8 +477,16 @@ export default {
         sort_id: 60, // 版块id
         page: 1,
         limit: 10
-      }
-      
+      },
+      form: {
+        name: '',
+        sex: '',
+        telephone: '',
+        id: '',
+        idnumbers: '',
+        desc: ''
+      },
+      dialogImageUrl: ''
     };
   },
   computed: { },
@@ -472,6 +591,16 @@ export default {
       this.listQuery.page = 1;
       this.listQuery.limit = 10;
       this.fetchData();
+    },
+    submitUpload() {
+      this.$refs.upload.submit();
+    },
+    handleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    handlePictureCardPreview(file) {
+      this.dialogImageUrl = file.url;
+      this.dialogVisible = true;
     }
   }
 };
@@ -604,6 +733,43 @@ export default {
       }
     }
   }
+}
+.critical-infos {
+  width: 600px;
+  margin: 50px auto;
+
+  .el-textarea__inner {
+    height: 115px;
+  }
+  .success {
+    display: block;
+    width: 200px;
+    height: 40px;
+    color: #fff;
+    background: #e08714;
+    margin: 50px auto 0;
+    font-size: 16px;
+    letter-spacing: 3px;
+  }
+  .el-input.is-active .el-input__inner, 
+  .el-select .el-input.is-focus .el-input__inner,
+  .el-input__inner:focus,
+  .el-radio__inner:hover,
+  .el-textarea__inner:focus,
+  .el-upload--picture-card:hover, 
+  .el-upload:focus {
+    border-color: #e08714;
+  }
+  .el-radio__input.is-checked .el-radio__inner {
+    border-color: #e08714;
+    background: #e08714;
+  }
+  .el-radio__input.is-checked+.el-radio__label {
+    color: #e08714;
+  }
+}
+.el-select-dropdown__item.selected {
+  color: #e08714;
 }
 .critical-vote {
   overflow: hidden;
