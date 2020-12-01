@@ -9,7 +9,7 @@
           <i class="badge badge-blue">论坛</i>
         </div>
         <div class="rcm-section">
-          <a href="">老兵论道</a>
+          <a href="/#/culture/on-tao/index">老兵论道</a>
           <a href="">休闲养生</a>
           <a href="">医学前沿</a>
           <a href="">户外运动</a>
