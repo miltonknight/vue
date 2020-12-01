@@ -221,7 +221,7 @@ export default {
       console.log('submit!');
     },
     numberSelect() {
-      
+
     }
   }
 };
@@ -349,12 +349,6 @@ export default {
       line-height: 1.5;
     }
   }
-
-
-
 }
-
-
-
 
 </style>
