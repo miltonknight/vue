@@ -10,7 +10,7 @@
           <h1>苏家屯区 | 二手车金融销售代表</h1>
           <p>苏家屯区 | 二手车金融销售代表</p>
           <div class="tips">
-            <span五险一金</span><span>交通补助</span><span>话补</span>
+            <span>五险一金</span> <span>交通补助</span> <span>话补</span>
           </div>
           <div class="rules">
             招10人    |    学历不限    |    经验不限
