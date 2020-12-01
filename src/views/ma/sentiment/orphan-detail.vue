@@ -150,18 +150,16 @@
 </template>
 
 <script>
-console.log("Views: /sentiment/critical-detail is loaded");
+console.log("Views: /sentiment/orphan-detail is loaded");
 // import Pagination from "@/components/Pagination";
-import Tinymce from "@/components/Tinymce";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 
 export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
-  name: "SentimentCriticalDetail",
+  name: "SentimentOrphanDetail",
   components: {
-    Tinymce
     // Pagination
   },
   data() {
@@ -170,8 +168,6 @@ export default {
       // 文章列表接口地址、接收数组
       url: LaobingUrl.modular_article_list,
       ArticleList: [],
-      ialogImageUrl: '',
-      dialogVisible: false,
       // Pagination
       total: 0,
       list: null,
@@ -180,16 +176,7 @@ export default {
         sort_id: 60, // 版块id
         page: 1,
         limit: 10
-      },
-      form: {
-        name: '',
-        sex: '',
-        telephone: '',
-        id: '',
-        idnumbers: '',
-        desc: ''
-      },
-      dialogImageUrl: ''
+      }
     };
   },
   computed: { },
@@ -201,48 +188,6 @@ export default {
   methods: { 
     handleClick(tab, event) {
       console.log(tab, event);
-      switch (tab.name) {
-        case "60":
-          console.log("case 60::::::::::")
-          this.books = "ture"
-          this.videos = false
-          this.musics = false
-          this.paintings = false // 书画
-          this.pictures = false
-          break
-        case "61":
-          console.log("case 61::::::::::")
-          this.videos = "ture"
-          this.books = false
-          this.musics = false
-          this.paintings = false // 书画
-          this.pictures = false
-          break
-        case "62":
-          console.log("case 62::::::::::")
-          this.books = false
-          this.videos = false
-          this.musics = "ture"
-          this.paintings = false // 书画
-          this.pictures = false
-          break
-        case "63":
-          console.log("case 63::::::::::")
-          this.books = false
-          this.videos = false
-          this.musics = false
-          this.paintings = "ture" // 书画
-          this.pictures = false
-          break
-        case "64":
-          console.log("case 64::::::::::")
-          this.books = false
-          this.videos = false
-          this.musics = false
-          this.paintings = false // 书画
-          this.pictures = "ture"
-          break
-      }
       this.searchBySort(tab.name);
     },
     postDataFromUI(url, data) {
@@ -315,6 +260,7 @@ export default {
 
   img {
     width: 100%;
+    border-radius: 3px;
   }
 }
 .critical-box {
@@ -382,6 +328,9 @@ export default {
         background: #e08714;
         color: #fff;
       }
+      // &:nth-last-child(1) {
+      //   width: 173px;
+      // }
       &.is-active {
         background: #e08714;
         font-weight: bold;

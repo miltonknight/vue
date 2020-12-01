@@ -98,14 +98,18 @@
                     <el-input v-model="form.idnumbers"></el-input>
                   </el-form-item>
                   <el-form-item label="申请救助简述">
-                    <el-input type="textarea" v-model="form.desc"></el-input>
+                    <el-input 
+                      v-model="form.desc"
+                      type="textarea" 
+                    ></el-input>
                   </el-form-item>
                   <el-form-item label="证件正反面">
                     <el-upload
                       action="https://jsonplaceholder.typicode.com/posts/"
                       list-type="picture-card"
                       :on-preview="handlePictureCardPreview"
-                      :on-remove="handleRemove">
+                      :on-remove="handleRemove"
+                    >
                       <i class="el-icon-plus"></i>
                     </el-upload>
                     <el-dialog :visible.sync="dialogVisible">
@@ -118,7 +122,8 @@
                       action="https://jsonplaceholder.typicode.com/posts/"
                       list-type="picture-card"
                       :on-preview="handlePictureCardPreview"
-                      :on-remove="handleRemove">
+                      :on-remove="handleRemove"
+                    >
                       <i class="el-icon-plus"></i>
                     </el-upload>
                     <el-dialog :visible.sync="dialogVisible">
@@ -131,7 +136,8 @@
                       action="https://jsonplaceholder.typicode.com/posts/"
                       list-type="picture-card"
                       :on-preview="handlePictureCardPreview"
-                      :on-remove="handleRemove">
+                      :on-remove="handleRemove"
+                    >
                       <i class="el-icon-plus"></i>
                     </el-upload>
                     <el-dialog :visible.sync="dialogVisible">
@@ -144,7 +150,8 @@
                       action="https://jsonplaceholder.typicode.com/posts/"
                       list-type="picture-card"
                       :on-preview="handlePictureCardPreview"
-                      :on-remove="handleRemove">
+                      :on-remove="handleRemove"
+                    >
                       <i class="el-icon-plus"></i>
                     </el-upload>
                     <el-dialog :visible.sync="dialogVisible">
@@ -157,7 +164,8 @@
                       action="https://jsonplaceholder.typicode.com/posts/"
                       list-type="picture-card"
                       :on-preview="handlePictureCardPreview"
-                      :on-remove="handleRemove">
+                      :on-remove="handleRemove"
+                    >
                       <i class="el-icon-plus"></i>
                     </el-upload>
                     <el-dialog :visible.sync="dialogVisible">
@@ -170,7 +178,8 @@
                       action="https://jsonplaceholder.typicode.com/posts/"
                       list-type="picture-card"
                       :on-preview="handlePictureCardPreview"
-                      :on-remove="handleRemove">
+                      :on-remove="handleRemove"
+                    >
                       <i class="el-icon-plus"></i>
                     </el-upload>
                     <el-dialog :visible.sync="dialogVisible">
@@ -450,7 +459,7 @@
 <script>
 console.log("Views: /sentiment/critical-detail is loaded");
 // import Pagination from "@/components/Pagination";
-import Tinymce from "@/components/Tinymce";
+// import Tinymce from "@/components/Tinymce";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 
@@ -459,7 +468,7 @@ export default {
   // components: { MaHomeheader },
   name: "SentimentCriticalDetail",
   components: {
-    Tinymce
+    // Tinymce
     // Pagination
   },
   data() {
@@ -493,54 +502,12 @@ export default {
   computed: { },
   created: function() {
     // this.fetchData();
-    this.$store.state.navactive = '/ma/sentiment/critical-detail';
+    this.$store.state.navactive = '/ma/sentiment/index';
   },
   mounted() { },
   methods: { 
     handleClick(tab, event) {
       console.log(tab, event);
-      switch (tab.name) {
-        case "60":
-          console.log("case 60::::::::::")
-          this.books = "ture"
-          this.videos = false
-          this.musics = false
-          this.paintings = false // 书画
-          this.pictures = false
-          break
-        case "61":
-          console.log("case 61::::::::::")
-          this.videos = "ture"
-          this.books = false
-          this.musics = false
-          this.paintings = false // 书画
-          this.pictures = false
-          break
-        case "62":
-          console.log("case 62::::::::::")
-          this.books = false
-          this.videos = false
-          this.musics = "ture"
-          this.paintings = false // 书画
-          this.pictures = false
-          break
-        case "63":
-          console.log("case 63::::::::::")
-          this.books = false
-          this.videos = false
-          this.musics = false
-          this.paintings = "ture" // 书画
-          this.pictures = false
-          break
-        case "64":
-          console.log("case 64::::::::::")
-          this.books = false
-          this.videos = false
-          this.musics = false
-          this.paintings = false // 书画
-          this.pictures = "ture"
-          break
-      }
       this.searchBySort(tab.name);
     },
     postDataFromUI(url, data) {
@@ -607,7 +574,7 @@ export default {
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss" scope>
 .banner {
   margin: 0 auto 20px;
 

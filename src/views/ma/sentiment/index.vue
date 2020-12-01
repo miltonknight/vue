@@ -402,9 +402,10 @@
         <el-tab-pane label="救助报道" name="fourth">
           <div class="report-box">
             <!-- <a v-for="item in ret" :key="item.article_id" :href="'/#/annals/article?id=' + item.article_id" class="list-item"> -->
-            <a href="#" class="list-item">
+            <a class="list-item" href="/#/ma/sentiment/report-detail">
+              
               <div class="list-body-img">
-                <img src="###">
+                <img src="@/assets/img/report.jpg">
               </div>
               <div class="list-body-text">
                 <h3>公正处等监督机构</h3>
@@ -415,9 +416,9 @@
                 </div>
               </div>
             </a>
-            <a href="#" class="list-item">
+            <a class="list-item" href="/#/ma/sentiment/report-detail">
               <div class="list-body-img">
-                <img src="###">
+                <img src="@/assets/img/report.jpg">
               </div>
               <div class="list-body-text">
                 <h3>公正处等监督机构</h3>
@@ -428,9 +429,9 @@
                 </div>
               </div>
             </a>
-            <a href="#" class="list-item">
+            <a class="list-item" href="/#/ma/sentiment/report-detail">
               <div class="list-body-img">
-                <img src="###">
+                <img src="@/assets/img/report.jpg">
               </div>
               <div class="list-body-text">
                 <h3>公正处等监督机构</h3>
@@ -441,9 +442,9 @@
                 </div>
               </div>
             </a>
-            <a href="#" class="list-item">
+            <a class="list-item" href="/#/ma/sentiment/report-detail">
               <div class="list-body-img">
-                <img src="###">
+                <img src="@/assets/img/report.jpg">
               </div>
               <div class="list-body-text">
                 <h3>公正处等监督机构</h3>
@@ -454,9 +455,9 @@
                 </div>
               </div>
             </a>
-            <a href="#" class="list-item">
+            <a class="list-item" href="/#/ma/sentiment/report-detail">
               <div class="list-body-img">
-                <img src="###">
+                <img src="@/assets/img/report.jpg">
               </div>
               <div class="list-body-text">
                 <h3>公正处等监督机构</h3>
@@ -467,9 +468,9 @@
                 </div>
               </div>
             </a>
-            <a href="#" class="list-item">
+            <a class="list-item" href="/#/ma/sentiment/report-detail">
               <div class="list-body-img">
-                <img src="###">
+                <img src="@/assets/img/report.jpg">
               </div>
               <div class="list-body-text">
                 <h3>公正处等监督机构</h3>
@@ -480,9 +481,9 @@
                 </div>
               </div>
             </a>
-            <a href="#" class="list-item">
+            <a class="list-item" href="/#/ma/sentiment/report-detail">
               <div class="list-body-img">
-                <img src="###">
+                <img src="@/assets/img/report.jpg">
               </div>
               <div class="list-body-text">
                 <h3>公正处等监督机构</h3>
@@ -493,9 +494,6 @@
                 </div>
               </div>
             </a>
-
-
-
 
           </div>
         </el-tab-pane>
@@ -532,7 +530,6 @@ export default {
         page: 1,
         limit: 10
       }
-      
     };
   },
   computed: { },
@@ -610,6 +607,7 @@ export default {
 }
 
 .el-tabs--top.sentiment-tab {
+  margin-bottom: 100px;
   
   .el-tabs__header {
     height: 40px ;
@@ -714,9 +712,11 @@ export default {
     color: #a5a5a5;
     text-align: right;
     padding-right: 15px;
+    font-size: 14px;
 
     span {
       color: #323232;
+      margin: 0 3px;
     }
   }
   .donate-list {
