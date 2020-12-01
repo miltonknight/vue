@@ -382,6 +382,27 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: "/ma/jobs/index",
+    redirect: "/ma/jobs/index",
+    name: "jobs",
+    meta: { title: "创就业", icon: "user" },
+    component: MaSentimentLayout,
+    children: [
+      {
+        path: "/ma/jobs/index",
+        name: "MaJobsIndex",
+        component: () => import("@/views/ma/jobs/index"),
+        meta: { title: "创就业", icon: "dashboard" }
+      },
+      {
+        path: "/ma/jobs/job-detail",
+        name: "MaJobsDetail",
+        component: () => import("@/views/ma/jobs/job-detail"),
+        meta: { title: "创就业", icon: "dashboard" }
+      }
+    ]
+  },
   
   // {
   //   path: "/user",
