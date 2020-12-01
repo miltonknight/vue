@@ -30,7 +30,9 @@
           <span><svg-icon icon-class="tip-corporation" class-name="card-panel-icon" />创业就业</span>
         </el-menu-item>
         <el-menu-item index="6">
-          <span><svg-icon icon-class="tip-address-book" class-name="card-panel-icon" />通讯</span>
+          <a href="/#/ma/telecom/index">
+            <span><svg-icon icon-class="tip-address-book" class-name="card-panel-icon" />通讯</span>
+          </a>
         </el-menu-item>
         <el-menu-item index="7">
           <span><svg-icon icon-class="tip-finance" class-name="card-panel-icon" />金融</span>

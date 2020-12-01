@@ -367,6 +367,21 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: "/ma/telecom/index",
+    redirect: "/ma/telecom/index",
+    name: "telecom",
+    meta: { title: "老兵通讯", icon: "user" },
+    component: MaSentimentLayout,
+    children: [
+      {
+        path: "/ma/telecom/index",
+        name: "MaTelecomIndex",
+        component: () => import("@/views/ma/telecom/index"),
+        meta: { title: "老兵通讯", icon: "dashboard" }
+      }
+    ]
+  },
   
   // {
   //   path: "/user",
