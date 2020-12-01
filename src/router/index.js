@@ -346,6 +346,24 @@ export const constantRoutes = [
         name: "MaSentimentCriticalDetail",
         component: () => import("@/views/ma/sentiment/critical-detail"),
         meta: { title: "大病救助-老兵情怀", icon: "dashboard" }
+      },
+      {
+        path: "/ma/sentiment/orphan-detail",
+        name: "MaSentimentOrphanDetail",
+        component: () => import("@/views/ma/sentiment/orphan-detail"),
+        meta: { title: "孤儿救助-老兵情怀", icon: "dashboard" }
+      },
+      {
+        path: "/ma/sentiment/donate-detail",
+        name: "MaSentimentDonateDetail",
+        component: () => import("@/views/ma/sentiment/donate-detail"),
+        meta: { title: "捐赠众筹-老兵情怀", icon: "dashboard" }
+      },
+      {
+        path: "/ma/sentiment/report-detail",
+        name: "MaSentimentReportDetail",
+        component: () => import("@/views/ma/sentiment/report-detail"),
+        meta: { title: "救助报道-老兵情怀", icon: "dashboard" }
       }
     ]
   },
