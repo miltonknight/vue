@@ -24,10 +24,12 @@
           <span><svg-icon icon-class="tip-travel" class-name="card-panel-icon" />旅游</span>
         </el-menu-item>
         <el-menu-item index="4">
-          <span><svg-icon icon-class="tip-catering" class-name="card-panel-icon" />老军号餐饮</span>
+          <span><svg-icon icon-class="tip-catering" class-name="card-panel-icon" />老军号</span>
         </el-menu-item>
         <el-menu-item index="5">
-          <span><svg-icon icon-class="tip-corporation" class-name="card-panel-icon" />创业就业</span>
+          <a href="/#/ma/jobs/index">
+            <span><svg-icon icon-class="tip-corporation" class-name="card-panel-icon" />创就业</span>
+          </a>
         </el-menu-item>
         <el-menu-item index="6">
           <a href="/#/ma/telecom/index">
@@ -59,7 +61,7 @@ export default {
   props: {},
   data() {
     return {
-      activeIndex2: '1'
+      activeIndex2: '0'
     };
   },
   methods: {
