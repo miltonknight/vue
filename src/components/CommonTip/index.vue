@@ -43,7 +43,9 @@
           <span><svg-icon icon-class="tip-refueling" class-name="card-panel-icon" />加油</span>
         </el-menu-item>
         <el-menu-item index="9">
-          <span><svg-icon icon-class="tip-house-moving" class-name="card-panel-icon" />搬家</span>
+          <a href="/#/ma/house-moving/index">
+            <span><svg-icon icon-class="tip-house-moving" class-name="card-panel-icon" />搬家</span>
+          </a>  
         </el-menu-item>
       </el-menu>
       <a href="" class="tip-link">寻求合作</a>
