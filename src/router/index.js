@@ -403,6 +403,27 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: "/ma/house-moving/index",
+    redirect: "/ma/house-moving/index",
+    name: "housemoving",
+    meta: { title: "老兵搬家", icon: "user" },
+    component: MaSentimentLayout,
+    children: [
+      {
+        path: "/ma/house-moving/index",
+        name: "MaHmIndex",
+        component: () => import("@/views/ma/house-moving/index"),
+        meta: { title: "老兵搬家", icon: "dashboard" }
+      },
+      {
+        path: "/ma/house-moving/detail",
+        name: "MaHmDetail",
+        component: () => import("@/views/ma/house-moving/detail"),
+        meta: { title: "老兵搬家", icon: "dashboard" }
+      }
+    ]
+  },
   
   // {
   //   path: "/user",
