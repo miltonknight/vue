@@ -79,7 +79,7 @@ export default {
 .tip-main {
   position: absolute;
   left: 50%;
-  top: 80px;
+  top: 70px;
   width: 180px;
   padding-top: 145px;
   margin-left: -727px;  
