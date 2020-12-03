@@ -230,6 +230,20 @@ export const constantRoutes = [
         meta: { title: "新媒体矩阵-资料库", icon: "dashboard" }
       },
       {
+        path: "/culture/competition/index",
+        name: "MaCultureCompetitionIndex",
+        component: () => import("@/views/ma/culture/competition/index"),
+        // component: MaCsArticleLayout,
+        meta: { title: "比赛活动-资料库", icon: "dashboard" }
+      },
+      {
+        path: "/culture/competition/detail",
+        name: "MaCultureCompetitionDetail",
+        component: () => import("@/views/ma/culture/competition/detail"),
+        // component: MaCsArticleLayout,
+        meta: { title: "比赛活动-资料库", icon: "dashboard" }
+      },
+      {
         path: "/homeland/index",
         name: "MaHomeLand",
         component: () => import("@/views/ma/homeland/index"),
