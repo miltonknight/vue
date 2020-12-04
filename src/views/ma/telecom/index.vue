@@ -227,7 +227,7 @@ export default {
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 .banner {
   margin: 0 auto 20px;
 
