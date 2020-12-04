@@ -111,6 +111,12 @@ export const constantRoutes = [
         meta: { title: "首页", icon: "dashboard" }
       },
       {
+        path: "/setting/index",
+        name: "MaSettingIndex",
+        component: () => import("@/views/ma/setting/index"),
+        meta: { title: "个人设置", icon: "dashboard" }
+      },
+      {
         path: "/courier-station/index",
         name: "MaCourierStationIndex",
         component: () => import("@/views/ma/courier-station/index"),
