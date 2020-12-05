@@ -411,5 +411,15 @@ M 大病救助，报名初核部分完成，大病救助页面完成
 2. src\router\index.js
 完善相关路由
 
-
-
+#-------------------- 20201205更新内容 --------------------
+1. src\router\index.js
+老兵情怀、老兵政策路由加入到/ma下的二级子路由，公用一个layout
+2. src\views\ma\policy\index.vue, src\views\ma\policy\article.vue,
+   src\views\ma\sentiment\index.vue, src\views\ma\sentiment\critical-detail.vue,
+   src\views\ma\sentiment\donate-detail.vue, src\views\ma\sentiment\orphan-detail.vue,
+   src\views\ma\sentiment\report-detail.vue
+页面更改 this.$store.state.navactive 
+3. src\views\ma\policy\index.vue
+老兵政策页面恢复左导航，tab由左侧改为上方
+4. src\components\CommonNav\index.vue
+上导航更改老兵情怀、老兵政策路径
