@@ -7,7 +7,6 @@ Vue.use(Router);
 import Layout from "@/layout";
 import MaLayout from "@/layout/ma/home/index";
 import MaLayout404 from "@/layout/ma/404";
-import MaPolicyLayout from "@/layout/ma/policy/index";
 import MaSentimentLayout from "@/layout/ma/sentiment/index";
 
 /**
@@ -292,6 +291,48 @@ export const constantRoutes = [
         // component: MaCsArticleLayout,
         meta: { title: "律师-老兵家园", icon: "dashboard" }
       },
+      {
+        path: "/sentiment/index",
+        name: "MaSentimentIndex",
+        component: () => import("@/views/ma/sentiment/index"),
+        meta: { title: "老兵情怀", icon: "dashboard" }
+      },
+      {
+        path: "/sentiment/critical-detail",
+        name: "MaSentimentCriticalDetail",
+        component: () => import("@/views/ma/sentiment/critical-detail"),
+        meta: { title: "大病救助-老兵情怀", icon: "dashboard" }
+      },
+      {
+        path: "/sentiment/orphan-detail",
+        name: "MaSentimentOrphanDetail",
+        component: () => import("@/views/ma/sentiment/orphan-detail"),
+        meta: { title: "孤儿救助-老兵情怀", icon: "dashboard" }
+      },
+      {
+        path: "/sentiment/donate-detail",
+        name: "MaSentimentDonateDetail",
+        component: () => import("@/views/ma/sentiment/donate-detail"),
+        meta: { title: "捐赠众筹-老兵情怀", icon: "dashboard" }
+      },
+      {
+        path: "/sentiment/report-detail",
+        name: "MaSentimentReportDetail",
+        component: () => import("@/views/ma/sentiment/report-detail"),
+        meta: { title: "救助报道-老兵情怀", icon: "dashboard" }
+      },
+      {
+        path: "/policy/index",
+        name: "MaPolicyIndex",
+        component: () => import("@/views/ma/policy/index"),
+        meta: { title: "老兵政策", icon: "dashboard" }
+      },
+      {
+        path: "/policy/article",
+        name: "MaPolicyArticle",
+        component: () => import("@/views/ma/policy/article"),
+        meta: { title: "老兵政策", icon: "dashboard" }
+      },
       // {
       //   path: "/policy/index",
       //   name: "MaPolicyIndex",
@@ -312,75 +353,75 @@ export const constantRoutes = [
 
     ]
   },
-  {
-    path: "/ma/policy",
-    redirect: "/ma/policy/index",
-    name: "policy",
-    meta: { title: "老兵政策", icon: "user" },
-    component: MaPolicyLayout,
-    children: [
-      {
-        path: "/ma/policy/index",
-        name: "MaPolicyIndex",
-        component: () => import("@/views/ma/policy/index"),
-        meta: { title: "老兵政策", icon: "dashboard" }
-      }
-    ]
-  },
-  {
-    path: "/ma/policy/article",
-    redirect: "/ma/policy/article",
-    name: "policyArticle",
-    meta: { title: "老兵政策", icon: "user" },
-    component: MaLayout,
-    children: [
-      {
-        path: "/ma/policy/article",
-        name: "MaPolicyArticle",
-        component: () => import("@/views/ma/policy/article"),
-        meta: { title: "老兵政策", icon: "dashboard" }
-      }
-    ]
-  },
-  {
-    path: "/ma/sentiment",
-    redirect: "/ma/sentiment/index",
-    name: "sentiment",
-    meta: { title: "老兵情怀", icon: "user" },
-    component: MaSentimentLayout,
-    children: [
-      {
-        path: "/ma/sentiment/index",
-        name: "MaSentimentIndex",
-        component: () => import("@/views/ma/sentiment/index"),
-        meta: { title: "老兵情怀", icon: "dashboard" }
-      },
-      {
-        path: "/ma/sentiment/critical-detail",
-        name: "MaSentimentCriticalDetail",
-        component: () => import("@/views/ma/sentiment/critical-detail"),
-        meta: { title: "大病救助-老兵情怀", icon: "dashboard" }
-      },
-      {
-        path: "/ma/sentiment/orphan-detail",
-        name: "MaSentimentOrphanDetail",
-        component: () => import("@/views/ma/sentiment/orphan-detail"),
-        meta: { title: "孤儿救助-老兵情怀", icon: "dashboard" }
-      },
-      {
-        path: "/ma/sentiment/donate-detail",
-        name: "MaSentimentDonateDetail",
-        component: () => import("@/views/ma/sentiment/donate-detail"),
-        meta: { title: "捐赠众筹-老兵情怀", icon: "dashboard" }
-      },
-      {
-        path: "/ma/sentiment/report-detail",
-        name: "MaSentimentReportDetail",
-        component: () => import("@/views/ma/sentiment/report-detail"),
-        meta: { title: "救助报道-老兵情怀", icon: "dashboard" }
-      }
-    ]
-  },
+  // {
+  //   path: "/ma/policy",
+  //   redirect: "/ma/policy/index",
+  //   name: "policy",
+  //   meta: { title: "老兵政策", icon: "user" },
+  //   component: MaPolicyLayout,
+  //   children: [
+  //     {
+  //       path: "/ma/policy/index",
+  //       name: "MaPolicyIndex",
+  //       component: () => import("@/views/ma/policy/index"),
+  //       meta: { title: "老兵政策", icon: "dashboard" }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: "/ma/policy/article",
+  //   redirect: "/ma/policy/article",
+  //   name: "policyArticle",
+  //   meta: { title: "老兵政策", icon: "user" },
+  //   component: MaLayout,
+  //   children: [
+  //     {
+  //       path: "/ma/policy/article",
+  //       name: "MaPolicyArticle",
+  //       component: () => import("@/views/ma/policy/article"),
+  //       meta: { title: "老兵政策", icon: "dashboard" }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: "/ma/sentiment",
+  //   redirect: "/ma/sentiment/index",
+  //   name: "sentiment",
+  //   meta: { title: "老兵情怀", icon: "user" },
+  //   component: MaSentimentLayout,
+  //   children: [
+  //     {
+  //       path: "/ma/sentiment/index",
+  //       name: "MaSentimentIndex",
+  //       component: () => import("@/views/ma/sentiment/index"),
+  //       meta: { title: "老兵情怀", icon: "dashboard" }
+  //     },
+  //     {
+  //       path: "/ma/sentiment/critical-detail",
+  //       name: "MaSentimentCriticalDetail",
+  //       component: () => import("@/views/ma/sentiment/critical-detail"),
+  //       meta: { title: "大病救助-老兵情怀", icon: "dashboard" }
+  //     },
+  //     {
+  //       path: "/ma/sentiment/orphan-detail",
+  //       name: "MaSentimentOrphanDetail",
+  //       component: () => import("@/views/ma/sentiment/orphan-detail"),
+  //       meta: { title: "孤儿救助-老兵情怀", icon: "dashboard" }
+  //     },
+  //     {
+  //       path: "/ma/sentiment/donate-detail",
+  //       name: "MaSentimentDonateDetail",
+  //       component: () => import("@/views/ma/sentiment/donate-detail"),
+  //       meta: { title: "捐赠众筹-老兵情怀", icon: "dashboard" }
+  //     },
+  //     {
+  //       path: "/ma/sentiment/report-detail",
+  //       name: "MaSentimentReportDetail",
+  //       component: () => import("@/views/ma/sentiment/report-detail"),
+  //       meta: { title: "救助报道-老兵情怀", icon: "dashboard" }
+  //     }
+  //   ]
+  // },
   {
     path: "/ma/telecom/index",
     redirect: "/ma/telecom/index",
