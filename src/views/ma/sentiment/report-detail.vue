@@ -55,7 +55,7 @@ export default {
   },
   created: function() {
     this.fetchData();
-    this.$store.state.navactive = '/ma/sentiment/index';
+    this.$store.state.navactive = '/sentiment/index';
   },
   methods: { 
     postDataFromUI(url, data) {
