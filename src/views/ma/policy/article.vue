@@ -153,7 +153,7 @@ export default {
   created: function() {
     this.fetchData();
     // console.log("navactive::::::" + this.$store.state.navactive);
-    this.$store.state.navactive = '/ma/policy/index';
+    this.$store.state.navactive = '/policy/index';
   },
   methods: { 
     postDataFromUI(url, data) {
