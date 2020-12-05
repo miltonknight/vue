@@ -423,3 +423,5 @@ M 大病救助，报名初核部分完成，大病救助页面完成
 老兵政策页面恢复左导航，tab由左侧改为上方
 4. src\components\CommonNav\index.vue
 上导航更改老兵情怀、老兵政策路径
+5. src\views\ma\sentiment\index.vue
+更改4个详情页的详情连接
