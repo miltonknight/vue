@@ -12,9 +12,10 @@
         :on-success="handleSuccess"
         :before-upload="beforeUpload"
         class="editor-slide-upload"
-        action="http://192.168.110.170:8181/uploads/article"
+        action="/uploads/article"
         list-type="picture-card"
       >
+        <!-- action="http://192.168.110.170:8181/uploads/article" -->
         <el-button size="small" type="primary">
           点击选择要上传的图片
         </el-button>
@@ -31,6 +32,7 @@
 
 <script>
 // import { getToken } from 'api/qiniu'
+import { LaobingUrl } from "@/api/laobing_url";
 
 export default {
   name: 'EditorSlideUpload',

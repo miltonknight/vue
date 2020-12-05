@@ -15,10 +15,14 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 
-//引用定义变量JS
+// 引用定义变量JS
 import siteBaseUrl from '@/global/global.js'
-//转化为全局变量后续通过this.方法进行引用 this.GLOBAL.basePath
+// 转化为全局变量后续通过this.方法进行引用 this.GLOBAL.basePath
 Vue.prototype.GLOBAL = siteBaseUrl;
+
+// V - Distpicker 是一个简单易用的地区选择器, 此处进行全局注册
+import VDistpicker from 'v-distpicker'
+Vue.use('v-distpicker', VDistpicker)
 
 /**
  * If you don't want to use mock-server

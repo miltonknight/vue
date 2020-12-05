@@ -11,7 +11,7 @@
             <div class="article-main">
               <div class="article-head">
                 <h1>{{ ArticleDetail.title }}标题标题标题</h1>
-                <p><a href="">{{ ArticleDetail.writer }}作者</a> {{ ArticleDetail.create_time }}</p>
+                <p><a href="">{{ ArticleDetail.writer }}</a> {{ ArticleDetail.create_time }}</p>
               </div>
               <div class="article-body">
                 <p v-html="ArticleDetail.content"></p>

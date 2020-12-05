@@ -447,10 +447,11 @@ export default {
   width: 50px;
   height: 100px;
   box-shadow: none;
+  border-radius: 3px;
 
   &:hover {
     box-shadow: none;
-    background: none!important; 
+    background: #fff; 
   }
 }
 .backtobox {

@@ -24,13 +24,17 @@
           <span><svg-icon icon-class="tip-travel" class-name="card-panel-icon" />旅游</span>
         </el-menu-item>
         <el-menu-item index="4">
-          <span><svg-icon icon-class="tip-catering" class-name="card-panel-icon" />老军号餐饮</span>
+          <span><svg-icon icon-class="tip-catering" class-name="card-panel-icon" />老军号</span>
         </el-menu-item>
         <el-menu-item index="5">
-          <span><svg-icon icon-class="tip-corporation" class-name="card-panel-icon" />创业就业</span>
+          <a href="/#/ma/jobs/index">
+            <span><svg-icon icon-class="tip-corporation" class-name="card-panel-icon" />创就业</span>
+          </a>
         </el-menu-item>
         <el-menu-item index="6">
-          <span><svg-icon icon-class="tip-address-book" class-name="card-panel-icon" />通讯</span>
+          <a href="/#/ma/telecom/index">
+            <span><svg-icon icon-class="tip-address-book" class-name="card-panel-icon" />通讯</span>
+          </a>
         </el-menu-item>
         <el-menu-item index="7">
           <span><svg-icon icon-class="tip-finance" class-name="card-panel-icon" />金融</span>
@@ -39,7 +43,9 @@
           <span><svg-icon icon-class="tip-refueling" class-name="card-panel-icon" />加油</span>
         </el-menu-item>
         <el-menu-item index="9">
-          <span><svg-icon icon-class="tip-house-moving" class-name="card-panel-icon" />搬家</span>
+          <a href="/#/ma/house-moving/index">
+            <span><svg-icon icon-class="tip-house-moving" class-name="card-panel-icon" />搬家</span>
+          </a>  
         </el-menu-item>
       </el-menu>
       <a href="" class="tip-link">寻求合作</a>
@@ -57,7 +63,7 @@ export default {
   props: {},
   data() {
     return {
-      activeIndex2: '1'
+      activeIndex2: '0'
     };
   },
   methods: {
@@ -73,7 +79,7 @@ export default {
 .tip-main {
   position: absolute;
   left: 50%;
-  top: 80px;
+  top: 70px;
   width: 180px;
   padding-top: 145px;
   margin-left: -727px;  

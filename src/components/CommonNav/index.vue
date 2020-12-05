@@ -34,7 +34,7 @@
           <el-menu-item index="/culture/on-tao/index">名家讲坛</el-menu-item>
           <el-menu-item index="/culture/storage/index">资料库</el-menu-item>
           <el-menu-item index="/culture/new-media/index">新媒体</el-menu-item>
-          <el-menu-item index="4-4">比赛活动</el-menu-item>
+          <el-menu-item index="/culture/competition/index">比赛活动</el-menu-item>
           <el-menu-item index="4-5">网络晚会</el-menu-item>
         </el-submenu>
         <el-submenu 

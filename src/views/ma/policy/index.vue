@@ -149,7 +149,7 @@
 </template>
 
 <script>
-console.log("Views: /policy/index is loaded-------------------------------");
+console.log("Views: /policy/index is loaded");
 // import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
@@ -188,6 +188,7 @@ export default {
   created: function() {
     // this.fetchData();
     this.$store.state.navactive = '/ma/policy/index';
+    this.$forceUpdate();
   },
   mounted() {
     // console.log("this.$store.state.navactive：：：：：：：：：：：：：")

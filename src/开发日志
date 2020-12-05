@@ -377,7 +377,39 @@ this.$store.state.navactive = '/xxxx/index';
 2. src\router\index.js
 增加老兵情怀，大病救助相关路由
 
+#-------------------- 20201130更新内容 --------------------
+1. src\components\Tinymce\components\EditorImage.vue
+添加baseurl L.15 action处更改请求地址
+2. src\views\ma\sentiment\critical-detail.vue
+M 大病救助，报名初核部分完成，大病救助页面完成
+3. src\views\ma\sentiment\orphan-detail.vue
+新增孤儿救助相关页面6 steps
+4. src\router\index.js
+新增孤儿救助相关链接, 增加捐款众筹相关链接
+5. src\views\ma\sentiment\index.vue
+关怀首页4列表完成
 
+#-------------------- 20201201更新内容 --------------------
+1. src\views\ma\sentiment
+新增情怀-捐助、报道两个子页面，完善index，standard format所有页面
+2. src\views\ma\telecom\index.vue
+老兵通信完成
+3. src\views\ma\jobs
+增加创就业版块相关页面，丰富其他区域链接，页面Vue已完成，后台接口暂无
+4. src\router\index.js
+完善相关路由
+
+#-------------------- 20201202更新内容 --------------------
+1. src\views\ma\house-moving
+新增老兵家园-搬家，相关列表页、详情页
+2. src\router\index.js
+完善相关路由
+
+#-------------------- 20201203更新内容 --------------------
+1. src\views\ma\culture\competition
+新增老兵文化-比赛活动列表页、内容页
+2. src\router\index.js
+完善相关路由
 
 
 

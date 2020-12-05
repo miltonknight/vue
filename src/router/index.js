@@ -230,6 +230,20 @@ export const constantRoutes = [
         meta: { title: "新媒体矩阵-资料库", icon: "dashboard" }
       },
       {
+        path: "/culture/competition/index",
+        name: "MaCultureCompetitionIndex",
+        component: () => import("@/views/ma/culture/competition/index"),
+        // component: MaCsArticleLayout,
+        meta: { title: "比赛活动-资料库", icon: "dashboard" }
+      },
+      {
+        path: "/culture/competition/detail",
+        name: "MaCultureCompetitionDetail",
+        component: () => import("@/views/ma/culture/competition/detail"),
+        // component: MaCsArticleLayout,
+        meta: { title: "比赛活动-资料库", icon: "dashboard" }
+      },
+      {
         path: "/homeland/index",
         name: "MaHomeLand",
         component: () => import("@/views/ma/homeland/index"),
@@ -346,6 +360,81 @@ export const constantRoutes = [
         name: "MaSentimentCriticalDetail",
         component: () => import("@/views/ma/sentiment/critical-detail"),
         meta: { title: "大病救助-老兵情怀", icon: "dashboard" }
+      },
+      {
+        path: "/ma/sentiment/orphan-detail",
+        name: "MaSentimentOrphanDetail",
+        component: () => import("@/views/ma/sentiment/orphan-detail"),
+        meta: { title: "孤儿救助-老兵情怀", icon: "dashboard" }
+      },
+      {
+        path: "/ma/sentiment/donate-detail",
+        name: "MaSentimentDonateDetail",
+        component: () => import("@/views/ma/sentiment/donate-detail"),
+        meta: { title: "捐赠众筹-老兵情怀", icon: "dashboard" }
+      },
+      {
+        path: "/ma/sentiment/report-detail",
+        name: "MaSentimentReportDetail",
+        component: () => import("@/views/ma/sentiment/report-detail"),
+        meta: { title: "救助报道-老兵情怀", icon: "dashboard" }
+      }
+    ]
+  },
+  {
+    path: "/ma/telecom/index",
+    redirect: "/ma/telecom/index",
+    name: "telecom",
+    meta: { title: "老兵通讯", icon: "user" },
+    component: MaSentimentLayout,
+    children: [
+      {
+        path: "/ma/telecom/index",
+        name: "MaTelecomIndex",
+        component: () => import("@/views/ma/telecom/index"),
+        meta: { title: "老兵通讯", icon: "dashboard" }
+      }
+    ]
+  },
+  {
+    path: "/ma/jobs/index",
+    redirect: "/ma/jobs/index",
+    name: "jobs",
+    meta: { title: "创就业", icon: "user" },
+    component: MaSentimentLayout,
+    children: [
+      {
+        path: "/ma/jobs/index",
+        name: "MaJobsIndex",
+        component: () => import("@/views/ma/jobs/index"),
+        meta: { title: "创就业", icon: "dashboard" }
+      },
+      {
+        path: "/ma/jobs/job-detail",
+        name: "MaJobsDetail",
+        component: () => import("@/views/ma/jobs/job-detail"),
+        meta: { title: "创就业", icon: "dashboard" }
+      }
+    ]
+  },
+  {
+    path: "/ma/house-moving/index",
+    redirect: "/ma/house-moving/index",
+    name: "housemoving",
+    meta: { title: "老兵搬家", icon: "user" },
+    component: MaSentimentLayout,
+    children: [
+      {
+        path: "/ma/house-moving/index",
+        name: "MaHmIndex",
+        component: () => import("@/views/ma/house-moving/index"),
+        meta: { title: "老兵搬家", icon: "dashboard" }
+      },
+      {
+        path: "/ma/house-moving/detail",
+        name: "MaHmDetail",
+        component: () => import("@/views/ma/house-moving/detail"),
+        meta: { title: "老兵搬家", icon: "dashboard" }
       }
     ]
   },

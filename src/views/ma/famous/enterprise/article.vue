@@ -12,7 +12,7 @@
             <div class="article-main">
               <div class="article-head">
                 <h1>{{ ArticleDetail.title }}</h1>
-                <p><a href="">{{ ArticleDetail.writer }}writer</a> {{ ArticleDetail.create_time }}   关注</p>
+                <p><a href="">{{ ArticleDetail.writer }}</a> {{ ArticleDetail.create_time }}   关注</p>
               </div>
               <div class="article-body">
                 <p v-html="ArticleDetail.content"></p>
