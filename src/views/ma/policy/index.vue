@@ -6,151 +6,132 @@
     </div>
     
     <div class="policy-main">
-      <el-tabs :tab-position="tabPosition" class="policy-tab">
-        <el-tab-pane label="权益维护">
+      <el-tabs :tab-position="tabPosition" v-model="activeName" class="policy-tab" @tab-click="handleClick">
+        <el-tab-pane label="权益维护" name="40">
           <div class="policy-header">权益维护</div>
           <div class="policy-body">
             <ul class="policy-list">
-              <li><a href="/#/policy/article">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
+              <!-- <li><a href="">中华人民共和国222英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li> -->
+              <li v-for="item in ArticleList.list" :key="item.id">
+                <a :href="'/#/policy/article?id=' + item.article_id + '&sort_id=' + item.sort_id">
+                  {{ item.title }}
+                </a>
+                <span><i class="el-icon-time"></i>{{ item.create_time }}</span>
+              </li>
             </ul>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="退役安置">
-          <div class="policy-header">军转干部安置 / 退役士兵安置</div>
+        <el-tab-pane label="退役安置" name="41">
+          <div class="policy-header"><span name="48">军转干部安置</span> / <span name="49">退役士兵安置</span></div>
           <div class="policy-body">
             <ul class="policy-list">
-              <li><a href="">中华人民共和国222英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国222英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英222雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
+              <li v-for="item in ArticleList.list" :key="item.id">
+                <a :href="'/#/policy/article?id=' + item.article_id + '&sort_id=' + item.sort_id">
+                  {{ item.title }}
+                </a>
+                <span><i class="el-icon-time"></i>{{ item.create_time }}</span>
+              </li>
             </ul>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="就业服务">
+        <el-tab-pane label="就业服务" name="42">
           <div class="policy-header">就业服务</div>
           <div class="policy-body">
             <ul class="policy-list">
-              <li><a href="">中华人民共和国3333英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国333英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英333雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
+              <li v-for="item in ArticleList.list" :key="item.id">
+                <a :href="'/#/policy/article?id=' + item.article_id + '&sort_id=' + item.sort_id">
+                  {{ item.title }}
+                </a>
+                <span><i class="el-icon-time"></i>{{ item.create_time }}</span>
+              </li>
             </ul>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="教育培训">
+        <el-tab-pane label="教育培训" name="43">
           <div class="policy-header">教育培训</div>
           <div class="policy-body">
             <ul class="policy-list">
-              <li><a href="">中华人民共和国44444英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国444英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英444雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
+              <li v-for="item in ArticleList.list" :key="item.id">
+                <a :href="'/#/policy/article?id=' + item.article_id + '&sort_id=' + item.sort_id">
+                  {{ item.title }}
+                </a>
+                <span><i class="el-icon-time"></i>{{ item.create_time }}</span>
+              </li>
             </ul>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="军休安置">
-          <div class="policy-header">军休安置</div>
+        <el-tab-pane label="军休安置" name="44">
+          <div class="policy-header"><span name="50">军队离退休干部服务管理</span> / <span name="51">无军籍职工安置</span></div>
+          <!-- <div class="policy-header">军休安置</div> -->
           <div class="policy-body">
             <ul class="policy-list">
-              <li><a href="">中华人民共和国555英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国555英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英555雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
+              <li v-for="item in ArticleList.list" :key="item.id">
+                <a :href="'/#/policy/article?id=' + item.article_id + '&sort_id=' + item.sort_id">
+                  {{ item.title }}
+                </a>
+                <span><i class="el-icon-time"></i>{{ item.create_time }}</span>
+              </li>
             </ul>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="优待抚恤">
+        <el-tab-pane label="优待抚恤" name="45">
           <div class="policy-header">优待抚恤</div>
           <div class="policy-body">
             <ul class="policy-list">
-              <li><a href="">中华人民共和国6666英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国6666英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英66666雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
+              <li v-for="item in ArticleList.list" :key="item.id">
+                <a :href="'/#/policy/article?id=' + item.article_id + '&sort_id=' + item.sort_id">
+                  {{ item.title }}
+                </a>
+                <span><i class="el-icon-time"></i>{{ item.create_time }}</span>
+              </li>
             </ul>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="英烈褒扬">
+        <el-tab-pane label="英烈褒扬" name="46">
           <div class="policy-header">英烈褒扬</div>
           <div class="policy-body">
             <ul class="policy-list">
-              <li><a href="">中华人民共和国7777英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国777英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英777雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
+              <li v-for="item in ArticleList.list" :key="item.id">
+                <a :href="'/#/policy/article?id=' + item.article_id + '&sort_id=' + item.sort_id">
+                  {{ item.title }}
+                </a>
+                <span><i class="el-icon-time"></i>{{ item.create_time }}</span>
+              </li>
             </ul>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="双拥工作">
+        <el-tab-pane label="双拥工作" name="47">
           <div class="policy-header">双拥工作</div>
           <div class="policy-body">
             <ul class="policy-list">
-              <li><a href="">中华人民共和国8888英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国888英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英888雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
-              <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
+              <li v-for="item in ArticleList.list" :key="item.id">
+                <a :href="'/#/policy/article?id=' + item.article_id + '&sort_id=' + item.sort_id">
+                  {{ item.title }}
+                </a>
+                <span><i class="el-icon-time"></i>{{ item.create_time }}</span>
+              </li>
             </ul>
           </div>
         </el-tab-pane>
       </el-tabs>
+      <!-- 暂无数据 -->
+      <div v-show="zwsj" class="zwsj">暂无数据</div>
+      <pagination
+        v-show="total > 0"
+        background
+        layout="prev, pager, next"
+        :total="total"
+        :page.sync="listQuery.page"
+        :limit.sync="listQuery.limit"
+        @pagination="fetchData"
+      />
     </div>
   </div>
 </template>
 
 <script>
 console.log("Views: /policy/index is loaded");
-// import Pagination from "@/components/Pagination";
+import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";
@@ -160,13 +141,12 @@ export default {
   // components: { MaHomeheader },
   name: "Policy",
   components: {
-    // Pagination
+    Pagination
   },
   data() {
     return {
       tabPosition: 'top',
-      activeName: '60', // tab active
-      navselected: '/ma/policy/index',
+      activeName: '40', // tab active
       // 文章列表接口地址、接收数组
       url: LaobingUrl.modular_article_list,
       ArticleList: [],
@@ -175,11 +155,13 @@ export default {
       list: null,
       listLoading: true,
       listQuery: {
-        sort_id: 60, // 版块id
+        sort_id: 40, // 版块id
         page: 1,
-        limit: 10
-      }
-      
+        limit: 10,
+        role_flag: 0,
+        search_input: ""
+      },
+      zwsj: false
     };
   },
   computed: { 
@@ -188,7 +170,7 @@ export default {
   created: function() {
     // this.fetchData();
     this.$store.state.navactive = '/policy/index';
-    this.$forceUpdate();
+    this.searchBySort(this.activeName);
   },
   mounted() {
     // console.log("this.$store.state.navactive：：：：：：：：：：：：：")
@@ -199,48 +181,7 @@ export default {
   methods: { 
     handleClick(tab, event) {
       console.log(tab, event);
-      switch (tab.name) {
-        case "60":
-          console.log("case 60::::::::::")
-          this.books = "ture"
-          this.videos = false
-          this.musics = false
-          this.paintings = false // 书画
-          this.pictures = false
-          break
-        case "61":
-          console.log("case 61::::::::::")
-          this.videos = "ture"
-          this.books = false
-          this.musics = false
-          this.paintings = false // 书画
-          this.pictures = false
-          break
-        case "62":
-          console.log("case 62::::::::::")
-          this.books = false
-          this.videos = false
-          this.musics = "ture"
-          this.paintings = false // 书画
-          this.pictures = false
-          break
-        case "63":
-          console.log("case 63::::::::::")
-          this.books = false
-          this.videos = false
-          this.musics = false
-          this.paintings = "ture" // 书画
-          this.pictures = false
-          break
-        case "64":
-          console.log("case 64::::::::::")
-          this.books = false
-          this.videos = false
-          this.musics = false
-          this.paintings = false // 书画
-          this.pictures = "ture"
-          break
-      }
+      console.log("tab.name::::" + tab.name);
       this.searchBySort(tab.name);
     },
     postDataFromUI(url, data) {
@@ -255,7 +196,7 @@ export default {
                 // console.log(response.data.total)
                 this.zwsj = true;
               }  
-              console.log("Get Annals List Response:", data);
+              console.log("Get Policy List Response:", data);
               console.log(msg);
               resolve(data);
             }
