@@ -25,12 +25,18 @@ export default {
         "/culture/on-tao/index",
         "/culture/storage/index",
         "/culture/new-media/index",
+        "/culture/competition/index",
         "/famous/people/index",
         "/famous/enterprise/index",
         "/homeland/index",
         "/homeland/qa-list",
         "/homeland/law-list",
-        "/homeland/lawyer-list"
+        "/homeland/lawyer-list",
+        "/ma/jobs/index",
+        "/ma/house-moving/index",
+        "/ma/telecom/index",
+        "/sentiment/index",
+        "/policy/index"
       ]
     };
   },
