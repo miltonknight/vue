@@ -197,7 +197,7 @@ export default {
                 this.zwsj = true;
               }  
               else { 
-                this.zwsj = false; // 修复数据与“暂无数据”共存
+                this.zwsj = false; // 修复数据与“暂无数据”共存bug
               }
               console.log("Get Policy List Response:", data);
               console.log(msg);
