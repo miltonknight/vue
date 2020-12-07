@@ -196,6 +196,9 @@ export default {
                 // console.log(response.data.total)
                 this.zwsj = true;
               }  
+              else { 
+                this.zwsj = false; // 修复数据与“暂无数据”共存
+              }
               console.log("Get Policy List Response:", data);
               console.log(msg);
               resolve(data);
