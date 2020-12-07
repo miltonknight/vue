@@ -502,7 +502,7 @@ export default {
   computed: { },
   created: function() {
     // this.fetchData();
-    this.$store.state.navactive = '/ma/sentiment/index';
+    this.$store.state.navactive = '/sentiment/index';
   },
   mounted() { },
   methods: { 

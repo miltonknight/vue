@@ -334,7 +334,9 @@ watch函数监听数值变化，如果navactive值变化则改变导航变量nav
 this.$store.state.navactive = '/xxxx/index';
 1.4 更改现有存在导航的页面共18(首页、列表、文章详情)
 2. 全局规范化、标准化代码，检查拼写错误等。更新后console无报错信息
-3. src\views\ma\culture\new-media\index.vue
+3. src\router\index.js
+注释掉无用/后台路径，默认 / 路径，改为redirect为/ma
+4. src\views\ma\culture\new-media\index.vue
 新增老兵文化-新媒体矩阵列表页
 
 #-------------------- 20201124更新内容 --------------------
@@ -413,15 +415,17 @@ M 大病救助，报名初核部分完成，大病救助页面完成
 1. src\views\ma\setting\index.vue
 新增个人设置首页
 
-
-
-
-
-
-
-
-
-
-
-
-
+#-------------------- 20201205更新内容 --------------------
+1. src\router\index.js
+老兵情怀、老兵政策路由加入到/ma下的二级子路由，公用一个layout
+2. src\views\ma\policy\index.vue, src\views\ma\policy\article.vue,
+   src\views\ma\sentiment\index.vue, src\views\ma\sentiment\critical-detail.vue,
+   src\views\ma\sentiment\donate-detail.vue, src\views\ma\sentiment\orphan-detail.vue,
+   src\views\ma\sentiment\report-detail.vue
+页面更改 this.$store.state.navactive 
+3. src\views\ma\policy\index.vue
+老兵政策页面恢复左导航，tab由左侧改为上方
+4. src\components\CommonNav\index.vue
+上导航更改老兵情怀、老兵政策路径
+5. src\views\ma\sentiment\index.vue
+更改4个详情页的详情连接

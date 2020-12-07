@@ -11,7 +11,7 @@
           <div class="policy-header">权益维护</div>
           <div class="policy-body">
             <ul class="policy-list">
-              <li><a href="/#/ma/policy/article">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
+              <li><a href="/#/policy/article">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
               <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
               <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
               <li><a href="">中华人民共和国英雄烈士保护法</a><span><i class="el-icon-time"></i>2020-11-22</span></li>
@@ -164,7 +164,7 @@ export default {
   },
   data() {
     return {
-      tabPosition: 'left',
+      tabPosition: 'top',
       activeName: '60', // tab active
       navselected: '/ma/policy/index',
       // 文章列表接口地址、接收数组
@@ -187,7 +187,7 @@ export default {
   },
   created: function() {
     // this.fetchData();
-    this.$store.state.navactive = '/ma/policy/index';
+    this.$store.state.navactive = '/policy/index';
     this.$forceUpdate();
   },
   mounted() {
@@ -302,18 +302,22 @@ export default {
   margin: 0 auto 20px;
 }
 
-.el-tabs--left.policy-tab {
+// .el-tabs--left.policy-tab {
+.el-tabs.policy-tab {
   
   .el-tabs__header {
-    height: 400px ;
+    // height: 400px;
+    height: 50px;
   }
   .el-tabs__item {
-    width: 120px;
+    // width: 120px;
+    width: 130px;
     height: 50px;
     line-height: 50px;
     background: #f5f7f9;
     text-align: center;
     font-size: 16px;
+    padding: 0 20px !important;
 
     &:hover {
       color: #e08714;
@@ -322,12 +326,14 @@ export default {
   .el-tabs__item.is-active {
     color: #fff;
     background: #e08714;
+    padding: 0 20px;
   }
   .el-tabs__active-bar {
     background-color: #e08714;
   }
   .el-tabs__content {
-    padding: 0 20px;
+    // padding: 0 20px;
+    padding: 20px 0;
   }
 }
 .policy-main {
@@ -340,7 +346,7 @@ export default {
     background-image: url('~@/assets/img/zcttl.png');
     background-repeat: no-repeat;
     padding-left: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   .policy-list {
     list-style: none;

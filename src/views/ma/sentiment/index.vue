@@ -7,7 +7,7 @@
       </div>
       <el-tabs v-model="activeName" class="sentiment-tab" @tab-click="handleClick">
         <el-tab-pane label="大病救助" name="first">
-          <a class="senti-box" href="/#/ma/sentiment/critical-detail">
+          <a class="senti-box" href="/#/sentiment/critical-detail">
             <div class="senti-img">
               <img src="@/assets/img/senti-img.jpg" alt="">
             </div>
@@ -127,7 +127,7 @@
         </el-tab-pane>
 
         <el-tab-pane label="孤儿救助" name="second">
-          <a class="senti-box" href="/#/ma/sentiment/orphan-detail">
+          <a class="senti-box" href="/#/sentiment/orphan-detail">
             <div class="senti-img">
               <img src="@/assets/img/senti-img2.jpg" alt="">
             </div>
@@ -250,7 +250,7 @@
               目前已有<span>99999</span>个项目
             </div>
             <div class="donate-list">
-              <a class="donate-item" href="/#/ma/sentiment/donate-detail">
+              <a class="donate-item" href="/#/sentiment/donate-detail">
                 <img src="@/assets/img/donate.jpg" alt="">
                 <div class="donate-info">
                   <h3>军用级航空母舰</h3>
@@ -402,7 +402,7 @@
         <el-tab-pane label="救助报道" name="fourth">
           <div class="report-box">
             <!-- <a v-for="item in ret" :key="item.article_id" :href="'/#/annals/article?id=' + item.article_id" class="list-item"> -->
-            <a class="list-item" href="/#/ma/sentiment/report-detail">
+            <a class="list-item" href="/#/sentiment/report-detail">
               
               <div class="list-body-img">
                 <img src="@/assets/img/report.jpg">
@@ -416,7 +416,7 @@
                 </div>
               </div>
             </a>
-            <a class="list-item" href="/#/ma/sentiment/report-detail">
+            <a class="list-item" href="/#/sentiment/report-detail">
               <div class="list-body-img">
                 <img src="@/assets/img/report.jpg">
               </div>
@@ -429,7 +429,7 @@
                 </div>
               </div>
             </a>
-            <a class="list-item" href="/#/ma/sentiment/report-detail">
+            <a class="list-item" href="/#/sentiment/report-detail">
               <div class="list-body-img">
                 <img src="@/assets/img/report.jpg">
               </div>
@@ -442,7 +442,7 @@
                 </div>
               </div>
             </a>
-            <a class="list-item" href="/#/ma/sentiment/report-detail">
+            <a class="list-item" href="/#/sentiment/report-detail">
               <div class="list-body-img">
                 <img src="@/assets/img/report.jpg">
               </div>
@@ -455,7 +455,7 @@
                 </div>
               </div>
             </a>
-            <a class="list-item" href="/#/ma/sentiment/report-detail">
+            <a class="list-item" href="/#/sentiment/report-detail">
               <div class="list-body-img">
                 <img src="@/assets/img/report.jpg">
               </div>
@@ -468,7 +468,7 @@
                 </div>
               </div>
             </a>
-            <a class="list-item" href="/#/ma/sentiment/report-detail">
+            <a class="list-item" href="/#/sentiment/report-detail">
               <div class="list-body-img">
                 <img src="@/assets/img/report.jpg">
               </div>
@@ -481,7 +481,7 @@
                 </div>
               </div>
             </a>
-            <a class="list-item" href="/#/ma/sentiment/report-detail">
+            <a class="list-item" href="/#/sentiment/report-detail">
               <div class="list-body-img">
                 <img src="@/assets/img/report.jpg">
               </div>
@@ -535,7 +535,7 @@ export default {
   computed: { },
   created: function() {
     // this.fetchData();
-    this.$store.state.navactive = '/ma/sentiment/index';
+    this.$store.state.navactive = '/sentiment/index';
   },
   mounted() { },
   methods: { 
