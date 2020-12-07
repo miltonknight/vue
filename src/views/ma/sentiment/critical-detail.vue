@@ -477,7 +477,7 @@ export default {
       // 文章列表接口地址、接收数组
       url: LaobingUrl.modular_article_list,
       ArticleList: [],
-      ialogImageUrl: '',
+      dialogImageUrl: '',
       dialogVisible: false,
       // Pagination
       total: 0,
@@ -495,8 +495,7 @@ export default {
         id: '',
         idnumbers: '',
         desc: ''
-      },
-      dialogImageUrl: ''
+      }
     };
   },
   computed: { },
