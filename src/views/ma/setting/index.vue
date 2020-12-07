@@ -5,114 +5,22 @@
       <div class="grid-content bg-purple setting-box">
         <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
           <el-tab-pane label="基本资料" name="first">
-            <div class="setting-body">
-              <el-form ref="ruleForm" :model="ruleForm" :rules="rules" label-width="100px" class="demo-ruleForm">
-                <el-form-item label="头像" prop="avatar">
-                  <el-upload
-                    class="avatar-uploader"
-                    action="https://jsonplaceholder.typicode.com/posts/"
-                    :show-file-list="false"
-                    :on-success="handleAvatarSuccess"
-                    :before-upload="beforeAvatarUpload"
-                  >
-                    <img v-if="ruleForm.imageUrl" :src="ruleForm.imageUrl" class="avatar">
-                    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-                  </el-upload>
-                </el-form-item>
-                <el-form-item label="昵称" prop="nickname">
-                  <el-input v-model="ruleForm.nickname"></el-input>
-                </el-form-item>
-                <el-form-item label="性别" prop="sex">
-                  <el-radio-group v-model="ruleForm.sex">
-                    <el-radio label="1">男</el-radio>
-                    <el-radio label="2">女</el-radio>
-                  </el-radio-group>
-                </el-form-item>
-                <el-form-item label="生日" required>
-                  <el-form-item prop="birthday">
-                    <el-date-picker v-model="ruleForm.birthday" type="date" placeholder="选择生日" style="width: 100%;"></el-date-picker>
-                  </el-form-item>
-                </el-form-item>
-                <el-form-item label="个人简介" prop="desc">
-                  <el-input v-model="ruleForm.desc" type="textarea"></el-input>
-                </el-form-item>
-                <el-form-item>
-                  <el-button type="warning" @click="submitForm('ruleForm')">保存</el-button>
-                  <el-button @click="resetForm('ruleForm')">重置</el-button>
-                </el-form-item>
-              </el-form>
-            </div>
+
+            <!-- components: components/basic -->
+            <basic-info />
+
           </el-tab-pane>
           <el-tab-pane label="修改绑定手机" name="second">
-            <div class="setting-body">
-              <el-steps :active="active" align-center>
-                <el-step title="验证原有手机" description=""></el-step>
-                <el-step title="验证新手机" description=""></el-step>
-                <el-step title="完成修改" description=""></el-step>
-              </el-steps>
 
-              <div class="step-box" id="box-one" v-show="active == 0">
-                <el-form :model="cellForm" label-width="100px" class="ruleForm">
-                  <el-form-item label="绑定手机" prop="phoneNumber">
-                    <el-input value="13555555555" disabled>></el-input>
-                  </el-form-item>
-                  <el-form-item label="验证方式" prop="checkWay">
-                    <el-input value="使用 13555555555 手机验证" disabled>></el-input>
-                  </el-form-item>
-                  <el-form-item label="验证码" prop="identity" class="verify">
-                    <el-input
-                      :key="passwordType"
-                      ref="identity"
-                      v-model="cellForm.password"
-                      :type="passwordType"
-                      placeholder="请输入6位短信验证码"
-                      name="identity"
-                      tabindex="2"
-                      auto-complete="on"
-                    />
-                    <el-button :loading="loading" type="primary" class="identitybtn" @click.native.prevent="getidentity">获取验证码</el-button>
-                  </el-form-item>
-                </el-form>
-              </div>
-              <div class="step-box" id="box-two" v-show="active == 1">
-                <el-form :model="cellForm" label-width="100px" class="ruleForm">
-                  <el-form-item label="绑定手机" prop="phoneNumber">
-                    <el-input value="13555555555" disabled>></el-input>
-                  </el-form-item>
-                  <el-form-item label="验证方式" prop="checkWay">
-                    <el-input value="使用 13555555555 手机验证" disabled>></el-input>
-                  </el-form-item>
-                  <el-form-item label="验证码" prop="identity" class="verify">
-                    <el-input
-                      :key="passwordType"
-                      ref="identity"
-                      v-model="cellForm.password"
-                      :type="passwordType"
-                      placeholder="请输入6位短信验证码"
-                      name="identity"
-                      tabindex="2"
-                      auto-complete="on"
-                    />
-                    <el-button :loading="loading" type="primary" class="identitybtn" @click.native.prevent="getidentity">获取验证码</el-button>
-                  </el-form-item>
-                </el-form>
-              </div>
-
-
-
-
-
-
-            </div>
-
-
-
-
+            <!-- components: components/phone -->
+            <bind-phone />
 
           </el-tab-pane>
           <el-tab-pane label="实名认证" name="third">
-            
 
+            <!-- components: components/auth -->
+            <real-name-auth />
+            
           </el-tab-pane>
         </el-tabs>
 
@@ -124,47 +32,27 @@
 
 <script>
 console.log("Views: /setting/index is loaded");
+
+import BasicInfo from "@/views/ma/setting/components/basic"
+import BindPhone from "@/views/ma/setting/components/phone"
+import RealNameAuth from "@/views/ma/setting/components/auth"
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
-
 export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
-  name: "CourierStation",
+  name: "setting",
   components: {
-
+    BasicInfo,
+    BindPhone,
+    RealNameAuth
   },
   data() {
     return {
-      active: 0, // step
       activeName: 'first', // tab active
       // 文章列表接口地址、接收数组
       url: LaobingUrl.modular_article_list,
       ArticleList: [],
-      ruleForm: {
-        imageUrl: '',
-        nickname: '',
-        sex: '',
-        desc: ''
-      },
-      rules: {
-        name: [
-          { required: true, message: '请输入昵称', trigger: 'blur' },
-          { required: true, min: 3, max: 16, message: '长度在 3 到 16 个字符', trigger: 'blur' }
-        ],
-        birthday: [
-          { type: 'date', required: true, message: '请选择生日', trigger: 'change' }
-        ],
-        sex: [
-          { required: true, message: '请选择性别', trigger: 'change' }
-        ],
-        desc: [
-          { required: true, message: '个人简介', trigger: 'blur' }
-        ]
-      },
-      cellForm: {
-
-      }
     };
   },
   // computed: { },
@@ -221,39 +109,7 @@ export default {
           this.listLoading = false;
           console.log(error);
         });
-    },
-    handleAvatarSuccess(res, file) {
-      this.ruleForm.imageUrl = URL.createObjectURL(file.raw);
-    },
-    beforeAvatarUpload(file) {
-      const isJPG = file.type === 'image/jpeg';
-      const isLt2M = file.size / 1024 / 1024 < 2;
-
-      if (!isJPG) {
-        this.$message.error('上传头像图片只能是 JPG 格式!');
-      }
-      if (!isLt2M) {
-        this.$message.error('上传头像图片大小不能超过 2MB!');
-      }
-      return isJPG && isLt2M;
-    },
-    submitForm(formName) {
-      this.$refs[formName].validate((valid) => {
-        if (valid) {
-          alert('submit!');
-        } else {
-          console.log('error submit!!');
-          return false;
-        }
-      });
-    },
-    resetForm(formName) {
-      this.$refs[formName].resetFields();
-    },
-    next() {
-      if (this.active++ > 2) this.active = 0;
     }
-
   }
 };
 </script>
@@ -342,11 +198,11 @@ export default {
   .el-button--warning {
     background-color: #e08714;
     border-color: #e08714;
-    width: 200px;
+    width: 150px;
   }
   .el-form {
     width: 500px;
-    margin: 50px;
+    // margin: 50px;
   }
   .el-form-item {
     margin-bottom: 35px;
@@ -357,6 +213,8 @@ export default {
   }
 }
 .setting-body {
+  // width: 500px;
+  padding: 50px;
 
   .el-steps {
     margin: 50px auto;
@@ -380,8 +238,26 @@ export default {
       background: #e08714;
       border-color: #e08714;
     }
-    
+  }
+  .el-step>>>.el-step__title.is-process,
+  .el-step>>>.el-step__title.is-finish {
+    color: #e08714;
+  }
+  .el-step>>>.el-step__head.is-process,
+  .el-step>>>.el-step__head.is-finish {
+    color: #e08714;
+    border-color: #e08714;
+  }
+  .el-step>>>.el-step__head.is-finish .el-step__line {
+    background-color: #e08714;
+  }
+  .step-final {
+    margin: 70px 0 70px 100px;
+    font-size: 14px;
   }
 
+}
+.step-buttons {
+  margin-left: 100px;
 }
 </style>
