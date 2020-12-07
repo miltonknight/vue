@@ -248,7 +248,7 @@ export default {
   border-bottom: 4px solid #e08714;
   border-radius: 3px;
 
-  &:nth-child(3n) {
+  &:nth-child(3n+1) {
     margin-right: 0;
   }
 }
