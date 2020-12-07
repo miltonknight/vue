@@ -429,3 +429,15 @@ M 大病救助，报名初核部分完成，大病救助页面完成
 上导航更改老兵情怀、老兵政策路径
 5. src\views\ma\sentiment\index.vue
 更改4个详情页的详情连接
+
+#-------------------- 20201207更新内容 --------------------
+1. src\views\404.vue
+404页面增加随机链接地址
+2. src\views\ma\policy\index.vue, src\views\ma\policy\article.vue
+老兵政策部分完成数据接口对接，修复数据与“暂无数据”共存bug
+3. src\views\ma\setting\index.vue, src\views\ma\setting\components\basic.vue
+   src\views\ma\setting\components\phone.vue, src\views\ma\setting\components\auth.vue
+个人设置部分，三个功能模块拆分为三个组件
+4. src\views\ma\homeland\law-list.vue
+修复列表样式
+
