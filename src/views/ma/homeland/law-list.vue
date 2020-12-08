@@ -182,7 +182,9 @@ export default {
                 response.data.total = 0
                 // console.log(response.data.total)
                 this.zwsj = true
-              }  
+              } else { 
+                this.zwsj = false; // 修复数据与“暂无数据”共存bug
+              } 
               console.log("Get Annals List Response:", data);
               resolve(data);
             }
