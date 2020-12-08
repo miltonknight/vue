@@ -260,4 +260,8 @@ export default {
 .step-buttons {
   margin-left: 100px;
 }
+.el-month-table a.cell,
+.el-month-table a.cell:hover {
+  color: #e08714 !important;
+}
 </style>

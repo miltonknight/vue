@@ -1,6 +1,6 @@
 <template>
   <div class="setting-body">
-    <el-steps :active="active" align-center>
+    <el-steps :active="active" align-center v-show="huya">
       <el-step title="填写基本资料" description=""></el-step>
       <el-step title="上传相关证件" description=""></el-step>
       <el-step title="填写军旅生涯" description=""></el-step>
@@ -19,10 +19,10 @@
           </el-radio-group>
         </el-form-item>
         <el-form-item label="身份证号码" prop="idNum">
-          <el-input value="" ></el-input>
+          <el-input v-model="nameForm.idNum" value=""></el-input>
         </el-form-item>
         <el-form-item label="退役证件号码" prop="armyid">
-          <el-input value="" ></el-input>
+          <el-input v-model="nameForm.armyid" value=""></el-input>
         </el-form-item>
         <el-form-item label="手机号" prop="phoneNumber">
           <el-input value="13555555555" disabled></el-input>
@@ -38,7 +38,8 @@
               v-for="item in options"
               :key="item.value"
               :label="item.label"
-              :value="item.value">
+              :value="item.value"
+            >
             </el-option>
           </el-select>
         </el-form-item>
@@ -89,10 +90,39 @@
       </el-form>
     </div>
     <div v-show="active == 2" id="box-three" class="step-box">
-      <div class="step-final">
-        <p>绑定手机修改成功！</p>
-        <p>您的新绑定手机号为： 188****8888</p>
-      </div>
+      <el-form :model="epxForm" label-width="120px" class="ruleForm">
+        <el-form-item label="总部/军区/战区" prop="area">
+          <el-input v-model="epxForm.area"></el-input>
+        </el-form-item>
+        <el-form-item label="兵种" prop="arms">
+          <el-input v-model="epxForm.arms"></el-input>
+        </el-form-item>
+        <el-form-item label="兵种" prop="arms">
+          <el-input v-model="epxForm.arms"></el-input>
+        </el-form-item>
+        <el-form-item label="师/旅级单位" prop="brigade">
+          <el-input v-model="epxForm.brigade"></el-input>
+        </el-form-item>
+        <el-form-item label="团级单位" prop="regiment">
+          <el-input v-model="epxForm.regiment"></el-input>
+        </el-form-item>
+        <el-form-item label="详细单位" prop="detail">
+          <el-input v-model="epxForm.detail"></el-input>
+        </el-form-item>
+        <el-form-item label="职务" prop="job">
+          <el-input v-model="epxForm.job"></el-input>
+        </el-form-item>
+        <el-form-item label="任职时间" prop="period">
+          <el-date-picker
+            v-model="epxForm.period"
+            type="monthrange"
+            range-separator="至"
+            start-placeholder="开始月份"
+            end-placeholder="结束月份">
+          </el-date-picker>
+        </el-form-item>
+          
+      </el-form>
     </div>
     <div v-show="active == 3" id="box-three" class="step-box">
       <div class="step-final">
@@ -103,9 +133,17 @@
 
     <div class="step-buttons">
       <!-- <el-button type="warning" @click="">下一步</el-button> -->
-      <el-button type="warning" @click="prev" v-if="active == 1 || active == 2 ">上一步</el-button>
-      <el-button type="warning" @click="next(active)" v-if="active == 0 || active == 1 || active == 2">下一步</el-button>
-      <el-button type="warning" @click="submit" v-if="active == 3">完成</el-button>
+      <el-button v-if="active == 1 || active == 2 " type="warning" @click="prev">上一步</el-button>
+      <el-button v-if="active == 0 || active == 1 || active == 2" type="warning" @click="next(active)">下一步</el-button>
+      <el-button v-if="active == 3" type="warning" @click="submit">完成</el-button>
+    </div>
+
+    <div class="auth-done" v-show="status">
+      <div class="done-check">
+        <svg-icon icon-class="done" class-name="card-panel-icon" />
+        <p>实名认证已成功！</p>
+      </div>
+      老兵老兵网实名认证有效期为永久，您的认证时间为 <span>2020年10月22日</span> ，根据您的实名认证信息可以在老兵老兵网享受多种优惠项目。
     </div>
 
   </div>
@@ -123,7 +161,7 @@ export default {
   name: "RealNameAuth",
   data() {
     return {
-      active: 0, // step
+      active: 0, // step 验证成功则if===4
       nameForm: {
         name: '',
         sex: '',
@@ -171,7 +209,18 @@ export default {
         }],
       value: '',
       dialogImageUrl: '',
-      dialogVisible: false
+      dialogVisible: false,
+      epxForm: {
+        area: '', // 战区
+        arms: '', // 兵种
+        brigade: '', // 旅
+        regiment: '', // 团
+        detail: '', 
+        job: '', // 职务
+        period: ''
+      },
+      status: false,
+      huya: true // temp value
     };
   },
   methods: {
@@ -184,10 +233,19 @@ export default {
       else return false;
     },
     submit() {
-      
+      // temp func
+      console.log("11111111111111111111111")
+      this.active = 4;
+      // var tops = document.getElementsByClassName(".el-steps");
+      // tops.style.display = 'none';
+      // var newBox = document.getElementsByClassName(".auth-done");
+      // newBox.style.display = 'block';
+      this.huya = false;
+      this.status = true;
+    
     },
     submitUpload() {
-      this.$refs.upload.submit();
+      // this.$refs.upload.submit();
     },
     handleRemove(file, fileList) {
       console.log(file, fileList);
@@ -262,9 +320,48 @@ export default {
     margin: 70px 0 70px 100px;
     font-size: 14px;
   }
-
+  
 }
 .step-buttons {
   margin-left: 120px;
+}
+.el-scrollbar__view .el-select-dropdown__item.selected {
+  color: #e08714;
+}
+.el-form>>>.el-upload--picture-card:hover, 
+.el-form>>>.el-upload:focus {
+  border-color: #e08714;
+  color: #e08714;
+}
+.el-date-editor {
+  width: 380px;
+}
+.el-picker-panel>>>.el-month-table a.cell,
+.el-picker-panel>>>.el-month-table a.cell:hover {
+  color: #e08714 !important;
+}
+.auth-done {
+  padding: 50px;
+  text-align: center;
+  line-height: 2;
+
+  span {
+    color:#67c23a;
+  }
+  .done-check {
+    text-align: center;
+
+    p {
+      text-align: center;
+      font-size: 20px;
+    }
+
+    svg {
+      color: #67c23a;
+      font-size: 90px;
+      margin-bottom: 20px;
+    }
+
+  }
 }
 </style>
