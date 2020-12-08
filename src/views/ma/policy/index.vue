@@ -6,7 +6,7 @@
     </div>
     
     <div class="policy-main">
-      <el-tabs :tab-position="tabPosition" v-model="activeName" class="policy-tab" @tab-click="handleClick">
+      <el-tabs v-model="activeName" :tab-position="tabPosition" class="policy-tab" @tab-click="handleClick">
         <el-tab-pane label="权益维护" name="40">
           <div class="policy-header">权益维护</div>
           <div class="policy-body">
@@ -159,7 +159,7 @@ export default {
         page: 1,
         limit: 10,
         role_flag: 0,
-        search_input: ""
+        search_input: ""
       },
       zwsj: false
     };
@@ -195,8 +195,7 @@ export default {
                 response.data.total = 0
                 // console.log(response.data.total)
                 this.zwsj = true;
-              }  
-              else { 
+              } else { 
                 this.zwsj = false; // 修复数据与“暂无数据”共存bug
               }
               console.log("Get Policy List Response:", data);
@@ -244,6 +243,10 @@ export default {
 <style lang="scss" >
 .banner {
   margin: 0 auto 20px;
+
+  img {
+    width: 1040px;
+  }
 }
 
 // .el-tabs--left.policy-tab {
