@@ -185,7 +185,7 @@ export default {
               } else { 
                 this.zwsj = false; // 修复数据与“暂无数据”共存bug
               } 
-              console.log("Get Annals List Response:", data);
+              console.log("Get Law List Response:", data);
               resolve(data);
             }
             // this.$message({
