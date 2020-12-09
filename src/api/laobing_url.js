@@ -36,6 +36,9 @@ export const LaobingUrl = {
   // index_article
   index_article: '/homepage/findHomepageModule',
   // famous_list
-  famous_people: '/veteranFamous/pageVereranFamous'
+  famous_people: '/veteranFamous/pageVereranFamous',
+  // persenal articles
+  user_article_list: '/article/pageArticleByUid'
+
 }
 
