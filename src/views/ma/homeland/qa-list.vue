@@ -29,7 +29,7 @@
                   <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
                 </a> -->
 
-               <a v-for="item in ArticleList.list" :key="item.id" class="qa-box" :href="'/#/homeland/qa-detail?id=' + item.article_id + '&sort_id=' + item.sort_id">
+                <a v-for="item in ArticleList.list" :key="item.id" class="qa-box" :href="'/#/homeland/qa-detail?id=' + item.article_id + '&sort_id=' + item.sort_id">
                   <h2><span>问</span>{{ item.title }}</h2>
                   <p>{{ item.content }}</p>
                 </a>
@@ -111,7 +111,7 @@ export default {
       list: null,
       listLoading: true,
       listQuery: {
-        search_input: "问题",
+        search_input: "",
         sort_id: 70, // 版块id
         page: 1,
         limit: 10
