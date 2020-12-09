@@ -118,7 +118,8 @@
             type="monthrange"
             range-separator="至"
             start-placeholder="开始月份"
-            end-placeholder="结束月份">
+            end-placeholder="结束月份"
+          >
           </el-date-picker>
         </el-form-item>
           
@@ -138,7 +139,7 @@
       <el-button v-if="active == 3" type="warning" @click="submit">完成</el-button>
     </div>
 
-    <div class="auth-done" v-show="status">
+    <div v-show="status" class="auth-done">
       <div class="done-check">
         <svg-icon icon-class="done" class-name="card-panel-icon" />
         <p>实名认证已成功！</p>
@@ -150,7 +151,7 @@
 </template>
 
 <script>
-console.log("setting/components: phone is loaded");
+console.log("setting/components: auth is loaded");
 
 import { postData } from '@/api/common';
 import { LaobingUrl } from "@/api/laobing_url";
@@ -242,7 +243,6 @@ export default {
       // newBox.style.display = 'block';
       this.huya = false;
       this.status = true;
-    
     },
     submitUpload() {
       // this.$refs.upload.submit();

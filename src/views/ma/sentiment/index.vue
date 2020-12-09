@@ -555,7 +555,7 @@ export default {
                 // console.log(response.data.total)
                 this.zwsj = true;
               }  
-              console.log("Get Annals List Response:", data);
+              console.log("Get Sentiment List Response:", data);
               console.log(msg);
               resolve(data);
             }

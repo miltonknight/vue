@@ -83,7 +83,7 @@ export default {
       this.postDataFromUI(this.url, this.param)
         .then(response => {
           this.Article = response;
-          console.log("homepage Case Studies Json:::::::::")
+          console.log("homepage Case Studies Json:")
           console.log(response)
         });
     }
