@@ -13,8 +13,8 @@
                 <h1>{{ ArticleDetail.title }}</h1>
                 <p><a href="">{{ ArticleDetail.writer }}</a> {{ ArticleDetail.create_time }}</p>
               </div>
-              <div class="article-body">
-                <p v-html="ArticleDetail.content"></p>
+              <div class="article-body" v-html="ArticleDetail.content">
+                <!-- <p v-html="ArticleDetail.content"></p> -->
                 <!-- <img src="@/assets/img/article.png" />
                 <p>数据库中文章内容较少填入测试文本“史无前例新品大爆发”，在“2020天猫双11全球狂欢季”新闻发布会上，阿里巴巴副总裁、天猫平台营运事业部总经理家洛身后的大屏幕上打出了这样一行大字。根据内部估算，今年将有5亿用户在双11期间主动访问新品会场，他们将让30个新品的成交额过亿，1000个新品成交金额过千万。</p>
                 <img src="@/assets/img/article2.png" />

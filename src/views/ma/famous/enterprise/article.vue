@@ -14,8 +14,8 @@
                 <h1>{{ ArticleDetail.title }}</h1>
                 <p><a href="">{{ ArticleDetail.writer }}</a> {{ ArticleDetail.create_time }}   关注</p>
               </div>
-              <div class="article-body">
-                <p v-html="ArticleDetail.content"></p>
+              <div class="article-body" v-html="ArticleDetail.content">
+                <!-- <p v-html="ArticleDetail.content"></p> -->
                 <!-- 以下内容添加真实数据后可删除 -->
                 <!-- <p>老兵名人大辞典示例文章</p>
                 <img src="@/assets/img/article.png" />
