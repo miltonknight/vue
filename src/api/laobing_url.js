@@ -20,25 +20,19 @@ export const LaobingUrl = {
   disk_user_getProfile: '/profile/authapi/profile/vue',
   article_add_article: '/cultureArticle/authapi/article/add',
   // -------------------- whole site modulars
-  // whole site modular focus
-  modular_focus: '/article/findModelCarousel',
-  // whole site article list
-  modular_article_list: '/article/pageArticleBySortId',
-  // whole site article
-  modular_articles: '/article/findArticleDetail',
-  // temp add article
-  temp_add_article: '/article/insertArticle',
+  modular_focus: '/article/findModelCarousel', // whole site modular focus
+  modular_article_list: '/article/pageArticleBySortId', // whole site article list
+  modular_articles: '/article/findArticleDetail', // whole site article
   // -------------------- homepage apis
-  // index_focus
-  index_focus: '/homepage/findHomepageFocus',
-  // index_coupon
-  // index_coupon: '/homepage/findHomepageFocus',
-  // index_article
-  index_article: '/homepage/findHomepageModule',
-  // famous_list
-  famous_people: '/veteranFamous/pageVereranFamous',
-  // persenal articles
-  user_article_list: '/article/pageArticleByUid'
-
+  index_focus: '/homepage/findHomepageFocus', // index_focus
+  // index_coupon: '/homepage/findHomepageFocus', // index_coupon
+  index_article: '/homepage/findHomepageModule', // index_article
+  famous_people: '/veteranFamous/pageVereranFamous', // famous_list
+  user_article_list: '/article/pageArticleByUid', // persenal articles
+  qa_index_list: '/lawConsult/findLawConsultLimit', // comoponent qa index
+  qa_lsit: '/lawConsult/pageLawConsultList', // qa list
+  qa_detail: '/lawConsult/findLawConsultDetailById', // qa detail
+  qa_is_useful: 'lawConsult/addAnswerIfUsefulByArticleId', // qa is useful
+  temp_add_article: '/article/insertArticle' // temp add article
 }
 
