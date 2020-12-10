@@ -1,4 +1,4 @@
-<!-- 我的文章列表 -->
+<!-- XX的文章列表 -->
 <template>
   <el-row :gutter="24">
     <!-- 左侧内容 -->
@@ -7,7 +7,7 @@
         <div class="list-container">
           <div class="list-main">
             <div class="list-head">
-              <h3>我的文章<span>My Articles</span></h3>
+              <h3>XXXX的文章<span>My Articles</span></h3>
             </div>
             <div class="list-body">
               <!-- 列表循环 -->

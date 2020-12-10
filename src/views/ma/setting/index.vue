@@ -41,7 +41,7 @@ import { LaobingUrl } from "@/api/laobing_url";
 export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
-  name: "setting",
+  name: "Setting",
   components: {
     BasicInfo,
     BindPhone,
@@ -52,13 +52,13 @@ export default {
       activeName: 'first', // tab active
       // 文章列表接口地址、接收数组
       url: LaobingUrl.modular_article_list,
-      ArticleList: [],
+      ArticleList: []
     };
   },
   // computed: { },
   created: function() {
     this.fetchData();
-    this.$store.state.navactive = '/setting/index';
+    // this.$store.state.navactive = '/setting/index';
   },
   mounted() {
   },
