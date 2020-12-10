@@ -7,42 +7,9 @@
     </div>
     <div class="list-body">
       
-      <!-- <a v-for="item in ret" :key="item.id" class="list-item">
-        <div class="list-body-img">
-          <img :src="item.srcPath" />
-          <i class="badge badge-red">加油优惠</i>
-        </div>
-        <div class="list-body-text">
-          <h3>{{item.title}}</h3>
-          <p>{{item.intro}}</p>
-          <div class="list-text-cate">
-            <span class="tip">加油优惠信息</span>
-            <span class="time">
-              <i class="el-icon-time"></i>{{item.createTime}}
-            </span>
-          </div>
-        </div>
-      </a> -->
-
-      <a class="qa-box" href="/#/homeland/qa-detail">
-        <h2><span>问</span>退役军人在遇到权益被侵害时，可依据哪些法律进行维权？</h2>
-        <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-      </a>
-      <a class="qa-box" href="/#/homeland/qa-detail">
-        <h2><span>问</span>退役军人在遇到权益被侵害时，可依据哪些法律进行维权？</h2>
-        <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-      </a>
-      <a class="qa-box" href="/#/homeland/qa-detail">
-        <h2><span>问</span>退役军人在遇到权益被侵害时，可依据哪些法律进行维权？</h2>
-        <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-      </a>
-      <a class="qa-box" href="/#/homeland/qa-detail">
-        <h2><span>问</span>退役军人在遇到权益被侵害时，可依据哪些法律进行维权？</h2>
-        <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-      </a>
-      <a class="qa-box" href="/#/homeland/qa-detail">
-        <h2><span>问</span>退役军人在遇到权益被侵害时，可依据哪些法律进行维权？</h2>
-        <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
+      <a v-for="item in ret" :key="item.id" class="qa-box" :href="'/#/homeland/qa-detail?id=' + item.article_id">
+        <h2><span>问</span>{{ item.title }}</h2>
+        <p v-html="item.content"></p>
       </a>
 
     </div>
@@ -63,7 +30,8 @@ export default {
     return {
       // 优惠信息接收数组
       ret: [],
-      url: LaobingUrl.index_coupon
+      url: LaobingUrl.qa_index_list,
+      params: { }
     }
   },
   computed: {
@@ -98,12 +66,10 @@ export default {
       });
     },
     fetchData() {
-      var params = {
-        
-      };
-      this.postDataFromUI(LaobingUrl.index_coupon, params)
+      this.postDataFromUI(this.url, this.params)
         .then(response => {
           this.ret = response;
+          console.log(response)
         });
     }
   }
@@ -115,6 +81,8 @@ export default {
   width: 100%;
   display: block;
   margin-bottom: 30px;
+  max-height: 105px;
+  overflow: hidden;
   
   h2 {
     font-size: 22px;

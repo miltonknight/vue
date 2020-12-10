@@ -42,11 +42,8 @@ export default {
     return {
       // 老兵驿站数据接收数组
       ret: [],
-      url: LaobingUrl.index_article,
-      param: {
-        sort_id: 1 // 版块id
-      }
-
+      url: LaobingUrl.law_index_list,
+      param: { }
     }
   },
   computed: {
@@ -62,7 +59,7 @@ export default {
           .then(response => {
             const { code, msg, data } = response;
             if (code === 20000 && data != null) {
-              console.log("Index CourierStation Response:", data);
+              console.log("Component HL-Law Response:", data);
               resolve(data);
             } else {
               reject(msg);
@@ -85,7 +82,6 @@ export default {
       this.postDataFromUI(this.url, this.param)
         .then(response => {
           this.ret = response;
-          console.log("homepage Courier Station Json:::::::::")
           console.log(response)
         });
     }

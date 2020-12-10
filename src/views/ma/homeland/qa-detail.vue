@@ -11,20 +11,17 @@
           <div class="article-container">
             <div class="article-main qa">
               <div class="article-head">
-                <h2><span>问</span>退役军人在遇到权益被侵害时，可依据哪些法律进行维权？</h2>
+                <h2><span>问</span>{{ ArticleDetail.title }}</h2>
               </div>
               <div class="article-body">
-                <div class="answer"><span class="orange">答</span><a class="blue">张炜</a> · 2020年11月1日</div>
-                <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-                <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-                <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-                <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
+                <div class="answer"><span class="orange">答</span><a class="blue">{{ ArticleDetail.answer_fullnamel }}</a> · {{ ArticleDetail.answer_time }}</div>
+                <div v-html="ArticleDetail.content"></div>
 
               </div>
               <div class="useful">
                 <p>此答案是否有用？</p>
-                <el-button type="warning">是</el-button>
-                <el-button type="info">否</el-button>
+                <el-button type="warning" @click="useful(1)">是</el-button>
+                <el-button type="info" @click="useful(2)">否</el-button>
               </div>
             </div>
           </div>
@@ -112,7 +109,7 @@ export default {
   data() {
     return {
       // article
-      url: LaobingUrl.modular_articles,
+      url: LaobingUrl.qa_detail,
       ArticleDetail: []
     };
   },
@@ -131,7 +128,7 @@ export default {
             // const { code, msg, data } = response;
             const { code, data } = response;
             if (code === 20000) {
-              console.log("Get Culture on Tao Article Response:", data);
+              console.log("Get HL Qa Article Response:", data);
               resolve(data);
             }
             // this.$message({
@@ -152,16 +149,26 @@ export default {
       // json post prop
       var params = {
         // 从url中获取文章id
-        "article_id": this.$route.query.id,
-        "sort_id": this.$route.query.sort_id,
-        // uid用户token中获取
+        "article_id": this.$route.query.id
         // "uid": '0a44f30462e742879f5fbd15d2fda9e6'
-        "uid": this.user_id
+        // "uid": this.user_id
       };
-      this.postDataFromUI(LaobingUrl.modular_articles, params)
+      this.postDataFromUI(this.url, params)
         .then(response => {
           this.ArticleDetail = response;
         });
+    },
+    useful(e) {
+      var prop = {
+        useful_flag: '',
+        article_id: this.$route.query.id
+      }
+      if (e === 1) {
+        prop.useful_flag = true;
+      } else {
+        prop.useful_flag = false;
+      }
+      this.postDataFromUI(LaobingUrl.qa_is_useful, prop)
     }
   }
 };

@@ -19,19 +19,14 @@
               </div>
               <div class="list-body">
                 <div class="list-serach">
-                  <el-input v-model="listQuery.search_input" placeholder="输入您想要查询的问题" class="input-with-select">
-                    <el-button slot="append" icon="el-icon-search"></el-button>
+                  <el-input v-model="qa_input" placeholder="输入您想要查询的问题" class="input-with-select">
+                    <el-button slot="append" icon="el-icon-search" @click="qaSearch"></el-button>
                   </el-input>
                 </div>
 
-                <!-- <a class="qa-box" href="/#/homeland/qa-detail">
-                  <h2><span>问</span>退役军人在遇到权益被侵害时，可依据哪些法律进行维权？</h2>
-                  <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-                </a> -->
-
-                <a v-for="item in ArticleList.list" :key="item.id" class="qa-box" :href="'/#/homeland/qa-detail?id=' + item.article_id + '&sort_id=' + item.sort_id">
+                <a v-for="item in ArticleList.list" :key="item.id" class="qa-box" :href="'/#/homeland/qa-detail?id=' + item.article_id">
                   <h2><span>问</span>{{ item.title }}</h2>
-                  <p>{{ item.content }}</p>
+                  <p v-html="item.content"></p>
                 </a>
 
                 <!-- 暂无数据 -->
@@ -104,7 +99,7 @@ export default {
   data() {
     return {
        // 文章列表接口地址、接收数组
-      url: LaobingUrl.modular_article_list,
+      url: LaobingUrl.qa_lsit,
       ArticleList: [],
       // Pagination
       total: 0,
@@ -112,10 +107,10 @@ export default {
       listLoading: true,
       listQuery: {
         search_input: "",
-        sort_id: 70, // 版块id
         page: 1,
         limit: 10
       },
+      qa_input: '',
       zwsj: false
     };
   },
@@ -157,7 +152,7 @@ export default {
     },
     fetchData() {
       this.listLoading = true;
-      this.postDataFromUI(LaobingUrl.modular_article_list, this.listQuery)
+      this.postDataFromUI(this.url, this.listQuery)
         .then(response => {
           this.ArticleList = response;
           this.total = response.total;
@@ -168,6 +163,10 @@ export default {
           this.listLoading = false;
           console.log(error);
         });
+    },
+    qaSearch() {
+      this.listQuery.search_input = this.qa_input;
+      this.fetchData();
     }
   }
 };
@@ -178,6 +177,8 @@ export default {
   width: 100%;
   margin-bottom: 30px;
   display: block;
+  max-height: 105px;
+  overflow: hidden;
   
   h2 {
     font-size: 22px;
