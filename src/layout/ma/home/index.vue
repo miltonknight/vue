@@ -21,6 +21,10 @@
           </div>  
           <!-- common tip -->
           <common-tip />
+
+          <!-- common BackTop -->
+          <back-top />
+
         </div>
 
         <!-- common footer -->
@@ -36,13 +40,15 @@ console.log("Layout：@/home/index is loaded");
 import CommonNav from "@/components/CommonNav";
 import CommonFooter from "@/components/CommonFooter";
 import CommonTip from "@/components/CommonTip";
+import BackTop from "@/components/BackTop"
 
 export default {
   name: "MaLayout",
-  components: { CommonNav, CommonFooter, CommonTip },
+  components: { CommonNav, CommonFooter, CommonTip, BackTop },
   data() {
     return {
-      activeIndex: "1"
+      activeIndex: "1",
+      visible: false
     };
   },
   // mixins: [ResizeMixin],
@@ -67,6 +73,10 @@ export default {
         mobile: this.device === "mobile"
       };
     }
+  },
+  created: function() {
+    console.log(":::::::::::::::::::::::", this.visible)
+    console.log(this.visible)
   },
   methods: {
     handleClickOutside() {
