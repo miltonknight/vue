@@ -74,10 +74,7 @@ export default {
       };
     }
   },
-  created: function() {
-    console.log(":::::::::::::::::::::::", this.visible)
-    console.log(this.visible)
-  },
+  created: function() { },
   methods: {
     handleClickOutside() {
       this.$store.dispatch("app/closeSideBar", { withoutAnimation: false });
