@@ -303,12 +303,20 @@
       </el-col>
       <!-- 右侧内容end -->
     </el-row>
-    <el-backtop>
+    <!-- <el-backtop>
       <div class="backtobox">
-        <div><img src="@/assets/img/cservice.png" /></div>
+        <div>
+          <el-popover
+            placement="top-start"
+            title="客服电话"
+            trigger="hover"
+            content="+86-24-23241999">
+            <img slot="reference" src="@/assets/img/cservice.png" />
+          </el-popover>
+        </div>
         <div><img src="@/assets/img/backtop.png" /></div>
       </div>
-    </el-backtop>
+    </el-backtop> -->
   </div>
 </template>
 
@@ -339,6 +347,7 @@ export default {
   },
   data() {
     return {
+      // visible: false
     };
   },
   computed: { },
@@ -440,45 +449,5 @@ export default {
     }
   }
 }
-.el-backtop {
-  left: 50%!important;
-  bottom: 320px!important;
-  margin-left: 542px!important;
-  width: 50px;
-  height: 100px;
-  box-shadow: none;
-  border-radius: 3px;
 
-  &:hover {
-    box-shadow: none;
-    background: #fff; 
-  }
-}
-.backtobox {
-  width: 50px;
-  height: 100px;
-
-  div {
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    // border: 1px solid #e08714;
-    border: 1px solid #f7e0c1;
-    display: flex;
-    align-items: center;
-    /*实现水平居中*/
-    justify-content: center;
-    text-align: center;
-    border-radius: 3px 3px 0 0;
-
-    &:nth-last-child(1) {
-      border-top: none;
-      border-radius: 0 0 3px 3px;
-    }
-    img {
-      width: 25px;
-      height: 25px;
-    }
-  }
-}
 </style>
