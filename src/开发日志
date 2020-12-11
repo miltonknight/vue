@@ -441,3 +441,50 @@ M 大病救助，报名初核部分完成，大病救助页面完成
 4. src\views\ma\homeland\law-list.vue
 修复列表样式
 
+#-------------------- 20201208更新内容 --------------------
+1. src\views\ma\setting\index.vue, src\views\ma\setting\components\auth.vue
+个人设置——基本信息部分完成，auth组件目前实现的是在组件内显隐，后续需要改为在index中判断参数进行显隐
+2. src\views\ma\profile
+新增我的文章列表、详情页View
+
+#-------------------- 20201209更新内容 --------------------
+1. src\views\ma\profile
+新增XX的文章列表、详情页接口对接
+2. src/views/ma/homeland/qa-list.vue 
+常见问题列表页接口对接
+3. src/router/index.js 
+增加profile我的文章列表页、详情页
+4. src/api/laobing_url.js 
+增加个人文章列表url变量
+5. src/views/ma/annals/article.vue, src/views/ma/case-studies/article.vue,
+   src/views/ma/courier-station/article.vue, src/views/ma/culture/on-tao/article.vue,
+   src/views/ma/famous/enterprise/article.vue, src/views/ma/famous/people/article.vue,
+   src/views/ma/profile/article.vue
+文章详情页s将v-html解析改为外层div取消掉内部p
+
+#-------------------- 20201210更新内容 --------------------
+1. src\components\BackTop\index.vue
+BackTop拆分为公共组件，加入到MaLayout中。目前存在跳转路由后pop失效问题，暂且搁置后续更改
+2. src\views\ma\homeland\qa-list.vue, src\views\ma\homeland\qa-detail.vue,
+   src\views\ma\homeland\components\qa.vue
+老兵家园部分，首页QA模块、QA列表、QA详情、“有用”后台接口对接完成
+
+#-------------------- 20201211更新内容 --------------------
+1. src\views\ma\inbox\index.vue
+新增站内信页面，包含已读、未读区分样式
+2. src\components\CommonNav\index.vue
+通用头部添加站内信链接，增加头像功能（含默认显示），添加私信、站内信的title信息
+3. src\router\index.js
+增加站内信相关路由
+4. 添加各个模块相关说明文件
+5. src\views\ma\follow\index.vue, src\views\ma\follow\components\followed.vue
+   src\views\ma\follow\components\friends.vue, src\views\ma\follow\components\followers.vue
+添加关注模块首页，我的关注、关注我的、找朋友三个组件，样式存在待修复点，下周对接接口
+
+
+
+
+
+
+
+
