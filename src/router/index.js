@@ -351,6 +351,12 @@ export const constantRoutes = [
         component: () => import("@/views/ma/profile/article"),
         meta: { title: "我的文章", icon: "dashboard" }
       },
+      {
+        path: "/inbox/index",
+        name: "MaInbox",
+        component: () => import("@/views/ma/inbox/index"),
+        meta: { title: "站内信", icon: "dashboard" }
+      },
       // {
       //   path: "/policy/index",
       //   name: "MaPolicyIndex",
