@@ -49,27 +49,41 @@
         </el-submenu>
         <el-menu-item index="/policy/index">老兵政策</el-menu-item>
         <el-menu-item index="7">老兵论坛</el-menu-item>
+
+        <div class="header-operations">
+          <el-badge is-dot class="item">
+            <i class="el-icon-chat-dot-round" @click="msg" />
+          </el-badge>
+          <el-badge is-dot class="item">
+            <i class="el-icon-message" alt="站内信" @click="mail" />
+          </el-badge>
+        </div>
+
+        <el-submenu index="8" mode="vertical" class="last">
+          <template slot="title">
+            <div class="avatar-box">
+              <!-- <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar"> -->
+              <img :src="avatar?avatar:defaultAvatar" class="user-avatar">
+              <i class="el-icon-caret-bottom" />
+            </div>
+          </template>
+          <el-menu-item index="/setting/index">资料</el-menu-item>
+          <el-menu-item index="/article">我的文章</el-menu-item>
+          <el-menu-item index="/follow">我的关注</el-menu-item>
+          <el-menu-item index="#" @click.native="logout">退出</el-menu-item>
+        </el-submenu>
+        
       </el-menu>
 
-      <div class="header-operations">
-        <span @click="login">登录</span>
-        <i class="el-icon-chat-dot-round" @click="msg" />
-        <i class="el-icon-message" @click="mail" />
-      </div>
-
-      <!-- <el-submenu index="7" mode="vertical">
-        <template slot="title"
-          >登录</template
-        >
-        <el-menu-item index="7-1">注册</el-menu-item>
-        <el-menu-item index="7-2">登录</el-menu-item>
-      </el-submenu> -->
     </div>
   </div>
 </template>
 
 <script>
+import router from '@/router';
 console.log("Components：@/CommonNav is loaded");
+
+import { mapGetters } from "vuex";
 export default {
   // name: "MaHomeheader",
   name: "CommonNav",
@@ -95,25 +109,49 @@ export default {
         { index: "5-2", path: "/famous/enterprise/index", title: "老兵名企展播" },
         { index: "6", path: "/policy/index", title: "老兵政策" },
         { index: "7", path: "/home/index", title: "老兵论坛" }
-      ]
+      ],
+      defaultAvatar: require("@/assets/img/head.png")
     };
+  },
+  computed: {
+    ...mapGetters(['avatar'])
   },
   watch: {
     // 监测store.state
     '$store.state.navactive': 'getNavType'
   },
+  created: function() {
+    // this.defaultAvatar();
+  },
   methods: {
+    defAvatar(e) {
+      console.log("🚀 ~ file: index.vue ~ line 138 ~ defaultAvatar ~ this.avatar::", this.avatar);
+      // if (this.avatar === undefined) {
+      //   this.$store.state.user.avatar = '@/assets/img/head.png';
+      //   console.log("avatar::::::::" + this.avatar);
+      // }
+      console.log(e)
+      const img = e.srcElement
+      img.src = this.defaultAvatar
+    },
+
     // example function for login 
     login: function() {
       alert("jump to model login")
     },
+    async logout() {
+      await this.$store.dispatch('user/logout')
+      this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+    },
     // example function for mail 
     mail: function() {
-      alert("jump to model mail")
+      router.push('/inbox/index');
+      // alert("jump to model mail")
     },
     // example function for msg 
     msg: function() {
-      alert("jump to model msg")
+      console.log("hhhhhhhhhhhhhhh", this.avatar);
+      // alert("jump to model msg")
     },
     getNavType() {
       this.navselected = this.$store.state.navactive;
@@ -158,12 +196,11 @@ export default {
     flex-shrink: 0;
   }
   .header-operations {
-    display: block;
+    display: inline-block;
     height: 50px;
-    width: 220px;
-    float: right;
     padding: 15px 0;
     text-align: right;
+    margin-left: 85px;
     
     i {
       font-size: 1.3em;
@@ -185,20 +222,21 @@ export default {
   .el-menu-demo {
     display: inline-block;
     list-style-type: disc;
+    width: 100%;
   }
   /* el menu bug fix */
   .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover,
   .el-menu-item.is-active,
   .el-menu--popup .el-menu--popup-bottom-start li,
   .el-menu--horizontal > .el-menu--popup > .el-menu-item:not(.is-disabled):hover {
+    background-color: #e08714 !important; 
     color: #fff !important;
-    background-color: #e08714 !important;
     border-bottom: none;
   }
-  .el-menu--horizontal>.el-submenu.is-active .el-submenu__title
-  {
+  .el-menu--horizontal>.el-submenu.is-active .el-submenu__title {
     color: #fff !important;
-    background-color: #e08714 !important;
+    // background-color: #e08714 !important;
+    background-color: #e08714;
     border-bottom: none;
   }
   /* el menu border bug fix */
@@ -210,6 +248,34 @@ export default {
     //this part is 4 bug fixing which is missing
     height: 50px!important;
     line-height: 50px!important;
+  }
+}
+ul.el-menu li.el-submenu {
+
+  &:nth-last-child(1) {
+    float: right;
+    background: none !important;
+    
+    .el-submenu__title { 
+      padding: 0px 30px 0px 10px !important;
+      background: none !important;
+    }
+  }
+}
+.el-menu--horizontal>.el-submenu.last .el-submenu__title, 
+.is-active.last>>>.el-submenu__title {
+  background: none !important;
+  // padding: 0px 30px 0px 10px !important;
+  // padding: 0px 10px 0px 10px;
+}
+.avatar-box {
+  width: 30px;
+  height: 30px;
+
+  img {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
   }
 }
 </style>
