@@ -69,7 +69,7 @@
           </template>
           <el-menu-item index="/setting/index">资料</el-menu-item>
           <el-menu-item index="/article">我的文章</el-menu-item>
-          <el-menu-item index="/follow">我的关注</el-menu-item>
+          <el-menu-item index="/follow/index">我的关注</el-menu-item>
           <el-menu-item index="#" @click.native="logout">退出</el-menu-item>
         </el-submenu>
         
