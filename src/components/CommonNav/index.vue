@@ -52,10 +52,10 @@
 
         <div class="header-operations">
           <el-badge is-dot class="item">
-            <i class="el-icon-chat-dot-round" @click="msg" />
+            <i class="el-icon-chat-dot-round" title="私信" @click="msg" />
           </el-badge>
           <el-badge is-dot class="item">
-            <i class="el-icon-message" alt="站内信" @click="mail" />
+            <i class="el-icon-message" title="站内信" @click="mail" />
           </el-badge>
         </div>
 
