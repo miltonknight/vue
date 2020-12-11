@@ -8,7 +8,7 @@
           trigger="hover"
           content="+86-24-23241999"
         >
-          <img slot="reference" src="@/assets/img/cservice.png" @click="pop" />
+          <img slot="reference" src="@/assets/img/cservice.png" />
         </el-popover>
       </div>
       <div><img src="@/assets/img/backtop.png" /></div>
