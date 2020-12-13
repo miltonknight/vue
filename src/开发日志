@@ -481,6 +481,14 @@ BackTop拆分为公共组件，加入到MaLayout中。目前存在跳转路由�
    src\views\ma\follow\components\friends.vue, src\views\ma\follow\components\followers.vue
 添加关注模块首页，我的关注、关注我的、找朋友三个组件，样式存在待修复点，下周对接接口
 
+#-------------------- 20201213更新内容 --------------------
+1. src\views\ma\follow\components\followed.vue, src\views\ma\follow\components\followers.vue
+   src\views\ma\follow\components\friends.vue
+修复关注模块列表样式
+2. src\views\ma\homeland\lawyer-list.vue, src\views\ma\homeland\components\lawyer.vue
+老兵家园律师模块首页列表，列表页对接接口
+3. src\api\laobing_url.js
+增加老兵家园律师模块地址变量
 
 
 
