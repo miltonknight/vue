@@ -29,10 +29,12 @@ export const LaobingUrl = {
   index_article: '/homepage/findHomepageModule', // index_article
   famous_people: '/veteranFamous/pageVereranFamous', // famous_list
   user_article_list: '/article/pageArticleByUid', // persenal articles
-  qa_index_list: '/lawConsult/findLawConsultLimit', // comoponent qa index
+  qa_index_list: '/lawConsult/findLawConsultLimit', // component qa index
   qa_lsit: '/lawConsult/pageLawConsultList', // qa list
   qa_detail: '/lawConsult/findLawConsultDetailById', // qa detail
-  qa_is_useful: 'lawConsult/addAnswerIfUsefulByArticleId', // qa is useful
+  qa_is_useful: '/lawConsult/addAnswerIfUsefulByArticleId', // qa is useful
+  lawyer_index_list: '/lawyer/lawFindLawyerListLimit', // component lawyer index
+  lawyer_list: '/lawyer/pageLawyer', // lawyer list
   temp_add_article: '/article/insertArticle' // temp add article
 }
 
