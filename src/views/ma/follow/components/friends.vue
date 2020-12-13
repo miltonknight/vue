@@ -172,11 +172,12 @@ export default {
 <style lang="scss" scoped>
 .follow-box {
   display: inline-flex;
-  width: 49.78%;
+  width: 48%;
   margin-bottom: 20px;
 
-  &:nth-child(even) {
-    
+  &:nth-child(odd) {
+    margin-left:3.5%;
+
     .follow-operate {
       text-align: right;
     }
@@ -212,14 +213,15 @@ export default {
     }
   }
   .follow-relation {
-    flex-grow: 2;
+    // flex-grow: 2;
+    width: 100px;
     align-self: center;
     text-align: center;
   }
   .follow-operate {
     flex-grow: 2;
     align-self: center;
-    text-align: center;
+    text-align: right;
   }
 }
 .follow-search {
