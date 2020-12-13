@@ -19,60 +19,11 @@
               </div>
               <div class="list-body">
 
-                <a class="lawyer-box" href="/#/homeland/lawyer-detail">
-                  <img src="~@/assets/img/lawyer.jpg" alt="" />
+                <a v-for="item in ret" :key="item.id" class="lawyer-box" :href="'/#/homeland/lawyer-detail?id=' + item.article_id">
+                  <img :src="item.img" alt="" />
                   <div class="lawyer-info">
-                    <h3>张炜</h3>
-                    <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
-                  </div>
-                </a>
-                <a class="lawyer-box" href="/#/homeland/lawyer-detail">
-                  <img src="~@/assets/img/lawyer.jpg" alt="" />
-                  <div class="lawyer-info">
-                    <h3>张炜</h3>
-                    <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
-                  </div>
-                </a>
-                <a class="lawyer-box" href="/#/homeland/lawyer-detail">
-                  <img src="~@/assets/img/lawyer.jpg" alt="" />
-                  <div class="lawyer-info">
-                    <h3>张炜</h3>
-                    <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
-                  </div>
-                </a>
-                <a class="lawyer-box" href="/#/homeland/lawyer-detail">
-                  <img src="~@/assets/img/lawyer.jpg" alt="" />
-                  <div class="lawyer-info">
-                    <h3>张炜</h3>
-                    <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
-                  </div>
-                </a>
-                <a class="lawyer-box" href="/#/homeland/lawyer-detail">
-                  <img src="~@/assets/img/lawyer.jpg" alt="" />
-                  <div class="lawyer-info">
-                    <h3>张炜</h3>
-                    <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
-                  </div>
-                </a>
-                <a class="lawyer-box" href="/#/homeland/lawyer-detail">
-                  <img src="~@/assets/img/lawyer.jpg" alt="" />
-                  <div class="lawyer-info">
-                    <h3>张炜</h3>
-                    <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
-                  </div>
-                </a>
-                <a class="lawyer-box" href="/#/homeland/lawyer-detail">
-                  <img src="~@/assets/img/lawyer.jpg" alt="" />
-                  <div class="lawyer-info">
-                    <h3>张炜</h3>
-                    <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
-                  </div>
-                </a>
-                <a class="lawyer-box" href="/#/homeland/lawyer-detail">
-                  <img src="~@/assets/img/lawyer.jpg" alt="" />
-                  <div class="lawyer-info">
-                    <h3>张炜</h3>
-                    <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.introduction }}</p>
                   </div>
                 </a>
 
@@ -146,14 +97,14 @@ export default {
   data() {
     return {
        // 文章列表接口地址、接收数组
-      url: LaobingUrl.modular_article_list,
+      url: LaobingUrl.lawyer_list,
       ArticleList: [],
       // Pagination
       total: 0,
       list: null,
       listLoading: true,
       listQuery: {
-        sort_id: 13, // 版块id
+        // sort_id: 13, // 版块id
         page: 1,
         limit: 10
       },
@@ -179,7 +130,7 @@ export default {
                 // console.log(response.data.total)
                 this.zwsj = true
               }  
-              console.log("Get Annals List Response:", data);
+              console.log("Get Lawyer List Response:", data);
               resolve(data);
             }
             // this.$message({
@@ -198,7 +149,7 @@ export default {
     },
     fetchData() {
       this.listLoading = true;
-      this.postDataFromUI(LaobingUrl.modular_article_list, this.listQuery)
+      this.postDataFromUI(LaobingUrl.lawyer_list, this.listQuery)
         .then(response => {
           this.ArticleList = response;
           this.total = response.total;

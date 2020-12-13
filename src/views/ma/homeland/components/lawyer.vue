@@ -1,83 +1,17 @@
 <template>
-  <!-- 优惠信息 -->
+  <!-- 找律师 -->
   <div class="list-main">
     <div class="list-head">
-      <h3>找律师<span>Find a laywer</span></h3>
+      <h3>找律师<span>Find laywers</span></h3>
       <a href="/#/homeland/lawyer-list">查看更多</a>
     </div>
     <div class="list-body">
       
-      <!-- <a v-for="item in ret" :key="item.id" class="list-item">
-        <div class="list-body-img">
-          <img :src="item.srcPath" />
-          <i class="badge badge-red">加油优惠</i>
-        </div>
-        <div class="list-body-text">
-          <h3>{{item.title}}</h3>
-          <p>{{item.intro}}</p>
-          <div class="list-text-cate">
-            <span class="tip">加油优惠信息</span>
-            <span class="time">
-              <i class="el-icon-time"></i>{{item.createTime}}
-            </span>
-          </div>
-        </div>
-      </a> -->
-
-      <a class="lawyer-box" href="/#/homeland/lawyer-detail">
-        <img src="~@/assets/img/lawyer.jpg" alt="" />
+      <a v-for="item in ret" :key="item.id" class="lawyer-box" :href="'/#/homeland/lawyer-detail?id=' + item.article_id">
+        <img :src="item.img" alt="" />
         <div class="lawyer-info">
-          <h3>张炜</h3>
-          <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
-        </div>
-      </a>
-      <a class="lawyer-box">
-        <img src="~@/assets/img/lawyer.jpg" alt="" />
-        <div class="lawyer-info">
-          <h3>张炜</h3>
-          <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
-        </div>
-      </a>
-      <a class="lawyer-box">
-        <img src="~@/assets/img/lawyer.jpg" alt="" />
-        <div class="lawyer-info">
-          <h3>张炜</h3>
-          <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
-        </div>
-      </a>
-      <a class="lawyer-box">
-        <img src="~@/assets/img/lawyer.jpg" alt="" />
-        <div class="lawyer-info">
-          <h3>张炜</h3>
-          <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
-        </div>
-      </a>
-      <a class="lawyer-box">
-        <img src="~@/assets/img/lawyer.jpg" alt="" />
-        <div class="lawyer-info">
-          <h3>张炜</h3>
-          <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
-        </div>
-      </a>
-      <a class="lawyer-box">
-        <img src="~@/assets/img/lawyer.jpg" alt="" />
-        <div class="lawyer-info">
-          <h3>张炜</h3>
-          <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
-        </div>
-      </a>
-      <a class="lawyer-box">
-        <img src="~@/assets/img/lawyer.jpg" alt="" />
-        <div class="lawyer-info">
-          <h3>张炜</h3>
-          <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
-        </div>
-      </a>
-      <a class="lawyer-box">
-        <img src="~@/assets/img/lawyer.jpg" alt="" />
-        <div class="lawyer-info">
-          <h3>张炜</h3>
-          <p>北京市炜衡（沈阳）律师事务所专职律师、高级合伙人</p>
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.introduction }}</p>
         </div>
       </a>
 
@@ -99,7 +33,7 @@ export default {
     return {
       // 优惠信息接收数组
       ret: [],
-      url: LaobingUrl.index_coupon
+      url: LaobingUrl.lawyer_index_list
     }
   },
   computed: {
@@ -116,7 +50,7 @@ export default {
             // const { code, msg, data } = response;
             const { code, data } = response;
             if (code === 20000) {
-              console.log("QA List Response:", data);
+              console.log("Lawyer List Response:", data);
               resolve(data);
             }
             // this.$message({
@@ -137,7 +71,7 @@ export default {
       var params = {
         
       };
-      this.postDataFromUI(LaobingUrl.index_coupon, params)
+      this.postDataFromUI(this.url, params)
         .then(response => {
           this.ret = response;
         });
