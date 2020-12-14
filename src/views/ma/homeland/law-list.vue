@@ -27,7 +27,7 @@
                 <a class="law-cover" href="/#/homeland/law-detail">
                   <img src="~@/assets/img/law-cover.jpg" />
                 </a>
-                <a class="law-cover" href="/#/homeland/law/">
+                <a class="law-cover" href="/#/homeland/law-detail">
                   <img src="~@/assets/img/law-cover.jpg" />
                 </a>
                 <a class="law-cover" href="/#/homeland/law/">
@@ -156,7 +156,7 @@ export default {
       list: null,
       listLoading: true,
       listQuery: {
-        sort_id: 13, // 版块id
+        sort_id: 69, // 版块id
         page: 1,
         limit: 10
       },
