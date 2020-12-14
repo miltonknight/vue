@@ -11,19 +11,9 @@
           <div class="article-container">
             <div class="article-main">
               <div class="article-head">
-                <h1>张炜 — 北京市炜衡（沈阳）事务所专职律师、高级合伙人{{ ArticleDetail.title }}</h1>
+                <h1>{{ ArticleDetail.title }}</h1>
               </div>
-              <div class="article-body">
-                <!-- <p v-html="ArticleDetail.content"></p> -->
-                <img src="@/assets/img/lawyer.jpg" alt="">
-                <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-                <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-                <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-                <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-                <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-                <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-                <p>退役军人在职场上不可避免地要遇到维权事件，处理此类问题时可依据有关法律作出如下处理：(1)不签订劳动合同《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系。”第十条规定：“建立劳动关系，应当订立书面劳动合同。</p>
-              </div>
+              <div class="article-body" v-html="ArticleDetail.content"></div>
             </div>
           </div>
           <!-- 内容 end -->
@@ -42,14 +32,14 @@
               <div class="article-side">
                 <div class="writer-box">
                   <div class="writer-head">
-                    <img src="@/assets/img/head.png" alt="">
+                    <img :src="ArticleDetail.img_path" alt="">
                   </div>
                   <div class="writer-info">
-                    王大壮<span>特邀作者</span>
+                    张益达<span>特邀作者</span>
                   </div>
                   <p class="writer-intro">北京市炜衡（沈阳）律师事务所</p>
                 </div>  
-                <p class="writer-corp">北京市炜衡（沈阳）律师事务 所专职律师、高级合伙人</p>
+                <p class="writer-corp">北京市很大的律师事务所 高级合伙人</p>
               </div>
               <div class="more">咨询客服</div>
             </div>
@@ -80,6 +70,7 @@ export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
   name: "HomeLandLawyerDetail",
+  components: { },
   data() {
     return {
       // article
@@ -102,7 +93,7 @@ export default {
             // const { code, msg, data } = response;
             const { code, data } = response;
             if (code === 20000) {
-              console.log("Get Culture on Tao Article Response:", data);
+              console.log("Get Lawyer Detail Response:", data);
               resolve(data);
             }
             // this.$message({
