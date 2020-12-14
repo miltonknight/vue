@@ -83,8 +83,7 @@ export default {
       this.postDataFromUI(this.url, this.param)
         .then(response => {
           this.ret = response;
-          console.log("homepage Courier Station Json:::::::::")
-          console.log(response)
+          console.log("homepage Courier Station Json:", response)
         });
     }
   }

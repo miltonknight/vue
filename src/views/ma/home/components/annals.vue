@@ -80,8 +80,7 @@ export default {
       this.postDataFromUI(this.url, this.param)
         .then(response => {
           this.ret = response;
-          console.log("homepage Annals Json:::::::::")
-          console.log(response)
+          console.log("homepage Annals Json:", response)
         });
     }
   }
