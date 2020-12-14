@@ -134,7 +134,7 @@ export default {
 
 $cursor: #7b7b7b;
 $orange: #e08714;
-$bg:#fff;
+$bg: rgba(51,102,51,0.83);
 $dark_gray:#889aa4;
 $light_gray:#eee;
 
@@ -151,13 +151,16 @@ $light_gray:#eee;
   margin: -400px 0 0 -260px;
   background: #fff;
   padding: 40px;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 0 5px -1px #8d8d8d;
+  border-radius: 10px;
   
 }
 .login-form-box {
-  border: 1px solid #ebebeb;
   padding: 35px 35px;
-  box-shadow: 0 0 5px -1px #8d8d8d;
-  border-radius: 10px;
+  // border: 1px solid #ebebeb;
+  // box-shadow: 0 0 5px -1px #8d8d8d;
+  // border-radius: 10px;
   background: #fff;
 
   .login-title {
@@ -186,7 +189,7 @@ $light_gray:#eee;
     width: 85%;
 
     input {
-      background: transparent;
+      background: #fff;
       border: 0px;
       -webkit-appearance: none;
       border-radius: 0px;
@@ -196,7 +199,7 @@ $light_gray:#eee;
       caret-color: $cursor;
 
       &:-webkit-autofill {
-        box-shadow: 0 0 0px 1000px $bg inset !important;
+        box-shadow: 0 0 0px 1000px #fff inset !important;
         -webkit-text-fill-color: $cursor !important;
       }
     }
