@@ -67,11 +67,11 @@
               <i class="el-icon-caret-bottom" />
             </div>
           </template>
-          <el-menu-item index="/login">登陆</el-menu-item>
-          <el-menu-item index="/setting/index">资料</el-menu-item>
-          <el-menu-item index="/article">我的文章</el-menu-item>
-          <el-menu-item index="/follow/index">我的关注</el-menu-item>
-          <el-menu-item index="#" @click.native="logout">退出</el-menu-item>
+          <el-menu-item v-if="!access_token" index="/login">登陆</el-menu-item>
+          <el-menu-item v-if="access_token" index="/setting/index">资料</el-menu-item>
+          <el-menu-item v-if="access_token" index="/articles/index">我的文章</el-menu-item>
+          <el-menu-item v-if="access_token" index="/follow/index">我的关注</el-menu-item>
+          <el-menu-item v-if="access_token" index="#" @click.native="logout">退出</el-menu-item>
         </el-submenu>
         
       </el-menu>
@@ -115,7 +115,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['avatar'])
+    ...mapGetters(['avatar', 'access_token'])
   },
   watch: {
     // 监测store.state
