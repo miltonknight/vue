@@ -67,6 +67,7 @@
               <i class="el-icon-caret-bottom" />
             </div>
           </template>
+          <el-menu-item index="/login">登陆</el-menu-item>
           <el-menu-item index="/setting/index">资料</el-menu-item>
           <el-menu-item index="/article">我的文章</el-menu-item>
           <el-menu-item index="/follow/index">我的关注</el-menu-item>
