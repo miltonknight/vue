@@ -48,7 +48,7 @@ export default {
             // const { code, msg, data } = response;
             const { code, data } = response;
             if (code === 20000) {
-              console.log("QA List Response:", data);
+              console.log("Component HL-QA List Response:", data);
               resolve(data);
             }
             // this.$message({

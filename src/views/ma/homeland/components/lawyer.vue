@@ -50,7 +50,7 @@ export default {
             // const { code, msg, data } = response;
             const { code, data } = response;
             if (code === 20000) {
-              console.log("Lawyer List Response:", data);
+              console.log("Component HL-Lawyer Response:", data);
               resolve(data);
             }
             // this.$message({
