@@ -10,11 +10,12 @@
           <!-- 内容 -->
           <div class="article-container">
             <div class="article-main">
-              <h1 align="center">标题标题标题{{ ArticleDetail.title }}</h1>
-              <p style="width:100%">
-                <img src="~@/assets/img/law-detail-sample.jpg" alt="" style="width:100%">
-              </p>
-              <p v-html="ArticleDetail.content"></p>
+              <div class="article-head">
+                <h1>{{ ArticleDetail.title }}</h1>
+                <p><a href="">{{ ArticleDetail.writer }}</a> {{ ArticleDetail.create_time }}</p>
+              </div>
+              <div class="article-body" v-html="ArticleDetail.content"></div>
+              
             </div>
           </div>
           <!-- 内容 end -->
@@ -81,7 +82,7 @@ export default {
             // const { code, msg, data } = response;
             const { code, data } = response;
             if (code === 20000) {
-              console.log("Get Culture on Tao Article Response:", data);
+              console.log("Get HL-Law detail Response:", data);
               resolve(data);
             }
             // this.$message({
