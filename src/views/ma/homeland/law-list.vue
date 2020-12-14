@@ -24,6 +24,7 @@
                   </el-input>
                 </div>
 
+
                 <a class="law-cover" href="/#/homeland/law-detail">
                   <img src="~@/assets/img/law-cover.jpg" />
                 </a>
