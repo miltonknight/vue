@@ -490,6 +490,30 @@ BackTop拆分为公共组件，加入到MaLayout中。目前存在跳转路由�
 3. src\api\laobing_url.js
 增加老兵家园律师模块地址变量
 
+#-------------------- 20201214更新内容 --------------------
+1. src\views\login\index.vue
+登录页更改背景色及部分样式
+2. src/views/ma/homeland/components/laws.vue, src/views/ma/homeland/lawyer-detail.vue,
+   src/views/ma/homeland/lawyer-list.vue, src/views/ma/homeland/law-list.vue,
+   src/views/ma/homeland/law-detail.vue
+老兵家园法律-部分页面接口对接，法律详情页面需要后台更改接口
+3. src/components/CommonNav/index.vue
+加入登录页链接，加入登录状态判断，从而显示不同的头像下拉菜单
+4. src\views\ma\follow\components\followed.vue, src\views\ma\follow\components\followers.vue,
+   src\views\ma\follow\components\friends.vue
+关注三个组件用unfollow方法代替空click方法，由于缺失数据，需要后续增加交互方法
+5. src\views\ma\articles
+新增我的文章版块，拆分三个tab内容为三个组件
+6. src\views\ma\articles\components\articles.vue
+**关于删除方法：
+6.1 先定义一个预删除方法deleteArticle(e)，点击后获取当前列表元素的最外层元素作为obj进行参数传递
+6.2 通过open(obj)方法打开Message Box的确认方法，obj为deleteArticle(e)传递来的obj
+6.3 在Message Box的comfirm回调函数中进行确认删除，前台将元素隐藏，同时请求后台接口假删除数据
+另外,链接地址目前存在指向错误的问题,用户发出的文章目前只能在论坛中显示,但论坛版块尚未开启所以暂时指向老兵驿站
+7. src\router\index.js
+加入我的文章模块相关链接
+8. 我的草稿翌日更改------
+
 
 
 
