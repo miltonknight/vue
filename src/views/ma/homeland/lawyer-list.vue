@@ -19,7 +19,7 @@
               </div>
               <div class="list-body">
 
-                <a v-for="item in ret" :key="item.id" class="lawyer-box" :href="'/#/homeland/lawyer-detail?id=' + item.article_id">
+                <a v-for="item in ArticleList.list" :key="item.id" class="lawyer-box" :href="'/#/homeland/lawyer-detail?id=' + item.article_id">
                   <img :src="item.img" alt="" />
                   <div class="lawyer-info">
                     <h3>{{ item.name }}</h3>
@@ -29,18 +29,17 @@
 
                 <!-- 暂无数据 -->
                 <div v-show="zwsj" class="zwsj">暂无数据</div>
-
-                <pagination
-                  v-show="total > 0"
-                  background
-                  layout="prev, pager, next"
-                  :total="total"
-                  :page.sync="listQuery.page"
-                  :limit.sync="listQuery.limit"
-                  @pagination="fetchData"
-                />
-                
               </div>
+              
+              <pagination
+                v-show="total > 0"
+                background
+                layout="prev, pager, next"
+                :total="total"
+                :page.sync="listQuery.page"
+                :limit.sync="listQuery.limit"
+                @pagination="fetchData"
+              />
             </div>
             <!-- 全部法律end -->
 
@@ -106,7 +105,7 @@ export default {
       listQuery: {
         // sort_id: 13, // 版块id
         page: 1,
-        limit: 10
+        limit: 8
       },
       zwsj: false
     };
