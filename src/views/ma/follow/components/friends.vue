@@ -8,7 +8,7 @@
 
     <div class="search-result">
       <div class="list-head">
-        <h3>搜索结果</h3>
+        <h3><svg-icon icon-class="hdot" class-name="card-panel-icon" />搜索结果</h3>
       </div>
 
       <div class="follow-box">
@@ -23,7 +23,7 @@
           <img src="@/assets/img/follow.png" alt="">
         </div>
         <div class="follow-operate">
-          <el-button type="warning" @click="">取消关注</el-button>
+          <el-button type="warning" @click="unfollow">取消关注</el-button>
         </div>
       </div>
       <div class="follow-box">
@@ -38,7 +38,7 @@
           <img src="@/assets/img/follow.png" alt="">
         </div>
         <div class="follow-operate">
-          <el-button type="warning" @click="">取消关注</el-button>
+          <el-button type="warning" @click="unfollow">取消关注</el-button>
         </div>
       </div>
       <div class="follow-box">
@@ -53,7 +53,7 @@
           <img src="@/assets/img/follow.png" alt="">
         </div>
         <div class="follow-operate">
-          <el-button type="warning" @click="">取消关注</el-button>
+          <el-button type="warning" @click="unfollow">取消关注</el-button>
         </div>
       </div>
       <div class="follow-box">
@@ -68,7 +68,7 @@
           <img src="@/assets/img/follow.png" alt="">
         </div>
         <div class="follow-operate">
-          <el-button type="warning" @click="">取消关注</el-button>
+          <el-button type="warning" @click="unfollow">取消关注</el-button>
         </div>
       </div>
 
@@ -76,7 +76,7 @@
 
     <div class="search-result">
       <div class="list-head">
-        <h3>相关推荐</h3>
+        <h3><svg-icon icon-class="hdot" class-name="card-panel-icon" />相关推荐</h3>
       </div>
 
       <div class="follow-box">
@@ -91,7 +91,7 @@
           <img src="@/assets/img/follow.png" alt="">
         </div>
         <div class="follow-operate">
-          <el-button type="warning" @click="">取消关注</el-button>
+          <el-button type="warning" @click="unfollow">取消关注</el-button>
         </div>
       </div>
       <div class="follow-box">
@@ -106,7 +106,7 @@
           <img src="@/assets/img/follow.png" alt="">
         </div>
         <div class="follow-operate">
-          <el-button type="warning" @click="">取消关注</el-button>
+          <el-button type="warning" @click="unfollow">取消关注</el-button>
         </div>
       </div>
       <div class="follow-box">
@@ -121,7 +121,7 @@
           <img src="@/assets/img/follow.png" alt="">
         </div>
         <div class="follow-operate">
-          <el-button type="warning" @click="">取消关注</el-button>
+          <el-button type="warning" @click="unfollow">取消关注</el-button>
         </div>
       </div>
       <div class="follow-box">
@@ -136,13 +136,12 @@
           <img src="@/assets/img/follow.png" alt="">
         </div>
         <div class="follow-operate">
-          <el-button type="warning" @click="">取消关注</el-button>
+          <el-button type="warning" @click="unfollow">取消关注</el-button>
         </div>
       </div>
 
     </div>
 
-    
   </div>
 </template>
 
@@ -164,6 +163,10 @@ export default {
   methods: {
     followSearch() {
       console.log("search")
+    },
+    unfollow() {
+      // 获取最外层div
+      console.log(e.currentTarget.parentElement.parentElement);
     }
   }  
 };
@@ -226,7 +229,7 @@ export default {
 }
 .follow-search {
   width: 80%;
-  margin: 0 auto 50px;
+  margin: 0 auto 30px;
 
   .el-button {
     background-color: #e08714!important;
@@ -234,7 +237,10 @@ export default {
     border: 1px solid #e08714!important;
   }
 }
+.card-panel-icon {
+  margin-right: 10px;
+}
 .search-result {
-  
+  overflow: hidden;
 }
 </style>

@@ -12,7 +12,7 @@
         <img src="@/assets/img/follow.png" alt="">
       </div>
       <div class="follow-operate">
-        <el-button type="warning" @click="">取消关注</el-button>
+        <el-button type="warning" @click="unfollow">取消关注</el-button>
       </div>
     </div>
 
@@ -28,7 +28,7 @@
         <img src="@/assets/img/follow.png" alt="">
       </div>
       <div class="follow-operate">
-        <el-button type="warning" @click="">取消关注</el-button>
+        <el-button type="warning" @click="unfollow">取消关注</el-button>
       </div>
     </div>
     <div class="follow-box">
@@ -43,7 +43,7 @@
         <!-- <img src="@/assets/img/follow.png" alt=""> -->
       </div>
       <div class="follow-operate">
-        <el-button type="warning" @click="">取消关注</el-button>
+        <el-button type="warning" @click="unfollow">取消关注</el-button>
       </div>
     </div>
     <div class="follow-box">
@@ -58,7 +58,7 @@
         <!-- <img src="@/assets/img/follow.png" alt=""> -->
       </div>
       <div class="follow-operate">
-        <el-button type="warning" @click="">取消关注</el-button>
+        <el-button type="warning" @click="unfollow">取消关注</el-button>
       </div>
     </div>
     <div class="follow-box">
@@ -73,7 +73,7 @@
         <img src="@/assets/img/follow.png" alt="">
       </div>
       <div class="follow-operate">
-        <el-button type="warning" @click="">取消关注</el-button>
+        <el-button type="warning" @click="unfollow">取消关注</el-button>
       </div>
     </div>
     <div class="follow-box">
@@ -88,7 +88,7 @@
         <!-- <img src="@/assets/img/follow.png" alt=""> -->
       </div>
       <div class="follow-operate">
-        <el-button type="warning" @click="">取消关注</el-button>
+        <el-button type="warning" @click="unfollow">取消关注</el-button>
       </div>
     </div>
     <div class="follow-box">
@@ -103,7 +103,7 @@
         <!-- <img src="@/assets/img/follow.png" alt=""> -->
       </div>
       <div class="follow-operate">
-        <el-button type="warning" @click="">取消关注</el-button>
+        <el-button type="warning" @click="unfollow">取消关注</el-button>
       </div>
     </div>
     <div class="follow-box">
@@ -118,7 +118,7 @@
         <img src="@/assets/img/follow.png" alt="">
       </div>
       <div class="follow-operate">
-        <el-button type="warning" @click="">取消关注</el-button>
+        <el-button type="warning" @click="unfollow">取消关注</el-button>
       </div>
     </div>
   </div>
@@ -140,7 +140,10 @@ export default {
     };
   },
   methods: {
-    
+    unfollow() {
+      // 获取最外层div
+      console.log(e.currentTarget.parentElement.parentElement);
+    }
   }
 };
 </script>
