@@ -512,9 +512,19 @@ BackTop拆分为公共组件，加入到MaLayout中。目前存在跳转路由�
 另外,链接地址目前存在指向错误的问题,用户发出的文章目前只能在论坛中显示,但论坛版块尚未开启所以暂时指向老兵驿站
 7. src\router\index.js
 加入我的文章模块相关链接
-8. 我的草稿翌日更改------
 
-
+#-------------------- 20201214更新内容 --------------------
+1. src\components\CommonNav\index.vue
+私信、站内信加入token判断进行显示隐藏
+2. src\components\BbsTop\index.vue
+将右侧顶部信息提取为公共组件，更改对应页面，删除无用组件，共计更改30个文件
+Showing 30 changed files with 140 additions and 907 deletions.
+3. src\views\ma\articles\components\comments.vue    
+完善我的评论组件
+4. src\views\ma\articles\components\drafts.vue
+新增我的草稿模块，数据接口暂缺
+5. src\views\ma\inbox\index.vue
+解决站内信弹层传值问题
 
 
 
