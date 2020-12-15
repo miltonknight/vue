@@ -50,7 +50,7 @@
         <el-menu-item index="/policy/index">老兵政策</el-menu-item>
         <el-menu-item index="7">老兵论坛</el-menu-item>
 
-        <div class="header-operations">
+        <div v-if="access_token" class="header-operations">
           <el-badge is-dot class="item">
             <i class="el-icon-chat-dot-round" title="私信" @click="msg" />
           </el-badge>
