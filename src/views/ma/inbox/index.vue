@@ -7,15 +7,16 @@
           <el-tab-pane label="站内信" name="first">
             <div class="setting-body">
 
-              <div class="inbox-msg unread">
+              <!-- <div class="inbox-msg unread" @click="dialogVisible = true"> -->
+              <div class="inbox-msg unread" @click="getMsg">
                 <div class="inbox-msg-avatar">
                   <img src="@/assets/img/envelope-close.png" alt="">
                   <i>NEW</i>
                 </div>
                 <div class="inbox-msg-content">
-                  <h3>老兵老兵网啊</h3>
+                  <h3 ref="msgTitle">老兵老兵网啊</h3>
                   <div class="inbox-msg-bm">
-                    <div class="msg-content">亲爱的老兵老兵网用户，您好！为打造“老兵老兵网”持续影响力，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络</div>
+                    <div class="msg-content" ref="msgContent">1亲爱的老兵老兵网用户，您好！为打造“老兵老兵网”持续影响力，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络</div>
                     <div class="time">
                       <i class="el-icon-time"></i>2020-20-20 15:16
                     </div>
@@ -23,22 +24,22 @@
                 </div>
               </div>
 
-              <div class="inbox-msg unread">
+              <div class="inbox-msg unread" @click="getMsg">
                 <div class="inbox-msg-avatar">
                   <img src="@/assets/img/envelope-close.png" alt="">
                   <i>NEW</i>
                 </div>
                 <div class="inbox-msg-content">
-                  <h3>老兵老兵网啊</h3>
+                  <h3 ref="msgTitle">老兵老兵网啊</h3>
                   <div class="inbox-msg-bm">
-                    <div class="msg-content">亲爱的老兵老兵网用户，您好！为打造“老兵老兵网”持续影响力，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络</div>
+                    <div class="msg-content">2亲爱的老兵老兵网用户，您好！为打造“老兵老兵网”持续影响力，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络</div>
                     <div class="time">
                       <i class="el-icon-time"></i>2020-20-20 15:16
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="inbox-msg unread">
+              <div class="inbox-msg unread" @click="getMsg">
                 <div class="inbox-msg-avatar">
                   <img src="@/assets/img/envelope-close.png" alt="">
                   <i>NEW</i>
@@ -46,7 +47,21 @@
                 <div class="inbox-msg-content">
                   <h3>老兵老兵网啊</h3>
                   <div class="inbox-msg-bm">
-                    <div class="msg-content">亲爱的老兵老兵网用户，您好！为打造“老兵老兵网”持续影响力，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络</div>
+                    <div class="msg-content">3亲爱的老兵老兵网用户，您好！为打造“老兵老兵网”持续影响力，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络</div>
+                    <div class="time">
+                      <i class="el-icon-time"></i>2020-20-20 15:16
+                    </div>
+                  </div>
+                </div>
+              </div><div class="inbox-msg" @click="getMsg">
+                <div class="inbox-msg-avatar">
+                  <img src="@/assets/img/envelope-open.png" alt="">
+                  <i>NEW</i>
+                </div>
+                <div class="inbox-msg-content">
+                  <h3>老兵老兵网啊</h3>
+                  <div class="inbox-msg-bm">
+                    <div class="msg-content">4亲爱的老兵老兵网用户，您好！为打造“老兵老兵网”持续影响力，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络</div>
                     <div class="time">
                       <i class="el-icon-time"></i>2020-20-20 15:16
                     </div>
@@ -60,7 +75,7 @@
                 <div class="inbox-msg-content">
                   <h3>老兵老兵网啊</h3>
                   <div class="inbox-msg-bm">
-                    <div class="msg-content">亲爱的老兵老兵网用户，您好！为打造“老兵老兵网”持续影响力，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络</div>
+                    <div class="msg-content">5亲爱的老兵老兵网用户，您好！为打造“老兵老兵网”持续影响力，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络</div>
                     <div class="time">
                       <i class="el-icon-time"></i>2020-20-20 15:16
                     </div>
@@ -74,21 +89,7 @@
                 <div class="inbox-msg-content">
                   <h3>老兵老兵网啊</h3>
                   <div class="inbox-msg-bm">
-                    <div class="msg-content">亲爱的老兵老兵网用户，您好！为打造“老兵老兵网”持续影响力，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络</div>
-                    <div class="time">
-                      <i class="el-icon-time"></i>2020-20-20 15:16
-                    </div>
-                  </div>
-                </div>
-              </div><div class="inbox-msg">
-                <div class="inbox-msg-avatar">
-                  <img src="@/assets/img/envelope-open.png" alt="">
-                  <i>NEW</i>
-                </div>
-                <div class="inbox-msg-content">
-                  <h3>老兵老兵网啊</h3>
-                  <div class="inbox-msg-bm">
-                    <div class="msg-content">亲爱的老兵老兵网用户，您好！为打造“老兵老兵网”持续影响力，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络</div>
+                    <div class="msg-content">6亲爱的老兵老兵网用户，您好！为打造“老兵老兵网”持续影响力，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络</div>
                     <div class="time">
                       <i class="el-icon-time"></i>2020-20-20 15:16
                     </div>
@@ -136,6 +137,21 @@
               </div>
 
             </div>
+            <el-dialog
+              :title="'来自：' + dialogMsg.title + ' 的消息'"
+              :visible.sync="dialogVisible"
+              width="400"
+              :open="getMsg"
+              @opened="openMsg"
+              :before-close="handleClose"
+              :lock-scroll="false"
+            >
+              <span>{{ dialogMsg.content }}</span>
+              <!-- <span slot="footer" class="dialog-footer">
+                <el-button @click="dialogVisible = false">取 消</el-button>
+                <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+              </span> -->
+            </el-dialog>
           </el-tab-pane>
           
         </el-tabs>
@@ -163,7 +179,12 @@ export default {
       activeName: 'first', // tab active
       // 文章列表接口地址、接收数组
       url: LaobingUrl.modular_article_list,
-      ArticleList: []
+      ArticleList: [],
+      dialogVisible: false,
+      dialogMsg: {
+        title: '老兵老兵网',
+        content: '456'
+      }
     };
   },
   // computed: { },
@@ -176,6 +197,30 @@ export default {
   methods: { 
     handleClick(tab, event) {
       console.log(tab, event);
+    },
+    // 获取站内信内容，存入变量
+    getMsg(e) {
+      console.log(e.currentTarget);
+      // var pNode = e.currentTarget;
+      this.dialogMsg.title = this.$refs.msgTitle.innerHTML
+      this.dialogMsg.content = this.$refs.msgContent.innerHTML
+      console.log("🚀 ", this.$refs.msgTitle.innerHTML)
+      console.log("🚀 ", this.$refs.msgContent.innerHTML)
+      this.dialogVisible = true
+    },
+    // 弹出层打开站内信，输出变量
+    openMsg() {
+      // alert("诶嘿")
+    },
+    handleClose(done) {
+      done();
+      // this.$confirm('确认关闭？')
+      //   .then(_ => {
+      //     console.log(this);
+      //     // this.classList.remove("unread");
+      //     done();
+      //   })
+      //   .catch(_ => {});
     },
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
@@ -324,5 +369,33 @@ export default {
     }
   }
 }
+.el-button--default {
+  color: #e08714;
 
+  &:focus {
+    color: #fff;
+    border-color: #ebcba2;
+    background-color: #ebcba2;
+  }
+  &:hover {
+    color: #fff;
+    border-color: #ebcba2;
+    background-color: #ebcba2;
+  }
+}
+.el-button--primary {
+  background: #e08714;
+  border-color: #e08714;
+
+  &:focus {
+    color: #fff;
+    border-color: #ecc18a;
+    background-color: #ecc18a;
+  }
+  &:hover {
+    color: #fff;
+    border-color: #ecc18a;
+    background-color: #ecc18a;
+  }
+}
 </style>
