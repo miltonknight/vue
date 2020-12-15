@@ -41,7 +41,6 @@
             <!-- components:@components/Activities -->
             <activities />
 
-
           </div>
         </div>
       </el-col>
