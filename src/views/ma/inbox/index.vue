@@ -16,7 +16,7 @@
                 <div class="inbox-msg-content">
                   <h3 ref="msgTitle">老兵老兵网啊</h3>
                   <div class="inbox-msg-bm">
-                    <div class="msg-content" ref="msgContent">1亲爱的老兵老兵网用户，您好！为打造“老兵老兵网”持续影响力，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络</div>
+                    <div ref="msgContent" class="msg-content">1亲爱的老兵老兵网用户，您好！为打造“老兵老兵网”持续影响力，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络，确保网络开通前基础构设精准落地，确保网络</div>
                     <div class="time">
                       <i class="el-icon-time"></i>2020-20-20 15:16
                     </div>
