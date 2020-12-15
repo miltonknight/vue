@@ -140,17 +140,17 @@
             <el-dialog
               :title="'来自：' + dialogMsg.title + ' 的消息'"
               :visible.sync="dialogVisible"
-              width="400"
+              width="600px"
               :open="getMsg"
-              @opened="openMsg"
-              :before-close="handleClose"
               :lock-scroll="false"
+              :before-close="handleClose"
+              @opened="openMsg"
             >
               <span>{{ dialogMsg.content }}</span>
-              <!-- <span slot="footer" class="dialog-footer">
-                <el-button @click="dialogVisible = false">取 消</el-button>
-                <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-              </span> -->
+              <span slot="footer" class="dialog-footer">
+                <el-button @click="dialogVisible = false">关 闭</el-button>
+                <!-- <el-button type="primary" @click="dialogVisible = false">确 定</el-button> -->
+              </span>
             </el-dialog>
           </el-tab-pane>
           
@@ -384,6 +384,25 @@ export default {
   }
 }
 .el-button--primary {
+  background: #e08714;
+  border-color: #e08714;
+
+  &:focus {
+    color: #fff;
+    border-color: #ecc18a;
+    background-color: #ecc18a;
+  }
+  &:hover {
+    color: #fff;
+    border-color: #ecc18a;
+    background-color: #ecc18a;
+  }
+}
+.el-dialog__body span {
+  line-height: 2;
+}
+.dialog-footer .el-button--default {
+  color: #fff;
   background: #e08714;
   border-color: #e08714;
 
