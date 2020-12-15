@@ -107,10 +107,10 @@
       <el-col :span="7">
         <div class="grid-content bg-purple">
           <div class="side-section">
-            
-            <!-- components:components/rightside -->
-            <culture-right-side-article />
 
+            <!-- components:components/BbsTop -->
+            <bbs-top />
+            
             <!-- components:@components/Activities -->
             <activities />
 
@@ -124,7 +124,7 @@
 
 <script>
 console.log("Views: /culture/article is loaded");
-import CultureRightSideArticle from "@/views/ma/culture/components/rightside-article"
+import BbsTop from "@/components/BbsTop";
 import Activities from "@/components/Activities";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
@@ -135,7 +135,7 @@ export default {
   // components: { MaHomeheader },
   name: "CultureArticle",
   components: {
-    CultureRightSideArticle,
+    BbsTop,
     Activities
   },
   data() {

@@ -461,10 +461,10 @@
       <el-col :span="7">
         <div class="grid-content bg-purple">
           <div class="side-section">
-            
-            <!-- components:components/rightside -->
-            <culture-right />
 
+            <!-- components:components/BbsTop -->
+            <bbs-top />
+            
             <!-- components:@components/Activities -->
             <activities />
 
@@ -478,7 +478,7 @@
 
 <script>
 console.log("Views: /culture/index is loaded");
-import CultureRight from "@/views/ma/culture/components/right";
+import BbsTop from "@/components/BbsTop";
 import Activities from "@/components/Activities";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
@@ -489,7 +489,7 @@ export default {
   // components: { MaHomeheader },
   name: "Culture",
   components: {
-    CultureRight,
+    BbsTop,
     Activities,
     Pagination
   },

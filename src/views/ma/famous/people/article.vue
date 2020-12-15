@@ -110,8 +110,8 @@
         <div class="grid-content bg-purple">
           <div class="side-section">
             
-            <!-- components:components/rightside -->
-            <famous-people-right-side />
+            <!-- components:components/BbsTop -->
+            <bbs-top />
 
             <!-- components:@components/Activities -->
             <activities />
@@ -126,7 +126,7 @@
 
 <script>
 console.log("Views: /famous/people/article is loaded");
-import FamousPeopleRightSide from "@/views/ma/famous/people/components/rightside";
+import BbsTop from "@/components/BbsTop";
 import Activities from "@/components/Activities";
 import { LaobingUrl } from "@/api/laobing_url";
 import { postData } from "@/api/common";
@@ -137,7 +137,7 @@ export default {
   // components: { MaHomeheader },
   name: "FamousPeopleArticle",
   components: {
-    FamousPeopleRightSide,
+    BbsTop,
     Activities
   },
   data() {

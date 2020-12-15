@@ -63,8 +63,8 @@
         <div class="grid-content bg-purple">
           <div class="side-section">
             
-            <!-- components:components/rightside -->
-            <case-studies-right-side />
+            <!-- components:components/BbsTop -->
+            <bbs-top />
             
             <!-- components:@components/Activities -->
             <activities />
@@ -80,7 +80,7 @@
 <script>
 console.log("./views/ma/case-studies/index is loaded~~~~~~~~~~~~~~~~~~~~");
 import CaseStudiesFocus from "@/views/ma/case-studies/components/focus";
-import CaseStudiesRightSide from "@/views/ma/case-studies/components/rightside";
+import BbsTop from "@/components/BbsTop";
 import Activities from "@/components/Activities";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
@@ -92,7 +92,7 @@ export default {
   name: "CaseStudies",
   components: {
     CaseStudiesFocus, // 焦点图
-    CaseStudiesRightSide,
+    BbsTop,
     Pagination,
     Activities
   },

@@ -85,8 +85,8 @@
         <div class="grid-content bg-purple">
           <div class="side-section">
             
-            <!-- components:components/rightside -->
-            <famous-people-right-side />
+            <!-- components:components/BbsTop -->
+            <bbs-top />
 
             <!-- components:@components/Activities -->
             <activities />
@@ -101,7 +101,7 @@
 
 <script>
 console.log("Views: /famous/people/index is loaded");
-import FamousPeopleRightSide from "@/views/ma/famous/people/components/rightside";
+import BbsTop from "@/components/BbsTop";
 import Activities from "@/components/Activities";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
@@ -112,7 +112,7 @@ export default {
   // components: { MaHomeheader },
   name: "FamousPeople",
   components: {
-    FamousPeopleRightSide,
+    BbsTop,
     Activities,
     Pagination
   },

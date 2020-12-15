@@ -107,9 +107,9 @@
         <div class="grid-content bg-purple">
           <div class="side-section">
             
-            <!-- components:components/rightside -->
-            <case-studies-right-side />
-
+            <!-- components:components/BbsTop -->
+            <bbs-top />
+            
             <!-- components:@components/Activities -->
             <activities />
 
@@ -123,7 +123,7 @@
 
 <script>
 console.log("./views/ma/case-studies/article is loaded~~~~~~~~~~~~~~~~~~~~");
-import CaseStudiesRightSide from "@/views/ma/case-studies/components/rightside"
+import BbsTop from "@/components/BbsTop";
 import Activities from "@/components/Activities";
 import { LaobingUrl } from "@/api/laobing_url";
 import { postData } from "@/api/common";
@@ -134,7 +134,7 @@ export default {
   // components: { MaHomeheader },
   name: "CaseStudiesArticle",
   components: {
-    CaseStudiesRightSide,
+    BbsTop,
     Activities
   },
   data() {

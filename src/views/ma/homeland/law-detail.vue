@@ -29,11 +29,18 @@
         <div class="grid-content bg-purple">
           <div class="side-section">
 
+            <!-- components:components/BbsTop -->
+            <bbs-top />
+
             <!-- components:components/rightside -->
             <home-land-right-side />
 
+            <!-- components:components/CaseStudy -->
+            <case-studies />
+
             <!-- components:@components/Activities -->
             <activities />
+
 
           </div>
         </div>
@@ -46,8 +53,10 @@
 <script>
 console.log("Views: /homeland/law-detail is loaded");
 
+import BbsTop from "@/components/BbsTop";
 import HomeLandRightSide from "./components/rightside";
 import Activities from "@/components/Activities";
+import CaseStudies from "@/components/CaseStudies";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";
@@ -57,6 +66,8 @@ export default {
   // components: { MaHomeheader },
   name: "HomeLandLawDetail",
   components: { 
+    BbsTop,
+    CaseStudies,
     HomeLandRightSide,
     Activities
   },

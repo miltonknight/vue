@@ -52,9 +52,15 @@
       <el-col :span="7">
         <div class="grid-content bg-purple">
           <div class="side-section">
+
+            <!-- components:components/BbsTop -->
+            <bbs-top />
             
             <!-- components:components/rightside -->
             <home-land-right-side />
+
+            <!-- components:components/CaseStudy -->
+            <case-studies />
 
             <!-- components:@components/Activities -->
             <activities />
@@ -76,9 +82,11 @@
 <script>
 console.log("Views: /homeland/lawyer-list is loaded");
 
-import HomeLandFocus from "./components/focus"
-import HomeLandRightSide from "./components/rightside"
+import HomeLandFocus from "./components/focus";
+import BbsTop from "@/components/BbsTop";
+import HomeLandRightSide from "./components/rightside";
 import Activities from "@/components/Activities";
+import CaseStudies from "@/components/CaseStudies";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
@@ -91,6 +99,8 @@ export default {
     HomeLandFocus, // 焦点图
     Activities,
     Pagination,
+    BbsTop,
+    CaseStudies,
     HomeLandRightSide // 右侧
   },
   data() {

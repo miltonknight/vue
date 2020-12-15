@@ -60,9 +60,9 @@
       <el-col :span="7">
         <div class="grid-content bg-purple">
           <div class="side-section">
-            
-            <!-- components:components/rightside -->
-            <famous-enterprise-right-side />
+
+            <!-- components:components/BbsTop -->
+            <bbs-top />
 
             <!-- components:@components/Activities -->
             <activities />
@@ -78,7 +78,7 @@
 <script>
 console.log("Views: /famous/enterprise/index is loaded");
 import FamousEnterpriseFocus from "@/views/ma/famous/enterprise/components/focus"
-import FamousEnterpriseRightSide from "@/views/ma/famous/enterprise/components/rightside";
+import BbsTop from "@/components/BbsTop";
 import Activities from "@/components/Activities";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
@@ -90,7 +90,7 @@ export default {
   name: "FamousEnterprise",
   components: {
     FamousEnterpriseFocus,
-    FamousEnterpriseRightSide,
+    BbsTop,
     Activities,
     Pagination
   },

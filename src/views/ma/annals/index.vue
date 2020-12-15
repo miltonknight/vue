@@ -143,8 +143,8 @@
         <div class="grid-content bg-purple">
           <div class="side-section">
             
-            <!-- components:components/rightside -->
-            <annals-right-side />
+            <!-- components:components/BbsTop -->
+            <bbs-top />
 
             <!-- components:@components/Activities -->
             <activities />
@@ -160,7 +160,7 @@
 <script>
 console.log("./views/ma/annals/index is loaded~~~~~~~~~~~~~~~~~~~~");
 import AnnalsFocus from "@/views/ma/annals/components/focus";
-import AnnalsRightSide from "@/views/ma/annals/components/rightside"
+import BbsTop from "@/components/BbsTop";
 import Activities from "@/components/Activities";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
@@ -172,9 +172,9 @@ export default {
   name: "Annals",
   components: {
     AnnalsFocus, // 焦点图
-    AnnalsRightSide,
     Pagination,
-    Activities
+    Activities,
+    BbsTop
   },
   data() {
     return {

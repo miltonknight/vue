@@ -84,8 +84,8 @@
         <div class="grid-content bg-purple">
           <div class="side-section">
             
-            <!-- components:components/rightside -->
-            <cs-right-side />
+            <!-- components:components/BbsTop -->
+            <bbs-top />
 
             <!-- components:@components/Activities -->
             <activities />
@@ -101,7 +101,7 @@
 <script>
 console.log("Views: /courier-station/index is loaded");
 import CsFocus from "@/views/ma/courier-station/components/focus";
-import CsRightSide from "@/views/ma/courier-station/components/rightside"
+import BbsTop from "@/components/BbsTop";
 import Activities from "@/components/Activities";
 import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
@@ -113,7 +113,7 @@ export default {
   name: "CourierStation",
   components: {
     CsFocus, // 焦点图
-    CsRightSide,
+    BbsTop,
     Activities,
     Pagination
   },
@@ -160,7 +160,7 @@ export default {
                 // console.log(response.data.total)
                 this.zwsj = true
               }  
-              console.log("Get Annals List Response:", data);
+              console.log("Get Courier-Station List Response:", data);
               resolve(data);
             }
             // this.$message({
