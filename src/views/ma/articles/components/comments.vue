@@ -1,9 +1,93 @@
 <!-- 我的评论 -->
 <template>
-  
+  <div class="setting-body">
 
-    
-    
+    <div class="inbox-msg unread">
+      <div class="inbox-msg-avatar">
+        <img src="@/assets/img/envelope-close.png" alt="">
+      </div>
+      <div class="inbox-msg-content">
+        <h3><span>老兵老兵网啊</span> 在<a class="article-link">我的从军生涯</a> 中评论你</h3>
+        <div class="inbox-msg-bm">
+          <div class="msg-content">你这篇文章写的太好了，完全写出了我们的心声。我当年就是这样，咋的战友没事咱们整点啊？</div>
+          <div class="time">
+            <i class="el-icon-time"></i>2020-20-20 15:16
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="inbox-msg unread">
+      <div class="inbox-msg-avatar">
+        <img src="@/assets/img/envelope-close.png" alt="">
+      </div>
+      <div class="inbox-msg-content">
+        <h3><span>老兵老兵网啊</span> 在<a class="article-link">我的从军生涯</a> 中评论你</h3>
+        <div class="inbox-msg-bm">
+          <div class="msg-content">你这篇文章写的太好了，完全写出了我们的心声。我当年就是这样，咋的战友没事咱们整点啊？</div>
+          <div class="time">
+            <i class="el-icon-time"></i>2020-20-20 15:16
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="inbox-msg unread">
+      <div class="inbox-msg-avatar">
+        <img src="@/assets/img/envelope-close.png" alt="">
+      </div>
+      <div class="inbox-msg-content">
+        <h3><span>老兵老兵网啊</span> 在<a class="article-link">我的从军生涯</a> 中评论你</h3>
+        <div class="inbox-msg-bm">
+          <div class="msg-content">你这篇文章写的太好了，完全写出了我们的心声。我当年就是这样，咋的战友没事咱们整点啊？</div>
+          <div class="time">
+            <i class="el-icon-time"></i>2020-20-20 15:16
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="inbox-msg">
+      <div class="inbox-msg-avatar">
+        <img src="@/assets/img/envelope-close.png" alt="">
+      </div>
+      <div class="inbox-msg-content">
+        <h3><span>老兵老兵网啊</span> 在<a class="article-link">我的从军生涯</a> 中评论你</h3>
+        <div class="inbox-msg-bm">
+          <div class="msg-content">你这篇文章写的太好了，完全写出了我们的心声。我当年就是这样，咋的战友没事咱们整点啊？</div>
+          <div class="time">
+            <i class="el-icon-time"></i>2020-20-20 15:16
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="inbox-msg">
+      <div class="inbox-msg-avatar">
+        <img src="@/assets/img/envelope-close.png" alt="">
+      </div>
+      <div class="inbox-msg-content">
+        <h3><span>老兵老兵网啊</span> 在<a class="article-link">我的从军生涯</a> 中评论你</h3>
+        <div class="inbox-msg-bm">
+          <div class="msg-content">你这篇文章写的太好了，完全写出了我们的心声。我当年就是这样，咋的战友没事咱们整点啊？</div>
+          <div class="time">
+            <i class="el-icon-time"></i>2020-20-20 15:16
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="inbox-msg">
+      <div class="inbox-msg-avatar">
+        <img src="@/assets/img/envelope-close.png" alt="">
+      </div>
+      <div class="inbox-msg-content">
+        <h3><span>老兵老兵网啊</span> 在<a class="article-link">我的从军生涯</a> 中评论你</h3>
+        <div class="inbox-msg-bm">
+          <div class="msg-content">你这篇文章写的太好了，完全写出了我们的心声。我当年就是这样，咋的战友没事咱们整点啊？</div>
+          <div class="time">
+            <i class="el-icon-time"></i>2020-20-20 15:16
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </template>
 
 <script>
@@ -30,9 +114,6 @@ export default {
   },
   mounted() {},
   methods: {
-    handleClick(tab, event) {
-      console.log(tab, event);
-    },
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
         postData(url, data)
@@ -84,8 +165,8 @@ export default {
 <style lang="scss" scoped>
 .setting-body {
   min-height: 700px;
-  border: 1px solid #f2f2f2;
-  padding: 0px 20px;
+  // border: 1px solid #f2f2f2;
+  // padding: 0px 20px;
   margin-bottom: 50px;
 }
 .inbox-msg {
@@ -114,13 +195,14 @@ export default {
   .inbox-msg-content {
     // float: left;
     width: 100%;
+    padding: 10px 0;
 
     h3 {
       font-size: 18px;
       margin: 0 0 5px;
-      // font-weight: normal;
+      font-weight: normal;
     }
-    a.a-ttl {
+    .article-link {
       color: #4696a3;
     }
     .inbox-msg-bm {
@@ -150,5 +232,13 @@ export default {
     }
   }
 }
-
+.inbox-msg.unread {
+    
+  h3 {
+    font-weight: bold;
+  }
+  .inbox-msg-avatar i {
+    display: block;
+  }
+}
 </style>
