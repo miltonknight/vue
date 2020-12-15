@@ -770,3 +770,7 @@ div:focus {
   min-width: auto !important;
   width: auto !important;
 }
+.el-popup-parent--hidden {
+  padding: 0 !important;
+  overflow: auto !important;
+}
