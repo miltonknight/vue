@@ -1,6 +1,6 @@
 <template>
-  <div class="components-container">
-    <div>
+  <div>
+    <div class="components-container">
       <H2 align="center">文章录入（临时）入口</H2>
       <el-form ref="form" :model="form" label-width="100px">
         <el-form-item label="文章标题">
@@ -32,7 +32,7 @@
     </div>
     <hr />
     <h2>文章预览</h2>
-    <div class="editor-content" v-html="form.content" />
+    <div class="editor-content" v-html="form.content"></div>
   </div>
 </template>
 
@@ -51,13 +51,13 @@ export default {
       form: {
         title: "",
         introduction: "文章简介",
-        content: '请开始编辑',
+        content: "请开始编辑",
         tag: "", // 作用域？用在哪里？
         categoryId: 1, // 作用域？用在哪里？
-        writer: '', // 文章作者昵称
-        create_uid: 'user', // 文章作者id
+        writer: "", // 文章作者昵称
+        create_uid: "user", // 文章作者id
         top_show_flag: false, // 是否推荐模块首页 true-是 false-否
-        topImage: '', // 干啥的?
+        topImage: "", // 干啥的?
         top_img_path: "", // 模块主页图片地址
         img_path1: "" // 文章图片地址
       }
@@ -74,7 +74,7 @@ export default {
   methods: {
     onSubmit() {
       this.postDataFromUI(LaobingUrl.temp_add_article, this.form)
-      .then(res => {
+        .then(res => {
           const { code, msg, data } = res.data;
           // if (data) {
           if (code === 20000) {
@@ -90,8 +90,7 @@ export default {
             });
           }
         })
-        .catch(error => {
-        });
+        .catch(error => {});
     },
     getDataFromUI(url) {
       return new Promise((resolve, reject) => {
