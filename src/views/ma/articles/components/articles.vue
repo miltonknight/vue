@@ -160,6 +160,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.list-body {
+  padding: 30px 0;
+}
 .list-item {
   margin-bottom: 20px;
   clear: both;
