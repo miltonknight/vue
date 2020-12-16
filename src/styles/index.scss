@@ -377,9 +377,15 @@ div:focus {
         margin-bottom: 20px;
         position: relative;
 
-        img {
+        .box-img {
           width: 100%;
-          border-radius: 3px 3px 0 0;
+          height: 169px;
+          overflow: hidden;
+          
+          img {
+            width: 100%;
+            border-radius: 3px 3px 0 0;
+          }
         }
         h3 {
           margin: 10px 0;
