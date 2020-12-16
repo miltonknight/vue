@@ -140,15 +140,14 @@
             <el-dialog
               :title="'来自：' + dialogMsg.title + ' 的消息'"
               :visible.sync="dialogVisible"
-              width="600px"
+              :show-close="false"
               :open="getMsg"
               :lock-scroll="false"
-              :before-close="handleClose"
-              @opened="openMsg"
+              width="600px"
             >
               <span>{{ dialogMsg.content }}</span>
               <span slot="footer" class="dialog-footer">
-                <el-button @click="dialogVisible = false">关 闭</el-button>
+                <el-button @click="readDone">关 闭</el-button>
                 <!-- <el-button type="primary" @click="dialogVisible = false">确 定</el-button> -->
               </span>
             </el-dialog>
@@ -184,7 +183,8 @@ export default {
       dialogMsg: {
         title: '老兵老兵网',
         content: '456'
-      }
+      },
+      readingObj: new Object
     };
   },
   // computed: { },
@@ -201,26 +201,18 @@ export default {
     // 获取站内信内容，存入变量
     getMsg(e) {
       console.log(e.currentTarget);
-      // var pNode = e.currentTarget;
-      this.dialogMsg.title = this.$refs.msgTitle.innerHTML
-      this.dialogMsg.content = this.$refs.msgContent.innerHTML
-      console.log("🚀 ", this.$refs.msgTitle.innerHTML)
-      console.log("🚀 ", this.$refs.msgContent.innerHTML)
-      this.dialogVisible = true
+      this.readingObj = e.currentTarget;
+      console.log("🚀-msgTitle ", this.$refs.msgTitle.innerHTML);
+      console.log("🚀-msgContent ", this.$refs.msgContent.innerHTML);
+      this.dialogMsg.title = this.$refs.msgTitle.innerHTML;
+      this.dialogMsg.content = this.$refs.msgContent.innerHTML;
+      this.dialogVisible = true;
     },
-    // 弹出层打开站内信，输出变量
-    openMsg() {
-      // alert("诶嘿")
-    },
-    handleClose(done) {
-      done();
-      // this.$confirm('确认关闭？')
-      //   .then(_ => {
-      //     console.log(this);
-      //     // this.classList.remove("unread");
-      //     done();
-      //   })
-      //   .catch(_ => {});
+    readDone() {
+      // console.log(this.readingObj);
+      this.dialogVisible = false;
+      this.readingObj.classList.remove("unread");
+      console.log("🚀-还需要请求后台方法，改变站内信阅读状态 " );
     },
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
@@ -235,7 +227,7 @@ export default {
                 // console.log(response.data.total)
                 this.zwsj = true
               }  
-              console.log("Get Annals List Response:", data);
+              console.log("Get Inbox-Msg List Response:", data);
               resolve(data);
             }
             // this.$message({
