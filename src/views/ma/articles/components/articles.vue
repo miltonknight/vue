@@ -116,8 +116,7 @@ export default {
           // const { code, msg, data } = response;
           const { code, data } = response;
           if (code === 20000) {
-            console.log("Delete Operation is done");
-            resolve(data);
+            console.log("Delete Operation is done", data);
           }
         })
       e.style.display = 'none';
