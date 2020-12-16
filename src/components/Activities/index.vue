@@ -8,19 +8,25 @@
     </div>
     <div class="side-body">
       <div class="side-img-box">
-        <img src="@/assets/img/side-demo.png" alt="" />
+        <div class="box-img">
+          <img src="@/assets/img/side-demo.png" alt="" />
+        </div>
         <h3>阅遍山河 看世界”老兵摄影大赛</h3>
         <p>活动时间：10月20日 - 12月20日</p>
         <i class="badge badge-blue">活动</i>
       </div>
       <div class="side-img-box">
-        <img src="@/assets/img/side-demo2.png" alt="" />
+        <div class="box-img">
+          <img src="@/assets/img/side-demo2.png" alt="" />
+        </div>
         <h3>“云”舞兵清云舞蹈大赛通知</h3>
         <p>活动时间：10月20日 - 12月20日</p>
         <i class="badge badge-blue">活动</i>
       </div>
       <div class="side-img-box">
-        <img src="@/assets/img/side-demo3.png" alt="" />
+        <div class="box-img">
+          <img src="@/assets/img/side-demo3.png" alt="" />
+        </div>
         <h3>全军野战文艺创演活动</h3>
         <p>活动时间：10月20日</p>
         <i class="badge badge-orange">晚会</i>
@@ -58,22 +64,22 @@ export default {
           .then(response => {
             const { code, msg, data } = response;
             if (code === 20000 && data != null) {
-              console.log("Index Case Studies Response:", data);
+              console.log("Get Activities Response:", data);
               resolve(data);
             } else {
               reject(msg);
-              this.$message({
-                message: "没有查询到数据",
-                type: "success"
-              });
+              // this.$message({
+              //   message: "没有查询到数据",
+              //   type: "success"
+              // });
             }
           })
           .catch(error => {
             console.log(error);
-            this.$message({
-              message: error,
-              type: "success"
-            });
+            // this.$message({
+            //   message: error,
+            //   type: "success"
+            // });
           });
       });
     },
@@ -81,8 +87,7 @@ export default {
       this.postDataFromUI(this.url, this.param)
         .then(response => {
           this.Article = response;
-          console.log("homepage Case Studies Json:::::::::")
-          console.log(response)
+          console.log("Get Activities Json:", response)
         });
     }
   }
