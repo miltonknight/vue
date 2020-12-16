@@ -23,6 +23,8 @@ export const LaobingUrl = {
   modular_focus: '/article/findModelCarousel', // whole site modular focus
   modular_article_list: '/article/pageArticleBySortId', // whole site article list
   modular_articles: '/article/findArticleDetail', // whole site article
+  delete_article: '/article/deleteArticleById', // delete(fake) article
+  next_article: '/article/findNextArticle', // next article
   // -------------------- homepage apis
   index_focus: '/homepage/findHomepageFocus', // index_focus
   // index_coupon: '/homepage/findHomepageFocus', // index_coupon
