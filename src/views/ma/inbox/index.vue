@@ -184,7 +184,10 @@ export default {
         title: '老兵老兵网',
         content: '456'
       },
-      readingObj: new Object
+      // readingObj: new Object()
+      readingObj: {
+        type: Object
+      }
     };
   },
   // computed: { },
@@ -212,7 +215,7 @@ export default {
       // console.log(this.readingObj);
       this.dialogVisible = false;
       this.readingObj.classList.remove("unread");
-      console.log("🚀-还需要请求后台方法，改变站内信阅读状态 " );
+      console.log("还需要请求后台方法，改变站内信阅读状态 ");
     },
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
