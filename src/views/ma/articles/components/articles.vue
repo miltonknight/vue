@@ -1,7 +1,7 @@
 <!-- 我的文章 -->
 <template>
   <div class="list-body">
-    <div v-for="item in ArticleList.list" :key="item.id" class="list-item">
+    <div v-for="item in ArticleList.list" :key="item.id" class="list-item" :data-id="item.article_id">
       <div class="list-body-img">
         <img :src="item.img_path">
         <i class="badge">{{ item.sort_name }}</i>
@@ -94,16 +94,33 @@ export default {
     // 删除文章，获取最外层父级元素，生成对象进行传参
     deleteArticle(e) {
       // 获取最外层div
+      // console.log(e.currentTarget);
       console.log(e.currentTarget.parentElement.parentElement.parentElement.parentElement);
       var obj = e.currentTarget.parentElement.parentElement.parentElement.parentElement;
       // 使用弹出层作为中间件传递当前对象
       this.open(obj);
-      // obj.style.display = 'none'
     },
     // 确认删除，前台将元素隐藏，同时请求后台接口假删除数据
     confirmDelete(e) {
-      console.log("后台接口缺失，我的关注部分可参考相同方法")
-      e.style.display = 'none'
+      console.log("e.data-id::::" + e.getAttribute("data-id"));
+      console.log("this.user_id;:::" + this.user_id)
+      var prop = {
+        article_id: '',
+        uid: ''
+      }
+      prop.article_id = e.getAttribute("data-id");
+      prop.uid = this.user_id;
+
+      this.postDataFromUI(LaobingUrl.delete_article, prop) 
+        .then(response => {
+          // const { code, msg, data } = response;
+          const { code, data } = response;
+          if (code === 20000) {
+            console.log("Delete Operation is done");
+            resolve(data);
+          }
+        })
+      e.style.display = 'none';
     },
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
