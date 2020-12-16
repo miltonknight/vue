@@ -35,27 +35,6 @@
     </div>
     <!-- 作者信息end -->
 
-    <!-- 推荐文章 -->
-    <div class="side-main">
-      <div class="article-side">
-       
-        <div class="article-side-list">
-          <div class="list-head">
-            <span class="list-head-ttl">下一篇</span>
-          </div>
-          <!-- link string is needed -->
-          <router-link to="/">
-            <div class="list-body">
-              <p>26岁银行柜女，每天被男友质问：“你今天是想我多一点，还是想辞职多一点？”</p>
-              <p class="intro">不论是“破茧成蝶”还是“凤凰涅槃”，不都是得剥掉一次皮重新来过吗？</p>
-              <span>1小时前</span>
-            </div>
-          </router-link>
-        </div>
-      </div>
-    </div>
-    <!-- 推荐文章end -->
-
   </div>    
 </template>
 
