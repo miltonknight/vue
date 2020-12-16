@@ -9,13 +9,15 @@
     </div>
     <div class="side-body">
       <div class="side-img-box">
-        <img src="@/assets/img/side-demo4.png" alt="" />
+        <div class="box-img">
+          <img src="@/assets/img/side-demo4.png" alt="" />
+        </div>
         <i class="badge badge-blue">NEW</i>
       </div>
       <div class="side-body">
 
         <!-- <router-link v-for="item in Article" :key="item.article_id" to="'/#/case-studies/article?id=' + item.article_id'"> -->
-        <a v-for="item in Article" :key="item.article_id" :href="'/#/case-studies/article?id=' + item.article_id">
+        <a v-if="Article.code === 20000" v-for="item in Article" :key="item.article_id" :href="'/#/case-studies/article?id=' + item.article_id">
           <div class="slist-box">
             <div class="slist-box-img">
               <img :src="item.small_img_path" />
@@ -60,22 +62,22 @@ export default {
           .then(response => {
             const { code, msg, data } = response;
             if (code === 20000 && data != null) {
-              console.log("Index Case Studies Response:", data);
+              console.log("Get Case Studies Response:", data);
               resolve(data);
             } else {
               reject(msg);
-              this.$message({
-                message: "没有查询到数据",
-                type: "success"
-              });
+              // this.$message({
+              //   message: "没有查询到数据",
+              //   type: "success"
+              // });
             }
           })
           .catch(error => {
             console.log(error);
-            this.$message({
-              message: error,
-              type: "success"
-            });
+            // this.$message({
+            //   message: error,
+            //   type: "success"
+            // });
           });
       });
     },
@@ -83,7 +85,7 @@ export default {
       this.postDataFromUI(this.url, this.param)
         .then(response => {
           this.Article = response;
-          console.log("homepage Case Studies Json:")
+          console.log("Get Case Studies Json:")
           console.log(response)
         });
     }
