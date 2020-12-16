@@ -14,10 +14,10 @@
         </div>
         <i class="badge badge-blue">NEW</i>
       </div>
-      <div class="side-body">
+      <div v-if="Article.code === 20000" class="side-body">
 
         <!-- <router-link v-for="item in Article" :key="item.article_id" to="'/#/case-studies/article?id=' + item.article_id'"> -->
-        <a v-if="Article.code === 20000" v-for="item in Article" :key="item.article_id" :href="'/#/case-studies/article?id=' + item.article_id">
+        <a v-for="item in Article" :key="item.article_id" :href="'/#/case-studies/article?id=' + item.article_id">
           <div class="slist-box">
             <div class="slist-box-img">
               <img :src="item.small_img_path" />
