@@ -107,8 +107,10 @@
         <div class="grid-content bg-purple">
           <div class="side-section">
             
-            <!-- components:components/rightside -->
-            <annals-right-side-article />
+            <!-- components:components/writer-info -->
+            <div v-if="flag">
+              <annals-writer-info :writer="ArticleDetail.create_uid" />
+            </div>
 
             <!-- components:components/next-article -->
             <!-- 组件传参 -->
@@ -130,7 +132,6 @@
 <script>
 console.log("Views: /annals/article is loaded");
 
-import AnnalsRightSideArticle from "@/views/ma/annals/components/rightside-article"
 import Activities from "@/components/Activities";
 import { LaobingUrl } from "@/api/laobing_url";
 import { postData } from "@/api/common";
@@ -141,7 +142,7 @@ export default {
   // components: { MaHomeheader },
   name: "AnnalsArticle",
   components: {
-    AnnalsRightSideArticle,
+    AnnalsWriterInfo: () => import('@/views/ma/annals/components/writer-info'),
     // 组件懒加载
     AnnalsNextArticle: () => import('@/views/ma/annals/components/next-article'),
     Activities
@@ -156,6 +157,7 @@ export default {
       sort: '',
       article: '',
       time: '',
+      writer: '',
       flag: false
     };
   },
@@ -236,16 +238,14 @@ export default {
         // "uid": '0a44f30462e742879f5fbd15d2fda9e6'
         "uid": this.user_id
       };
-      console.log("::::::::::::::::::::>>>>>>>>>");
-      console.log(this.$route.path);
-      // this.$route.path = '/annals/index'; // read only
-      console.log("::::::::::::::::::::>>>>>>>>>");
       this.postDataFromUI(LaobingUrl.modular_articles, params)
         .then(response => {
           this.ArticleDetail = response;
           this.sort = response.sort_id;
           this.article = response.article_id;
           this.time = response.create_time;
+          this.writer = response.create_uid;
+          console.log("uid-------------", response.create_uid)
           this.flag = true;
         });
     }
