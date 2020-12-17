@@ -1,28 +1,29 @@
 <!-- 老兵驿站文章右侧 -->
 <template>
-  <div>
-    <!-- 推荐文章 -->
-    <div class="side-main">
-      <div class="article-side">
-       
-        <div class="article-side-list">
-          <div class="list-head">
-            <span class="list-head-ttl">下一篇</span>
-          </div>
-          <!-- link string is needed -->
-          <router-link to="/">
-            <div class="list-body">
-              <p>{{ ArticleDetail.title }}</p>
-              <p class="intro">{{ ArticleDetail.introduction }}</p>
-              <span>1小时前</span>
-            </div>
-          </router-link>
+  <!-- 推荐文章 -->
+  <div class="side-main">
+    <div class="article-side">
+      
+      <div class="article-side-list">
+        <div class="list-head">
+          <span class="list-head-ttl">下一篇</span>
         </div>
+        <!-- link string is needed -->
+        <div class="list-body">
+          <router-link v-if="ArticleDetail.code != 50003" :to="'article?id=' + ArticleDetail.article_id + '&sort_id=' + ArticleDetail.sort_id">
+
+            <p>{{ ArticleDetail.title }}</p>
+            <p class="intro">{{ ArticleDetail.introduction }}</p>
+            <span>{{ ArticleDetail.create_time }}</span>
+          </router-link>
+          <!-- 没有更多 -->
+          <div v-show="zwsj" class="zwsj">没有更多文章了</div>
+        </div>
+
       </div>
     </div>
-    <!-- 推荐文章end -->
-
-  </div>    
+  </div>
+  <!-- 推荐文章end -->
 </template>
 
 <script>
@@ -52,12 +53,13 @@ export default {
   data() {
     return {
       ArticleDetail: [],
-      url: LaobingUrl.modular_articles,
+      url: LaobingUrl.next_article,
       param: {
         sort_id: '',
         article_id: '',
         create_time: ''
-      }
+      },
+      zwsj: false
     }
   },
   computed: {
@@ -80,6 +82,14 @@ export default {
           .then(response => {
             const { code, msg, data } = response;
             if (code === 20000 && data != null) {
+              if (data.code === 50003) {
+                // console.log("::::::::::data.data.code" + response.data.code)
+                response.data.total = 0
+                // console.log(response.data.total)
+                this.zwsj = true
+              } else { 
+                this.zwsj = false; // 修复数据与“暂无数据”共存bug
+              }  
               console.log("Get Cs Next Article Response:", data);
               resolve(data);
             } else {
@@ -221,5 +231,13 @@ export default {
   border-radius: 0 0 3px 3px;
   cursor: pointer;
 }
-
+.zwsj {
+  font-size: 16px;
+}
+.article-side {
+  border-bottom: 1px solid #f5f7f9;
+}
+.article-side .article-side-list .list-head {
+  padding: 0px 0 20px;
+}
 </style>
