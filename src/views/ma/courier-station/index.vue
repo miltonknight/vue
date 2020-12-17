@@ -100,6 +100,7 @@
 
 <script>
 console.log("Views: /courier-station/index is loaded");
+
 import CsFocus from "@/views/ma/courier-station/components/focus";
 import BbsTop from "@/components/BbsTop";
 import Activities from "@/components/Activities";
