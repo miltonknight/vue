@@ -39,18 +39,76 @@
 </template>
 
 <script>
-console.log("@/views/ma/annals/components/rightside-article.vue is loaded~~~~~~~~~~~~~~");
+console.log("annals/components: writer-info is loaded");
+
+import { LaobingUrl } from "@/api/laobing_url";
+import { postData } from "@/api/common";
+// import { mapGetters } from "vuex";
+
 export default {
-  name: "AnnalsRightSideArticle",
+  name: "AnnalsWriterInfo",
   components: {},
+  props: {
+    writer: {
+      type: String,
+      default: ''
+    }
+  },
   data() {
-    return {}
-  }
-  // ,
+    return {
+      infoDetail: [],
+      url: LaobingUrl.writer_info,
+      zwsj: false,
+      create_uid: ''
+    }
+  },
   // computed: {
-  //   // message() {}
+  //   ...mapGetters(["user_id", "access_token"])
   // },
-  // created: {}
+  // created: function() {
+  //   this.fetchData();
+  // },
+  mounted: function() { 
+    this.create_uid = this.writer;
+    this.fetchData();
+  },
+  methods: {
+    postDataFromUI(url, data) {
+      return new Promise((resolve, reject) => {
+        postData(url, data)
+          .then(response => {
+            // const { code, msg, data } = response;
+            const { code, data } = response;
+            if (code === 20000) {
+              console.log("Get Annals Writer Info Response:", data);
+              resolve(data);
+            }
+            // this.$message({
+            //   message: msg,
+            //   type: "success"
+            // });
+          })
+          .catch(error => {
+            console.log(error);
+            // this.$message({
+            //   message: error,
+            //   type: "success"
+            // });
+          });
+      });
+    },
+    fetchData() {
+      console.log(22222222222);
+      console.log(this.url, this.create_uid);
+      // this.postDataFromUI('/article/findWriterDataById', 'cd3a070bf1d14f1eba3f0b434ad57e4b')
+      this.postDataFromUI(this.url, this.create_uid)
+        .then(response => {
+          this.infoDetail = response;
+          console.log(3333333)
+        });
+      console.log(444444);
+    }
+  }
 };
 </script>
 
