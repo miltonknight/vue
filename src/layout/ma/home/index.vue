@@ -15,7 +15,7 @@
           <!-- main content box -->
           <div class="main-box">
 
-            <!-- <home-page /> -->
+            <!-- global router-view -->
             <router-view :key="key" />
 
           </div>  
@@ -54,7 +54,8 @@ export default {
   // mixins: [ResizeMixin],
   computed: {
     key() {
-      return this.$route.path;
+      // return this.$route.path;
+      return this.$route.fullPath;
     },
     sidebar() {
       return this.$store.state.app.sidebar;
