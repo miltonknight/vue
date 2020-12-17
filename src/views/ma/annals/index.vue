@@ -158,7 +158,8 @@
 </template>
 
 <script>
-console.log("./views/ma/annals/index is loaded~~~~~~~~~~~~~~~~~~~~");
+console.log("Views: /annals/index is loaded");
+
 import AnnalsFocus from "@/views/ma/annals/components/focus";
 import BbsTop from "@/components/BbsTop";
 import Activities from "@/components/Activities";
@@ -217,6 +218,8 @@ export default {
                 response.data.total = 0
                 // console.log(response.data.total)
                 this.zwsj = true
+              } else { 
+                this.zwsj = false; // 修复数据与“暂无数据”共存bug
               }  
               console.log("Get Annals List Response:", data);
               resolve(data);
