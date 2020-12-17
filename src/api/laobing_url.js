@@ -25,6 +25,7 @@ export const LaobingUrl = {
   modular_articles: '/article/findArticleDetail', // whole site article
   delete_article: '/article/deleteArticleById', // delete(fake) article
   next_article: '/article/findNextArticle', // next article
+  writer_info: '/article/findWriterDataById', // article writer info
   // -------------------- homepage apis
   index_focus: '/homepage/findHomepageFocus', // index_focus
   // index_coupon: '/homepage/findHomepageFocus', // index_coupon
