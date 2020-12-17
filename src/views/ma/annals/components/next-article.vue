@@ -27,7 +27,7 @@
 </template>
 
 <script>
-console.log("courier-station/components: next-article is loaded");
+console.log("annals/components: next-article is loaded");
 
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
