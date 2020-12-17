@@ -110,6 +110,12 @@
             <!-- components:components/rightside -->
             <annals-right-side-article />
 
+            <!-- components:components/next-article -->
+            <!-- 组件传参 -->
+            <div v-if="flag">
+              <annals-next-article :sort="ArticleDetail.sort_id" :article="ArticleDetail.article_id" :time="ArticleDetail.create_time" />
+            </div>
+
             <!-- components:@components/Activities -->
             <activities />
 
@@ -122,7 +128,8 @@
 </template>
 
 <script>
-console.log("./views/ma/annals/article is loaded~~~~~~~~~~~~~~~~~~~~");
+console.log("Views: /annals/article is loaded");
+
 import AnnalsRightSideArticle from "@/views/ma/annals/components/rightside-article"
 import Activities from "@/components/Activities";
 import { LaobingUrl } from "@/api/laobing_url";
@@ -135,6 +142,8 @@ export default {
   name: "AnnalsArticle",
   components: {
     AnnalsRightSideArticle,
+    // 组件懒加载
+    AnnalsNextArticle: () => import('@/views/ma/annals/components/next-article'),
     Activities
   },
   data() {
@@ -143,7 +152,11 @@ export default {
       url: LaobingUrl.modular_articles,
       ArticleDetail: [],
       // like flag
-      thumbup: true
+      thumbup: true,
+      sort: '',
+      article: '',
+      time: '',
+      flag: false
     };
   },
   computed: {
@@ -230,6 +243,10 @@ export default {
       this.postDataFromUI(LaobingUrl.modular_articles, params)
         .then(response => {
           this.ArticleDetail = response;
+          this.sort = response.sort_id;
+          this.article = response.article_id;
+          this.time = response.create_time;
+          this.flag = true;
         });
     }
   }
