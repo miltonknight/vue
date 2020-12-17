@@ -158,14 +158,6 @@ export default {
   computed: {
     ...mapGetters(["user_id", "access_token"])
   },
-  // watch: {
-  //   // 如果路由有变化，会再次执行该方法
-  //   '$route'(to, from){
-  //     if (this.$route.params.index !== 'undefined') {
-  //         console.log(this.$route.params.index);
-  //     }
-  //   }
-  // },
   created: function() {
     this.fetchData();
     this.$store.state.navactive = '/courier-station/index';
