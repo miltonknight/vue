@@ -513,7 +513,7 @@ BackTop拆分为公共组件，加入到MaLayout中。目前存在跳转路由�
 7. src\router\index.js
 加入我的文章模块相关链接
 
-#-------------------- 20201214更新内容 --------------------
+#-------------------- 20201215更新内容 --------------------
 1. src\components\CommonNav\index.vue
 私信、站内信加入token判断进行显示隐藏
 2. src\components\BbsTop\index.vue
@@ -526,7 +526,41 @@ Showing 30 changed files with 140 additions and 907 deletions.
 5. src\views\ma\inbox\index.vue
 解决站内信弹层传值问题
 
+#-------------------- 20201216更新内容 --------------------
+1. src\views\ma\inbox\index.vue
+站内信传值函数优化，打开、关闭方法优化。
+open 和 close方法 不可等同于:visible.sync 的true和false，
+:visible.sync为直接显示隐藏并不调用开关函数
+2. src\components\CaseStudies\index.vue
+增加小列表打出判断条件，代码标准化
+3. src\components\Activities\index.vue
+代码标准化
+4. src\views\ma\articles\components\articles.vue
+我的文章列表添加删除接口，点击后前台刷新再无显示
+5. src\api\laobing_url.js
+增加delete_article删除文章、next_article下一篇文章接口地址变量
+6. src\views\ma\inbox\index.vue
+规范变量定义语句
+7. src\views\ma\courier-station\components\rightside-article.vue
+拆分下一篇为单独组件
+8. src\views\ma\courier-station\components\next-article.vue,
+   src\views\ma\courier-station\article.vue
+将我的文章右侧下一篇文章拆分为单独的组件，实现父页面与子组件间的传值
+*核心问题：组件传值，组件异步加载（本例需要通过主体的返回值作为子组件函数参数进行请求）
+8.1 首先在父级需要在return中定义传值的变量
+8.2 舍弃原import组件的方式，改为在components方法中通过() => 延迟加载，
+    并且通过异步函数的回调值来配合v-if来延迟显示组件
+8.3 在组件上绑定变量，进行传值 e.g. v-bind:param= 或 :params=
+8.4 子组件中通过props定义对应变量用于接收，props位于data前
+8.5 子组件接收变量后，对页面内方法参数进行赋值，然后执行函数
+8.6 完成组件功能
 
-
-
-
+#-------------------- 20201217更新内容 --------------------
+1. src\layout\ma\home\index.vue
+next文章组件点击链接后页面url变化，但内容不刷新需要手动F5，
+-更改layout中的<router-view :key="key" />中的key值，将key()方法
+-由return this.$route.path; 变更为return this.$route.fullPath
+2. src\views\ma\annals\components\rightside-article.vue
+   src\views\ma\annals\components\next-article.vue
+将老兵战史右侧内容中的下一篇拆分为独立组件
+3. 
