@@ -213,6 +213,8 @@ export default {
       p.intro {
         color: #c4c4c4;
         font-size: 12px;
+        height: 54px;
+        overflow: hidden;
       }
       span {
         color: #c4c4c4;
