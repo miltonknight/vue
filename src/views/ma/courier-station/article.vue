@@ -101,8 +101,10 @@
         <div class="grid-content bg-purple">
           <div class="side-section">
             
-            <!-- components:components/rightside -->
-            <cs-right-side-article />
+            <!-- components:components/writer-info -->
+            <div v-if="flag">
+              <cs-writer-info :writer="ArticleDetail.create_uid" />
+            </div>
 
             <!-- components:components/next-article -->
             <!-- 组件传参 -->
@@ -124,7 +126,7 @@
 <script>
 console.log("Views: /courier-station/article is loaded");
 
-import CsRightSideArticle from "@/views/ma/courier-station/components/rightside-article"
+// import CsRightSideArticle from "@/views/ma/courier-station/components/rightside-article"
 // import CsNextArticle from "@/views/ma/courier-station/components/next-article"
 import Activities from "@/components/Activities";
 import { postData } from "@/api/common";
@@ -136,9 +138,9 @@ export default {
   // components: { MaHomeheader },
   name: "CsArticle",
   components: {
-    CsRightSideArticle,
     // CsNextArticle: resolve => { require(['@/views/ma/courier-station/components/next-article'], resolve) },
     // 组件懒加载
+    CsWriterInfo: () => import('@/views/ma/annals/components/writer-info'),
     CsNextArticle: () => import('@/views/ma/courier-station/components/next-article'),
     Activities
   },
@@ -152,6 +154,7 @@ export default {
       sort: '',
       article: '',
       time: '',
+      writer: '',
       flag: false
     };
   },
@@ -238,6 +241,7 @@ export default {
           this.sort = response.sort_id;
           this.article = response.article_id;
           this.time = response.create_time;
+          this.writer = response.create_uid;
           this.flag = true;
         });
     }
