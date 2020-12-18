@@ -6,32 +6,41 @@
       <div class="article-side">
         <div class="writer-box">
           <div class="writer-head">
-            <img src="@/assets/img/head.png" alt="">
+            <!-- <img src="@/assets/img/head.png" alt=""> -->
+            <img :src="avatar?avatar:defaultAvatar" class="user-avatar">
           </div>
           <div class="writer-info">
-            王大壮<p><span>特邀作者</span></p>
+            {{ infoDetail.name }}<p v-if="infoDetail.label_name"><span>{{ infoDetail.label_name }}</span></p>
           </div>
           <div class="writer-follow">关注</div>  
-          <p class="writer-intro">老兵老兵网官方特邀作者。多年写作经验，谙熟老兵文化事业。</p>
+          <p class="writer-intro">{{ infoDetail.introduction }}</p>
         </div>  
         <div class="article-side-list">
           <div class="list-head">
-            <span class="list-head-ttl">发表文章 999 篇</span>
+            <span class="list-head-ttl">发表文章 {{ infoDetail.count }} 篇</span>
           </div>
           <div class="list-body">
             <span class="list-head-ttl">最近发布</span>
-            <dl>
+            <!-- <dl>
               <dt>教育股集体下跌，教育股还是好的投资吗？</dt>
               <dd>1小时前</dd>
               <dt>教育股集体下跌，教育股还是好的投资吗？</dt>
               <dd>1小时前</dd>
-              <dt>教育股集体下跌，教育股还是好的投资吗？</dt>
-              <dd>1小时前</dd>
+            </dl> -->
+
+            <dl v-for="item in infoDetail.list" :key="item.id">
+              <a :href="'/#/annals/article?id=' + item.article_id + '&sort_id=' + item.sort_id">
+                <dt>{{ infoDetail.title }}</dt>
+                <dd>{{ infoDetail.create_time }}</dd>
+              </a>
             </dl>
+
           </div>
         </div>
       </div>
-      <div class="more">阅读更多内容</div>
+      <div class="more">
+        <router-link :to="'/profile/index?uid=' + writer">阅读更多内容</router-link>
+      </div>
     </div>
     <!-- 作者信息end -->
 
@@ -43,7 +52,7 @@ console.log("annals/components: writer-info is loaded");
 
 import { LaobingUrl } from "@/api/laobing_url";
 import { postData } from "@/api/common";
-// import { mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "AnnalsWriterInfo",
@@ -59,20 +68,29 @@ export default {
       infoDetail: [],
       url: LaobingUrl.writer_info,
       zwsj: false,
-      create_uid: ''
+      defaultAvatar: require("@/assets/img/head.png")
     }
   },
-  // computed: {
-  //   ...mapGetters(["user_id", "access_token"])
-  // },
+  computed: {
+    ...mapGetters(["user_id", "access_token", "avatar"])
+  },
   // created: function() {
   //   this.fetchData();
   // },
   mounted: function() { 
-    this.create_uid = this.writer;
     this.fetchData();
   },
   methods: {
+    defAvatar(e) {
+      console.log("-this.avatar::", this.avatar);
+      // if (this.avatar === undefined) {
+      //   this.$store.state.user.avatar = '@/assets/img/head.png';
+      //   console.log("avatar::::::::" + this.avatar);
+      // }
+      console.log(e)
+      const img = e.srcElement
+      img.src = this.defaultAvatar
+    },
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
         postData(url, data)
@@ -98,15 +116,18 @@ export default {
       });
     },
     fetchData() {
-      console.log(22222222222);
-      console.log(this.url, this.create_uid);
       // this.postDataFromUI('/article/findWriterDataById', 'cd3a070bf1d14f1eba3f0b434ad57e4b')
-      this.postDataFromUI(this.url, this.create_uid)
+      var param = {
+        // create_uid: this.writer
+        create_uid: "0a44f30462e742879f5fbd15d2fda9e6"
+      }
+      console.log(this.url, param.create_uid);
+      // console.log(param.create_uid)
+      this.postDataFromUI(this.url, param)
         .then(response => {
           this.infoDetail = response;
-          console.log(3333333)
+          console.log(response);
         });
-      console.log(444444);
     }
   }
 };
