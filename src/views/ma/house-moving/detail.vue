@@ -62,7 +62,7 @@
 </template>
 
 <script>
-console.log("Views: /jobs/job-detail is loaded");
+console.log("Views: /house-moving/detail is loaded");
 
 import { LaobingUrl } from "@/api/laobing_url";
 import { postData } from "@/api/common";

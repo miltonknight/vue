@@ -1,4 +1,4 @@
-<!-- 老兵情怀 - 救助报道 -->
+<!-- 创就业 -->
 <template>
   <el-row>
     <div class="banner">

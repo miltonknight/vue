@@ -173,7 +173,7 @@
 </template>
 
 <script>
-console.log("Views: /jobs/index is loaded");
+console.log("Views: /house-moving/index is loaded");
 // import Pagination from "@/components/Pagination";
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";

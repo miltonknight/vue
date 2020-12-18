@@ -1,4 +1,4 @@
-<!-- 老兵政策 -->
+<!-- 创就业 -->
 <template>
   <el-row>
     <div class="banner">
