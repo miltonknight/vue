@@ -323,6 +323,9 @@ export default {
       .el-button {
         width: 100%;
       }
+      .el-form--label-top .el-form-item__label {
+        padding: 0 0 3px;
+      }
     }
   }
   .telecom-body {
