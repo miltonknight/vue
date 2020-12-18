@@ -97,12 +97,9 @@ export default {
       list: null,
       listLoading: true,
       listQuery: {
-        sort_id: 40, // 版块id
+        uid: '',
         page: 1,
-        limit: 10,
-        role_flag: 0,
-        search_input: "",
-        uid: ''
+        limit: 10
       },
       zwsj: false
     };
@@ -110,16 +107,12 @@ export default {
   computed: { 
     ...mapGetters(["user_id", "access_token", "navactive"])
   },
-  created: function() {
-    this.fetchData();
-    // this.$store.state.navactive = '/profile/index';
-  },
+  // created: function() {
+  //   // this.$store.state.navactive = '/profile/index';
+  // },
   mounted() {
-    // console.log("this.$store.state.navactive：：：：：：：：：：：：：")
-    // console.log(this.$store.state.navactive)
-    // console.log(this.navselected)
-    // this.$forceUpdate( this.$store.state.navactive )
-   },
+    this.fetchData();
+  },
   methods: { 
     postDataFromUI(url, data) {
       return new Promise((resolve, reject) => {
@@ -157,11 +150,13 @@ export default {
       this.listLoading = true;
       // uid用户token中获取
       // "uid": '0a44f30462e742879f5fbd15d2fda9e6'
-      this.listQuery.uid = this.user_id;
+      // 依赖解决后调用下面方法
+      // this.listQuery.uid = this.$route.query.uid;
+      this.listQuery.uid = "cd3a070bf1d14f1eba3f0b434ad57e4b";
       this.postDataFromUI(LaobingUrl.user_article_list, this.listQuery)
         .then(response => {
           this.ArticleList = response;
-          this.total = response.total;
+          // this.total = response.total;
           this.list = response.list;
           this.listLoading = false;
         })
