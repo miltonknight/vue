@@ -126,7 +126,7 @@ export default {
   },
   methods: {
     defAvatar(e) {
-      console.log("🚀 ~ file: index.vue ~ line 138 ~ defaultAvatar ~ this.avatar::", this.avatar);
+      console.log("defaultAvatar ~ this.avatar::", this.avatar);
       // if (this.avatar === undefined) {
       //   this.$store.state.user.avatar = '@/assets/img/head.png';
       //   console.log("avatar::::::::" + this.avatar);
