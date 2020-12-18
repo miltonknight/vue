@@ -38,6 +38,7 @@ export const LaobingUrl = {
   qa_is_useful: '/lawConsult/addAnswerIfUsefulByArticleId', // qa is useful
   lawyer_index_list: '/lawyer/lawFindLawyerListLimit', // component lawyer index
   lawyer_list: '/lawyer/pageLawyer', // lawyer list
+  find_friends: '/profile/findFriend', // find friends
   temp_add_article: '/article/insertArticle' // temp add article
 }
 
