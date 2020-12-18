@@ -118,8 +118,8 @@ export default {
     fetchData() {
       // this.postDataFromUI('/article/findWriterDataById', 'cd3a070bf1d14f1eba3f0b434ad57e4b')
       var param = {
-        // create_uid: this.writer
-        create_uid: "0a44f30462e742879f5fbd15d2fda9e6"
+        create_uid: this.writer
+        // create_uid: "cd3a070bf1d14f1eba3f0b434ad57e4b"
       }
       console.log(this.url, param.create_uid);
       // console.log(param.create_uid)
