@@ -2,3 +2,7 @@
 2. 细化明确布局宽度具体数值
 3. 优化console
 4. 优化this.message
+5. 作者信息组件 src\views\ma\annals\components\writer-info.vue
+用户信息存在表依赖，依赖于用户表，但现有用户表信息残缺，部分信息不存在，数据不完整。
+-完整功能需相关信息完善后方可实现。老兵驿站部分存在同样问题。
+
