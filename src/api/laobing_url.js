@@ -26,12 +26,12 @@ export const LaobingUrl = {
   delete_article: '/article/deleteArticleById', // delete(fake) article
   next_article: '/article/findNextArticle', // next article
   writer_info: '/article/findWriterDataById', // article writer info
+  user_article_list: '/article/pageArticleByUid', // persenal articles
   // -------------------- homepage apis
   index_focus: '/homepage/findHomepageFocus', // index_focus
   // index_coupon: '/homepage/findHomepageFocus', // index_coupon
   index_article: '/homepage/findHomepageModule', // index_article
   famous_people: '/veteranFamous/pageVereranFamous', // famous_list
-  user_article_list: '/article/pageArticleByUid', // persenal articles
   qa_index_list: '/lawConsult/findLawConsultLimit', // component qa index
   qa_lsit: '/lawConsult/pageLawConsultList', // qa list
   qa_detail: '/lawConsult/findLawConsultDetailById', // qa detail
