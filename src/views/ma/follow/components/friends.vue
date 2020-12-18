@@ -102,8 +102,8 @@ import { mapGetters } from "vuex";
 
 export default {
   // name: 'MaHomeHeader',
-  components: { Pagination },
   name: "FindFriends",
+  components: { Pagination },
   data() {
     return {
       url: LaobingUrl.find_friends,
