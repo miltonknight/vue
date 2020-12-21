@@ -170,7 +170,7 @@ export default {
 <style scoped lang="scss">
 .header-main {
   width: 100%;
-  min-width: 1390px;
+  min-width: 1340px;
   height: 50px;
   overflow: hidden;
   margin: 0 auto;
