@@ -19,6 +19,7 @@
             <router-view :key="key" />
 
           </div>  
+          
         </div>
 
         <!-- common footer -->
@@ -199,6 +200,7 @@ export default {
 .main-wrapper {
   min-height: 1000px;
   padding-top: 50px;
+  min-width: 1340px;
 
   .main-box {
     width: 1030px;
