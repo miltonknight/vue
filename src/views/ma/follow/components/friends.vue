@@ -27,23 +27,26 @@
         </div>
       </div> -->
 
-      <div class="follow-box" v-for="item in friends" :key="item.id" >
-        <div class="follow-avatar">
-          <!-- <img src="@/assets/img/avatar-follow.png" alt=""> -->
-          <img :src="avatar?avatar:defaultAvatar" class="user-avatar">
-        </div>
-        <div class="follow-name">
-          {{ item.friend_full_name }}<span v-if="item.label_name">{{ item.label_name }}</span>
-          <p>{{ item.introduction }}</p>
-        </div>
-        <div class="follow-relation">
-          <img src="@/assets/img/follow.png" alt="" v-if="item.focus_eachother">
-        </div>
-        <div class="follow-operate" v-if="item.focus_eachother">
-          <el-button type="warning" @click="unfollow">取消关注</el-button>
-        </div>
-        <div class="follow-operate" v-if="!item.focus_eachother">
-          <el-button type="warning" @click="follow">关 注</el-button>
+      <div v-if="friends.code != 50003" class="result-body">
+        <div v-for="item in friends" :key="item.id" class="follow-box">
+          <div class="follow-avatar">
+            <!-- <img src="@/assets/img/avatar-follow.png" alt=""> -->
+            <!-- <img :src="avatar?avatar:defaultAvatar" class="user-avatar"> -->
+            <img :src="item.friend_avatar?item.friend_avatar:defaultAvatar" class="user-avatar">
+          </div>
+          <div class="follow-name">
+            {{ item.friend_full_name }}<span v-if="item.label_name">{{ item.label_name }}</span>
+            <p>{{ item.introduction }}</p>
+          </div>
+          <div class="follow-relation">
+            <img v-if="item.focus_eachother" src="@/assets/img/follow.png" alt="">
+          </div>
+          <div v-if="item.focus_eachother" class="follow-operate">
+            <el-button type="warning" @click="unfollow">取消关注</el-button>
+          </div>
+          <div v-if="!item.focus_eachother" class="follow-operate">
+            <el-button type="warning" @click="follow">关 注</el-button>
+          </div>
         </div>
       </div>
 
@@ -67,26 +70,29 @@
         <h3><svg-icon icon-class="hdot" class-name="card-panel-icon" />相关推荐</h3>
       </div>
 
-      <div class="follow-box" v-for="item in cfriends" :key="item.id" >
-        <div class="follow-avatar">
-          <!-- <img src="@/assets/img/avatar-follow.png" alt=""> -->
-          <img :src="avatar?avatar:defaultAvatar" class="user-avatar">
-        </div>
-        <div class="follow-name">
-          {{ item.friend_full_name }}<span v-if="item.label_name">{{ item.label_name }}</span>
-          <p>{{ item.introduction }}</p>
-        </div>
-        <div class="follow-relation">
-          <img src="@/assets/img/follow.png" alt="" v-if="item.focus_eachother">
-        </div>
-        <div class="follow-operate" v-if="item.focus_eachother">
-          <el-button type="warning" @click="unfollow">取消关注</el-button>
-        </div>
-        <div class="follow-operate" v-if="!item.focus_eachother">
-          <el-button type="warning" @click="follow">关 注</el-button>
-        </div>
-      </div>
+      <div v-if="friends.code != 50003" class="result-body">
 
+        <div v-for="item in cfriends" :key="item.id" class="follow-box">
+          <div class="follow-avatar">
+            <!-- <img src="@/assets/img/avatar-follow.png" alt=""> -->
+            <img :src="item.friend_avatar?item.friend_avatar:defaultAvatar" class="user-avatar">
+          </div>
+          <div class="follow-name">
+            {{ item.friend_full_name }}<span v-if="item.label_name">{{ item.label_name }}</span>
+            <p>{{ item.introduction }}</p>
+          </div>
+          <div class="follow-relation">
+            <img v-if="item.focus_eachother" src="@/assets/img/follow.png" alt="">
+          </div>
+          <div v-if="item.focus_eachother" class="follow-operate">
+            <el-button type="warning" @click="unfollow">取消关注</el-button>
+          </div>
+          <div v-if="!item.focus_eachother" class="follow-operate">
+            <el-button type="warning" @click="follow">关 注</el-button>
+          </div>
+        </div>
+        
+      </div>
     </div>
 
   </div>
@@ -139,7 +145,7 @@ export default {
       // console.log(e.currentTarget.parentElement.parentElement);
     },
     defAvatar(e) {
-      console.log("defaultAvatar ~ this.avatar::", this.avatar);
+      // console.log("defaultAvatar ~ this.avatar::", this.avatar);
       // if (this.avatar === undefined) {
       //   this.$store.state.user.avatar = '@/assets/img/head.png';
       //   console.log("avatar::::::::" + this.avatar);
@@ -190,7 +196,7 @@ export default {
         .then(response => {
           this.friends = response;
           console.log("Find Friends Json:", response);
-          console.log(response[0])
+          console.log(response)
         });
     },
     makeData() {
@@ -215,7 +221,7 @@ export default {
   width: 48%;
   margin-bottom: 20px;
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
     margin-left:3.5%;
 
     .follow-operate {
