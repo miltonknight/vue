@@ -1,5 +1,5 @@
 <template>
-  <div :class="classObj" class="app-wrapper">
+  <div :class="classObj" class="app-wrapper" @mousewheel="scrollEvent">
     <div class="web-container">
       <div :class="{ 'fixed-header': fixedHeader }" />
 
@@ -20,7 +20,7 @@
 
           </div>  
           <!-- common tip -->
-          <common-tip />
+          <common-tip id="tip-index" ref="tipMenu" :style="tipStyle" />
 
           <!-- common BackTop -->
           <back-top />
@@ -48,7 +48,11 @@ export default {
   data() {
     return {
       activeIndex: "1",
-      visible: false
+      visible: false,
+      tipStyle: {
+        position: '',
+        top: '70px'
+      }
     };
   },
   // mixins: [ResizeMixin],
@@ -75,7 +79,9 @@ export default {
       };
     }
   },
-  created: function() { },
+  created: function() { 
+    this.tipPosition();
+  },
   methods: {
     handleClickOutside() {
       this.$store.dispatch("app/closeSideBar", { withoutAnimation: false });
@@ -96,7 +102,32 @@ export default {
       if (key === 4) {
         this.$router.push({ path: "/login" });
       }
-    }
+    },
+    scrollEvent(e) {
+      console.log("滚动事件", e);
+      this.tipPosition();
+    },
+    tipPosition() {
+      var tip = document.getElementById("tip-index").offsetTop;
+      // var tip = this.$refs.tipMenu.offsetTop;
+      console.log("tip:::", tip);
+      // console.log("tip::::::", window.innerHeight);
+      console.log("innerHeight::::::", window.innerHeight);
+      // 内容高度 document.body.scrollHeight
+      var contentHeight = document.body.scrollHeight; 
+      // 可用高度
+      var variableHeight = contentHeight - 670 - tip; 
+      // offsetTop
+      // var offsetTop = '';
+      console.log("variableHeight:::", variableHeight);
+      if (variableHeight > 0) {
+        this.tipStyle.position = 'fixed';
+        this.tipStyle.top = tip;
+      } else {
+        this.tipStyle.position = 'fixed';
+        this.tipStyle.top = '70px';
+      }
+    } 
   }
 };
 </script>
