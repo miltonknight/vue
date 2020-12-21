@@ -56,7 +56,17 @@
         </el-row>
       </div>
       <div class="footer-infos">
-        <a href=""><img src="@/assets/img/footer-logo.png" alt=""></a>
+        <div class="footer-corp-info">
+          <div class="footer-logo">
+            <img src="@/assets/img/footer-logo.png" alt="">
+            <span>老兵老兵网</span>
+            <p>www.lblbsy.com</p>
+          </div>
+          <div class="footer-logo-tip">
+            <span>一个专属服务老兵的</span>
+            <p>新型网络平台</p>
+          </div>
+        </div>
         <div class="footer-infos-detail">
           <span>地址：沈阳市浑南区远航中路３甲１号</span>
           <span>邮编：110000</span>
@@ -96,7 +106,7 @@ export default {
 <style scoped lang="scss">
 .footer-main {
   width: 100%;
-  min-width: 1390px;
+  min-width: 1340px;
   height: 300px;
   margin: 0 auto;
   background-color: #3b3b3b;
@@ -175,10 +185,35 @@ export default {
       padding: 20px 0 0;
       display: flex;
 
-      a {
-        width: 205px;
-        height: 25px;
+      .footer-corp-info {
+        // width: 205px;
+        // height: 25px;
         margin-right: 20px;
+        overflow: hidden;
+
+        .footer-logo {
+          // width: 80px;
+          // height: 30px;
+          float: left;
+          margin-right: 10px;
+
+          img {
+            float: left;
+            margin: 2px 7px 0 0;
+          }
+          span {
+            font-size: 18px;
+            font-weight: bold;
+          }
+        }
+        .footer-logo-tip {
+          float: left;
+        }
+        span, p {
+          font-size: 0.5em;
+          color: #aaa;
+          margin: 0 10px 0 0;
+        }
       }
       .footer-infos-detail {
         flex: 1;
