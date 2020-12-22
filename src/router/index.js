@@ -369,6 +369,37 @@ export const constantRoutes = [
         component: () => import("@/views/ma/articles/index"),
         meta: { title: "我的文章", icon: "dashboard" }
       },
+      {
+        path: "/telecom/index",
+        name: "MaTelecomIndex",
+        component: () => import("@/views/ma/telecom/index"),
+        meta: { title: "老兵通讯", icon: "dashboard" }
+      },
+      {
+        path: "/jobs/index",
+        name: "MaJobsIndex",
+        component: () => import("@/views/ma/jobs/index"),
+        meta: { title: "创就业", icon: "dashboard" }
+      },
+      {
+        path: "/jobs/job-detail",
+        name: "MaJobsDetail",
+        component: () => import("@/views/ma/jobs/job-detail"),
+        meta: { title: "创就业", icon: "dashboard" }
+      },
+      {
+        path: "/house-moving/index",
+        name: "MaHmIndex",
+        component: () => import("@/views/ma/house-moving/index"),
+        meta: { title: "老兵搬家", icon: "dashboard" }
+      },
+      {
+        path: "/house-moving/detail",
+        name: "MaHmDetail",
+        component: () => import("@/views/ma/house-moving/detail"),
+        meta: { title: "老兵搬家", icon: "dashboard" }
+      },
+
       // {
       //   path: "/policy/index",
       //   name: "MaPolicyIndex",
@@ -458,63 +489,63 @@ export const constantRoutes = [
   //     }
   //   ]
   // },
-  {
-    path: "/ma/telecom/index",
-    redirect: "/ma/telecom/index",
-    name: "telecom",
-    meta: { title: "老兵通讯", icon: "user" },
-    component: MaSentimentLayout,
-    children: [
-      {
-        path: "/ma/telecom/index",
-        name: "MaTelecomIndex",
-        component: () => import("@/views/ma/telecom/index"),
-        meta: { title: "老兵通讯", icon: "dashboard" }
-      }
-    ]
-  },
-  {
-    path: "/ma/jobs/index",
-    redirect: "/ma/jobs/index",
-    name: "jobs",
-    meta: { title: "创就业", icon: "user" },
-    component: MaSentimentLayout,
-    children: [
-      {
-        path: "/ma/jobs/index",
-        name: "MaJobsIndex",
-        component: () => import("@/views/ma/jobs/index"),
-        meta: { title: "创就业", icon: "dashboard" }
-      },
-      {
-        path: "/ma/jobs/job-detail",
-        name: "MaJobsDetail",
-        component: () => import("@/views/ma/jobs/job-detail"),
-        meta: { title: "创就业", icon: "dashboard" }
-      }
-    ]
-  },
-  {
-    path: "/ma/house-moving/index",
-    redirect: "/ma/house-moving/index",
-    name: "housemoving",
-    meta: { title: "老兵搬家", icon: "user" },
-    component: MaSentimentLayout,
-    children: [
-      {
-        path: "/ma/house-moving/index",
-        name: "MaHmIndex",
-        component: () => import("@/views/ma/house-moving/index"),
-        meta: { title: "老兵搬家", icon: "dashboard" }
-      },
-      {
-        path: "/ma/house-moving/detail",
-        name: "MaHmDetail",
-        component: () => import("@/views/ma/house-moving/detail"),
-        meta: { title: "老兵搬家", icon: "dashboard" }
-      }
-    ]
-  },
+  // {
+  //   path: "/ma/telecom/index",
+  //   redirect: "/ma/telecom/index",
+  //   name: "telecom",
+  //   meta: { title: "老兵通讯", icon: "user" },
+  //   component: MaLayout,
+  //   children: [
+  //     {
+  //       path: "/ma/telecom/index",
+  //       name: "MaTelecomIndex",
+  //       component: () => import("@/views/ma/telecom/index"),
+  //       meta: { title: "老兵通讯", icon: "dashboard" }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: "/ma/jobs/index",
+  //   redirect: "/ma/jobs/index",
+  //   name: "jobs",
+  //   meta: { title: "创就业", icon: "user" },
+  //   component: MaLayout,
+  //   children: [
+  //     {
+  //       path: "/ma/jobs/index",
+  //       name: "MaJobsIndex",
+  //       component: () => import("@/views/ma/jobs/index"),
+  //       meta: { title: "创就业", icon: "dashboard" }
+  //     },
+  //     {
+  //       path: "/ma/jobs/job-detail",
+  //       name: "MaJobsDetail",
+  //       component: () => import("@/views/ma/jobs/job-detail"),
+  //       meta: { title: "创就业", icon: "dashboard" }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: "/ma/house-moving/index",
+  //   redirect: "/ma/house-moving/index",
+  //   name: "housemoving",
+  //   meta: { title: "老兵搬家", icon: "user" },
+  //   component: MaLayout,
+  //   children: [
+  //     {
+  //       path: "/ma/house-moving/index",
+  //       name: "MaHmIndex",
+  //       component: () => import("@/views/ma/house-moving/index"),
+  //       meta: { title: "老兵搬家", icon: "dashboard" }
+  //     },
+  //     {
+  //       path: "/ma/house-moving/detail",
+  //       name: "MaHmDetail",
+  //       component: () => import("@/views/ma/house-moving/detail"),
+  //       meta: { title: "老兵搬家", icon: "dashboard" }
+  //     }
+  //   ]
+  // },
   
   // {
   //   path: "/user",
