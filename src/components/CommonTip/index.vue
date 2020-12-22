@@ -1,5 +1,5 @@
 <template>
-  <div class="tip-main">
+  <div ref="moveTip" class="tip-main">
     <div class="side-logo">
       <div class="logo-text">
         老兵老兵网
@@ -68,17 +68,47 @@ console.log("Components：@/CommonTip is loaded");
 
 export default {
   name: "CommonTip",
-  props: {},
+  props: {
+    vrbheight: {
+      type: Number,
+      default: 0
+    }
+  },
   data() {
     return {
       activeIndex2: '0'
     };
   },
+  watch: {
+    vrbheight() {
+      console.log("val:::");
+      this.variableStyle();
+    }
+  },
+  created() {
+    // this.variableStyle();
+  },
   methods: {
     handleSelect(key, keyPath) {
       this.$router.push(key);
       console.log(key, keyPath);
-    }
+    },
+    variableStyle() {
+      var obj = this.$refs.moveTip;
+      console.log("obj::::", obj);
+      if (this.vrbheight > 0) {
+        // console.log("component vrbheight > 0");
+        obj.style.position = "fixed";
+        obj.style.top = '70px';
+        obj.style.bottom = 'auto';
+        // this.$forceUpdate();
+      } else {
+        // console.log("component vrbheight < 0");
+        obj.style.position = "absolute";
+        obj.style.top = 'auto';
+        obj.style.bottom = '320px';
+      }
+    } 
   }
 }
 </script>

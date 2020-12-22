@@ -20,7 +20,7 @@
 
           </div>  
           <!-- common tip -->
-          <common-tip id="tip-index" ref="tipMenu" :style="tipStyle" />
+          <common-tip ref="tipMenu" :vrbheight="tipValue" />
 
           <!-- common BackTop -->
           <back-top />
@@ -49,10 +49,11 @@ export default {
     return {
       activeIndex: "1",
       visible: false,
-      tipStyle: {
-        position: '',
-        top: '70px'
-      }
+      // tipStyle: {
+      //   position: '',
+      //   top: ''
+      // }
+      tipValue: 0
     };
   },
   // mixins: [ResizeMixin],
@@ -80,7 +81,7 @@ export default {
     }
   },
   created: function() { 
-    this.tipPosition();
+    // this.tipPosition();
   },
   methods: {
     handleClickOutside() {
@@ -104,29 +105,21 @@ export default {
       }
     },
     scrollEvent(e) {
-      console.log("滚动事件", e);
+      // console.log("滚动事件", e);
       this.tipPosition();
+      this.$refs.tipMenu.variableStyle();
     },
     tipPosition() {
-      var tip = document.getElementById("tip-index").offsetTop;
-      // var tip = this.$refs.tipMenu.offsetTop;
-      console.log("tip:::", tip);
-      // console.log("tip::::::", window.innerHeight);
-      console.log("innerHeight::::::", window.innerHeight);
       // 内容高度 document.body.scrollHeight
       var contentHeight = document.body.scrollHeight; 
-      // 可用高度
-      var variableHeight = contentHeight - 670 - tip; 
-      // offsetTop
-      // var offsetTop = '';
-      console.log("variableHeight:::", variableHeight);
-      if (variableHeight > 0) {
-        this.tipStyle.position = 'fixed';
-        this.tipStyle.top = tip;
-      } else {
-        this.tipStyle.position = 'fixed';
-        this.tipStyle.top = '70px';
-      }
+      // console.log("contentHeight::", contentHeight);
+      // 页面滚动高度
+      var rollHeight = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset;
+      // console.log("rollHeight:::", rollHeight);
+      // 可用高度 = 内容高度 -（头50+脚300）- tip高度（box+mgT） - 安全高度 - 滚动高度
+      var variableHeight = contentHeight - 350 - 690 - 200 - rollHeight; 
+      // console.log("variableHeight:::", variableHeight);
+      this.tipValue = variableHeight;
     } 
   }
 };
