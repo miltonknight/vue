@@ -35,12 +35,12 @@
           <span><svg-icon icon-class="tip-catering" class-name="card-panel-icon" />老军号</span>
         </el-menu-item>
         <el-menu-item index="5">
-          <a href="/#/ma/jobs/index">
+          <a href="/#/jobs/index">
             <span><svg-icon icon-class="tip-corporation" class-name="card-panel-icon" />创就业</span>
           </a>
         </el-menu-item>
         <el-menu-item index="6">
-          <a href="/#/ma/telecom/index">
+          <a href="/#/telecom/index">
             <span><svg-icon icon-class="tip-address-book" class-name="card-panel-icon" />通<i></i>讯</span>
           </a>
         </el-menu-item>
@@ -51,7 +51,7 @@
           <span><svg-icon icon-class="tip-refueling" class-name="card-panel-icon" />加<i></i>油</span>
         </el-menu-item>
         <el-menu-item index="9">
-          <a href="/#/ma/house-moving/index">
+          <a href="/#/house-moving/index">
             <span><svg-icon icon-class="tip-house-moving" class-name="card-panel-icon" />搬<i></i>家</span>
           </a>  
         </el-menu-item>
@@ -81,7 +81,7 @@ export default {
   },
   watch: {
     vrbheight() {
-      console.log("val:::");
+      // console.log("vrbheight:::", vrbheight);
       this.variableStyle();
     }
   },
@@ -95,7 +95,7 @@ export default {
     },
     variableStyle() {
       var obj = this.$refs.moveTip;
-      console.log("obj::::", obj);
+      // console.log("obj::::", obj);
       if (this.vrbheight > 0) {
         // console.log("component vrbheight > 0");
         obj.style.position = "fixed";
