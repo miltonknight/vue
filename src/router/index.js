@@ -4,10 +4,9 @@ import Router from "vue-router";
 Vue.use(Router);
 
 /* Layout */
-import Layout from "@/layout";
+// import Layout from "@/layout";
 import MaLayout from "@/layout/ma/home/index";
 import MaLayout404 from "@/layout/ma/404";
-import MaSentimentLayout from "@/layout/ma/sentiment/index";
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -78,22 +77,22 @@ export const constantRoutes = [
     ]
   },
 
-  {
-    path: "/admin",
-    redirect: "/admin/dashboard",
-    name: "admin",
-    meta: { title: "数据中心", icon: "user" },
-    component: Layout,
-    children: [
-      {
-        path: "/admin/dashboard",
-        name: "Dashboard",
-        component: () => import("@/views/dashboard/index"),
-        meta: { title: "数据中心", icon: "dashboard" }
-      }
-    ]
-  },
-  // test pages edited by Ma
+  // {
+  //   path: "/admin",
+  //   redirect: "/admin/dashboard",
+  //   name: "admin",
+  //   meta: { title: "数据中心", icon: "user" },
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: "/admin/dashboard",
+  //       name: "Dashboard",
+  //       component: () => import("@/views/dashboard/index"),
+  //       meta: { title: "数据中心", icon: "dashboard" }
+  //     }
+  //   ]
+  // },
+  // URL for new pages edited by Ma
   {
     path: "/ma",
     // redirect: "/ma/",
