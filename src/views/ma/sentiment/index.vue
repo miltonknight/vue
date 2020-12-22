@@ -637,11 +637,15 @@ export default {
 }
 .senti-box {
   width: 510px;
-  height: 458px;
+  height: 457px;
   overflow: hidden;
   float: left;
   margin: 20px 20px 0 0;
   border-radius: 3px;
+
+  &:hover {
+    box-shadow: 1px 0px 5px 2px rgba(220, 220, 220, 0.5);
+  }
 
   &:nth-child(2n) {
     margin-right: 0;
