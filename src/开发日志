@@ -606,18 +606,28 @@ logo更换，文字转为代码，菜单文字对齐
 7. src\layout\ma\home\index.vue
 首页布局增加tipMenu滚动样式变化，offsetTop目前存在问题，翌日更改
 
-
-
-
-
-
-
-
-
-
-
-
-
+#-------------------- 20201222更新内容 --------------------
+1. 关于解决左侧导航固定位置，且不穿越footer的整体思路
+1.1 src\layout\ma\home\index.vue
+首先在最外层app-wrapper上添加@mousewheel鼠标滚动事件进行监听
+1.2 在滚动的时候调用tipPosition()进行操作
+1.3 在tipPosition()中首先获取body整体高度，然后获取页面滚动的高度
+-此时计算可活动区域高度=内容高度-头尾高度-tip高度-安全距离-滚动高度，然后传参
+1.4 在组件上绑定变量，进行传值
+1.5 src\components\CommonTip\index.vue子组件内定义props接收变量
+1.6 在variableStyle()方法中通过$refs获取tip对象，通过变量数值给tip菜单样式赋值
+1.7 由于vrbheight是不停变化的，所以要通过watch方法对变量进行监听实时更改
+2. src\router\index.js
+更改老兵通讯、创就业、老兵搬家部分Layout文件，全站除404页面均已使用统一Layout，
+-目前除404页面外均改为二级路由
+3. src\views\ma\house-moving\index.vue, src\views\ma\house-moving\detail.vue
+更改链接取值，因更换统一Layout，所以目前同为二级路由，更改页面内链接去掉/ma
+4. src\components\CommonTip\index.vue
+更改更改老兵通讯、创就业、老兵搬家链接，去掉/ma
+5. src\styles\index.scss
+通用列表.list-item样式增加hover效果
+6. src\views\ma\sentiment\index.vue
+增加列表框hover样式
 
 
 
