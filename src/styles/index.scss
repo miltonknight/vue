@@ -174,6 +174,15 @@ div:focus {
         clear: both;
         width: 100%;
         display: flex;
+
+        &:hover {
+          box-shadow: 1px 0px 5px 2px rgba(220, 220, 220, 0.5);
+          width: 718px;
+
+          span.time {
+            margin-right: 8px !important;
+          }  
+        }
       }
       .list-body-img {
         position: relative;
