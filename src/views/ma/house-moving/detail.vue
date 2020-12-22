@@ -124,10 +124,8 @@ export default {
         // "uid": '0a44f30462e742879f5fbd15d2fda9e6'
         "uid": this.user_id
       };
-      console.log("::::::::::::::::::::>>>>>>>>>");
       console.log(this.$route.path);
       // this.$route.path = '/annals/index'; // read only
-      console.log("::::::::::::::::::::>>>>>>>>>");
       this.postDataFromUI(LaobingUrl.modular_articles, params)
         .then(response => {
           this.ArticleDetail = response;

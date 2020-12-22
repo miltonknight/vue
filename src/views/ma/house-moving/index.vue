@@ -38,7 +38,7 @@
           <img src="@/assets/img/list-corp.jpg" alt="">
         </div>
         <div class="corp-info">
-          <a href="/#/ma/house-moving/detail"><h3>提供长途搬家、拆装服务、设备搬运等服务 | 响应及时、态度好</h3></a>
+          <a href="/#/house-moving/detail"><h3>提供长途搬家、拆装服务、设备搬运等服务 | 响应及时、态度好</h3></a>
           <p>沈阳双福搬家服务中心与沈阳大兵搬家公司强强联合共同打造沈阳搬</p>
           <p>二十一世纪广场-沈阳市皇姑区双福搬家服务中心</p>
           <div class="corp-tip">
@@ -57,7 +57,7 @@
           <img src="@/assets/img/list-corp.jpg" alt="">
         </div>
         <div class="corp-info">
-          <a href="/#/ma/house-moving/detail"><h3>提供长途搬家、拆装服务、设备搬运等服务 | 响应及时、态度好</h3></a>
+          <a href="/#/house-moving/detail"><h3>提供长途搬家、拆装服务、设备搬运等服务 | 响应及时、态度好</h3></a>
           <p>沈阳双福搬家服务中心与沈阳大兵搬家公司强强联合共同打造沈阳搬</p>
           <p>二十一世纪广场-沈阳市皇姑区双福搬家服务中心</p>
           <div class="corp-tip">
@@ -76,7 +76,7 @@
           <img src="@/assets/img/list-corp.jpg" alt="">
         </div>
         <div class="corp-info">
-          <a href="/#/ma/house-moving/detail"><h3>提供长途搬家、拆装服务、设备搬运等服务 | 响应及时、态度好</h3></a>
+          <a href="/#/house-moving/detail"><h3>提供长途搬家、拆装服务、设备搬运等服务 | 响应及时、态度好</h3></a>
           <p>沈阳双福搬家服务中心与沈阳大兵搬家公司强强联合共同打造沈阳搬</p>
           <p>二十一世纪广场-沈阳市皇姑区双福搬家服务中心</p>
           <div class="corp-tip">
@@ -95,7 +95,7 @@
           <img src="@/assets/img/list-corp.jpg" alt="">
         </div>
         <div class="corp-info">
-          <a href="/#/ma/house-moving/detail"><h3>提供长途搬家、拆装服务、设备搬运等服务 | 响应及时、态度好</h3></a>
+          <a href="/#/house-moving/detail"><h3>提供长途搬家、拆装服务、设备搬运等服务 | 响应及时、态度好</h3></a>
           <p>沈阳双福搬家服务中心与沈阳大兵搬家公司强强联合共同打造沈阳搬</p>
           <p>二十一世纪广场-沈阳市皇姑区双福搬家服务中心</p>
           <div class="corp-tip">
@@ -114,7 +114,7 @@
           <img src="@/assets/img/list-corp.jpg" alt="">
         </div>
         <div class="corp-info">
-          <a href="/#/ma/house-moving/detail"><h3>提供长途搬家、拆装服务、设备搬运等服务 | 响应及时、态度好</h3></a>
+          <a href="/#/house-moving/detail"><h3>提供长途搬家、拆装服务、设备搬运等服务 | 响应及时、态度好</h3></a>
           <p>沈阳双福搬家服务中心与沈阳大兵搬家公司强强联合共同打造沈阳搬</p>
           <p>二十一世纪广场-沈阳市皇姑区双福搬家服务中心</p>
           <div class="corp-tip">
@@ -133,7 +133,7 @@
           <img src="@/assets/img/list-corp.jpg" alt="">
         </div>
         <div class="corp-info">
-          <a href="/#/ma/house-moving/detail"><h3>提供长途搬家、拆装服务、设备搬运等服务 | 响应及时、态度好</h3></a>
+          <a href="/#/house-moving/detail"><h3>提供长途搬家、拆装服务、设备搬运等服务 | 响应及时、态度好</h3></a>
           <p>沈阳双福搬家服务中心与沈阳大兵搬家公司强强联合共同打造沈阳搬</p>
           <p>二十一世纪广场-沈阳市皇姑区双福搬家服务中心</p>
           <div class="corp-tip">
@@ -152,7 +152,7 @@
           <img src="@/assets/img/list-corp.jpg" alt="">
         </div>
         <div class="corp-info">
-          <a href="/#/ma/house-moving/detail"><h3>提供长途搬家、拆装服务、设备搬运等服务 | 响应及时、态度好</h3></a>
+          <a href="/#/house-moving/detail"><h3>提供长途搬家、拆装服务、设备搬运等服务 | 响应及时、态度好</h3></a>
           <p>沈阳双福搬家服务中心与沈阳大兵搬家公司强强联合共同打造沈阳搬</p>
           <p>二十一世纪广场-沈阳市皇姑区双福搬家服务中心</p>
           <div class="corp-tip">
