@@ -7,7 +7,7 @@
         <div class="writer-box">
           <div class="writer-head">
             <!-- <img src="@/assets/img/head.png" alt=""> -->
-            <img :src="avatar?avatar:defaultAvatar" class="user-avatar">
+            <img :src="infoDetail.avatar?infoDetail.avatar:defaultAvatar" class="user-avatar">
           </div>
           <div class="writer-info">
             {{ infoDetail.name }}<p v-if="infoDetail.label_name"><span>{{ infoDetail.label_name }}</span></p>
@@ -29,11 +29,14 @@
             </dl> -->
 
             <dl v-for="item in infoDetail.list" :key="item.id">
-              <a :href="'/#/annals/article?id=' + item.article_id + '&sort_id=' + item.sort_id">
-                <dt>{{ infoDetail.title }}</dt>
-                <dd>{{ infoDetail.create_time }}</dd>
+              <!-- <a :href="'/#/annals/article?id=' + item.article_id + '&sort_id=' + item.sort_id"> -->
+              <a :href="'/#/annals/article?id=' + item.article_id">
+                <dt>{{ item.title }}</dt>
+                <dd>{{ item.create_time }}</dd>
               </a>
             </dl>
+            <!-- 近期 -->
+            <div v-show="zwsj" class="zwsj">近期没有发表过其他文章</div>
 
           </div>
         </div>
@@ -98,6 +101,11 @@ export default {
             // const { code, msg, data } = response;
             const { code, data } = response;
             if (code === 20000) {
+              if (data.list.length === 0) {
+                this.zwsj = true
+              } else { 
+                this.zwsj = false; // 修复数据与“暂无数据”共存bug
+              }  
               console.log("Get Annals Writer Info Response:", data);
               resolve(data);
             }
@@ -244,5 +252,10 @@ export default {
   border-radius: 0 0 3px 3px;
   cursor: pointer;
 }
-
+.zwsj {
+  font-size: 12px;
+  text-align: left;
+  color: #ccc;
+  margin: 15px 0 0;
+}
 </style>
