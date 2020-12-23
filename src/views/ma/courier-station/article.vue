@@ -140,7 +140,7 @@ export default {
   components: {
     // CsNextArticle: resolve => { require(['@/views/ma/courier-station/components/next-article'], resolve) },
     // 组件懒加载
-    CsWriterInfo: () => import('@/views/ma/annals/components/writer-info'),
+    CsWriterInfo: () => import('@/views/ma/courier-station/components/writer-info'),
     CsNextArticle: () => import('@/views/ma/courier-station/components/next-article'),
     Activities
   },
