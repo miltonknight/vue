@@ -7,9 +7,9 @@
     </div>
     <div class="list-body">
 
-      <a class="law-cover" href="/#/homeland/law-detail">
+      <!-- <a class="law-cover" href="/#/homeland/law-detail">
         <img src="~@/assets/img/law-cover.jpg" />
-      </a>
+      </a> -->
 
       <a v-for="item in ret.list" :key="item.id" :href="'/#/homeland/law-detail?id=' + item.article_id + '&sort_id=' + item.sort_id" class="law-cover">
         <img :src="item.img_path" />
