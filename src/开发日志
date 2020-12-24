@@ -640,6 +640,12 @@ logo更换，文字转为代码，菜单文字对齐
 4. src\views\ma\courier-station\article.vue
 文章页更改作者信息组件引入地址
 
+#-------------------- 20201224更新内容 --------------------
+1. src\views\ma\courier-station\index.vue,
+   src\views\ma\culture\on-tao\index.vue,
+   src\views\ma\culture\storage\index.vue,
+   src\views\ma\famous\people\index.vue
+更改el-tab中el-tabs__item的属性样式，此部分为公共属性后续需要整体提出
 
 
 
