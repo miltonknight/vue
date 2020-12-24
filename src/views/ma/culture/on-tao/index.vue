@@ -192,13 +192,14 @@ export default {
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 
 /******* new home page ***************/
 
 .list-head-sub-culture {
-  border-bottom: 1px solid #d7d7d7!important;
-  margin-bottom: 30px!important;
+  // border-bottom: 1px solid #d7d7d7!important;
+  border-bottom: none !important;
+  margin-bottom: 30px !important;
 
   .section-title {
     display: flex;
@@ -217,11 +218,12 @@ export default {
     }
   }
 }
-.list-container .list-main .list-head {
-  height: auto;
-}
 .list-head-sub-culture {
-  .el-tabs__nav {
+
+  .el-tabs>>>.el-tabs__header {
+    margin-bottom: 5px;
+  }
+  .el-tabs>>>.el-tabs__nav {
       display: flex;
 
     .el-tabs__item {
@@ -231,18 +233,27 @@ export default {
       font-size: 16px;
     }
   }
-  .el-tabs__item:hover {
+  .el-tabs>>>.el-tabs__item:hover {
     color: #e08714;
   }  
-  .el-tabs__item.is-active {
+  .el-tabs>>>.el-tabs__item.is-active {
     color: #e08714;
   }
-  .el-tabs__active-bar {
+  .el-tabs>>>.el-tabs__active-bar {
     background-color: #e08714;
     height: 3px;
   }
-  .el-tabs__item:hover {
+  .el-tabs>>>.el-tabs__item:hover {
     color: #e08714;
   }
+  // .el-tabs>>>.el-tabs__nav-wrap::after {
+  //   background-color: transparent;
+  // }
+}
+.list-container .list-main .list-head {
+  height: auto;
+}
+.el-tabs__nav-wrap::after {
+  background-color: transparent;
 }
 </style>

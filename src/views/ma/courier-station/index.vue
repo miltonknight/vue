@@ -206,19 +206,10 @@ export default {
 
 <style lang="scss">
 
-.el-row {
-  margin-right: 0 !important;
-
-  .el-col.el-col-17 {
-    padding-right: 0 !important;
-  }
-  .el-col.el-col-7 {
-    padding-right: 0 !important;
-  }
-}
 /************ tabs */
 .list-head-sub2 {
-  border-bottom: 1px solid #d7d7d7!important;
+  // border-bottom: 1px solid #d7d7d7!important;
+  border-bottom: none !important;
 
   .section-title {
     display: flex;
@@ -237,15 +228,15 @@ export default {
     }
   }
 }
-.list-container .list-main .list-head {
-  height: auto;
-}
 .list-head-sub2 {
 
+  .el-tabs__header {
+    margin: 0;
+  }
   .el-tabs__item {
-    width: 102px!important;
-    padding: 5px 0!important;
-    height: auto!important;
+    width: 102px !important;
+    padding: 0 0 !important;
+    height: auto !important;
     text-align: center;
     font-size: 16px;
   }
@@ -262,8 +253,12 @@ export default {
   .el-tabs__item:hover {
     color: #e08714;
   }
-  .el-tabs__nav-wrap::after {
-    background-color: transparent;
-  }
+  // .el-tabs__nav-wrap::after {
+  //   background-color: transparent;
+  // }
+}
+.list-container .list-main .list-head {
+  height: auto;
+  margin-bottom: 10px;
 }
 </style>
