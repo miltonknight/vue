@@ -629,8 +629,16 @@ logo更换，文字转为代码，菜单文字对齐
 6. src\views\ma\sentiment\index.vue
 增加列表框hover样式
 
-
-
+#-------------------- 20201223更新内容 --------------------
+1. src\views\ma\annals\components\writer-info.vue,
+   src\views\ma\courier-station\components\writer-info.vue
+老兵战史，老兵驿站作者信息接口数据部分完善
+2. src\views\ma\courier-station\article.vue
+更改错误组件的引入方式
+3. src\styles\index.scss
+更改文章页作者与发布时间间距
+4. src\views\ma\courier-station\article.vue
+文章页更改作者信息组件引入地址
 
 
 
