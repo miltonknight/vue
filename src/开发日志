@@ -646,6 +646,8 @@ logo更换，文字转为代码，菜单文字对齐
    src\views\ma\culture\storage\index.vue,
    src\views\ma\famous\people\index.vue
 更改el-tab中el-tabs__item的属性样式，此部分为公共属性后续需要整体提出
+2. src\views\ma\homeland\components\laws.vue
+去掉无用占位示例
 
 
 
