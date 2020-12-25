@@ -649,9 +649,51 @@ logo更换，文字转为代码，菜单文字对齐
 2. src\views\ma\homeland\components\laws.vue
 去掉无用占位示例
 
-
-
-
+#-------------------- 20201225更新内容 --------------------
+1. src\components\CommonNav\index.vue
+.header-main 中添加窄屏bug修复
+2. src\components\CommonTip\index.vue
+添加旅游、金融外链
+3. src\views\ma\telecom\index.vue
+添加选号方法，修复右侧表单样式
+4. src\views\ma\jobs\index.vue
+增加联系商家电话弹出提示
+5. src\views\ma\homeland\components\lawyer.vue
+更改循环变量适配接口
+6. src\views\ma\home\components\courier-station.vue
+注释掉组件内无用导航
+7. src\views\ma\courier-station\index.vue, 
+   src\views\ma\annals\index.vue
+调整el-tab样式
+8. src\views\404.vue
+调整提示文本内容
+9. src\layout\ma\home\index.vue
+调整左侧tip安全高度
+10. src\components\Activities\index.vue,
+    src\components\CaseStudies\index.vue,
+    src\components\CommonTip\index.vue,
+    src\views\ma\sentiment\critical-detail.vue,
+    src\views\ma\home\index.vue,
+    src\views\ma\culture\competition\index.vue,
+    src\views\ma\annals\components\focus.vue
+    src\views\ma\courier-station\components\focus.vue
+    src\views\ma\culture\components\focus.vue
+    src\views\ma\famous\enterprise\index.vue
+    src\views\ma\home\components\focus.vue
+    src\views\ma\homeland\components\focus.vue
+“造假”数据
+11. src\styles\index.scss
+修复部分样式bug
+12. src\views\ma\annals\index.vue
+增加抗美援朝分类
+13. src\views\ma\homeland\law-list.vue
+接口对接，列表+搜索
+14. src\views\ma\homeland\lawyer-detail.vue,
+    src\views\ma\homeland\lawyer-list.vue
+接口对接，列表+搜索
+15. src\views\ma\house-moving\detail.vue,
+    src\views\ma\house-moving\index.vue
+调整联系商家按钮的链接，列表=>详情，详情=>弹层
 
 
 
