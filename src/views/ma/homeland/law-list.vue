@@ -123,7 +123,7 @@ export default {
         search_input: "",
         sort_id: 69, // 版块id
         page: 1,
-        limit: 10
+        limit: 12
       },
       law_input: '',
       zwsj: false,
