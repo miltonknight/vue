@@ -5,7 +5,7 @@
       <a href="/#/courier-station/index">查看更多</a>
     </div>
     <div class="list-body img-list-box">
-      <div class="section-head">
+      <!-- <div class="section-head">
         <ul class="section-title">
           <li class="is-active">老营房</li>
           <li>老哨所</li>
@@ -15,7 +15,7 @@
           <li>老连队</li>
           <li>老照片</li>
         </ul>
-      </div>
+      </div> -->
       <a v-for="item in ret" :key="item.article_id" :href="'/#/courier-station/article?id=' + item.article_id" class="img-list">
         <div class="img-list-main">
           <img :src="item.small_img_path" />
