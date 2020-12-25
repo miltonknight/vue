@@ -24,6 +24,12 @@
         </a>
         <h3></h3>
       </el-carousel-item>
+      <el-carousel-item>
+        <a>
+          <img src="http://www.lblbsy.com:2000/test/fake-107.jpg" alt="" width="726px" />
+        </a>
+        <h3></h3>
+      </el-carousel-item>
     </el-carousel>
   </div>
     
