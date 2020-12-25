@@ -19,80 +19,34 @@
               </div>
               <div class="list-body">
                 <div class="list-serach">
-                  <el-input v-model="inputLaw" placeholder="输入您想要查询的法律条文" class="input-with-select">
-                    <el-button slot="append" icon="el-icon-search"></el-button>
+                  <el-input v-model="law_input" placeholder="输入您想要查询的法律条文" class="input-with-select">
+                    <el-button slot="append" icon="el-icon-search" @click="lawSearch"></el-button>
                   </el-input>
                 </div>
 
-                <a class="law-cover" href="/#/homeland/law-detail">
+                <!-- <a class="law-cover" href="/#/homeland/law-detail">
                   <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law-detail">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
-                </a>
-                <a class="law-cover" href="/#/homeland/law/">
-                  <img src="~@/assets/img/law-cover.jpg" />
+                </a> -->
+
+                <a v-for="item in ArticleList.list" :key="item.id" :href="'/#/homeland/law-detail?id=' + item.article_id + '&sort_id=' + item.sort_id" class="law-cover">
+                  <img :src="item.img_path">
                 </a>
 
                 <!-- 暂无数据 -->
                 <div v-show="zwsj" class="zwsj">暂无数据</div>
 
-                <pagination
-                  v-show="total > 0"
-                  background
-                  layout="prev, pager, next"
-                  :total="total"
-                  :page.sync="listQuery.page"
-                  :limit.sync="listQuery.limit"
-                  @pagination="fetchData"
-                />
-                
               </div>
+
+              <pagination
+                v-show="total > 0"
+                background
+                layout="prev, pager, next"
+                :total="total"
+                :page.sync="listQuery.page"
+                :limit.sync="listQuery.limit"
+                @pagination="fetchData"
+              />
+                
             </div>
             <!-- 全部法律end -->
 
@@ -166,10 +120,12 @@ export default {
       list: null,
       listLoading: true,
       listQuery: {
+        search_input: "",
         sort_id: 69, // 版块id
         page: 1,
         limit: 10
       },
+      law_input: '',
       zwsj: false,
       inputLaw: ''
     };
@@ -225,6 +181,10 @@ export default {
           this.listLoading = false;
           console.log(error);
         });
+    },
+    lawSearch() {
+      this.listQuery.search_input = this.law_input;
+      this.fetchData();
     }
   }
 };
