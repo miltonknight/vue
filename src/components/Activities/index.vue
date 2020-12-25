@@ -3,19 +3,21 @@
   <div class="side-main">
     <div class="side-head">
       <h3>
-        <svg-icon icon-class="hdot" class-name="card-panel-icon" />最新活动<a href="">更多活动</a>
+        <svg-icon icon-class="hdot" class-name="card-panel-icon" />最新活动<a href="/#/culture/competition/index">更多活动</a>
       </h3>
     </div>
     <div class="side-body">
       <div class="side-img-box">
-        <div class="box-img">
-          <img src="@/assets/img/side-demo.png" alt="" />
-        </div>
-        <h3>阅遍山河 看世界”老兵摄影大赛</h3>
-        <p>活动时间：10月20日 - 12月20日</p>
-        <i class="badge badge-blue">活动</i>
+        <a href="/#/culture/competition/detail">
+          <div class="box-img">
+            <img src="http://www.lblbsy.com:2020/static/img/competitions-top.c3c6fc73.jpg" alt="" />
+          </div>
+          <h3>《难忘军号声》全国网络歌唱大赛</h3>
+          <p>活动时间：2020年10月 至 2020年12月</p>
+          <i class="badge badge-blue">活动</i>
+        </a>
       </div>
-      <div class="side-img-box">
+      <!-- <div class="side-img-box">
         <div class="box-img">
           <img src="@/assets/img/side-demo2.png" alt="" />
         </div>
@@ -30,7 +32,7 @@
         <h3>全军野战文艺创演活动</h3>
         <p>活动时间：10月20日</p>
         <i class="badge badge-orange">晚会</i>
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- 最新活动end -->

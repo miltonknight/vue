@@ -8,7 +8,7 @@
     <div class="item-main">
       <a class="item-box" href="/#/culture/competition/detail">
         <div class="item-img">
-          <img src="@/assets/img/competitions.jpg" alt="">
+          <img src="http://www.lblbsy.com:2020/static/img/competitions-top.c3c6fc73.jpg" alt="">
         </div>
         <div class="item-data">
           <div class="item-info">
@@ -22,7 +22,7 @@
       </a>
       <a class="item-box" href="/#/culture/competition/detail">
         <div class="item-img">
-          <img src="@/assets/img/competitions.jpg" alt="">
+          <img src="http://www.lblbsy.com:2020/static/img/competitions-top.c3c6fc73.jpg" alt="">
         </div>
         <div class="item-data">
           <div class="item-info">
@@ -36,7 +36,7 @@
       </a>
       <a class="item-box" href="/#/culture/competition/detail">
         <div class="item-img">
-          <img src="@/assets/img/competitions.jpg" alt="">
+          <img src="http://www.lblbsy.com:2020/static/img/competitions-top.c3c6fc73.jpg" alt="">
         </div>
         <div class="item-data">
           <div class="item-info">
@@ -50,7 +50,7 @@
       </a>
       <a class="item-box" href="/#/culture/competition/detail">
         <div class="item-img">
-          <img src="@/assets/img/competitions.jpg" alt="">
+          <img src="http://www.lblbsy.com:2020/static/img/competitions-top.c3c6fc73.jpg" alt="">
         </div>
         <div class="item-data">
           <div class="item-info">
@@ -64,7 +64,7 @@
       </a>
       <a class="item-box" href="/#/culture/competition/detail">
         <div class="item-img">
-          <img src="@/assets/img/competitions.jpg" alt="">
+          <img src="http://www.lblbsy.com:2020/static/img/competitions-top.c3c6fc73.jpg" alt="">
         </div>
         <div class="item-data">
           <div class="item-info">

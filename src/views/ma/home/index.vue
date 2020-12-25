@@ -30,37 +30,37 @@
             <div class="list-main">
               <div class="list-head">
                 <h3>老兵情怀<span>Veteran feelings</span></h3>
-                <a href="/#/ma/sentiment/index">查看更多</a>
+                <a href="/#/sentiment/index">查看更多</a>
               </div>
               <div class="list-body">
-                <a href="" class="img-list slide">
+                <a href="/#/sentiment/critical-detail" class="img-list slide">
                   <div class="img-list-main">
-                    <img src="@/assets/img/list-img2.png" />
-                    <span>守护民族之光 — 老兵大病救助</span>
+                    <img src="@/assets/img/senti-img.jpg" />
+                    <span>老兵老兵网2020年老兵救助第1期</span>
                   </div>
                 </a>
               </div>
               <div class="list-body">
-                <a href="" class="img-list" style="margin-right:6px;">
+                <a href="/#/sentiment/critical-detail" class="img-list" style="margin-right: 12px;">
                   <div class="img-list-main">
-                    <img src="@/assets/img/list-img2.png" />
-                    <span>守护民族之光 — 老兵大病救助</span>
+                    <img src="@/assets/img/fake-1.png" />
+                    <span>[测试数据文章标题]</span>
                   </div>
-                  <p>军营还在，军人不见了。看不见引以为荣的“国防绿”，听不到铿锵有力的军力的军歌声力的军歌声歌声...</p>
+                  <p>测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容...</p>
                 </a>
-                <a href="" class="img-list" style="margin-right:6px;">
+                <a href="/#/sentiment/critical-detail" class="img-list" style="margin-right: 12px;">
                   <div class="img-list-main">
-                    <img src="@/assets/img/list-img2.png" />
-                    <span>守护民族之光 — 老救助</span>
+                    <img src="@/assets/img/fake-2.png" />
+                    <span>[测试数据文章标题]</span>
                   </div>
-                  <p>军营还在，军人不见了。看不见引以为荣的“国防绿”，听不到铿锵有力的军歌力的军歌声力的军歌声声...</p>
+                  <p>测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容...</p>
                 </a>
-                <a href="" class="img-list">
+                <a href="/#/sentiment/critical-detail" class="img-list">
                   <div class="img-list-main">
                     <img src="@/assets/img/list-img2.png" />
-                    <span>守护民族之光 — 老兵大病救助</span>
+                    <span>[测试数据文章标题]</span>
                   </div>
-                  <p>军营还在，军人不见了。看不见引以为荣的“国防绿”，听不到铿锵有力的军歌声力的军歌声力的军歌声...</p>
+                  <p>测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容...</p>
                 </a>
               </div>
             </div>
@@ -106,13 +106,13 @@
               </div>
 
               <div class="list-body culture-list-box">
-                <a href="" class="img-list nonebg" style="margin-right:6px;">
+                <a href="" class="img-list nonebg" style="margin-right: 12px;">
                   <div class="img-list-main">
                     <img src="@/assets/img/9.png" />
                   </div>
                   <p>军旅书法家 王文杰 作品</p>
                 </a>
-                <a href="" class="img-list nonebg" style="margin-right:6px;">
+                <a href="" class="img-list nonebg" style="margin-right: 12px;">
                   <div class="img-list-main">
                     <img src="@/assets/img/9.png" />
                   </div>
@@ -200,7 +200,7 @@
                 <a href="/#/famous/people/index">查看更多</a>
               </div>
               <div class="list-body">
-                <a href="" class="img-list-famous">
+                <a href="" class="img-list-famous" style="margin-right: 13px;">
                   <div class="img-list-main">
                     <img src="@/assets/img/r2.jpg" />
                   </div>
@@ -209,7 +209,7 @@
                   <p>湖北浠水人，1933年1月出生。2017年7月28日，中央军委主席习近平签署命令：授予冷鹏飞</p>
                   <span class="famous-dict"></span>
                 </a>
-                <a href="" class="img-list-famous">
+                <a href="" class="img-list-famous" style="margin-right: 13px;">
                   <div class="img-list-main">
                     <img src="@/assets/img/r1.jpg" />
                   </div>

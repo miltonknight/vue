@@ -10,7 +10,9 @@
     <div class="side-body">
       <div class="side-img-box">
         <div class="box-img">
-          <img src="@/assets/img/side-demo4.png" alt="" />
+          <a href="https://apply.95559.com.cn/personbank/minipro/phcd/index.html#/?channelSign=LNLB&producId=050" target="_blank">
+            <img src="@/assets/img/side-demo4.png" alt="" />
+          </a>
         </div>
         <i class="badge badge-blue">NEW</i>
       </div>

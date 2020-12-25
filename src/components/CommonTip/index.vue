@@ -62,7 +62,7 @@
       </el-menu>
       <a href="" class="tip-link">寻求合作</a>
       <a href="" class="tip-link">我要投稿</a>
-      <a href="/#/temp-upload/article" class="tip-link">临时上传</a>
+      <!-- <a href="/#/temp-upload/article" class="tip-link">临时上传</a> -->
     </div>
   </div>
 </template>
@@ -93,6 +93,9 @@ export default {
     // this.variableStyle();
   },
   methods: {
+    building() {
+      alert("对不起，网站功能正在建设中，先到别处看看吧！");
+    },
     handleSelect(key, keyPath) {
       this.$router.push(key);
       console.log(key, keyPath);
@@ -119,7 +122,7 @@ export default {
 
 <style lang="scss" scoped>
 .tip-main {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 70px;
   width: 130px;

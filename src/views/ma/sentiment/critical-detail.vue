@@ -9,7 +9,7 @@
       <div class="critical-top">
         <img src="@/assets/img/critical-top.jpg" alt="">
         <div class="critical-top-infos">
-          <span>进行中</span>老兵大病救助（第四期）
+          <span>进行中</span>老兵老兵网2020年老兵救助第1期
         </div>
       </div>
       <div class="critical-main">
