@@ -3,7 +3,8 @@
     <div class="lost-pic">
       <img src="~@/assets/img/404.png" alt="" /> 
     </div>
-    <p>对不起，您所访问的页面不在服务区，一会再试试吧！</p>
+    <!-- <p>对不起，您所访问的页面不在服务区，一会再试试吧！</p> -->
+    <p>对不起，网站功能正在建设中，先到别处看看吧！</p>
     <div class="btn">
       <el-button type="primary" round @click="gohome()">回到首页</el-button>
       <el-button type="warning" round @click="lucky()">试试手气</el-button>
