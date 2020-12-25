@@ -204,7 +204,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 /************ tabs */
 .list-head-sub2 {
@@ -230,27 +230,27 @@ export default {
 }
 .list-head-sub2 {
 
-  .el-tabs__header {
+  .el-tabs>>>.el-tabs__header {
     margin: 0;
   }
-  .el-tabs__item {
+  .el-tabs>>>.el-tabs__item {
     width: 102px !important;
     padding: 0 0 !important;
     height: auto !important;
     text-align: center;
     font-size: 16px;
   }
-  .el-tabs__item:hover {
+  .el-tabs>>>.el-tabs__item:hover {
     color: #e08714;
   }  
-  .el-tabs__item.is-active {
+  .el-tabs>>>.el-tabs__item.is-active {
     color: #e08714;
   }
-  .el-tabs__active-bar {
+  .el-tabs>>>.el-tabs__active-bar {
     background-color: #e08714;
     height: 3px;
   }
-  .el-tabs__item:hover {
+  .el-tabs>>>.el-tabs__item:hover {
     color: #e08714;
   }
   // .el-tabs__nav-wrap::after {
