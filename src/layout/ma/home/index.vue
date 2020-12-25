@@ -117,7 +117,7 @@ export default {
       var rollHeight = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset;
       // console.log("rollHeight:::", rollHeight);
       // 可用高度 = 内容高度 -（头50+脚300）- tip高度（box+mgT） - 安全高度 - 滚动高度
-      var variableHeight = contentHeight - 350 - 690 - 200 - rollHeight; 
+      var variableHeight = contentHeight - 350 - 690 - 180 - rollHeight; 
       // console.log("variableHeight:::", variableHeight);
       this.tipValue = variableHeight;
     } 
