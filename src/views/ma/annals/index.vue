@@ -33,6 +33,10 @@
                         <img src="@/assets/img/annals1_3.png" />
                         <span>解放战争</span>
                       </div>
+                      <div class="tab-boxes" @click="searchBySort(15)">
+                        <img src="@/assets/img/annals1_9.png" />
+                        <span>抗美援朝</span>
+                      </div>
                       <div class="tab-boxes" @click="searchBySort(17)">
                         <img src="@/assets/img/annals1_4.png" />
                         <span>中印边境<br />自卫反击战</span>
@@ -318,7 +322,7 @@ export default {
   .el-tabs__content {
   
     .tab-boxes {
-      width: 172px;
+      width: 233px;
       height: 85px;
       margin: 0 10px 10px 0;
       position: relative;
@@ -326,7 +330,7 @@ export default {
       cursor: pointer;
 
       img {
-        width: 172px;
+        width: 233px;
         height: 85px;
       }
 
@@ -347,7 +351,7 @@ export default {
         text-align: center;
       }
     }
-    .tab-boxes:nth-child(4n) {
+    .tab-boxes:nth-child(3n) {
       margin-right: 0;
     }
   }
