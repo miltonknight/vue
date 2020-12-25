@@ -8,51 +8,51 @@
       <div class="telecom-head">选号中心</div>
       <div class="telecom-numbody">
         <div class="number-box">
-          <div class="nums is-active">
+          <div class="nums is-active" @click="numberSelect">
             <p><span>靓</span>176 42080047</p>
             <span>预存: 500元</span>
           </div>
-          <div class="nums">
+          <div class="nums" @click="numberSelect">
             <p><span>靓</span>176 42080047</p>
             <span>预存: 500元</span>
           </div>
-          <div class="nums">
+          <div class="nums" @click="numberSelect">
             <p><span>靓</span>176 42080047</p>
             <span>预存: 500元</span>
           </div>
-          <div class="nums">
+          <div class="nums" @click="numberSelect">
             <p><span>靓</span>176 42080047</p>
             <span>预存: 500元</span>
           </div>
-          <div class="nums">
+          <div class="nums" @click="numberSelect">
             <p><span>靓</span>176 42080047</p>
             <span>预存: 500元</span>
           </div>
-          <div class="nums">
+          <div class="nums" @click="numberSelect">
             <p><span>靓</span>176 42080047</p>
             <span>预存: 500元</span>
           </div>
-          <div class="nums">
+          <div class="nums" @click="numberSelect">
             <p><span>靓</span>176 42080047</p>
             <span>预存: 500元</span>
           </div>
-          <div class="nums">
+          <div class="nums" @click="numberSelect">
             <p><span>靓</span>176 42080047</p>
             <span>预存: 500元</span>
           </div>
-          <div class="nums">
+          <div class="nums" @click="numberSelect">
             <p><span>靓</span>176 42080047</p>
             <span>预存: 500元</span>
           </div>
-          <div class="nums">
+          <div class="nums" @click="numberSelect">
             <p><span>靓</span>176 42080047</p>
             <span>预存: 500元</span>
           </div>
-          <div class="nums">
+          <div class="nums" @click="numberSelect">
             <p><span>靓</span>176 42080047</p>
             <span>预存: 500元</span>
           </div>
-          <div class="nums">
+          <div class="nums" @click="numberSelect">
             <p><span>靓</span>176 42080047</p>
             <span>预存: 500元</span>
           </div>
@@ -121,6 +121,20 @@
         <p>中国联通各项业务用户可以通过联通实体营业厅、网上营业厅、手机营业厅及10010客服电话、短信营业厅、微信公众号等多种渠道咨询、办理。</p>
       </div>
     </div>
+
+    <el-dialog
+      :title="'老兵通讯提醒您'"
+      :visible.sync="dialogVisible"
+      :show-close="false"
+      :lock-scroll="false"
+      width="500px"
+    >
+      <span style="font-size:24px; color:#e08714; line-height:1.5">您的信息已提交，稍后会有联通公司的人与您确认相关信息，请保持手机畅通</span>
+      <span slot="footer" class="dialog-footer">
+        <!-- <el-button>关 闭</el-button> -->
+        <el-button style="background-color:#e08714; border-color:#e08714;" type="primary" @click="dialogVisible = false">关闭</el-button>
+      </span>
+    </el-dialog>
     
   </el-row>
 </template>
@@ -161,7 +175,8 @@ export default {
         id: '',
         address: '',
         rules: ''
-      }
+      },
+      dialogVisible: false
     };
   },
   computed: { 
@@ -219,9 +234,21 @@ export default {
     },
     onSubmit() {
       console.log('submit!');
+      this.dialogVisible = true;
     },
-    numberSelect() {
-
+    numberSelect(e) {
+      var obj = document.getElementsByClassName("is-active");
+      console.log(obj[0].classList);
+      obj[0].classList.remove("is-active")
+      // obj.classList.replace("is-active")
+      // for (var i in obj) {
+      //   console.log("this is ", obj[i].classList);
+      //   if (obj[i].classList.indexOf("is-active")) {
+      //     obj[i].classList.remove("is-active");
+      //   }
+      // }
+      // add class
+      e.currentTarget.classList.add("is-active");
     }
   }
 };
@@ -302,9 +329,9 @@ export default {
       .el-form-item {
         margin-bottom: 0;
       }
-      .el-form--label-top .el-form-item__label {
-        padding: 0 0 7px;
-        line-height: 30px;
+      .el-form--label-top>>>.el-form-item__label {
+        padding: 0 0 3px !important;
+        line-height: 40px;
       }
       .el-input__inner {
         height: 35px;
@@ -322,9 +349,6 @@ export default {
       }
       .el-button {
         width: 100%;
-      }
-      .el-form--label-top .el-form-item__label {
-        padding: 0 0 3px;
       }
     }
   }
