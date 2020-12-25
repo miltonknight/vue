@@ -35,11 +35,11 @@
                     <img :src="ArticleDetail.img_path" alt="">
                   </div>
                   <div class="writer-info">
-                    张益达<span>特邀作者</span>
+                    {{ ArticleDetail.title }}<span>特邀律师</span>
                   </div>
-                  <p class="writer-intro">北京市炜衡（沈阳）律师事务所</p>
+                  <!-- <p class="writer-intro">北京市炜衡（沈阳）律师事务所</p> -->
                 </div>  
-                <p class="writer-corp">北京市很大的律师事务所 高级合伙人</p>
+                <p class="writer-corp">{{ ArticleDetail.introduction }}</p>
               </div>
               <div class="more">咨询客服</div>
             </div>
@@ -47,7 +47,7 @@
 
             <!-- 律所信息 -->
             <div class="side-main">
-              <img src="~@/assets/img/corp.jpg" alt="">
+              <!-- <img src="~@/assets/img/corp.jpg" alt=""> -->
             </div>
             <!-- 律所信息 -->
 

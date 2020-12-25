@@ -20,7 +20,7 @@
               <div class="list-body">
 
                 <a v-for="item in ArticleList.list" :key="item.id" class="lawyer-box" :href="'/#/homeland/lawyer-detail?id=' + item.article_id">
-                  <img :src="item.img" alt="" />
+                  <img :src="item.img_path" alt="" />
                   <div class="lawyer-info">
                     <h3>{{ item.name }}</h3>
                     <p>{{ item.introduction }}</p>
@@ -106,7 +106,7 @@ export default {
   data() {
     return {
        // 文章列表接口地址、接收数组
-      url: LaobingUrl.lawyer_list,
+      url: LaobingUrl.modular_article_list,
       ArticleList: [],
       // Pagination
       total: 0,
@@ -158,7 +158,7 @@ export default {
     },
     fetchData() {
       this.listLoading = true;
-      this.postDataFromUI(LaobingUrl.lawyer_list, this.listQuery)
+      this.postDataFromUI(this.url, this.listQuery)
         .then(response => {
           this.ArticleList = response;
           this.total = response.total;
@@ -206,6 +206,8 @@ export default {
       font-size: 12px;
       line-height: 1.5;
       margin: 0;
+      height: 55px;
+      overflow: hidden;
     }
   }
 }
