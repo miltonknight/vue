@@ -15,7 +15,7 @@
       </v-distpicker>
     </div>
     <div class="job-list">
-      <div class="job-box">
+      <div class="job-box" @click="handleCall">
         <a class="box-info" href="/#/ma/jobs/job-detail">
           <h3>苏家屯区 | 二手车金融销售代表</h3>
           <div class="box-info-money"><span>6000-9000</span>元/月</div>
@@ -33,7 +33,7 @@
         </div>
       </div>
 
-      <div class="job-box">
+      <div class="job-box" @click="handleCall">
         <a class="box-info" href="/#/ma/jobs/job-detail">
           <h3>苏家屯区 | 二手车金融销售代表</h3>
           <div class="box-info-money"><span>6000-9000</span>元/月</div>
@@ -51,7 +51,7 @@
         </div>
       </div>
 
-      <div class="job-box">
+      <div class="job-box" @click="handleCall">
         <a class="box-info" href="/#/ma/jobs/job-detail">
           <h3>苏家屯区 | 二手车金融销售代表</h3>
           <div class="box-info-money"><span>6000-9000</span>元/月</div>
@@ -69,7 +69,7 @@
         </div>
       </div>
 
-      <div class="job-box">
+      <div class="job-box" @click="handleCall">
         <a class="box-info" href="/#/ma/jobs/job-detail">
           <h3>苏家屯区 | 二手车金融销售代表</h3>
           <div class="box-info-money"><span>6000-9000</span>元/月</div>
@@ -87,7 +87,7 @@
         </div>
       </div>
 
-      <div class="job-box">
+      <div class="job-box" @click="handleCall">
         <a class="box-info" href="/#/ma/jobs/job-detail">
           <h3>苏家屯区 | 二手车金融销售代表</h3>
           <div class="box-info-money"><span>6000-9000</span>元/月</div>
@@ -105,7 +105,7 @@
         </div>
       </div>
 
-      <div class="job-box">
+      <div class="job-box" @click="handleCall">
         <a class="box-info" href="/#/ma/jobs/job-detail">
           <h3>苏家屯区 | 二手车金融销售代表</h3>
           <div class="box-info-money"><span>6000-9000</span>元/月</div>
@@ -124,6 +124,19 @@
       </div>
         
     </div>
+    <el-dialog
+      :title="'商家：XXXXX的联系方式为：'"
+      :visible.sync="dialogVisible"
+      :show-close="false"
+      :lock-scroll="false"
+      width="500px"
+    >
+      <span style="font-size:30px; color:#e08714;">固定电话：4008208820</span>
+      <span slot="footer" class="dialog-footer">
+        <!-- <el-button>关 闭</el-button> -->
+        <el-button style="background-color:#e08714; border-color:#e08714;" type="primary" @click="dialogVisible = false">关闭</el-button>
+      </span>
+    </el-dialog>
     
   </el-row>
 </template>
@@ -161,7 +174,8 @@ export default {
       address: {
         "province": "辽宁省",
         "city": "沈阳市"
-      }
+      },
+      dialogVisible: false
     };
   },
   computed: { 
@@ -237,6 +251,9 @@ export default {
     onChangeCity(a) {
       console.log(a)    
       // this.txt2 = a.value + '-'    
+    },
+    handleCall() {
+      this.dialogVisible = true;
     }
   }
 };
