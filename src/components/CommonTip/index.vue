@@ -29,7 +29,9 @@
           <span><svg-icon icon-class="tip-medical-treatment" class-name="card-panel-icon" />医<i></i>疗</span>
         </el-menu-item>
         <el-menu-item index="3">
-          <span><svg-icon icon-class="tip-travel" class-name="card-panel-icon" />旅<i></i>游</span>
+          <a href="https://testlb.sweetour.com/Index" target="_blank">
+            <span><svg-icon icon-class="tip-travel" class-name="card-panel-icon" />旅<i></i>游</span>
+          </a>
         </el-menu-item>
         <el-menu-item index="4">
           <span><svg-icon icon-class="tip-catering" class-name="card-panel-icon" />老军号</span>
@@ -45,7 +47,9 @@
           </a>
         </el-menu-item>
         <el-menu-item index="7">
-          <span><svg-icon icon-class="tip-finance" class-name="card-panel-icon" />金<i></i>融</span>
+          <a href="https://apply.95559.com.cn/personbank/minipro/phcd/index.html#/?channelSign=LNLB&producId=050" target="_blank">
+            <span><svg-icon icon-class="tip-finance" class-name="card-panel-icon" />金<i></i>融</span>
+          </a>
         </el-menu-item>
         <el-menu-item index="8">
           <span><svg-icon icon-class="tip-refueling" class-name="card-panel-icon" />加<i></i>油</span>
