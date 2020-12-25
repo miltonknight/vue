@@ -14,8 +14,10 @@
                 <h3>老兵名企展播<span>The Veteran's Company</span></h3>
               </div>
               <div class="list-body">
+
                 <!-- components:components/focus -->
-                <famous-enterprise-focus />
+                <!-- <famous-enterprise-focus /> -->
+
                 <!-- 列表循环 -->
                 <!-- <a v-for="item in ArticleList.list" :key="item.id" :href="'/courier-station/article?id=' + item.soldier_station_id" class="list-item"> -->
                 <a v-for="item in ArticleList.list" :key="item.id" :href="'/#/famous/enterprise/article?id=' + item.article_id + '&sort_id=' + item.sort_id" class="list-item">

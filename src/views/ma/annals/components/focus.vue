@@ -2,13 +2,19 @@
  
   <div class="block" style="margin-bottom: 40px;">
     <el-carousel height="300px">
-      <el-carousel-item v-for="item in ret" :key="item.id">
+      <!-- <el-carousel-item v-for="item in ret" :key="item.id"> -->
         <!-- <a :href="item.link" :id="item.soldier_station_id"> -->
         <!-- 实现href传参，soldier_station_id写在type后方   -->
-        <a :href="'/#/annals/article?id=' + item.article_id">
+        <!-- <a :href="'/#/annals/article?id=' + item.article_id">
           <img :src="item.img_path" width="726px" />
         </a>
         <h3>{{ item.title }}</h3>
+      </el-carousel-item> -->
+      <el-carousel-item>
+        <a>
+          <img src="http://www.lblbsy.com:2000/test/fake-104.jpg" alt="" width="726px" />
+        </a>
+        <h3></h3>
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -17,7 +23,7 @@
 
 <script>
 
-console.log("@/views/ma/annals/components/focus is loaded~~~~~~~~~~~~~~");
+console.log("annals/components: focus is loaded");
 
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";

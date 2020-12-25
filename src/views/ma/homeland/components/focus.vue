@@ -1,7 +1,7 @@
 <template>
   <div class="block" style="margin-bottom: 40px;">
     <el-carousel height="300px">
-      <el-carousel-item v-for="item in ret" :key="item.title">
+      <!-- <el-carousel-item v-for="item in ret" :key="item.title">
         <a :href="'/#/' + item.link">
           <img
             :src="item.img_path"
@@ -10,6 +10,12 @@
           />
         </a>
         <h3>{{ item.title }}</h3>
+      </el-carousel-item> -->
+      <el-carousel-item>
+        <a>
+          <img src="http://www.lblbsy.com:2000/test/fake-106.jpg" alt="" width="726px" />
+        </a>
+        <h3></h3>
       </el-carousel-item>
     </el-carousel>
   </div>
