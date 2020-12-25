@@ -22,7 +22,7 @@
               <p>服务承诺：服务保障计划</p>
 
               <div class="corp-apply">
-                <el-button type="el-button el-button--warning">
+                <el-button type="el-button el-button--warning" @click="handleCall">
                   <svg-icon icon-class="tel" class-name="card-panel-icon" /> 联系商家
                 </el-button>
               </div>
@@ -58,6 +58,19 @@
         </div>
       </div>
     </div>
+    <el-dialog
+      :title="'商家：XXXXX的联系方式为：'"
+      :visible.sync="dialogVisible"
+      :show-close="false"
+      :lock-scroll="false"
+      width="500px"
+    >
+      <span style="font-size:30px; color:#e08714;">固定电话：4008208820</span>
+      <span slot="footer" class="dialog-footer">
+        <!-- <el-button>关 闭</el-button> -->
+        <el-button style="background-color:#e08714; border-color:#e08714;" type="primary" @click="dialogVisible = false">关闭</el-button>
+      </span>
+    </el-dialog>
   </el-row>
 </template>
 
@@ -79,7 +92,8 @@ export default {
       url: LaobingUrl.modular_articles,
       ArticleDetail: [],
       // like flag
-      thumbup: true
+      thumbup: true,
+      dialogVisible: false
     };
   },
   computed: {
@@ -130,7 +144,11 @@ export default {
         .then(response => {
           this.ArticleDetail = response;
         });
+    },
+    handleCall() {
+      this.dialogVisible = true;
     }
+
   }
 };
 </script>

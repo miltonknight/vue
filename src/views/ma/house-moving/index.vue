@@ -46,9 +46,11 @@
             <i class="el-icon-time"></i>2020-10-26
           </div>
           <div class="corp-btn">
-            <el-button type="el-button el-button--warning">
-              <svg-icon icon-class="tel" class-name="card-panel-icon" />联系商家
-            </el-button>
+            <a href="/#/house-moving/detail">
+              <el-button type="el-button el-button--warning">
+                <svg-icon icon-class="tel" class-name="card-panel-icon" />联系商家
+              </el-button>
+            </a>
           </div>
         </div>
       </div>
@@ -65,9 +67,11 @@
             <i class="el-icon-time"></i>2020-10-26
           </div>
           <div class="corp-btn">
-            <el-button type="el-button el-button--warning">
-              <svg-icon icon-class="tel" class-name="card-panel-icon" />联系商家
-            </el-button>
+            <a href="/#/house-moving/detail">
+              <el-button type="el-button el-button--warning">
+                <svg-icon icon-class="tel" class-name="card-panel-icon" />联系商家
+              </el-button>
+            </a>
           </div>
         </div>
       </div>
@@ -84,9 +88,11 @@
             <i class="el-icon-time"></i>2020-10-26
           </div>
           <div class="corp-btn">
-            <el-button type="el-button el-button--warning">
-              <svg-icon icon-class="tel" class-name="card-panel-icon" />联系商家
-            </el-button>
+            <a href="/#/house-moving/detail">
+              <el-button type="el-button el-button--warning">
+                <svg-icon icon-class="tel" class-name="card-panel-icon" />联系商家
+              </el-button>
+            </a>
           </div>
         </div>
       </div>
@@ -103,9 +109,11 @@
             <i class="el-icon-time"></i>2020-10-26
           </div>
           <div class="corp-btn">
-            <el-button type="el-button el-button--warning">
-              <svg-icon icon-class="tel" class-name="card-panel-icon" />联系商家
-            </el-button>
+            <a href="/#/house-moving/detail">
+              <el-button type="el-button el-button--warning">
+                <svg-icon icon-class="tel" class-name="card-panel-icon" />联系商家
+              </el-button>
+            </a>
           </div>
         </div>
       </div>
@@ -122,9 +130,11 @@
             <i class="el-icon-time"></i>2020-10-26
           </div>
           <div class="corp-btn">
-            <el-button type="el-button el-button--warning">
-              <svg-icon icon-class="tel" class-name="card-panel-icon" />联系商家
-            </el-button>
+            <a href="/#/house-moving/detail">
+              <el-button type="el-button el-button--warning">
+                <svg-icon icon-class="tel" class-name="card-panel-icon" />联系商家
+              </el-button>
+            </a>
           </div>
         </div>
       </div>
@@ -141,9 +151,11 @@
             <i class="el-icon-time"></i>2020-10-26
           </div>
           <div class="corp-btn">
-            <el-button type="el-button el-button--warning">
-              <svg-icon icon-class="tel" class-name="card-panel-icon" />联系商家
-            </el-button>
+            <a href="/#/house-moving/detail">
+              <el-button type="el-button el-button--warning">
+                <svg-icon icon-class="tel" class-name="card-panel-icon" />联系商家
+              </el-button>
+            </a>
           </div>
         </div>
       </div>
@@ -160,9 +172,11 @@
             <i class="el-icon-time"></i>2020-10-26
           </div>
           <div class="corp-btn">
-            <el-button type="el-button el-button--warning">
-              <svg-icon icon-class="tel" class-name="card-panel-icon" />联系商家
-            </el-button>
+            <a href="/#/house-moving/detail">
+              <el-button type="el-button el-button--warning">
+                <svg-icon icon-class="tel" class-name="card-panel-icon" />联系商家
+              </el-button>
+            </a>
           </div>
         </div>
       </div>
