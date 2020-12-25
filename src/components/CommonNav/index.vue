@@ -177,6 +177,7 @@ export default {
   background-color: #3b3b3b;
   position: fixed;
   z-index: 99;
+  padding: 0 195px; /* narrow screen bug fixed */
 
   .header-container {
     -webkit-box-orient: vertical;
