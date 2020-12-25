@@ -7,8 +7,8 @@
     </div>
     <div class="list-body">
       
-      <a v-for="item in ret" :key="item.id" class="lawyer-box" :href="'/#/homeland/lawyer-detail?id=' + item.article_id">
-        <img :src="item.img" alt="" />
+      <a v-for="item in ret.list" :key="item.id" class="lawyer-box" :href="'/#/homeland/lawyer-detail?id=' + item.article_id">
+        <img :src="item.img_path" alt="" />
         <div class="lawyer-info">
           <h3>{{ item.name }}</h3>
           <p>{{ item.introduction }}</p>
@@ -33,7 +33,8 @@ export default {
     return {
       // 优惠信息接收数组
       ret: [],
-      url: LaobingUrl.lawyer_index_list
+      // url: LaobingUrl.lawyer_index_list
+      url: LaobingUrl.modular_article_list
     }
   },
   computed: {
@@ -69,7 +70,9 @@ export default {
     },
     fetchData() {
       var params = {
-        
+        sort_id: 71,
+        page: 1,
+        limit: 8
       };
       this.postDataFromUI(this.url, params)
         .then(response => {
@@ -112,6 +115,8 @@ export default {
       font-size: 12px;
       line-height: 1.5;
       margin: 0;
+      height: 55px;
+      overflow: hidden;
     }
   }
 }
