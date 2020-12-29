@@ -4,7 +4,7 @@ import Router from "vue-router";
 Vue.use(Router);
 
 /* Layout */
-// import Layout from "@/layout";
+import Layout from "@/layout";
 import MaLayout from "@/layout/ma/home/index";
 import MaLayout404 from "@/layout/ma/404";
 
@@ -77,21 +77,36 @@ export const constantRoutes = [
     ]
   },
 
-  // {
-  //   path: "/admin",
-  //   redirect: "/admin/dashboard",
-  //   name: "admin",
-  //   meta: { title: "数据中心", icon: "user" },
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: "/admin/dashboard",
-  //       name: "Dashboard",
-  //       component: () => import("@/views/dashboard/index"),
-  //       meta: { title: "数据中心", icon: "dashboard" }
-  //     }
-  //   ]
-  // },
+  {
+    path: "/admin",
+    redirect: "/admin/dashboard",
+    name: "admin",
+    meta: { title: "数据中心", icon: "user" },
+    component: Layout,
+    children: [
+      {
+        path: "/admin/dashboard",
+        name: "Dashboard",
+        component: () => import("@/views/dashboard/index"),
+        meta: { title: "数据中心", icon: "dashboard" }
+      }
+    ]
+  },
+  {
+    path: "/chart",
+    redirect: "/chart/index",
+    name: "Chart",
+    meta: { title: "图表示例", icon: "user" },
+    component: Layout,
+    children: [
+      {
+        path: "/chart/index",
+        name: "Charts",
+        component: () => import("@/views/chart/index"),
+        meta: { title: "数表中心", icon: "dashboard" }
+      }
+    ]
+  },
   // URL for new pages edited by Ma
   {
     path: "/ma",
