@@ -50,6 +50,9 @@
           <a href="https://apply.95559.com.cn/personbank/minipro/phcd/index.html#/?channelSign=LNLB&producId=050" target="_blank">
             <span><svg-icon icon-class="tip-finance" class-name="card-panel-icon" />金<i></i>融</span>
           </a>
+          <!-- <el-link href="https://apply.95559.com.cn/personbank/minipro/phcd/index.html#/?channelSign=LNLB&producId=050" target="_blank">
+            <span><svg-icon icon-class="tip-finance" class-name="card-panel-icon" />金<i></i>融</span>
+          </el-link> -->
         </el-menu-item>
         <el-menu-item index="8">
           <span><svg-icon icon-class="tip-refueling" class-name="card-panel-icon" />加<i></i>油</span>
