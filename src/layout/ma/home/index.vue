@@ -1,7 +1,9 @@
 <template>
   <div :class="classObj" class="app-wrapper" @mousewheel="scrollEvent">
     <div class="web-container">
-      <div :class="{ 'fixed-header': fixedHeader }" />
+      <!-- <div :class="{ 'fixed-header': fixedHeader }">
+         <div class="asHead2"></div>
+      </div> -->
 
       <section class="app-main">
         <!--transition name="fade-transform" mode="out-in">
@@ -9,9 +11,11 @@
         </transition-->
         <!-- common nav -->
         <common-nav />
+        <!-- <common-nav-pic :class="newPst" /> -->
 
         <!-- main content layout -->
         <div class="main-wrapper">
+
           <!-- main content box -->
           <div class="main-box">
 
@@ -38,13 +42,20 @@
 console.log("Layout：@/home/index is loaded");
 // import ResizeMixin from "../../mixin/ResizeHandler";
 import CommonNav from "@/components/CommonNav";
+// import CommonNavPic from "@/components/CommonNav/index2";
 import CommonFooter from "@/components/CommonFooter";
 import CommonTip from "@/components/CommonTip";
 import BackTop from "@/components/BackTop"
 
 export default {
   name: "MaLayout",
-  components: { CommonNav, CommonFooter, CommonTip, BackTop },
+  components: { 
+    CommonNav, 
+    // CommonNavPic,
+    CommonFooter, 
+    CommonTip, 
+    BackTop
+  },
   data() {
     return {
       activeIndex: "1",
@@ -54,6 +65,7 @@ export default {
       //   top: ''
       // }
       tipValue: 0
+      // newPst: ''
     };
   },
   // mixins: [ResizeMixin],
@@ -116,10 +128,17 @@ export default {
       // 页面滚动高度
       var rollHeight = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset;
       // console.log("rollHeight:::", rollHeight);
-      // 可用高度 = 内容高度 -（头50+脚300）- tip高度（box+mgT） - 安全高度 - 滚动高度
-      var variableHeight = contentHeight - 350 - 690 - 170 - rollHeight; 
-      // console.log("variableHeight:::", variableHeight);
-      this.tipValue = variableHeight;
+      // 可用高度 = 内容高度 -（头50+脚300）- tip高度（box+mgT） - 安全高度 - 滚动高度 
+      // 头部新增230图片高
+      // if (rollHeight > 230) {
+        var variableHeight = contentHeight - 350 - 230 - 690 - 0 - rollHeight; 
+        // console.log("variableHeight:::", variableHeight);
+        this.tipValue = variableHeight;
+        // this.newPst = 'fixhead-move'
+      // }
+      // else {
+      //   this.newPst = 'fixhead-still'
+      // }
     } 
   }
 };
@@ -230,5 +249,4 @@ export default {
     }
   }
 }
-
 </style>
