@@ -24,7 +24,7 @@
 
           <a class="senti-box">
             <div class="senti-img">
-              <img src="@/assets/img/senti-img.jpg" alt="">
+              <img src="@/assets/img/jz1.jpg" alt="">
             </div>
             <div class="senti-data">
               <div class="senti-info">
@@ -38,7 +38,36 @@
           </a>
           <a class="senti-box">
             <div class="senti-img">
-              <img src="@/assets/img/senti-img.jpg" alt="">
+              <img src="@/assets/img/jz2.jpg" alt="">
+            </div>
+            <div class="senti-data">
+              <div class="senti-info">
+                <h3>《难忘军号声》— 老兵老兵网2020年老兵救助第N期</h3>
+                <p>这是甲子光年的年度最重磅峰会，旨在站在当下时间节点，围绕中国科技产业化、产业科技化发表出趋势判断，传达思考和观点。</p>
+              </div>
+              <div class="senti-status">
+                <span>进行中</span>2020-09-30  至  2020-09-30
+              </div>
+            </div>
+          </a>
+
+          <a class="senti-box">
+            <div class="senti-img">
+              <img src="@/assets/img/jz3.jpg" alt="">
+            </div>
+            <div class="senti-data">
+              <div class="senti-info">
+                <h3>《难忘军号声》— 老兵老兵网2020年老兵救助第N期</h3>
+                <p>这是甲子光年的年度最重磅峰会，旨在站在当下时间节点，围绕中国科技产业化、产业科技化发表出趋势判断，传达思考和观点。</p>
+              </div>
+              <div class="senti-status">
+                <span class="end">已结束</span>2020-09-30  至  2020-09-30
+              </div>
+            </div>
+          </a>
+          <a class="senti-box">
+            <div class="senti-img">
+              <img src="@/assets/img/jz4.jpg" alt="">
             </div>
             <div class="senti-data">
               <div class="senti-info">
@@ -67,7 +96,7 @@
           </a>
           <a class="senti-box">
             <div class="senti-img">
-              <img src="@/assets/img/senti-img.jpg" alt="">
+              <img src="@/assets/img/jz3.jpg" alt="">
             </div>
             <div class="senti-data">
               <div class="senti-info">
@@ -82,36 +111,7 @@
 
           <a class="senti-box">
             <div class="senti-img">
-              <img src="@/assets/img/senti-img.jpg" alt="">
-            </div>
-            <div class="senti-data">
-              <div class="senti-info">
-                <h3>《难忘军号声》— 老兵老兵网2020年老兵救助第N期</h3>
-                <p>这是甲子光年的年度最重磅峰会，旨在站在当下时间节点，围绕中国科技产业化、产业科技化发表出趋势判断，传达思考和观点。</p>
-              </div>
-              <div class="senti-status">
-                <span class="end">已结束</span>2020-09-30  至  2020-09-30
-              </div>
-            </div>
-          </a>
-          <a class="senti-box">
-            <div class="senti-img">
-              <img src="@/assets/img/senti-img.jpg" alt="">
-            </div>
-            <div class="senti-data">
-              <div class="senti-info">
-                <h3>《难忘军号声》— 老兵老兵网2020年老兵救助第N期</h3>
-                <p>这是甲子光年的年度最重磅峰会，旨在站在当下时间节点，围绕中国科技产业化、产业科技化发表出趋势判断，传达思考和观点。</p>
-              </div>
-              <div class="senti-status">
-                <span>进行中</span>2020-09-30  至  2020-09-30
-              </div>
-            </div>
-          </a>
-
-          <a class="senti-box">
-            <div class="senti-img">
-              <img src="@/assets/img/senti-img.jpg" alt="">
+              <img src="@/assets/img/jz2.jpg" alt="">
             </div>
             <div class="senti-data">
               <div class="senti-info">
@@ -144,7 +144,7 @@
 
           <a class="senti-box">
             <div class="senti-img">
-              <img src="@/assets/img/senti-img2.jpg" alt="">
+              <img src="@/assets/img/ge1.jpg" alt="">
             </div>
             <div class="senti-data">
               <div class="senti-info">
@@ -158,7 +158,36 @@
           </a>
           <a class="senti-box">
             <div class="senti-img">
-              <img src="@/assets/img/senti-img2.jpg" alt="">
+              <img src="@/assets/img/ge2.jpg" alt="">
+            </div>
+            <div class="senti-data">
+              <div class="senti-info">
+                <h3>《幸福中国一起走》— 老兵老兵网2020年老兵救助活动</h3>
+                <p>这是甲子光年的年度最重磅峰会，旨在站在当下时间节点，围绕中国科技产业化、产业科技化发表出趋势判断，传达思考和观点。</p>
+              </div>
+              <div class="senti-status">
+                <span>进行中</span>2020-09-30  至  2020-09-30
+              </div>
+            </div>
+          </a>
+
+          <a class="senti-box">
+            <div class="senti-img">
+              <img src="@/assets/img/ge2.jpg" alt="">
+            </div>
+            <div class="senti-data">
+              <div class="senti-info">
+                <h3>《幸福中国一起走》— 老兵老兵网2020年老兵救助活动</h3>
+                <p>这是甲子光年的年度最重磅峰会，旨在站在当下时间节点，围绕中国科技产业化、产业科技化发表出趋势判断，传达思考和观点。</p>
+              </div>
+              <div class="senti-status">
+                <span class="end">已结束</span>2020-09-30  至  2020-09-30
+              </div>
+            </div>
+          </a>
+          <a class="senti-box">
+            <div class="senti-img">
+              <img src="@/assets/img/ge1.jpg" alt="">
             </div>
             <div class="senti-data">
               <div class="senti-info">
@@ -187,7 +216,7 @@
           </a>
           <a class="senti-box">
             <div class="senti-img">
-              <img src="@/assets/img/senti-img2.jpg" alt="">
+              <img src="@/assets/img/ge1.jpg" alt="">
             </div>
             <div class="senti-data">
               <div class="senti-info">
@@ -202,36 +231,7 @@
 
           <a class="senti-box">
             <div class="senti-img">
-              <img src="@/assets/img/senti-img2.jpg" alt="">
-            </div>
-            <div class="senti-data">
-              <div class="senti-info">
-                <h3>《幸福中国一起走》— 老兵老兵网2020年老兵救助活动</h3>
-                <p>这是甲子光年的年度最重磅峰会，旨在站在当下时间节点，围绕中国科技产业化、产业科技化发表出趋势判断，传达思考和观点。</p>
-              </div>
-              <div class="senti-status">
-                <span class="end">已结束</span>2020-09-30  至  2020-09-30
-              </div>
-            </div>
-          </a>
-          <a class="senti-box">
-            <div class="senti-img">
-              <img src="@/assets/img/senti-img2.jpg" alt="">
-            </div>
-            <div class="senti-data">
-              <div class="senti-info">
-                <h3>《幸福中国一起走》— 老兵老兵网2020年老兵救助活动</h3>
-                <p>这是甲子光年的年度最重磅峰会，旨在站在当下时间节点，围绕中国科技产业化、产业科技化发表出趋势判断，传达思考和观点。</p>
-              </div>
-              <div class="senti-status">
-                <span>进行中</span>2020-09-30  至  2020-09-30
-              </div>
-            </div>
-          </a>
-
-          <a class="senti-box">
-            <div class="senti-img">
-              <img src="@/assets/img/senti-img2.jpg" alt="">
+              <img src="@/assets/img/ge2.jpg" alt="">
             </div>
             <div class="senti-data">
               <div class="senti-info">
