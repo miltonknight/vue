@@ -147,7 +147,7 @@ console.log("Views: /jobs/index is loaded");
 import { postData } from "@/api/common";
 import { LaobingUrl } from "@/api/laobing_url";
 import { mapGetters } from "vuex";
-import VDistpicker from 'v-distpicker'
+import VDistpicker from 'v-distpicker';
 
 export default {
   // name: 'MaHomeHeader',
