@@ -7,10 +7,10 @@
       label-width="100px"
       class="demo-ruleForm"
     >
-      <el-form-item label="头像" prop="avatar">
+      <!-- <el-form-item label="头像" prop="avatar">
         <el-upload
           class="avatar-uploader"
-          action="https://jsonplaceholder.typicode.com/posts/"
+          action="http://192.168.110.170:8181/uploads/avatar"
           :show-file-list="false"
           :on-success="handleAvatarSuccess"
           :before-upload="beforeAvatarUpload"
@@ -22,33 +22,56 @@
           />
           <i v-else class="el-icon-plus avatar-uploader-icon"></i>
         </el-upload>
+      </el-form-item> -->
+
+      <el-form-item label="头像" prop="avatar">
+        <upload-avatar ref="avatarImg" :avatarurl="ruleForm.avatar" />
       </el-form-item>
+
       <el-form-item label="昵称" prop="nickname">
-        <el-input v-model="ruleForm.nickname"></el-input>
+        <el-input v-model="ruleForm.nickname" placeholder="请输入昵称"></el-input>
       </el-form-item>
+
       <el-form-item label="性别" prop="sex">
         <el-radio-group v-model="ruleForm.sex">
-          <el-radio label="1">男</el-radio>
-          <el-radio label="2">女</el-radio>
+          <el-radio label="男">男</el-radio>
+          <el-radio label="女">女</el-radio>
         </el-radio-group>
       </el-form-item>
+
       <el-form-item label="生日" required>
-        <el-form-item prop="birthday">
+        <el-form-item prop="birth_date">
           <el-date-picker
-            v-model="ruleForm.birthday"
+            v-model="ruleForm.birth_date"
             type="date"
             placeholder="选择生日"
             style="width: 100%;"
           ></el-date-picker>
         </el-form-item>
       </el-form-item>
-      <el-form-item label="个人简介" prop="desc">
-        <el-input v-model="ruleForm.desc" type="textarea"></el-input>
+
+      <el-form-item label="常住地" prop="">
+        <!-- <el-input v-model="ruleForm.home"></el-input> -->
+        <v-distpicker
+          :province="ruleForm.province"
+          :city="ruleForm.city"
+          :district="ruleForm.district"
+          @province="onChangeProvince"
+          @city="onChangeCity"
+          @area="onChangeArea"
+        >
+        </v-distpicker>
+      </el-form-item>
+      <el-form-item label="个人简介" prop="introduction">
+        <el-input v-model="ruleForm.introduction" type="textarea" placeholder="请输入个人简介"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="warning" @click="submitForm('ruleForm')"
-          >保存</el-button
+        <el-button 
+          type="warning" 
+          @click="submitForm('ruleForm')"
         >
+          保存
+        </el-button>
         <el-button @click="resetForm('ruleForm')">重置</el-button>
       </el-form-item>
     </el-form>
@@ -60,18 +83,39 @@ console.log("setting/components: basic is loaded");
 
 import { postData } from '@/api/common';
 import { LaobingUrl } from "@/api/laobing_url";
+import { mapGetters } from "vuex";
+import VDistpicker from "v-distpicker";
+import {
+  setTokenByKey,
+  TOKEN_KEYS
+} from "@/utils/auth";
+// import UploadAvatar from "@/components/UploadImg/avatar"
 
 export default {
   // name: 'MaHomeHeader',
   // components: { MaHomeheader },
   name: "BasicInfo",
+  components: {
+    VDistpicker,
+    UploadAvatar: () => import("@/components/UploadImg/avatar")
+  },
   data() {
     return {
+      infos: [],
       ruleForm: {
         imageUrl: "",
-        nickname: "",
-        sex: "",
-        desc: ""
+        // nickname: "",
+        // sex: "",
+        // desc: "",
+        uid: "",
+        avatar: "",
+        nickname: "", //
+        sex: "", //
+        birth_date: "", //
+        introduction: "", //
+        province: '',
+        city: '',
+        district: ''
       },
       rules: {
         name: [
@@ -84,7 +128,7 @@ export default {
             trigger: "blur"
           }
         ],
-        birthday: [
+        birth_date: [
           {
             type: "date",
             required: true,
@@ -102,6 +146,13 @@ export default {
       newPhoneNumber: ""
     };
   },
+  computed: {
+    ...mapGetters(["user_id", "avatar"])
+  },
+  created: function() {
+    this.fetchData();
+    // this.$store.state.navactive = '/annals/index';
+  },
   methods: {
     handleAvatarSuccess(res, file) {
       this.ruleForm.imageUrl = URL.createObjectURL(file.raw);
@@ -118,18 +169,127 @@ export default {
       }
       return isJPG && isLt2M;
     },
+    // 地址选择
+    onSelected(data) {
+      alert(data.province + ' | ' + data.city)
+      console.log(data)
+    },
+    choose() {
+      this.show = !this.show
+    },
+    onChangeProvince(a) {
+      console.log(a) 
+      this.ruleForm.province = a.value;
+      // this.txt1 = a.value + '-'
+    },    
+    onChangeCity(a) {
+      console.log(a)    
+      this.ruleForm.city = a.value;
+      // this.txt2 = a.value + '-'    
+    },
+    onChangeArea(a) {
+      console.log(a)    
+      this.ruleForm.district = a.value;
+    },
+    // time format
+    timeLabel(strTime) {
+      var curTime = new Date(strTime);
+      var Y = curTime.getFullYear();
+      var M = curTime.getMonth() + 1;
+      var D = curTime.getDate();
+      var timeLabel = Y + '-' + M + '-' + D;
+      // console.log("timeLabel", timeLabel);
+      this.ruleForm.birth_date = timeLabel;
+    },
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          alert("submit!");
+          // alert("submit!");
+          this.saveData();
         } else {
-          console.log("error submit!!");
+          console.log("整不了!!");
           return false;
         }
       });
     },
     resetForm(formName) {
+      console.log("this.ruleForm::::", this.ruleForm)
       this.$refs[formName].resetFields();
+    },
+    postDataFromUI(url, data) {
+      return new Promise((resolve, reject) => {
+        postData(url, data)
+          .then(response => {
+            // const { code, msg, data } = response;
+            const { code, data } = response;
+            if (code === 20000) {
+              if (data.code === 50003) {
+                // console.log("::::::::::data.data.code" + response.data.code)
+                response.data.total = 0
+                // console.log(response.data.total)
+                this.zwsj = true
+              }  
+              console.log("Get profile Response:", data);
+              resolve(data);
+            }
+            // this.$message({
+            //   message: msg,
+            //   type: "success"
+            // });
+          })
+          .catch(error => {
+            console.log(error);
+            // this.$message({
+            //   message: error,
+            //   type: "success"
+            // });
+          });
+      });
+    },
+    fetchData() { // 读取已保存信息
+      var params = {
+        uid: this.user_id
+      };
+      this.listLoading = true;
+      this.postDataFromUI(LaobingUrl.get_infos, params)
+        .then(response => {
+          console.log(response)
+          this.ruleForm.avatar = response.avatar;
+          this.ruleForm.nickname = response.nickname;
+          this.ruleForm.sex = response.sex;
+          this.ruleForm.birth_date = response.birth_date;
+          this.ruleForm.province = response.province;
+          this.ruleForm.city = response.city;
+          this.ruleForm.district = response.area;
+          this.ruleForm.introduction = response.introduction;
+          this.listLoading = false;
+        })
+        .catch(error => {
+          this.listLoading = false;
+          console.log(error);
+        });
+    },
+    saveData() { // 保存信息
+      // this.timeLabel(this.ruleForm.birth_date); 
+      this.ruleForm.uid = this.user_id;
+      this.ruleForm.avatar = this.$refs.avatarImg.imgUrl;
+      // 解决token数据不刷新的bug
+      this.avatar = this.ruleForm.avatar;
+
+      console.log("ruleForm:::", this.ruleForm);
+      this.listLoading = true;
+      this.postDataFromUI(LaobingUrl.save_infos, this.ruleForm)
+        .then(response => { 
+          // this.ArticleList = response;
+          console.log("save response:::::", response);
+          // 强刷token，并且刷新页面
+          setTokenByKey(TOKEN_KEYS.avatar_key, response.avatar);
+          history.go(0);
+        })
+        .catch(error => {
+          this.listLoading = false;
+          console.log(error);
+        });
     }
   }
 };
@@ -222,7 +382,7 @@ export default {
     width: 150px;
   }
   .el-form {
-    width: 500px;
+    width: 600px;
     // margin: 50px;
   }
   .el-form-item {
@@ -236,5 +396,9 @@ export default {
 .setting-body {
   // width: 500px;
   padding: 50px;
+}
+.el-tabs>>>.distpicker-address-wrapper select {
+  color: #606266 !important;
+  border: 1px solid #e08714 !important;;
 }
 </style>
