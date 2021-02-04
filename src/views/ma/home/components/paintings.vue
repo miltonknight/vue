@@ -12,7 +12,7 @@
 </template>
 
 <script>
-console.log("home/components: cpaintings is loaded");
+console.log("home/components: paintings is loaded");
 
 import { postData } from '@/api/common';
 import { LaobingUrl } from "@/api/laobing_url";
@@ -43,7 +43,7 @@ export default {
           .then(response => {
             const { code, msg, data } = response;
             if (code === 20000 && data != null) {
-              console.log("Index cpaintings Response:", data);
+              console.log("Index paintings Response:", data);
               resolve(data);
             } else {
               reject(msg);
@@ -66,7 +66,7 @@ export default {
       this.postDataFromUI(this.url, this.param)
         .then(response => {
           this.ret = response.list;
-          console.log("homepage cpaintings Json:", response);
+          console.log("homepage paintings Json:", response);
         });
     }
   }
