@@ -14,7 +14,7 @@
             
             <!-- 优惠信息 -->
             <!-- components:components/coupon -->
-            <!-- <home-coupon /> -->
+            <home-coupon />
 
             <!-- 老兵驿站 -->
             <!-- components:components/courier-station -->
@@ -27,43 +27,8 @@
             <!-- 老兵战史end -->
 
             <!-- 老兵情怀 -->
-            <div class="list-main">
-              <div class="list-head">
-                <h3>老兵情怀<span>Veteran feelings</span></h3>
-                <a href="/#/sentiment/index">查看更多</a>
-              </div>
-              <div class="list-body">
-                <a href="/#/sentiment/critical-detail" class="img-list slide">
-                  <div class="img-list-main">
-                    <img src="@/assets/img/senti-img.jpg" />
-                    <span>老兵老兵网2020年老兵救助第1期</span>
-                  </div>
-                </a>
-              </div>
-              <div class="list-body">
-                <a href="/#/sentiment/critical-detail" class="img-list" style="margin-right: 12px;">
-                  <div class="img-list-main">
-                    <img src="@/assets/img/fake-1.png" />
-                    <span>[测试数据文章标题]</span>
-                  </div>
-                  <p>测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容...</p>
-                </a>
-                <a href="/#/sentiment/critical-detail" class="img-list" style="margin-right: 12px;">
-                  <div class="img-list-main">
-                    <img src="@/assets/img/fake-2.png" />
-                    <span>[测试数据文章标题]</span>
-                  </div>
-                  <p>测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容...</p>
-                </a>
-                <a href="/#/sentiment/critical-detail" class="img-list">
-                  <div class="img-list-main">
-                    <img src="@/assets/img/list-img2.png" />
-                    <span>[测试数据文章标题]</span>
-                  </div>
-                  <p>测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容测试数据文章内容...</p>
-                </a>
-              </div>
-            </div>
+            <!-- components:components/annals -->
+            <home-senti />
             <!-- 老兵情怀end -->
 
             <!-- 老兵文化 -->
@@ -105,26 +70,10 @@
                 </a>
               </div>
 
-              <div class="list-body culture-list-box">
-                <a href="" class="img-list nonebg" style="margin-right: 12px;">
-                  <div class="img-list-main">
-                    <img src="@/assets/img/9.png" />
-                  </div>
-                  <p>军旅书法家 王文杰 作品</p>
-                </a>
-                <a href="" class="img-list nonebg" style="margin-right: 12px;">
-                  <div class="img-list-main">
-                    <img src="@/assets/img/9.png" />
-                  </div>
-                  <p>军旅书法家 王文杰 作品</p>
-                </a>
-                <a href="" class="img-list nonebg">
-                  <div class="img-list-main">
-                    <img src="@/assets/img/9.png" />
-                  </div>
-                  <p>军旅书法家 王文杰 作品</p>
-                </a>
-              </div>
+              <!-- 老兵文化-书画 -->
+              <!-- components:components/paintings -->
+              <home-paintings />
+              <!-- 老兵文化-书画 end -->
 
               <div class="list-body">
                 <a href="" class="list-item">
@@ -194,95 +143,10 @@
             <!-- 老兵文化end -->
 
             <!-- 老兵风采 -->
-            <div class="list-main">
-              <div class="list-head">
-                <h3>老兵风采<span>Veteran presence</span></h3>
-                <a href="/#/famous/people/index">查看更多</a>
-              </div>
-              <div class="list-body">
-                <a href="" class="img-list-famous" style="margin-right: 13px;">
-                  <div class="img-list-main">
-                    <img src="@/assets/img/r2.jpg" />
-                  </div>
-                  <h3>冷鹏飞</h3>
-                  <span>全国战斗英雄 一等功臣</span>
-                  <p>湖北浠水人，1933年1月出生。2017年7月28日，中央军委主席习近平签署命令：授予冷鹏飞</p>
-                  <span class="famous-dict"></span>
-                </a>
-                <a href="" class="img-list-famous" style="margin-right: 13px;">
-                  <div class="img-list-main">
-                    <img src="@/assets/img/r1.jpg" />
-                  </div>
-                  <h3>阎肃</h3>
-                  <span>著名艺术家 空政文工团创作员</span>
-                  <p>河北保定人，1930年5月出生。一级编剧。2016年当选“感动中国2015年度人物”。2019年9获“最美奋斗者”个人称号。</p>
-                  <span class="famous-dict"></span>
-                </a>
-                <a href="" class="img-list-famous">
-                  <div class="img-list-main">
-                    <img src="@/assets/img/r1.jpg" />
-                  </div>
-                  <h3>阎肃</h3>
-                  <span>著名艺术家 空政文工团创作员</span>
-                  <p>河北保定人，1930年5月出生。一级编剧。2016年当选“感动中国2015年度人物”。2019年9获“最美奋斗者”个人称号。</p>
-                  <span class="famous-dict"></span>
-                </a>
-              </div>
-            </div>
+            <!-- components:components/famous -->
+            <home-famous />
             <!-- 老兵风采end -->
-
-            <!-- 企业展播 -->
-            <div class="list-main">
-              <div class="list-body">
-                <a href="" class="list-item">
-                  <div class="list-body-img">
-                    <img src="@/assets/img/11.png" />
-                    <i class="badge">名企展播</i>
-                  </div>
-                  <div class="list-body-text">
-                    <h3>华为“南泥湾”</h3>
-                    <p>为了规避美国技术和含有美国技术的产品，华为高高举起南泥湾大旗，及时启动了“南泥湾项目”。在实现“去美化”的过程中，实现技术自给自足。在美国一次次的无情打压下...</p>
-                    <div class="list-text-cate">
-                      <span class="time">
-                        <i class="el-icon-time"></i>2020-10-26
-                      </span>
-                    </div>
-                  </div>
-                </a>
-                <a href="" class="list-item">
-                  <div class="list-body-img">
-                    <img src="@/assets/img/12.png" />
-                    <i class="badge">名企展播</i>
-                  </div>
-                  <div class="list-body-text">
-                    <h3>麒麟将成绝唱？</h3>
-                    <p>8月7日，华为消费者业务CEO余承东宣布，9月15日之后，世上再无华为麒麟芯片。余承东说，今年秋天发布的新一代旗舰机Mate40将搭载华为自己的麒麟芯片...</p>
-                    <div class="list-text-cate">
-                      <span class="time">
-                        <i class="el-icon-time"></i>2020-10-26
-                      </span>
-                    </div>
-                  </div>
-                </a>
-                <a href="" class="list-item">
-                  <div class="list-body-img">
-                    <img src="@/assets/img/13.png" />
-                    <i class="badge">广告</i>
-                  </div>
-                  <div class="list-body-text">
-                    <h3>麒麟将成绝唱？</h3>
-                    <p>8月7日，华为消费者业务CEO余承东宣布，9月15日之后，世上再无华为麒麟芯片。余承东说，今年秋天发布的新一代旗舰机Mate40将搭载华为自己的麒麟芯片...</p>
-                    <div class="list-text-cate">
-                      <span class="time">
-                        <i class="el-icon-time"></i>2020-10-26
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
           </div>
-          <!-- 企业展播end -->
         </div>
       </el-col>
       <!-- 左侧内容end -->
@@ -331,9 +195,12 @@
 console.log("Views: /home/index is loaded");
 
 import HomeFocus from "@/views/ma/home/components/focus";
-// import HomeCoupon from "@/views/ma/home/components/coupon";
+import HomeCoupon from "@/views/ma/home/components/coupon";
 import HomeCourierStation from "@/views/ma/home/components/courier-station";
 import HomeAnnals from "@/views/ma/home/components/annals";
+import HomeSenti from "@/views/ma/home/components/sentiment";
+import HomeFamous from "@/views/ma/home/components/famous";
+import HomePaintings from "@/views/ma/home/components/paintings";
 import HomeRightSide from "@/views/ma/home/components/rightside";
 import Activities from "@/components/Activities";
 import BbsTop from "@/components/BbsTop";
@@ -349,9 +216,12 @@ export default {
   name: "HomePage",
   components: {
     HomeFocus, // 焦点图
-    // HomeCoupon, // 优惠信息
+    HomeCoupon, // 优惠信息
     HomeCourierStation, // 老兵驿站
     HomeAnnals, // 老兵战史
+    HomeSenti, // 情怀
+    HomePaintings, // 文化-书画
+    HomeFamous, // 风采n名企展播
     HomeRightSide,
     Activities,
     BbsTop,
