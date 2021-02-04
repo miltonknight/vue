@@ -6,10 +6,9 @@
       <el-carousel-item v-for="item in ret" :key="item.id">
         <!-- <a :href="item.link" :id="item.soldier_station_id"> -->
         <!-- 实现href传参，soldier_station_id写在type后方   -->
-        <a :href="'/#/famous/enterprise/article?id=' + item.article_id">
-          <img :src="item.img_path" width="726px" />
+        <a :href="item.link">
+          <img :src="item.img_path" width="720px" />
         </a>
-        <h3>{{ item.title }}</h3>
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -79,7 +78,7 @@ export default {
       };
       this.postDataFromUI(LaobingUrl.modular_focus, params)
         .then(response => {
-          this.ret = response;
+          this.ret = response.list;
           console.log(response);
         });
     }

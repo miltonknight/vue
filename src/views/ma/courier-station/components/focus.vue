@@ -2,20 +2,19 @@
 
   <div class="block" style="margin-bottom: 40px;">
     <el-carousel height="300px">
-      <!-- <el-carousel-item v-for="item in ret" :key="item.id"> -->
+      <el-carousel-item v-for="item in ret" :key="item.id">
         <!-- <a :href="item.link" :id="item.soldier_station_id"> -->
         <!-- 实现href传参，soldier_station_id写在type后方   -->
-        <!-- <a :href="'/#/courier-station/article?id=' + item.article_id">
-          <img :src="item.img_path" width="726px" />
+        <a :href="item.link">
+          <img :src="item.img_path" width="720px" />
         </a>
-        <h3>{{ item.title }}</h3>
-      </el-carousel-item> -->
-      <el-carousel-item>
+      </el-carousel-item>
+      <!-- <el-carousel-item>
         <a>
           <img src="http://www.lblbsy.com:2000/test/fake-103.jpg" alt="" width="726px" />
         </a>
         <h3></h3>
-      </el-carousel-item>
+      </el-carousel-item> -->
     </el-carousel>
   </div>
     
@@ -80,11 +79,11 @@ export default {
     fetchData() {
       // json post prop
       var params = {
-        "sort_id": 3
+        section_name: "老兵驿站"
       };
       this.postDataFromUI(LaobingUrl.modular_focus, params)
         .then(response => {
-          this.ret = response;
+          this.ret = response.list;
           console.log(response);
         });
     }
