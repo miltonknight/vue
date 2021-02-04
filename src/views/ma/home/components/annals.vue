@@ -6,9 +6,9 @@
     </div>
     <div class="list-body">
 
-      <a v-for="item in ret" :key="item.article_id" :href="'/#/annals/article?id=' + item.article_id" class="list-item">
+      <a v-for="item in ret.list" :key="item.article_id" :href="'/#/annals/article?id=' + item.article_id" class="list-item">
         <div class="list-body-img">
-          <img :src="item.small_img_path">
+          <img :src="item.img_path">
           <i class="badge">{{ item.sort_name }}</i>
         </div>
         <div class="list-body-text">
@@ -38,7 +38,7 @@ export default {
     return {
       // annals数据接收数组
       ret: [],
-      url: LaobingUrl.index_article,
+      url: LaobingUrl.index_modulars,
       param: {
         sort_id: 9 // 版块id=9
       }
@@ -55,12 +55,13 @@ export default {
       return new Promise((resolve, reject) => {
         postData(url, data)
           .then(response => {
-            const { code, msg, data } = response;
+            // const { code, msg, data } = response;
+            const { code, data } = response;
             if (code === 20000 && data != null) {
               console.log("Index Annals Response:", data);
               resolve(data);
             } else {
-              reject(msg);
+              // reject(msg);
               // this.$message({
               //   message: "没有查询到数据",
               //   type: "success"
@@ -80,7 +81,7 @@ export default {
       this.postDataFromUI(this.url, this.param)
         .then(response => {
           this.ret = response;
-          console.log("homepage Annals Json:", response)
+          console.log("homepage Annals Json:", response);
         });
     }
   }
