@@ -16,9 +16,9 @@
           <li>老照片</li>
         </ul>
       </div> -->
-      <a v-for="item in ret" :key="item.article_id" :href="'/#/courier-station/article?id=' + item.article_id" class="img-list">
+      <a v-for="item in ret.list" :key="item.article_id" :href="'/#/courier-station/article?id=' + item.article_id" class="img-list">
         <div class="img-list-main">
-          <img :src="item.small_img_path" />
+          <img :src="item.img_path" />
           <span>{{ item.title }}</span>
         </div>
         <p>{{ item.introduction }}</p>
@@ -40,7 +40,7 @@ export default {
     return {
       // 老兵驿站数据接收数组
       ret: [],
-      url: LaobingUrl.index_article,
+      url: LaobingUrl.index_modulars,
       param: {
         sort_id: 1
       }
@@ -58,12 +58,13 @@ export default {
       return new Promise((resolve, reject) => {
         postData(url, data)
           .then(response => {
-            const { code, msg, data } = response;
+            // const { code, msg, data } = response;
+            const { code, data } = response;
             if (code === 20000 && data != null) {
               console.log("Index CourierStation Response:", data);
               resolve(data);
             } else {
-              reject(msg);
+              // reject(msg);
               // this.$message({
               //   message: "没有查询到数据",
               //   type: "success"
