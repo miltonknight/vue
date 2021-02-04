@@ -695,6 +695,43 @@ logo更换，文字转为代码，菜单文字对齐
     src\views\ma\house-moving\index.vue
 调整联系商家按钮的链接，列表=>详情，详情=>弹层
 
+#-------------------- 20210203更新内容 --------------------
+1. 老兵情怀大病救助、孤儿救助更新封面图片
+2. src\components\CommonTip\index.vue
+M 左侧菜单栏样式调整
+3. src\styles\index.scss
+M 修复列表.list-item hover时shadow的显示情况，首元素shadow不全问题修复
+
+#-------------------- 20210204更新内容 --------------------
+1. src/views/ma/home/components/sentiment.vue,
+   src/views/ma/home/components/courier-station.vue,
+   src/views/ma/home/components/annals.vue,
+   src/views/ma/home/components/coupon.vue,
+   src/views/ma/home/components/famous.vue,
+   src/views/ma/home/components/paintings.vue
+首页老兵情怀版块、老兵驿站版块接口更改、老兵战史更换接口、优惠版块、首页老兵风采版块、
+首页书画版块拆分为组件
+2. src/styles/index.scss
+更改首页部分样式
+3. src/views/ma/home/index.vue
+首页部分代码转为组件
+4. src/views/ma/annals/components/focus.vue,
+   src/views/ma/courier-station/components/focus.vue,
+   src/views/ma/culture/components/focus.vue,
+   src/views/ma/famous/enterprise/components/focus.vue,
+   src/views/ma/home/components/focus.vue,
+   src/views/ma/homeland/components/focus.vue
+全局focus接口替换
+5. src/api/laobing_url.js
+加入新接口地址变量
+6. src\views\ma\setting\components\basic.vue
+   src\components\UploadImg\avatar.vue
+接口联调，上传头像部分引用图片上传组件src\components\UploadImg\avatar.vue
+-使用了父子组件相互传值的方法，以及组件懒加载。头像上传之后出现了右上角不及时刷新的bug
+-调用了系统SetToken方法，强刷token，并且刷新页面。解决以上问题。
+
+
+
 
 
 
