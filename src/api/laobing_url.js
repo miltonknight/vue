@@ -19,16 +19,20 @@ export const LaobingUrl = {
   disk_generate_download_code: '/diskFile/authapi/generateCode',
   disk_user_getProfile: '/profile/authapi/profile/vue',
   article_add_article: '/cultureArticle/authapi/article/add',
+
   // -------------------- whole site modulars
-  modular_focus: '/article/findModelCarousel', // whole site modular focus
+  // modular_focus: '/article/findModelCarousel', // whole site modular focus
+  modular_focus: '/headPicture/findHeadPidBySectionName', // whole site modular focus new
   modular_article_list: '/article/pageArticleBySortId', // whole site article list
   modular_articles: '/article/findArticleDetail', // whole site article
   delete_article: '/article/deleteArticleById', // delete(fake) article
   next_article: '/article/findNextArticle', // next article
   writer_info: '/article/findWriterDataById', // article writer info
   user_article_list: '/article/pageArticleByUid', // persenal articles
+
   // -------------------- homepage apis
-  index_focus: '/homepage/findHomepageFocus', // index_focus
+  index_modulars: '/homepage/findHomepageModule', // index_modulars new
+  // index_focus: '/homepage/findHomepageFocus', // index_focus
   // index_coupon: '/homepage/findHomepageFocus', // index_coupon
   index_article: '/homepage/findHomepageModule', // index_article
   famous_people: '/veteranFamous/pageVereranFamous', // famous_list
