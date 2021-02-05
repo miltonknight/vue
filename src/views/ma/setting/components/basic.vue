@@ -130,7 +130,7 @@ export default {
         ],
         birth_date: [
           {
-            type: "date",
+            // type: "date",
             required: true,
             message: "请选择生日",
             trigger: "change"
@@ -198,7 +198,7 @@ export default {
       var M = curTime.getMonth() + 1;
       var D = curTime.getDate();
       var timeLabel = Y + '-' + M + '-' + D;
-      // console.log("timeLabel", timeLabel);
+      console.log("timeLabel", timeLabel);
       this.ruleForm.birth_date = timeLabel;
     },
     submitForm(formName) {
@@ -270,9 +270,10 @@ export default {
         });
     },
     saveData() { // 保存信息
-      // this.timeLabel(this.ruleForm.birth_date); 
+      console.log("token avatar:::::::::::::::::::::::::::::::::::", this.avatar);
+      this.timeLabel(this.ruleForm.birth_date); 
       this.ruleForm.uid = this.user_id;
-      this.ruleForm.avatar = this.$refs.avatarImg.imgUrl;
+      this.ruleForm.avatar = (this.$refs.avatarImg.imgUrl ? this.$refs.avatarImg.imgUrl : this.avatar);
       // 解决token数据不刷新的bug
       this.avatar = this.ruleForm.avatar;
 
@@ -318,7 +319,8 @@ export default {
     overflow: hidden;
     width: 80px;
     height: 80px;
-    background: url('~@/assets/img/avatar-default.png');
+    // background: url('~@/assets/img/avatar-default.png');
+    background: url('~@/assets/img/head.png');
   }
   .avatar-uploader>>>.el-upload:hover {
     border-color: #e08714;
